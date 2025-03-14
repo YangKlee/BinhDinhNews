@@ -37,6 +37,32 @@
     border-radius: 30px;
 
 }
+.header.search{
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+.header.search > *{
+    display: block;
+}
+.header.search button{
+    background-color: blue;
+    font-size: 20px;
+    width: 130px;
+    border: none;
+    padding: 5px 10px;
+    color: white;
+    border-radius: 10px;
+}
+.header.search input{
+    width: 80%;
+    border: none;
+    border-radius: 30px;
+    height: auto;
+    font-size: 20px;
+    padding: 5px 10px;
+}
 .header.button.login:hover {
     background-color: rgb(94, 94, 238);
 }

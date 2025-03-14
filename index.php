@@ -16,10 +16,16 @@
                 <label class="des-container slogan">Nhanh - Chính xác - Trách nhiệm</label>
             </div>
         </div>
+        <div class="header search">
+            <input type="text" name="search">
+            <button>Tìm kiếm</button>
+
+        </div>
         <div class="header button">
             <button class="header button login"> Đăng nhập </button>
             <button class="header button res">Đăng ký</button>
         </div>
+
     </header>
     <nav class="nav" id="nav-container">
         <ul class="nav ul">
@@ -37,7 +43,7 @@
         <div class="content" id = "content-container">
             <div class="content first" >
                 <div class="content first left">
-                    <h1 class="content-title">Tin nóng</h1>
+                    <h1 class="content-title"><b style="font-weight: bolder;">></b> Tin nóng</h1>
                     <hr class="hr-divide">
                     <div class="content first left hotnews">
                         <img src="https://cdn2.tuoitre.vn/thumb_w/480/471584752817336320/2024/12/11/edit-46980599211551147528521984309402575554985839n-1733889662255711833361.jpeg" alt="">
