@@ -216,6 +216,9 @@ div{
     border: 0px solid black;
 }
 .footer {
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
     background-color: #0099FF;
     color: white;
     padding: 20px;
