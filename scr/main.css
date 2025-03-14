@@ -40,7 +40,7 @@
 .header.search{
     display: flex;
     gap: 10px;
-    justify-content: center;
+    justify-content: left;
     align-items: center;
 }
 .header.search > *{
@@ -62,6 +62,9 @@
     height: auto;
     font-size: 20px;
     padding: 5px 10px;
+}
+.header.search button:hover{
+    background-color: rgb(94, 94, 238);
 }
 .header.button.login:hover {
     background-color: rgb(94, 94, 238);
