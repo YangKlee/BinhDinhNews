@@ -6,9 +6,15 @@
 }.homepage .container__content{
     display: grid;
     grid-template-columns: 50% 50%;
-    grid-template-rows: 50px 50px 50px 50px;
+    grid-template-rows: 250px 250px 250px 250px;
+    column-gap: 10px;
 }
 .homepage.thoi-su{
+    grid-column-start: 1;
+    grid-column-end: 3;
+    column-gap: 10px;
+}
+.homepage.du-lich{
     grid-column-start: 1;
     grid-column-end: 3;
 }

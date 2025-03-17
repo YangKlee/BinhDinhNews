@@ -11,17 +11,34 @@
     <div class="homepage homepage-container">
         <div class="container__content">
             <div class="homepage hot-news">
-                <p>Tin nóng</p>
+                <h1>Tin nóng</h1>
+                <hr>
             </div>
             <div class="homepage current-news">
-                <p>Tin mới</p>
+                <h1>Tin mới</h1>
+                <hr>
             </div>
             <div class="homepage thoi-su">
-                <p>Thời sự</p>
+                <h1>Thời sự<h1>
+                <hr>
             </div>
-            <p>Kinh tế tổng hợp</p>
-            <p>Văn hóa xh</p>
-            <p>Du lịch</p>
+            <div class="homepage kinh-te">
+                <h1>Kinh tế - tổng hợp<h1>
+                <hr>
+            </div>
+ 
+
+            <div class="homepage van-hoa">
+                <h1>Văn hóa<h1>
+                <hr>
+            </div>
+            <div class="homepage van-hoa">
+                <p>Du lịch</p>
+            </div>
+
+            
+            
+
         </div>
     </div>
 </body>
