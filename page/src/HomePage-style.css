@@ -1,0 +1,14 @@
+.homepage.homepage-container{
+    padding: 10px 10%;
+}
+.homepage .container__content{
+    padding: 0px 20px;
+}.homepage .container__content{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 50px 50px 50px 50px;
+}
+.homepage.thoi-su{
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
