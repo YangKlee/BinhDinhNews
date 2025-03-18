@@ -1,12 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./page/src/HomePage-style.css">
-    <link rel="stylesheet" href="./page/src/reset.css">
+    <link rel="stylesheet" href="./css/HomePage-style.css">
+    <link rel="stylesheet" href="./css/reset.css">
+	<link rel="stylesheet" href="./css/footer-style.css">
+	<link rel="stylesheet" href="./css/header-style.css">
     <title>Trang chủ</title>
 </head>
+<?php
+	include('partials/header.php');
+
+?>
 <body>
     <div class="homepage homepage-container">
         <div class="container__content">
@@ -42,4 +46,7 @@
         </div>
     </div>
 </body>
-</html>
+<?php
+	include('partials/footer.php');
+?>
+

@@ -1,0 +1,37 @@
+.footer {
+    position: relative;
+    bottom: 0px;
+    width: 100%;
+    background-color: #0099FF;
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 16px;
+    border-top: 3px solid white; 
+}
+
+.footer-left {
+    text-align: left;
+    max-width: 50%;
+    line-height: 1.6;
+}
+
+.footer-right {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.footer-right p {
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.footer-logo {
+    width: 100px;
+    height: auto;
+    margin-bottom: 10px;
+}
