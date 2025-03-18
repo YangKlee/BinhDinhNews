@@ -1,3 +1,6 @@
+:root{
+    --main_color: rgb(0, 132, 255);
+}
 .homepage.homepage-container{
     padding: 10px 10%;
 }
@@ -9,12 +12,26 @@
     grid-template-rows: 250px 250px 250px 250px;
     column-gap: 10px;
 }
-.homepage.thoi-su{
+.homepage-content.thoi-su{
     grid-column-start: 1;
     grid-column-end: 3;
     column-gap: 10px;
 }
-.homepage.du-lich{
+.homepage-content.du-lich{
     grid-column-start: 1;
     grid-column-end: 3;
+}
+.homepage-content h1{
+    color: var(--main_color);
+}
+.homepage-content hr{
+    height: 5px;
+    background-color: var(--main_color);
+    border: none;
+}
+.homepage-content i{
+    color: var(--main_color);
+    float: left;
+    font-size: 30px;
+    margin-right: 10px;
 }
