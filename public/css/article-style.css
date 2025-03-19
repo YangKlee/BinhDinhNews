@@ -8,6 +8,7 @@
 }
 .art-content img{
     display: block;
+    max-width: 800px;
     margin: 20px auto;
 }
 .art-content p{

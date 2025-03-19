@@ -1,0 +1,27 @@
+.img-banner-h {
+    display: block;
+    margin: 0px auto;
+    width: 50%;
+    background-size: cover;
+}
+.img-banner-h img{
+
+    margin-bottom: 10px;
+
+}
+.banner-vectical{
+
+    width: 250px;
+
+}
+.banner-vectical.left{
+    position: fixed;
+    bottom: 300px;  /* Cách mép trên 10px */
+    left: 10px; /* Cách mép trái 20px */
+
+}
+.banner-vectical.right{
+    position: fixed;
+    bottom: 300px;  /* Cách mép trên 10px */
+    right: 10px; /* Cách mép trái 20px */
+}
