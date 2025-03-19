@@ -1,6 +1,6 @@
 <article>
     <h1>Cách duy nhất để cứu J97 khỏi Drama</h1>
-    <h1>Cách Cứu J97: Chứng Minh Jack Vô Sinh?</h1>
+
         <p><em>Ngày đăng: 19/03/2025</em></p>
         
         <h2>Mở đầu: J97 và những lùm xùm không hồi kết</h2>
@@ -36,4 +36,5 @@
         <p class="note">
             *Lưu ý: Bài viết này chỉ mang tính giả định và không dựa trên bất kỳ bằng chứng thực tế nào về tình trạng sức khỏe của Jack (J97). Mọi thông tin liên quan đến sức khỏe cá nhân cần được xác minh qua các nguồn chính thức.*
         </p>
+        <h3>Tác giả: Cường Liệt Du</h3>
 </article>

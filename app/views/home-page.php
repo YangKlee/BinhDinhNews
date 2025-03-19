@@ -19,7 +19,7 @@
         <span>
             <?php
                   include('partials/banner-horizon.php');
-                  include('partials/banner-vetical.php');
+                  //include('partials/banner-vetical.php');
             ?>
         </span>
     <div class="homepage homepage-container">
@@ -53,8 +53,13 @@
                         <i>19/03/2021</i>
                     </article>
                     <article class="hot-article 777"  onclick="showArticle(777)">
-                        <img src="" alt="">
+                        <img src="../app/data/article/777/toan_main.jpg" alt="">
                         <h1>Bùi Ngọc Toàn - Kẻ biến thái khốn nạn nhất Đại Học Quy Nhơn </h1>
+                        <i>19/03/2021</i>
+                    </article>
+                    <article class="hot-article 9703"  onclick="showArticle(9703)">
+                        <img src="https://thanhnien.mediacdn.vn/Uploaded/haoph/2021_10_21/jack-va-thien-an-5805.jpeg" alt="">
+                        <h1>Cách duy nhất để cứu J97 khỏi Drama </h1>
                         <i>19/03/2021</i>
                     </article>
                     <button class="btn slide-right" onclick="loadArtNext(true)"><i class="fa-solid fa-arrow-right"></i></button>
