@@ -52,6 +52,11 @@
                         <h1>Tổ chức WHO đưa ra những lợi ích bất ngờ về việc yêu người đồng tính </h1>
                         <i>19/03/2021</i>
                     </article>
+                    <article class="hot-article 777"  onclick="showArticle(777)">
+                        <img src="" alt="">
+                        <h1>Bùi Ngọc Toàn - Kẻ biến thái khốn nạn nhất Đại Học Quy Nhơn </h1>
+                        <i>19/03/2021</i>
+                    </article>
                     <button class="btn slide-right" onclick="loadArtNext(true)"><i class="fa-solid fa-arrow-right"></i></button>
                 </div>
                 
