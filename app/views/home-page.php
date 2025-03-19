@@ -14,7 +14,14 @@
 
 ?>
 <body>
+        <span>
+            <?php
+                  include('partials/banner-horizon.php');
+
+            ?>
+        </span>
     <div class="homepage homepage-container">
+
         <div class="container__content">
             <div class="homepage-content hot-news">
                 <i class="fa-solid fa-star"></i>
@@ -30,6 +37,7 @@
                 <h1 class="type-title" >Tin mới</h1>
                 <hr>
             </div>
+
             <div class="homepage-content thoi-su">
                 <i class="fa-solid fa-globe"></i>
                 <h1 class="type-title" >Thời sự<h1>

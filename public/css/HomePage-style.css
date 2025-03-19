@@ -7,6 +7,17 @@
 .homepage-content .hot-article img{
     width: auto;
 }
+.img-banner-h {
+    display: block;
+    margin: 0px auto;
+    width: 50%;
+    background-size: cover;
+}
+.img-banner-h img{
+
+    margin-bottom: 10px;
+
+}
 .homepage-content .hot-article:hover{
     color: red;
 }
