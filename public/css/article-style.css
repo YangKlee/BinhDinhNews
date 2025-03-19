@@ -1,0 +1,16 @@
+.art-content{
+    margin: 10px 20%;
+    text-align: justify;
+}
+.art-content h1{
+    font-size: 50px;
+    margin-bottom: 30px;
+}
+.art-content img{
+    display: block;
+    margin: 20px auto;
+}
+.art-content p{
+    font-size: 20px;
+    line-height: 30px;
+}

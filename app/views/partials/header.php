@@ -12,6 +12,17 @@
                 <button id="btn-login">Đăng nhập</button>
                 <button id="btn-res">Đăng ký</button>
             </div>
+            <div class="header header-Logined-Info">
+
+                <div class="user-label">
+                        <b id="user-label name">User name label</b>
+                        <i id = "user-label role">Role label</i>  
+                </div>
+                <div class="user-profile">
+                    <img id="user-profile-img" src="../app/data/user_profile_img/shikanoko.jpg" alt="">
+                    <button id="btn-logout">Đăng xuất</button>
+                </div>
+            </div>
             <div class="header userinfo-phone">
                 <button><img src="./images/user.png" alt=""></button>
                 <div class="user-phone-menu">
@@ -21,10 +32,11 @@
                     </ul>
                 </div>
             </div>
+            
         </header>
         <nav class="nav nav--pc">
             <ul>
-                <li><a href="#">Trang chủ</a></li>
+                <li><a href="../public/index.php">Trang chủ</a></li>
                 <li><a href="#">Tin nóng</a></li>
                 <li><a href="#">Mới nhất</a></li>
                 <li><a href="#">Thời sự</a></li>

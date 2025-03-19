@@ -1,16 +1,27 @@
 :root{
     --main_color: rgb(0, 132, 255);
 }
+.homepage-content .hot-article{
+    margin:20px 20px;
+}
+.homepage-content .hot-article img{
+    width: auto;
+}
+.homepage-content .hot-article:hover{
+    color: red;
+}
 .homepage.homepage-container{
-    padding: 10px 10%;
+    margin: 20px 15%;
+    border-left: 1px solid rgba(0, 0, 0, 0.432);
+    border-right: 1px solid  rgba(0, 0, 0, 0.432);
 }
 .homepage .container__content{
     padding: 0px 20px;
 }.homepage .container__content{
     display: grid;
     grid-template-columns: 50% 50%;
-    grid-template-rows: 250px 250px 250px 250px;
-    column-gap: 10px;
+    grid-template-rows: auto 100px 100px 100px;
+    column-gap: 20px;
 }
 .homepage-content.thoi-su{
     grid-column-start: 1;
@@ -21,7 +32,7 @@
     grid-column-start: 1;
     grid-column-end: 3;
 }
-.homepage-content h1{
+.homepage-content .type-title{
     color: var(--main_color);
 }
 .homepage-content hr{
