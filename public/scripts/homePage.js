@@ -14,7 +14,9 @@ let index_list_Hot_art = 0;
 
 function loadArtNext(isNext){
     let lenght_list_Hot_art = document.getElementsByClassName("hot-article").length;
+
     let listHotArt =document.getElementsByClassName("hot-article");
+    console.log(listHotArt)
     listHotArt[index_list_Hot_art].style.display = "none";
     if (isNext) index_list_Hot_art++;
     else index_list_Hot_art--;
@@ -28,4 +30,10 @@ function loadArtNext(isNext){
     }
     listHotArt[index_list_Hot_art].style.display = "block";
 
+}
+
+window.onload = function(){
+    setInterval(() => {
+        loadArtNext(true)
+    }, 5000);
 }

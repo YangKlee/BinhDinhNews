@@ -46,18 +46,26 @@
     padding: 0px 20px;
 }.homepage .container__content{
     display: grid;
-    grid-template-columns: 50% 50%;
+    grid-template-columns: 50% 25% 20%;
     grid-template-rows: 500px 100px 100px 100px;
-    column-gap: 20px;
+    column-gap: 10px;
 }
 .homepage-content.thoi-su{
     grid-column-start: 1;
-    grid-column-end: 3;
+    grid-column-end: 4;
     column-gap: 10px;
+}
+.homepage-content.van-hoa{
+    grid-column-start: 2;
+    grid-column-end: 4;
+}
+.homepage-content.kinh-te{
+    grid-column-start: 1;
+    grid-column-end: 2;
 }
 .homepage-content.du-lich{
     grid-column-start: 1;
-    grid-column-end: 3;
+    grid-column-end: 4;
 }
 .homepage-content .type-title{
     color: var(--main_color);
@@ -72,4 +80,22 @@
     float: left;
     font-size: 30px;
     margin-right: 10px;
+}
+.homepage-content.maps img{
+    width: 100%;
+}
+.homepage-content.maps .map-title{
+    display: flex;
+    background-color: var(--main_color);
+    width: auto;
+    height: 50px;
+    margin: 5px;
+    color: white;
+    font-weight: bold;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+.homepage-content.maps .map-title h3{
+  
 }

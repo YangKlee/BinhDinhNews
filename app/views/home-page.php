@@ -52,11 +52,7 @@
                         <h1>Tổ chức WHO đưa ra những lợi ích bất ngờ về việc yêu người đồng tính </h1>
                         <i>19/03/2021</i>
                     </article>
-                    <article class="hot-article 777"  onclick="showArticle(777)">
-                        <img src="../app/data/article/777/toan_main.jpg" alt="">
-                        <h1>Bùi Ngọc Toàn - Kẻ biến thái khốn nạn nhất Đại Học Quy Nhơn </h1>
-                        <i>19/03/2021</i>
-                    </article>
+
                     <article class="hot-article 9703"  onclick="showArticle(9703)">
                         <img src="https://thanhnien.mediacdn.vn/Uploaded/haoph/2021_10_21/jack-va-thien-an-5805.jpeg" alt="">
                         <h1>Cách duy nhất để cứu J97 khỏi Drama </h1>
@@ -72,7 +68,13 @@
                 <h1 class="type-title" >Tin mới</h1>
                 <hr>
             </div>
+            <div class="homepage-content maps">
+                <div class="map-title">
+                    <h3>BẢN ĐỒ HÀNH CHÍNH</h3>
+                </div>
+                <img src="../public/images/bando.png" alt="">
 
+            </div>
             <div class="homepage-content thoi-su">
                 <i class="fa-solid fa-globe"></i>
                 <h1 class="type-title" >Thời sự<h1>

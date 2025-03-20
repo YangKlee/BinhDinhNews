@@ -1,4 +1,6 @@
-
+    <header>
+        <script src="../public/scripts/header-scripts.js"></script>
+    </header>
     <body>
         <header class="header header-container">
             <div class="header header-logo">
@@ -9,7 +11,7 @@
                 </div>
             </div>
             <div class="header header-userinfo">
-                <button  id="btn-login">Đăng nhập</button>
+                <button  id="btn-login" onclick="loadPageLoginBtb()">Đăng nhập</button>
                 <button id="btn-res">Đăng ký</button>
             </div>
             <div class="header header-Logined-Info">
