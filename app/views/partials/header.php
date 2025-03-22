@@ -3,9 +3,9 @@
     </header>
     <body>
         <header class="header header-container">
-            <div class="header header-logo">
-                <img src="./images/logo.webp" alt="">
-                <div class="header-logo header-logo__description">
+            <div  class="header header-logo">
+                <img onclick="loadHomePage()" src="./images/logo.webp" alt="">
+                <div  class="header-logo header-logo__description">
                     <h1>CỔNG THÔNG TIN BÌNH ĐỊNH</h1>
                     <i>Nhanh - Chính xác - Trách nhiệm</i>
                 </div>
