@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Trang Đăng Nhập </title>
     <link rel="stylesheet" href="../../public/css/login-style.css">
+    <link rel="stylesheet" href="../../public/css/mini-footer-style.css">
 </head>
 <body>
     <form>
@@ -20,5 +21,8 @@
         <button>Chưa có tài khoản</button>
         
     </form>
+    <?php 
+        include("./partials/mini-footer.php");
+    ?>
 </body>
 </html>
