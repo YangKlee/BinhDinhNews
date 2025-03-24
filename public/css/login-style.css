@@ -61,7 +61,7 @@ input{
 ::placeholder{
     color: #ffffff;
 }
-button{
+#loginbtn{
     margin-top: 50px;
     width: 100%;
     background-color: #ffffff;
@@ -85,4 +85,13 @@ form a {
 form a:hover {
     color: #000000;
     text-decoration: underline;
+}
+.login-nofication{
+    display: none;
+    position: relative;
+    top: 30px;
+    left: 40%;
+    width: 300px;
+    height: 250px;
+    background-color: white;
 }
