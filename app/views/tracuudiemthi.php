@@ -2,7 +2,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TRA CỨU ĐIỂM THI THPT QUỐC GIA</title>
-    <link rel="stylesheet" href="stylestracuu.css">
+    <link rel="stylesheet" href="../../public/css/stylestracuu.css">
 
 </head>
 <body>
