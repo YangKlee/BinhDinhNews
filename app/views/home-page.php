@@ -42,11 +42,7 @@
                         <h3>Khai mạc Liên hoan Truyền hình toàn quốc lần thứ 42</h3>
                         <i>Thứ 4, 19/03/2025 | 20:17    </i>
                     </article>
-                    <article class="hot-article 0002"  onclick="showArticle('0003')">
-                        <img src="../app/data/article/0003.jpg" alt="">
-                        <h3>ViruSs xác nhận 'phụ tùng' để quên ở nhà anh là của J97 </h3>
-                        <i>Thứ 4, 26/03/2025 | 20:17    </i>
-                    </article>
+                    
                     <button class="btn slide-right" onclick="loadArtNext(true)"><i class="fa-solid fa-arrow-right"></i></button>
                 </div>
                 
