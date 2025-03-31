@@ -3,7 +3,7 @@
         private $nameserver = 'localhost';
         private $username = 'root';
         private $password = '';
-        private $dbname = 'binhdinhnews_de';
+        private $dbname = 'binhdinhnews_demo';
 
         public function getConnection()
         {
