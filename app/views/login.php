@@ -57,7 +57,9 @@
     </form>
     <div class="login-nofication" style="display: <?php echo $displayNofi ?>;">
         <script>
-            alert("Dang nhap");
+            <?php
+    
+            ?>
         </script>
     </div>
     <?php 

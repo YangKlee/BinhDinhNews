@@ -29,7 +29,6 @@ function loadArtNext(isNext){
         index_list_Hot_art = lenght_list_Hot_art -1 ;
     }
     listHotArt[index_list_Hot_art].style.display = "block";
-
 }
 
 window.onload = function(){

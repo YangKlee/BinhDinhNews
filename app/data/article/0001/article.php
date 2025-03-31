@@ -1,5 +1,5 @@
 <?php
-    $main_dir = "../app/data/article/0001/";
+    $main_dir = `../app/data/article/${$_GET['id']}/`;
     
 ?>
 <h1>Kỳ họp thứ 22 (kỳ họp chuyên đề), HĐND tỉnh khóa XIII</h1>
