@@ -1,6 +1,6 @@
 function loadPageLoginBtb()
 {
-    window.location.href = "../app/views/login.php";
+    window.location.href = "login.php";
 }
 function loadHomePage()
 {

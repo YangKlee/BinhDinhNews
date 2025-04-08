@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Trang Đăng Ký </title>
-    <link rel="stylesheet" href="../../public/css/signin-style.css">
+    <link rel="stylesheet" href="./css/signin-style.css">
 </head>
 <body>
     <form>

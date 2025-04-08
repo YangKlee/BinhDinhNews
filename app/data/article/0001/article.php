@@ -1,5 +1,5 @@
 <?php
-    $main_dir = `../app/data/article/${$_GET['id']}/`;
+    $main_dir = $_SERVER['PHP_SELF'].'/';
     
 ?>
 <h1>Kỳ họp thứ 22 (kỳ họp chuyên đề), HĐND tỉnh khóa XIII</h1>
