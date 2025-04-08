@@ -1,22 +1,41 @@
+
 :root{
     --main_color: rgb(0, 132, 255);
 }
 .homepage-content .hot-article{
-    width: 100%;
+    width: 80%;
     margin:10px 5px;
 }
 .hot-article-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
+    /* position: relative;
+    left: 0px;
+    top: 0px;
+    right: 0px; */
 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
 }
+
 .hot-article h3{
-    font-size: 25px;
+    text-align: justify;
+    font-size: 30px;
+    width: 100%;
 }
+/* .btn.slide-left{
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translate( 0px, -50px);
+} */
+/* .btn.slide-right{
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translate( 0px, -50px);
+} */
 .hot-article-container .btn{
-    flex-shrink: 0;
 
     border-radius: 50%;
     border: none;
@@ -28,6 +47,7 @@
     margin-left: 10px;
     color: var(--main_color)
 }
+
 .homepage-content.hot-news .hot-article-container .hot-article{
     display: none;
 }
@@ -36,11 +56,9 @@
 }
 
 .homepage-content .hot-article img{
+    /* display: none; */
     width: 100%;
-    max-width: 600px;
-    min-width: 500px;
-    height: 300px;
-    background-size: auto;
+    object-fit: cover;
     margin-bottom: 20px;
     border-radius: 10px;
 }
@@ -59,16 +77,22 @@ article:hover{
 }.homepage .container__content{
     display: grid;
     grid-template-columns: 100% ;
-    grid-template-rows: 480px 100px 100px 100px;
+    grid-template-rows: 530px 100px 100px 100px;
     column-gap: 10px;
 }
 .homepage-row-1{
     display: grid;
     grid-template-columns: 60% 40%;
     grid-template-rows: 100%;
+    column-gap: 10px;
+   
 }
-.homepage-row-2{
+.homepage-content.hot-news{
 
+
+}
+.homepage-content.current-news{
+ 
 }
 .homepage-row-3{
     display: grid;
@@ -118,6 +142,7 @@ article:hover{
     align-items: center;
     gap: 10px;
 }
+
 .article-news img{
     background-color: gray;
     max-width: 100px;
@@ -137,6 +162,7 @@ article:hover{
 }
 .homepage-content.maps img{
     width:100%;
+
 
 }
 
@@ -235,4 +261,88 @@ article:hover{
 }
 .tienich-title{
 
+}
+@media (width <= 1600px)
+{
+    .main-container{
+        display: grid;
+        grid-template-columns: 75% 25%;
+        grid-template-rows: 100%;
+    }
+    .container-left{
+        display: none;
+    }
+    .container-right{
+        margin-right: 5px;
+    }
+
+}
+@media (width <= 1500px)
+{
+    .hot-article h3{
+        font-size: 20px;
+
+    }
+    .article-news h3{
+        font-size: 17px;
+    }
+
+}
+@media (width <= 1340px)
+{
+    .container-right{
+        display: none;
+    }
+    .main-container{
+        display: block;
+    }
+}
+@media (width <= 1000px)
+{
+    .homepage .container__content{
+        display: block;
+
+
+    }
+    .homepage-row-1{
+        display: block;
+
+       
+    }
+    .hot-article-container{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+
+
+    }
+    .hot-article > * {
+
+        display: inline-block;
+        width: 100%;
+
+
+    }
+
+    .current-news-container{
+        height: 300px;
+    }
+    .homepage-content.hot-news{
+    
+    
+    }
+    .homepage-content.current-news{
+     
+    }
+    .homepage-row-3{
+        display: block;
+
+    }
+    .btn.slide-left{
+        display: none;
+    }
+    .btn.slide-right{
+        display: none;
+    }
 }
