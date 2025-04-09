@@ -1,5 +1,5 @@
-create database BinhDinhNews_Demo11111
-use BinhDinhNews_Demo11111
+create database BinhDinhNews
+use BinhDinhNews
 
 create table User_role(
 	ROLE_ID varchar(10) primary key,
@@ -16,23 +16,20 @@ create table UserData(
 create table StaffData(
 	UID nvarchar(10) primary key,
     foreign key (UID)  references UserData(UID),
-    Alias nvarchar(100) ,
-    Public_article int
+    Alias nvarchar(100) 
+
 );
 
 create table Category(
 	ID_CAT varchar(10) primary key,
-    NAME_CAT nvarchar(100),
-    total_visits int
+    NAME_CAT nvarchar(100)
 );
 create table Article(
 	ID_Art varchar(100) primary key,
-    Time_Public datetime,
-    Time_modify datetime not null,
-    StaffID nvarchar(10), foreign key (StaffID) references UserData(UID),
-    ViewArt int,
-    Title nvarchar(1000),
 	ID_CAT varchar(10), foreign key (ID_CAT)  references Category(ID_Cat),
+    Time_modify datetime,
+    StaffID nvarchar(10), foreign key (StaffID) references UserData(UID),
+    Title nvarchar(1000),
     IS_Public bool
 );
 create table Commment(
@@ -42,7 +39,8 @@ create table Commment(
     Time_cmt datetime,
     Content text
 )
-create table ViewData(
+create table ViewArtData(
+	UID nvarchar(10) , foreign key (UID)  references UserData(UID),
 	TimeView datetime,
     ID_Art varchar(100), foreign key (ID_Art) references Article(ID_Art)
 );
