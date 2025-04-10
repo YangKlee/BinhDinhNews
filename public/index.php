@@ -35,17 +35,22 @@
                         
                         <div class="hot-article-container">
                             <button class="btn slide-left" onclick="loadArtNext(false)"><i class="fa-solid fa-arrow-left"></i></button>
-                            <article class="hot-article 0001"  onclick="showArticle('0001')">
-                                <img src="../app/data/article/0001.jpg" alt="">
-                                <h3>Kỳ họp thứ 22 (kỳ họp chuyên đề), HĐND tỉnh khóa XIII</h3>
-                                <i>Thứ 6, 21/03/2025 | 15:45</i>
-                            </article>
-                            <article class="hot-article 0002"  onclick="showArticle('0002')">
-                                <img src="../app/data/article/0002.jpg" alt="">
-                                <h3>Khai mạc Liên hoan Truyền hình toàn quốc lần thứ 42</h3>
-                                <i>Thứ 4, 19/03/2025 | 20:17    </i>
-                            </article>
-                            
+                            <a href="./article.php?id=1"  class="hot-article 1">
+                                <article>
+                                    <img src="./images/article/1.jpeg" alt="">
+                                    <h3>Đoàn tàu chở lực lượng vào TP Hồ Chí Minh diễu binh, diễu hành được chào đón nồng ấm tại Ga Diêu Trì
+                                    </h3>
+                                    <i>Thứ 6, 21/03/2025 | 15:45</i>
+                                </article>
+                            </a>
+                            <a href="./article.php?id=2" class="hot-article 2" >
+                                <article>
+                                    <img src="./images/article/2.jp g" alt="">
+                                    <h3>Bí thư Tỉnh ủy làm việc với Ban Thường vụ Đảng ủy UBND tỉnh
+                                    </h3>
+                                    <i>Thứ 6, 21/03/2025 | 15:45</i>
+                                </article>
+                            </a>
                             <button class="btn slide-right" onclick="loadArtNext(true)"><i class="fa-solid fa-arrow-right"></i></button>
                         </div>
                         
@@ -56,78 +61,91 @@
                         <h2 class="type-title" >Tin mới</h2>
                         <hr class="hr_cat">
                         <div class="current-news-container">
-                            <article class="article-news 0001">    
-                                <div class="container-news">
-                                    <div class="left">
-                                        <img src="" alt="">
+                            <a class="article-news">
+                                <article>    
+                                    <div class="container-news">
+                                        <div class="left">
+                                            <img src="" alt="">
+                                        </div>
+                                        <div class="right">
+                                            <h3>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Temporibus consectetur dolores minima provident culpa aliquid</h3>
+                                            <i>Time</i>
+                                        </div>
                                     </div>
-                                    <div class="right">
-                                        <h3>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Temporibus consectetur dolores minima provident culpa aliquid</h3>
-                                        <i>Time</i>
+                                    <hr class="hr_article">
+                                </article>
+                            </a>
+                            <a class="article-news">
+                                <article>    
+                                    <div class="container-news">
+                                        <div class="left">
+                                            <img src="" alt="">
+                                        </div>
+                                        <div class="right">
+                                            <h3>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Temporibus consectetur dolores minima provident culpa aliquid</h3>
+                                            <i>Time</i>
+                                        </div>
                                     </div>
-                                </div>
-                                <hr class="hr_article">
-                            </article>
-                            <article class="article-news 0001">    
-                                <div class="container-news">
-                                    <div class="left">
-                                        <img src="" alt="">
+                                    <hr class="hr_article">
+                                </article>
+                            </a>
+                            <a class="article-news">
+                                <article>    
+                                    <div class="container-news">
+                                        <div class="left">
+                                            <img src="" alt="">
+                                        </div>
+                                        <div class="right">
+                                            <h3>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Temporibus consectetur dolores minima provident culpa aliquid</h3>
+                                            <i>Time</i>
+                                        </div>
                                     </div>
-                                    <div class="right">
-                                        <h3>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Temporibus consectetur dolores minima provident culpa aliquid</h3>
-                                        <i>Time</i>
+                                    <hr class="hr_article">
+                                </article>
+                            </a>
+                            <a class="article-news">
+                                <article>    
+                                    <div class="container-news">
+                                        <div class="left">
+                                            <img src="" alt="">
+                                        </div>
+                                        <div class="right">
+                                            <h3>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Temporibus consectetur dolores minima provident culpa aliquid</h3>
+                                            <i>Time</i>
+                                        </div>
                                     </div>
-                                </div>
-                                <hr class="hr_article">
-                            </article>
-                            <article class="article-news 0001">    
-                                <div class="container-news">
-                                    <div class="left">
-                                        <img src="" alt="">
+                                    <hr class="hr_article">
+                                </article>
+                            </a>
+                            <a class="article-news">
+                                <article>    
+                                    <div class="container-news">
+                                        <div class="left">
+                                            <img src="" alt="">
+                                        </div>
+                                        <div class="right">
+                                            <h3>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Temporibus consectetur dolores minima provident culpa aliquid</h3>
+                                            <i>Time</i>
+                                        </div>
                                     </div>
-                                    <div class="right">
-                                        <h3>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Temporibus consectetur dolores minima provident culpa aliquid</h3>
-                                        <i>Time</i>
+                                    <hr class="hr_article">
+                                </article>
+                            </a>
+                            <a class="article-news">
+                                <article>    
+                                    <div class="container-news">
+                                        <div class="left">
+                                            <img src="" alt="">
+                                        </div>
+                                        <div class="right">
+                                            <h3>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Temporibus consectetur dolores minima provident culpa aliquid</h3>
+                                            <i>Time</i>
+                                        </div>
                                     </div>
-                                </div>
-                                <hr class="hr_article">
-                            </article>
-                            <article class="article-news 0001">    
-                                <div class="container-news">
-                                    <div class="left">
-                                        <img src="" alt="">
-                                    </div>
-                                    <div class="right">
-                                        <h3>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Temporibus consectetur dolores minima provident culpa aliquid</h3>
-                                        <i>Time</i>
-                                    </div>
-                                </div>
-                                <hr class="hr_article">
-                            </article>
-                            <article class="article-news 0001">    
-                                <div class="container-news">
-                                    <div class="left">
-                                        <img src="" alt="">
-                                    </div>
-                                    <div class="right">
-                                        <h3>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Temporibus consectetur dolores minima provident culpa aliquid</h3>
-                                        <i>Time</i>
-                                    </div>
-                                </div>
-                                <hr class="hr_article">
-                            </article>
-                            <article class="article-news 0001">    
-                                <div class="container-news">
-                                    <div class="left">
-                                        <img src="" alt="">
-                                    </div>
-                                    <div class="right">
-                                        <h3>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Temporibus consectetur dolores minima provident culpa aliquid</h3>
-                                        <i>Time</i>
-                                    </div>
-                                </div>
-                                <hr class="hr_article">
-                            </article>
+                                    <hr class="hr_article">
+                                </article>
+                            </a>
+
                         </div>
                     </div>
                     </div>
