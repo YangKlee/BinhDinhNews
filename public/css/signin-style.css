@@ -13,8 +13,8 @@ body::before{
     background-color: rgba(0, 0, 0, 0.61);
 }
 form{
-    height: 550px;
-    width: 400px;
+    height: 750px;
+    width: 500px;
     background-color: rgba(255, 255, 255, 0.11);
     position: absolute;
     transform: translate(-50%,-50%);
@@ -61,7 +61,7 @@ input{
 ::placeholder{
     color: #ffffff;
 }
-button{
+#submit_btn{
     margin-top: 50px;
     width: 100%;
     background-color: #ffffff;
@@ -85,4 +85,7 @@ form a {
 form a:hover {
     color: #000000;
     text-decoration: underline;
+}
+form{
+    padding-top: 10px;
 }
