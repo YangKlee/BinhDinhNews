@@ -14,7 +14,7 @@
     <div class="art-content">
         <?php
             $id_art = $_GET['id'] ?? "404 not found";
-            include("../app/data/article/${id_art}/article.php");
+            include("../app/data/article/${id_art}.php");
         ?>
     </div>
 

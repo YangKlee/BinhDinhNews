@@ -72,12 +72,16 @@ article:hover{
     border-left: 1px solid rgba(0, 0, 0, 0.432);
     border-right: 1px solid  rgba(0, 0, 0, 0.432);
 }
+.hot-article{
+    color: black;
+    text-decoration: none;
+}
 .homepage .container__content{
     padding: 0px 10px;
 }.homepage .container__content{
     display: grid;
     grid-template-columns: 100% ;
-    grid-template-rows: 530px 100px 100px 100px;
+    grid-template-rows: auto 100px 100px 100px;
     column-gap: 10px;
 }
 .homepage-row-1{
@@ -142,7 +146,10 @@ article:hover{
     align-items: center;
     gap: 10px;
 }
-
+.article-news{
+    text-decoration: none;
+    color: black;
+}
 .article-news img{
     background-color: gray;
     max-width: 100px;
@@ -179,7 +186,7 @@ article:hover{
 }
 .main-container{
     display: grid;
-    grid-template-columns: 10% 65% 25%;
+    grid-template-columns: 5% 65% 30%;
     grid-template-rows: 100%;
 }
 .homepage-content.maps .map-title h3{
