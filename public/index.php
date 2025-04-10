@@ -35,22 +35,28 @@
                         
                         <div class="hot-article-container">
                             <button class="btn slide-left" onclick="loadArtNext(false)"><i class="fa-solid fa-arrow-left"></i></button>
-                            <a href="./article.php?id=1"  class="hot-article 1">
-                                <article>
-                                    <img src="./images/article/1.jpeg" alt="">
-                                    <h3>Đoàn tàu chở lực lượng vào TP Hồ Chí Minh diễu binh, diễu hành được chào đón nồng ấm tại Ga Diêu Trì
-                                    </h3>
-                                    <i>Thứ 6, 21/03/2025 | 15:45</i>
-                                </article>
-                            </a>
-                            <a href="./article.php?id=2" class="hot-article 2" >
-                                <article>
-                                    <img src="./images/article/2.jp g" alt="">
-                                    <h3>Bí thư Tỉnh ủy làm việc với Ban Thường vụ Đảng ủy UBND tỉnh
-                                    </h3>
-                                    <i>Thứ 6, 21/03/2025 | 15:45</i>
-                                </article>
-                            </a>
+                            <?php
+                                require_once "../app/model/article.php";
+                                require_once "../app/model/articleDAO.php";
+                                $conn = new articleDAO();
+                                $artArray = $conn->getListArticle("Select * from article");
+                                if (mysqli_num_rows($artArray) > 0)
+                                {
+                                    while($row = mysqli_fetch_assoc($artArray))
+                                    {
+                                        echo '  <a href="./article.php?id='.$row['ID_Art'].'"  class="hot-article 1">
+                                            <article>
+                                                <img src="./images/article/'.$row['ImageTitle'].'" alt="">
+                                                <h3> '.$row['Title'].'
+                                                </h3>
+                                                <i>'.$row['Time_modify'].'</i>
+                                            </article>
+                                        </a>';
+                                    }
+                                }
+                                
+                            ?>
+
                             <button class="btn slide-right" onclick="loadArtNext(true)"><i class="fa-solid fa-arrow-right"></i></button>
                         </div>
                         
