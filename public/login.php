@@ -18,15 +18,16 @@
             if ($result->num_rows != 0)
             {
                 // login complete
+                echo "<script> alert('Dang nhap thanh cong')  window.location.href = `./index.php`</script>";
                 $nofi = "Đăng nhập thành công";
-                $isSuccess = true;
-                $displayNofi = "block";
+
+
                 } 
             else
             {
-                                // login complete
+                echo "<script> alert('Dang nhap that bai') </script>";
                 $nofi = "Đăng nhập thất bại";
-                $displayNofi = "block";
+
             }
         }
     }

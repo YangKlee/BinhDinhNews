@@ -18,13 +18,13 @@ form{
     background-color: rgba(255, 255, 255, 0.11);
     position: absolute;
     transform: translate(-50%,-50%);
-    top: 50%;
+    top: 50%;   
     left: 50%;
     border-radius: 10px;
     backdrop-filter: blur(10px);
     border: 2px solid rgba(255,255,255,0.1);
     box-shadow: 0 0 40px rgba(8,7,16,0.6);
-    padding: 50px 35px;
+    padding: 50px 20px;
 }
 form *{
     font-family: 'Poppins',sans-serif;
@@ -44,7 +44,7 @@ label{
     margin-top: 30px;
     font-size: 16px;
     font-weight: 500;
-    margin-left: -10px;
+
 }
 input{
     display: block;
@@ -56,7 +56,7 @@ input{
     margin-top: 8px;
     font-size: 14px;
     font-weight: 300;
-    margin-left: -10px;
+
 }
 ::placeholder{
     color: #ffffff;
