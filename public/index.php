@@ -26,6 +26,7 @@
                     ?>
                 </span>
             <div class="homepage homepage-container">
+
                 <div class="container__content">
                     <div class="homepage-row-1">
                     <div class="homepage-content hot-news">

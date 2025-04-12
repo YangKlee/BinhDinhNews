@@ -82,7 +82,7 @@ article:hover{
 }.homepage .container__content{
     display: grid;
     grid-template-columns: 100% ;
-    grid-template-rows: 530px 100px 100px 100px;
+    grid-template-rows: 550px 100px 100px 100px;
     column-gap: 10px;
 }
 .homepage-row-1{

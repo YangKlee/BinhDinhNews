@@ -32,13 +32,7 @@ create table Article(
     Title nvarchar(1000),
     IS_Public bool
 );
-create table Commment(
-	ID_Cmt int auto_increment primary key,
-	ID_Art int, foreign key (ID_Art) references Article(ID_Art),
-    UID int , foreign key (UID)  references UserData(UID),
-    Time_cmt datetime,
-    Content text
-)
+
 create table ViewArtData(
 	UID int , foreign key (UID)  references UserData(UID),
 	TimeView datetime,

@@ -1,9 +1,9 @@
 <?php
     class DatabaseConnection{
-        private static $nameserver = 'localhost';
+        private static $nameserver = 'localhost:3306';
         private static $username = 'root';
         private static $password = '';
-        private  static $dbname = 'binhdinhnews';
+        private  static $dbname = 'Binhdinhnews';
 
         public static function getConnection()
         {

@@ -20,7 +20,7 @@
 <div class="tien-ich">
     <div class="right-title tienich-title">TIỆN ÍCH</div>
     <ul class="right-list tien-ich">
-        <li><a href="">Camera giao thông Bình Định</a></li>
+        <li><a href="https://binhdinh.ttgt.vn/ban-do/cameras">Camera giao thông Bình Định</a></li>
         <li><a href="">Bản đồ Bình Định</a></li>
         <li><a href="">Dịch vụ Công Bình Định</a></li>
         <li><a href="">Radar thời tiết Quy Nhơn</a></li>

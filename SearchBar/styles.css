@@ -4,7 +4,9 @@
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
-
+:root{
+    --main_color: rgb(0, 132, 255);
+}
 .container{
     width: 100%;
     height: 100vh;
@@ -22,8 +24,9 @@
     justify-content: center;
     align-items: center;
     border-radius: 60px;
-    padding: 5px 20px;
-    background-color: rgb(83, 163, 237);
+    padding: 5px 5px;
+    background-color: white;
+    border: 1px solid black;
 }
 
 .search-bar input[type="text"]{
@@ -33,7 +36,7 @@
     border: none;
     border-radius: 30px;
     outline: none;
-    font-size: 16px;
+    font-size: 25px;
     background: transparent;
     margin-right: 10px;
 }
@@ -45,12 +48,14 @@
 }
 
 
-.search-bar button{
+.fa-solid.fa-magnifying-glass{
     background: transparent;
     border: none;
     cursor: pointer;
-    margin-right: 10px;
+    margin-right: 0px;
     border-radius: 30px;
     font-size: 16px;
     transition: background-color 0.3s ease;
+    background-image: linear-gradient(to right, rgb(145, 220, 255), var(--main_color) );
+    padding: 20px;
 }
