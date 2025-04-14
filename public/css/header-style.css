@@ -146,6 +146,7 @@
     padding-right: 10%;
     width: 100%;
     background-color: rgb(83, 163, 255);
+    z-index: 100;
 }
 .nav.nav--pc ul{
     display: flex;

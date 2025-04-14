@@ -34,29 +34,30 @@
                         <h2 class="type-title">Tin nóng</h2>
                         <hr class="hr_cat">
                         
-                        <div class="hot-article-container">
+                        <div class="hot-article-container" id="slide-hot-news">
                             <button class="btn slide-left" onclick="loadArtNext(false)"><i class="fa-solid fa-arrow-left"></i></button>
                             <?php
-                                require_once "../app/model/article.php";
-                                require_once "../app/model/articleDAO.php";
-                                $conn = new articleDAO();
-                                $artArray = $conn->getListArticle("Select * from article");
-                                if (mysqli_num_rows($artArray) > 0)
-                                {
-                                    while($row = mysqli_fetch_assoc($artArray))
+                                    require_once "../app/model/article.php";
+                                    require_once "../app/model/articleDAO.php";
+                                    $conn = new articleDAO();
+                                    $artArray = $conn->getListArticle("Select * from article");
+                                    if (mysqli_num_rows($artArray) > 0)
                                     {
-                                        echo '  <a href="./article.php?id='.$row['ID_Art'].'"  class="hot-article 1">
-                                            <article>
-                                                <img src="./images/article/'.$row['ImageTitle'].'" alt="">
-                                                <h3> '.$row['Title'].'
-                                                </h3>
-                                                <i>'.$row['Time_modify'].'</i>
-                                            </article>
-                                        </a>';
+                                        while($row = mysqli_fetch_assoc($artArray))
+                                        {
+                                            echo '  <a href="./article.php?id='.$row['ID_Art'].'"  class="hot-article" id="art-hot-news">
+                                                <article>
+                                                    <img src="./images/article/'.$row['ImageTitle'].'" alt="">
+                                                    <h3> '.$row['Title'].'
+                                                    </h3>
+                                                    <i>'.$row['Time_modify'].'</i>
+                                                </article>
+                                            </a>';
+                                        }
                                     }
-                                }
-                                
-                            ?>
+
+                                    
+                                ?>
 
                             <button class="btn slide-right" onclick="loadArtNext(true)"><i class="fa-solid fa-arrow-right"></i></button>
                         </div>
