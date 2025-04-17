@@ -1,4 +1,4 @@
-<p>
+<p >
 Gần 9 giờ tối 4.4, đoàn tàu chở cán bộ, chiến sĩ vào TP Hồ Chí Minh chuẩn bị tham gia diễu binh, diễu hành kỷ niệm 50 năm Ngày Giải phóng miền Nam, thống nhất đất nước (30.4.1975 - 30.4.2025) đã đến Ga Diêu Trì.
 </p>
 <p>

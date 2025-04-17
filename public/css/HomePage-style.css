@@ -4,6 +4,27 @@
 :root{
     --main_color: rgb(0, 132, 255);
 }
+
+.homepage-content .hot-article{
+
+    display: block;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    margin:10px 0px;
+
+    animation: slideCloseLeft 0.8s forwards;;
+
+}
+.hot-article.show{
+
+    display: block;
+
+    animation: slideOpenLeft 0.8s forwards;;
+
+    
+}
 @keyframes slideOpenLeft {
     0% {
 
@@ -29,26 +50,6 @@
         opacity: 0;
     }   
   }
-.homepage-content .hot-article{
-
-    display: block;
-    position: absolute;
-    left: 0px;
-    top: 0px;
-    width: 100%;
-    margin:10px 0px;
-
-    animation: slideCloseLeft 0.8s forwards;;
-
-}
-.hot-article.show{
-
-    display: block;
-
-    animation: slideOpenLeft 0.8s forwards;;
-
-    
-}
 .hot-article-container {
     position: relative;
     display: block;
@@ -86,20 +87,7 @@
     color: white
 }
 
-/* .hot-article.hide{
 
-    animation: slideCloseLeft 0.8s forwards;;
-    display: none;
-
-    
-} */
-
-/* .homepage-content.hot-news .hot-article-container .hot-article{
-    display: none;
-}
-.homepage-content.hot-news .hot-article-container .hot-article:first-of-type{
-    display: block;
-} */
 
 .homepage-content .hot-article img{
     /* display: none; */
@@ -156,7 +144,7 @@ article:hover{
 }.homepage .container__content{
     display: grid;
     grid-template-columns: 100% ;
-    grid-template-rows: auto 100px 100px 100px;
+    grid-template-rows: auto 400px 100px 100px;
     column-gap: 10px;
 }
 .homepage-row-1{
@@ -181,26 +169,13 @@ article:hover{
     grid-template-columns: 50% 50%;
     grid-template-rows: 100%;
 }
+.homepage-row-2{
+
+}
 .homepage-row-4{
 
 }
-/* .homepage-content.thoi-su{
-    grid-column-start: 1;
-    grid-column-end: 3;
-    column-gap: 10px;
-}
-.homepage-content.van-hoa{
-    grid-column-start: 2;
-    grid-column-end: 3;
-}
-.homepage-content.kinh-te{
-    grid-column-start: 1;
-    grid-column-end: 2;
-}
-.homepage-content.du-lich{
-    grid-column-start: 1;
-    grid-column-end: 3;
-} */
+
 .homepage-content .type-title{
     font-family: Arial, Helvetica, sans-serif;
     font-size: 25px;
@@ -344,6 +319,67 @@ article:hover{
     width: 100%;
 }
 .tienich-title{
+
+}
+.thoisu-wrapper
+{
+
+    display: flex;
+    justify-content: left;
+    /* gap: 20px; */
+
+}
+.article-thoisu-container{
+    margin: 20px 10px;
+    width: calc( 100% - 20px);
+    height: 100%;
+    overflow-x: hidden;
+}
+.thoisu-article{
+    padding: 10px;
+    flex-wrap: 0;
+    flex-shrink: 0;
+    display: block;
+    width: 300px;
+    height: 300px;
+    text-decoration: none;
+    color: black;
+    transition: 0.1s;
+}
+.thoisu-article:hover{
+    background-color: rgb(0, 0, 0, 0.1);
+    color: red;
+    transform: translateX();
+}
+.thoisu-article img{
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+
+}
+.thoisu-article p{
+    font-size: 25px;
+    font-style: normal;
+    margin-top: 10px;
+    font-weight: 100;
+}
+
+.homepage-content.thoi-su button i.fa-solid{
+    color: black;
+    font-size: 15px;
+    padding: 0px;
+}
+.thoisu-head-container{
+    display: flex;
+    justify-content: space-between;
+
+}
+.thoisu-title-container{
+    display: flex;
+}
+.thoisu-button-container
+{
 
 }
 @media (width <= 1600px)

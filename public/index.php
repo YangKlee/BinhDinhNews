@@ -35,7 +35,7 @@
                         <hr class="hr_cat">
                         
                         <div class="hot-article-container" id="slide-hot-news">
-                            <button class="btn slide-left" onclick="loadArtNext(false)"><i class="fa-solid fa-arrow-left"></i></button>
+                            <button class="btn slide-left" onclick="loadArtNext(false);clearHotNewsTimer()"><i class="fa-solid fa-arrow-left"></i></button>
                             <?php
                                     require_once "../app/model/article.php";
                                     require_once "../app/model/articleDAO.php";
@@ -59,7 +59,7 @@
                                     
                                 ?>
 
-                            <button class="btn slide-right" onclick="loadArtNext(true)"><i class="fa-solid fa-arrow-right"></i></button>
+                            <button class="btn slide-right" onclick="loadArtNext(true); clearHotNewsTimer()"><i class="fa-solid fa-arrow-right"></i></button>
                         </div>
                         
 
@@ -159,9 +159,54 @@
                     </div>
                     <div class="homepage-row-2">
                         <div class="homepage-content thoi-su">
-                            <i class="fa-solid fa-globe"></i>
-                            <h2 class="type-title" >Thời sự<h1>
+                            <div class="thoisu-head-container">
+                                <div class="thoisu-title-container">
+                                    <i  class="fa-solid fa-globe"></i>
+                                    <h2 class="type-title" >Thời sự<h2>
+                                </div>
+                                <div class="thoisu-button-container">
+                                    <button onclick="loadArtThoiSuNext(false);clearHotNewsTimer()" class="left-btn"><i class="fa-solid fa-arrow-left"></i></button>
+                                    <button onclick="loadArtThoiSuNext(true);clearHotNewsTimer()"class="right-btn"><i class="fa-solid fa-arrow-right"></i></button>
+                                </div>
+                                
+                            </div>
                             <hr class="hr_cat">
+                            <div class="article-thoisu-container">
+                            <div class="thoisu-wrapper" id="thoisu-wrapper">
+                                    <?php
+                                        for($i = 6; $i <= 10; $i++)
+                                        {
+                                            echo '                                <a href="" class="thoisu-article clone">
+                                                <img src=".\images\article\3.jpg" alt="ảnh">
+                                                <p>Tiêu đề bài báo '.$i.'</p> 
+                                                </a>';
+                                        }
+                                        for($i = 1; $i <= 10; $i++)
+                                        {
+                                            echo '                                <a href="" class="thoisu-article">
+                                                <img src=".\images\article\3.jpg" alt="ảnh">
+                                                <p>Tiêu đề bài báo '.$i.'</p> 
+                                                </a>';
+                                        }
+                                        for($i = 1; $i <= 4; $i++)
+                                        {
+                                            echo '                                <a href="" class="thoisu-article clone">
+                                                <img src=".\images\article\3.jpg" alt="ảnh">
+                                                <p>Tiêu đề bài báo '.$i.'</p> 
+                                                </a>';
+                                        }
+                                    ?>
+                                    <script>
+                                        const dsThoiSu = document.querySelector("thoisu-wrapper");
+                                        let start, isclick;
+                                        dsThoiSu.addEventListener('mousedown', function (e){
+                                            isclick = true;
+                                            
+                                        })
+                                        
+                                    </script>
+                            </div>
+                            </div>
                         </div>
 
                     </div>
@@ -170,6 +215,7 @@
                                 <i class="fa-solid fa-coins"></i>
                                 <h2 class="type-title" >Kinh tế - tổng hợp<h1>
                                 <hr class="hr_cat">
+
                             </div>
                         <div class="homepage-content van-hoa">
                             <i class="fa-solid fa-earth-americas"></i>
