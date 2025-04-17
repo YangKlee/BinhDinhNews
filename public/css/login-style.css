@@ -1,9 +1,10 @@
+/* Nhóm định dạng cho body và overlay */
 body {
-    background-color: rgba(0, 0, 0, 0.233) ;
+    background-color: rgba(0, 0, 0, 0.233);
     background: url('../images/du-lich-binh-dinh-ivivu1.jpg') no-repeat center center fixed;
     background-size: cover;
 }
-body::before{
+body::before {
     content: '';
     position: fixed;
     top: 0;
@@ -12,7 +13,9 @@ body::before{
     width: 100%;
     background-color: rgba(0, 0, 0, 0.61);
 }
-form{
+
+/* Nhóm định dạng cho form đăng nhập */
+form {
     height: 480px;
     width: 400px;
     background-color: rgba(255, 255, 255, 0.11);
@@ -26,27 +29,29 @@ form{
     box-shadow: 0 0 40px rgba(8,7,16,0.6);
     padding: 50px 35px;
 }
-form *{
+form * {
     font-family: 'Poppins',sans-serif;
     color: #ffffff;
     letter-spacing: 0.5px;
     outline: none;
     border: none;
 }
-form h3{
+form h3 {
     font-size: 32px;
     font-weight: 500;
     line-height: 42px;
     text-align: center;
 }
-label{
+
+/* Nhóm định dạng cho nhãn và trường nhập liệu */
+label {
     display: block;
     margin-top: 30px;
     font-size: 16px;
     font-weight: 500;
     margin-left: -10px;
 }
-input{
+input {
     display: block;
     height: 50px;
     width: 100%;
@@ -58,10 +63,12 @@ input{
     font-weight: 300;
     margin-left: -10px;
 }
-::placeholder{
+::placeholder {
     color: #ffffff;
 }
-#loginbtn{
+
+/* Nhóm định dạng cho nút đăng nhập */
+#loginbtn {
     margin-top: 50px;
     width: 100%;
     background-color: #ffffff;
@@ -72,6 +79,8 @@ input{
     border-radius: 5px;
     cursor: pointer;
 }
+
+/* Nhóm định dạng cho liên kết trong form */
 form a {
     color: #ffffff;
     font-size: 14px;
@@ -86,7 +95,9 @@ form a:hover {
     color: #000000;
     text-decoration: underline;
 }
-.login-nofication{
+
+/* Nhóm định dạng cho thông báo đăng nhập */
+.login-nofication {
     display: none;
     position: relative;
     top: 30px;

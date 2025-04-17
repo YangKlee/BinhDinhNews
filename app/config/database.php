@@ -1,16 +1,16 @@
 <?php
     class DatabaseConnection{
-        private $nameserver = 'localhost';
-        private $username = 'root';
-        private $password = '';
-        private $dbname = 'binhdinhnews_demo';
+        private static $nameserver = 'localhost:3306';
+        private static $username = 'root';
+        private static $password = '';
+        private  static $dbname = 'Binhdinhnews';
 
-        public function getConnection()
+        public static function getConnection()
         {
-            $conn = new mysqli($this->nameserver, $this->username, $this->password, $this->dbname);
+            $conn = new mysqli(self::$nameserver, self::$username, self::$password, self::$dbname);
             return $conn;
         }
-        public function closeConnection($conn)
+        public static function closeConnection($conn)
         {
             $conn->closeConnection();
         }

@@ -1,16 +1,17 @@
 <body>
-        <footer class="footer">            
+    <footer class="footer">
+        <div class="footer-top">
             <div class="footer-left">
                 <div class="head">
                     <div><img src="./images/logo.webp" alt="Logo" class="footer-logo"></div>
-                    <div>                    
+                    <div>
                         <h2>
-                        <span>© CỔNG THÔNG TIN BÌNH ĐỊNH</span>
+                            <span>© CỔNG THÔNG TIN BÌNH ĐỊNH</span>
                         </h2>
                         <p>
-                        Chủ tịch Trần Thanh Cường, Thư kí Nguyễn Khánh Dương
+                            Tổng giám ngục: Trần Thanh Cường
                         </p>
-                </div>
+                    </div>
                 </div>
 
                 <div class="footer-content">
@@ -20,5 +21,51 @@
                     <p>Địa chỉ: 123 Đường ABC, Thành phố Quy Nhơn, Tỉnh Bình Định</p>
                 </div>
             </div>
-        </footer>
-    </body>
+
+            <div class="footer-right">
+                <div class="top-menu">
+                    <div class="footer-item">
+                        <i class="fas fa-search"></i>
+                        <p>Tra cứu</p>
+                    </div>
+
+                    <div class="footer-item">
+                        <i class="fas fa-info-circle"></i>
+                        <p>Thông tin</p>
+                    </div>
+
+                    <div class="footer-item">
+                        <i class="fas fa-envelope"></i>
+                        <p>Liên hệ</p>
+                    </div>
+
+                    <div class="footer-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p>Bản đồ</p>
+                    </div>
+                </div>
+
+                <hr class="footer-divider">
+
+                <div class="bottom-menu">
+                    <a href="#">Chính sách</a>
+                    <a href="#">Trợ giúp</a>
+                    <a href="#">Điều khoản sử dụng</a>
+                    <a href="#">Quy định</a>
+                </div>
+
+                <div class="auth-menu">
+                    <a href="#">Đăng nhập</a>
+                    <a href="#">Đăng ký</a>
+                </div>
+            </div>
+        </div>
+
+         <hr class="footer-special-divider">
+
+        <div class="footer-bottom">
+           
+            <p>Cộng Hòa Xã Hội Chủ Nghĩa Việt Nam</p>
+        </div>
+    </footer>
+</body>
