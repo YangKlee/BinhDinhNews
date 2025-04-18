@@ -1,9 +1,10 @@
+/* Nhóm định dạng cho body và overlay */
 body {
-    background-color: rgba(0, 0, 0, 0.233) ;
+    background-color: rgba(0, 0, 0, 0.233);
     background: url('../images/du-lich-binh-dinh-ivivu1.jpg') no-repeat center center fixed;
     background-size: cover;
 }
-body::before{
+body::before {
     content: '';
     position: fixed;
     top: 0;
@@ -12,41 +13,47 @@ body::before{
     width: 100%;
     background-color: rgba(0, 0, 0, 0.61);
 }
-form{
+
+/* Nhóm định dạng cho form đăng ký */
+form {
     height: 750px;
     width: 500px;
     background-color: rgba(255, 255, 255, 0.11);
     position: absolute;
     transform: translate(-50%,-50%);
-    top: 50%;   
+    top: 50%;
     left: 50%;
     border-radius: 10px;
     backdrop-filter: blur(10px);
     border: 2px solid rgba(255,255,255,0.1);
     box-shadow: 0 0 40px rgba(8,7,16,0.6);
     padding: 50px 20px;
+    padding-top: 10px;
 }
-form *{
+form * {
     font-family: 'Poppins',sans-serif;
     color: #ffffff;
-    letter-spacing: 0.5px;  
+    letter-spacing: 0.5px;
     outline: none;
     border: none;
 }
-form h3{
+
+/* Nhóm định dạng cho tiêu đề trong form */
+form h3 {
     font-size: 32px;
     font-weight: 500;
     line-height: 42px;
     text-align: center;
 }
-label{
+
+/* Nhóm định dạng cho nhãn và trường nhập liệu */
+label {
     display: block;
     margin-top: 30px;
     font-size: 16px;
     font-weight: 500;
-
 }
-input{
+input {
     display: block;
     height: 50px;
     width: 100%;
@@ -56,12 +63,13 @@ input{
     margin-top: 8px;
     font-size: 14px;
     font-weight: 300;
-
 }
-::placeholder{
+::placeholder {
     color: #ffffff;
 }
-#submit_btn{
+
+/* Nhóm định dạng cho nút đăng ký */
+#submit_btn {
     margin-top: 50px;
     width: 100%;
     background-color: #ffffff;
@@ -72,6 +80,8 @@ input{
     border-radius: 5px;
     cursor: pointer;
 }
+
+/* Nhóm định dạng cho liên kết trong form */
 form a {
     color: #ffffff;
     font-size: 14px;
@@ -85,7 +95,4 @@ form a {
 form a:hover {
     color: #000000;
     text-decoration: underline;
-}
-form{
-    padding-top: 10px;
 }

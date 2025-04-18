@@ -1,7 +1,10 @@
-:root{
+/* Nhóm định dạng biến màu chính */
+:root {
     --main_color: rgb(0, 132, 255);
 }
-.header.header-container{
+
+/* Nhóm định dạng cho header container */
+.header.header-container {
     background-color: var(--main_color);
     width: 100%;
     height: 150px;
@@ -11,81 +14,36 @@
     justify-content: space-between;
     align-items: center;
 }
-.header.header.header-logo{
+
+/* Nhóm định dạng cho logo trong header */
+.header.header-logo {
     display: flex;
     justify-content: flex-start;
     align-items: center;
 }
-.header.header-logo img{
+.header.header-logo img {
     width: 110px;
-
 }
-
-.header.header-logo > *{
+.header.header-logo > * {
     margin-right: 20px;
 }
-.header-logo.header-logo__description{
-   
+
+/* Nhóm định dạng cho mô tả logo trong header */
+.header-logo.header-logo__description {
     color: white;
 }
-.header-logo.header-logo__description > *{
+.header-logo.header-logo__description > * {
     margin-bottom: 10px;
 }
-.header-logo.header-logo__description i{
+.header-logo.header-logo__description i {
     font-size: 20px;
 }
-.header.header-userinfo{
+
+/* Nhóm định dạng cho thông tin người dùng trong header */
+.header.header-userinfo {
     display: flex;
 }
-.header.header-Logined-Info #user-profile-img{
-    width: 80px;
-    border-radius: 50%;
-}
-.header.header-Logined-Info 
-{
-    display: none;
-    justify-content: flex-end;
-    align-items: self-start;
-    gap: 10px;
-}
-.header.header-Logined-Info .user-label{
-     margin-top: 15px;
-}
-.header.header-Logined-Info .user-label > *
-{
-    display: block;
-    color: white;
-
-}
-.header.header-Logined-Info .user-label  b
-{
-    font-size: 25px;
-
-}
-.header.header-Logined-Info .user-label  i
-{
-    font-size: 15px;
-    text-align: right;
-
-}
-.header.header-Logined-Info .user-profile >* 
-{
-    display: block;
-    margin-bottom: 10px;
-    
-}
-.header.header-Logined-Info .user-profile button{
-    background-color: white;
-    border: none;
-    font-size: 15px;
-    padding: 10px 10px;
-    border-radius: 20px;
-    margin-right: 10px;
-}
-.header.header-Logined-Info span{
-    
-}
-.header.header-userinfo button{
+.header.header-userinfo button {
     background-color: white;
     border: none;
     font-size: 20px;
@@ -93,51 +51,84 @@
     border-radius: 20px;
     margin-right: 10px;
 }
-.header.userinfo-phone{
+
+/* Nhóm định dạng cho thông tin người dùng đã đăng nhập */
+.header.header-Logined-Info {
+    display: none;
+    justify-content: flex-end;
+    align-items: self-start;
+    gap: 10px;
+}
+.header.header-Logined-Info #user-profile-img {
+    width: 80px;
+    border-radius: 50%;
+}
+.header.header-Logined-Info .user-label {
+    margin-top: 15px;
+}
+.header.header-Logined-Info .user-label > * {
+    display: block;
+    color: white;
+}
+.header.header-Logined-Info .user-label b {
+    font-size: 25px;
+}
+.header.header-Logined-Info .user-label i {
+    font-size: 15px;
+    text-align: right;
+}
+.header.header-Logined-Info .user-profile > * {
+    display: block;
+    margin-bottom: 10px;
+}
+.header.header-Logined-Info .user-profile button {
+    background-color: white;
+    border: none;
+    font-size: 15px;
+    padding: 10px 10px;
+    border-radius: 20px;
+    margin-right: 10px;
+}
+
+/* Nhóm định dạng cho thông tin người dùng trên điện thoại */
+.header.userinfo-phone {
     display: none;
 }
-.userinfo-phone .user-phone-menu{
-    display: none;
-}
-.header.userinfo-phone button img{
-    width: 10px;
-    
-}
-.header.userinfo-phone button{
+.header.userinfo-phone button {
     position: relative;
     padding: 10px;
     background-color: var(--main_color);
     border: 2px solid white;
 }
-
-.userinfo-phone .user-phone-menu
-{
-    display: block;
+.header.userinfo-phone button img {
+    width: 10px;
+}
+.userinfo-phone .user-phone-menu {
+    display: none;
     position: absolute;
     text-align: center;
     width: 130px;
     right: 10px;
     background-color: white;
-
     box-shadow: 1px 1px 5px black;
 }
-.userinfo-phone .user-phone-menu li{
-    margin :10px
-}
-.userinfo-phone .user-phone-menu ul
-{
+.userinfo-phone .user-phone-menu ul {
     background-color: white;
     text-decoration: none;
     list-style-type: none;
 }
-.header.userinfo-phone:focus-within  .user-phone-menu{
+.userinfo-phone .user-phone-menu li {
+    margin: 10px;
+}
+.header.userinfo-phone:focus-within .user-phone-menu {
     display: block;
 }
-.header.userinfo-phone button:focus-within
-{
+.header.userinfo-phone button:focus-within {
     background-color: rgb(122, 122, 255);
 }
-.nav.nav--pc{
+
+/* Nhóm định dạng cho navigation trên PC */
+.nav.nav--pc {
     position: sticky;
     display: inline-block;
     justify-content: center;
@@ -148,21 +139,18 @@
     background-color: rgb(83, 163, 255);
     z-index: 100;
 }
-.nav.nav--pc ul{
+.nav.nav--pc ul {
     display: flex;
     padding: 0px 0px;
     justify-content: space-between;
     align-items: center;
     list-style-type: none;
     gap: 0px;
-    
 }
-.nav.nav--pc ul li{
-
+.nav.nav--pc ul li {
     padding: 15px 10px;
-    
 }
-.nav.nav--pc ul li a{
+.nav.nav--pc ul li a {
     text-decoration: none;
     color: white;
     font-size: 20px;
@@ -170,133 +158,121 @@
     text-transform: uppercase;
     font-weight: bold;
 }
-.nav.nav--pc ul li:hover{
+.nav.nav--pc ul li:hover {
     background-color: white;
-
-
 }
-.nav.nav--pc ul li:hover a{
+.nav.nav--pc ul li:hover a {
     color: var(--main_color);
 }
 
-.nav.nav--mobile button img{
-    width: 10px;
-}
-.nav.nav--mobile{
+/* Nhóm định dạng cho navigation trên mobile */
+.nav.nav--mobile {
     position: static;
     top: 0px;
-
     width: 100%;
     background-color: rgb(255, 254, 252);
+    display: none;
 }
-.nav.nav--mobile button{
+.nav.nav--mobile button {
     padding: 10px;
     width: 10%;
 }
-.nav.nav--mobile{
-    display: none;
+.nav.nav--mobile button img {
+    width: 10px;
 }
-.nav.nav--mobile .nav--mobile__menu{
-
+.nav.nav--mobile .nav--mobile__menu {
     position: absolute;
     padding: 10px;
     background-color: var(--main_color);
     height: 100vh;
+    display: none;
 }
 .nav.nav--mobile .nav--mobile__menu ul {
     list-style: none;
-    
 }
-.nav.nav--mobile .nav--mobile__menu ul li{
+.nav.nav--mobile .nav--mobile__menu ul li {
     margin-bottom: 10px;
     text-align: center;
 }
-.nav.nav--mobile .nav--mobile__menu ul li a{
+.nav.nav--mobile .nav--mobile__menu ul li a {
     text-decoration: none;
     color: white;
     font-size: 20px;
-    
     text-transform: uppercase;
 }
 .nav.nav--mobile:focus-within .nav--mobile__menu {
-    display: block ;
+    display: block;
 }
-@media only screen and (max-width: 900px){
-    .header-logo.header-logo__description h1{
+
+/* Nhóm định dạng responsive cho các kích thước màn hình */
+@media only screen and (max-width: 900px) {
+    .header-logo.header-logo__description h1 {
         font-size: 25px;
     }
-    .header.header-userinfo button{
+    .header.header-userinfo button {
         font-size: 10px;
     }
-    .header.header-logo img{
+    .header.header-logo img {
         width: 80px;
-    
     }
 }
-@media only screen and (max-width: 750px){
-
-    .header.userinfo-phone{
+@media only screen and (max-width: 750px) {
+    .header.userinfo-phone {
         display: block;
     }
-    .userinfo-phone .user-phone-menu{
+    .userinfo-phone .user-phone-menu {
         display: none;
     }
-    .header.header-userinfo button{
+    .header.header-userinfo button {
         display: none;
     }
-    .header-logo.header-logo__description > *{
+    .header-logo.header-logo__description > * {
         margin-bottom: 5px;
     }
-    .header-logo.header-logo__description h1{
+    .header-logo.header-logo__description h1 {
         font-size: 15px;
     }
-    .header.header-container{
+    .header.header-container {
         height: 70px;
     }
-    .header-logo.header-logo__description i{
+    .header-logo.header-logo__description i {
         font-size: 10px;
     }
-    .header.header-logo > *{
+    .header.header-logo > * {
         margin-right: 10px;
     }
-    .header.header-logo img{
+    .header.header-logo img {
         width: 40px;
-    
     }
-    
 }
-@media only screen and (max-width: 1200px){
-    .header.header-container{
+@media only screen and (max-width: 1200px) {
+    .header.header-container {
         padding-left: 10px;
         padding-right: 5px;
     }
-    .nav.nav--pc{
+    .nav.nav--pc {
         display: none;
     }
-    .nav.nav--mobile{
+    .nav.nav--mobile {
         display: block;
     }
-    .nav.nav--mobile .nav--mobile__menu{
+    .nav.nav--mobile .nav--mobile__menu {
         display: none;
     }
 }
-@media only screen and (max-width:1820px) {
-    .nav.nav--pc ul li a{
+@media only screen and (max-width: 1820px) {
+    .nav.nav--pc ul li a {
         font-size: 20px;
     }
-    .nav.nav--pc ul li{
-
+    .nav.nav--pc ul li {
         padding: 5px;
-        
     }
 }
-@media only screen and (max-width:1550px) {
-    .nav.nav--pc ul li a{
+@media only screen and (max-width: 1550px) {
+    .nav.nav--pc ul li a {
         font-size: 15px;
     }
-    .nav.nav--pc ul li{
-
+    .nav.nav--pc ul li {
         padding: 5px;
-        
     }
 }
