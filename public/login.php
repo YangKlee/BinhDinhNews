@@ -18,7 +18,9 @@
             if ($result->num_rows != 0)
             {
                 // login complete
-                echo "<script> alert('Dang nhap thanh cong')  window.location.href = `./index.php`</script>";
+                echo "<script> alert('Dang nhap thanh cong') 
+                    window.location.href = `./index.php`
+                </script>";
                 $nofi = "Đăng nhập thành công";
 
 
