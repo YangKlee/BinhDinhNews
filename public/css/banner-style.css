@@ -2,7 +2,8 @@
 .img-banner-h {
     display: block;
     margin: 0px auto;
-    width: 50%;
+    width: 100%;
+    height: auto;
     background-size: cover;
 }
 .img-banner-h img {

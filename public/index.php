@@ -177,21 +177,21 @@
                                         for($i = 6; $i <= 10; $i++)
                                         {
                                             echo '                                <a href="" class="thoisu-article clone">
-                                                <img src=".\images\article\3.jpg" alt="ảnh">
+                                                <img src=".\images\article\2.jpg" alt="ảnh">
                                                 <p>Tiêu đề bài báo '.$i.'</p> 
                                                 </a>';
                                         }
                                         for($i = 1; $i <= 10; $i++)
                                         {
                                             echo '                                <a href="" class="thoisu-article">
-                                                <img src=".\images\article\3.jpg" alt="ảnh">
+                                                <img src=".\images\article\2.jpg" alt="ảnh">
                                                 <p>Tiêu đề bài báo '.$i.'</p> 
                                                 </a>';
                                         }
                                         for($i = 1; $i <= 4; $i++)
                                         {
                                             echo '                                <a href="" class="thoisu-article clone">
-                                                <img src=".\images\article\3.jpg" alt="ảnh">
+                                                <img src=".\images\article\2.jpg" alt="ảnh">
                                                 <p>Tiêu đề bài báo '.$i.'</p> 
                                                 </a>';
                                         }
@@ -210,17 +210,70 @@
                         </div>
 
                     </div>
+                    <?php
+                        include('../app/views/partials/banner-horizon.php');
+                    ?>
                     <div class="homepage-row-3">
-                        <div class="homepage-content kinh-te">
+                        <div class="homepage-content chinh-quyen">
                                 <i class="fa-solid fa-coins"></i>
-                                <h2 class="type-title" >Kinh tế - tổng hợp<h1>
+                                <h2 class="type-title" >Chính quyền<h1>
                                 <hr class="hr_cat">
+                                <div class="row-3 module-1-container">
+                                    <div class="module-1 top-news">
+                                        <a href="" class="top-news container">
+                                            <img src=".\images\article\1.jpg" alt="ảnh">
+                                            <p>Lên hồ sơ dự kiến sáp nhập các cơ quan hành chính tỉnh Bình Định</p>
+                                            <i>Thời gian...</i>
+                                        </a>
+                                    </div>
+                                    <div class="module-1 list-news">
+                                        <?php
+                                            for($i = 0; $i <10; $i++)
+                                            {
+                                                echo '                                        <a href="" class="list-news container">
+                                                <img src=".\images\article\1.jpg" alt="ảnh">
+                                                <div class="news-title">
+                                                    <p>Đéo biết viết gì nên cứ coi đây là tiêu đề tin tức số '.$i.' đi nha heheheheh</p>
+                                                    <i>Thời gian...</i>
+                                                    
+                                                </div>
+                                        </a>
+                                        <hr class="hr_article">';
+                                            }
+                                        ?>
+                                    </div>
+                                </div>
 
                             </div>
                         <div class="homepage-content van-hoa">
                             <i class="fa-solid fa-earth-americas"></i>
                             <h2 class="type-title" >Văn hóa<h1>
                             <hr class="hr_cat">
+                            <div class="row-3 module-2-container">
+                                    <div class="module-2 top-news">
+                                        <a href="" class="top-news container">
+                                            <img src=".\images\article\1.jpg" alt="ảnh">
+                                            <p>Lên hồ sơ dự kiến sáp nhập các cơ quan hành chính tỉnh Bình Định</p>
+                                            <i>Thời gian...</i>
+                                        </a>
+                                    </div>
+                                    <div class="module-1 list-news">
+                                        <?php
+                                            for($i = 0; $i <10; $i++)
+                                            {
+                                                echo '                                        <a href="" class="list-news container">
+                                                <img src=".\images\article\1.jpg" alt="ảnh">
+                                                <div class="news-title">
+                                                    <p>Đéo biết viết gì nên cứ coi đây là tiêu đề tin tức số '.$i.' đi nha heheheheh</p>
+                                                    <i>Thời gian...</i>
+                                                   
+                                                </div>
+                                        </a>
+                                         <hr class="hr_article">';
+                                            }
+                                        ?>
+                                    </div>
+                                </div>
                         </div>
                     </div>
                     <div class="homepage-row-4">
