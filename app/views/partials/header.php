@@ -36,32 +36,50 @@
             </div>
             
         </header>
-        <nav class="nav nav--pc">
-            <ul>
-                <li><a href="../public/index.php">Trang chủ</a></li>
-                <li><a href="#">Tin nóng</a></li>
-                <li><a href="#">Mới nhất</a></li>
-                <li><a href="#">Thời sự</a></li>
-                <li><a href="#">Chính quyền</a></li>
-                <li><a href="#">Giao thông</a></li>
-                <li><a href="#">Du lịch</a></li>
-                <li><a href="#">Tiện ích</a></li>
-            </ul>
-        </nav>
-        <nav class="nav nav--mobile">
-            <button><img src="./images/menu.png" alt=""></button>
-            <div class="nav--mobile__menu">
-                <ul>
-                    <li><a href="#">Trang chủ</a></li>
-                    <li><a href="#">Tin nóng</a></li>
-                    <li><a href="#">Mới nhất</a></li>
-                    <li><a href="#">Thời sự</a></li>
-                    <li><a href="#">Chính quyền</a></li>
-                    <li><a href="#">Giao thông</a></li>
-                    <li><a href="#">Du lịch</a></li>
-                    <li><a href="#">Tiện ích</a></li>
+
+        <nav class="nav-pc">
+            <ul class="main">
+                    <li><a href="./index.php">Homepage</a></li>
+
+                    <li class="parent tin-tuc"><a href="/index.php">Tin tức</a>
+                        <ul class="subnav tin-tuc">
+                            <li><a href="#">Thời sự</a></li>
+                            <li><a href="#">Chính trị</a></li>
+                            <li><a href="#">Kinh tế - tổng hợp</a></li>
+                            <li><a href="#">Văn hóa - xã hội</a></li>
+                            <li><a href="#">Thể loại 1</a></li>
+                            <li><a href="#">Thể loại 2</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="parent chinh-quyen"><a href="#">Chính quyền</a>
+                        <ul class="subnav chinh-quyen">
+                            <li><a href="#">Tỉnh ủy</a></li>
+                            <li><a href="#">HDND Tỉnh</a></li>
+                            <li><a href="#">UBMTTQVN Tỉnh</a></li>
+                            <li><a href="#">Cơ quan chuyên môn</a></li>
+                            <li><a href="#">Bản đồ bộ máy</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="parent du-lich"><a href="#">Du lịch Bình Định</a>
+                        <ul class="subnav du-lich">
+                            <li><a href="#">Danh lam thắng cảnh</a></li>
+                            <li><a href="#">Di tích lịch sử</a></li>
+                            <li><a href="#">Khu du lịch</a></li>
+                            <li><a href="#">Ẩm thực Bình Định</a></li>
+                            <li><a href="#">Bài viết du lịch</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="#">Giới thiệu</a></li>
+                    </ul>
+                
                 </ul>
-            </div>
-        </nav>
+                <form action="" class="search-bar">
+                    <input type="text" placeholder="Search..." name="search" id="search">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </form>
+            </nav>
 
     </body>
