@@ -39,9 +39,9 @@
 
         <nav class="nav-pc">
             <ul class="main">
-                    <li><a href="./index.php">Homepage</a></li>
+                    <li><a  href="./index.php"> <i class="fa-solid fa-house"></i> Homepage</a></li>
 
-                    <li class="parent tin-tuc"><a href="/index.php">Tin tức</a>
+                    <li class="parent tin-tuc"><a  href="/index.php"> <i class="fa-solid fa-newspaper"></i> Tin tức <i class="fa-solid fa-caret-down"></i></a> 
                         <ul class="subnav tin-tuc">
                             <li><a href="#">Thời sự</a></li>
                             <li><a href="#">Chính trị</a></li>
@@ -52,7 +52,7 @@
                         </ul>
                     </li>
 
-                    <li class="parent chinh-quyen"><a href="#">Chính quyền</a>
+                    <li class="parent chinh-quyen"><a href="#"> <i class="fa-solid fa-circle-nodes"></i> Chính quyền <i class="fa-solid fa-caret-down"></i></a>
                         <ul class="subnav chinh-quyen">
                             <li><a href="#">Tỉnh ủy</a></li>
                             <li><a href="#">HDND Tỉnh</a></li>
@@ -62,7 +62,7 @@
                         </ul>
                     </li>
 
-                    <li class="parent du-lich"><a href="#">Du lịch Bình Định</a>
+                    <li class="parent du-lich"><a href="#"> <i class="fa-solid fa-plane-departure"></i>  Du lịch Bình Định <i class="fa-solid fa-caret-down"></i></a>
                         <ul class="subnav du-lich">
                             <li><a href="#">Danh lam thắng cảnh</a></li>
                             <li><a href="#">Di tích lịch sử</a></li>

@@ -63,7 +63,7 @@
     backdrop-filter: blur(10px);
 }
 .hot-article-container .btn .fa-solid {
-    font-size: 25px;
+    font-size: 2rem;
     color: white;
 }
 .btn.slide-left {
@@ -140,7 +140,7 @@
 /* Nhóm định dạng cho tiêu đề và đường phân cách */
 .homepage-content .type-title {
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 25px;
+    font-size: 2rem;
     color: var(--main_color);
 }
 .hr_cat {
@@ -201,12 +201,12 @@
 .homepage-content .fa-solid {
     color: var(--main_color);
     float: left;
-    font-size: 30px;
+    font-size: 2rem;
     margin-right: 10px;
 }
 .homepage-content.thoi-su button i.fa-solid {
     color: black;
-    font-size: 15px;
+    font-size: 1rem;
     padding: 0px;
 }
 
@@ -246,7 +246,7 @@
     border-radius: 10px;
 }
 .thoisu-article p {
-    font-size: 25px;
+    font-size: 1.3rem;
     font-style: normal;
     margin-top: 10px;
     font-weight: 100;
@@ -277,7 +277,7 @@
     background-color: red;
     color: white;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 1.4rem;
     width: 100%;
 }
 .chu-tich img {
@@ -304,7 +304,7 @@
     list-style: none;
     color: black;
     text-decoration: none;
-    font-size: 20px;
+    font-size: 1.2rem;
 }
 .right-list li {
     width: 100%;
@@ -337,7 +337,7 @@ article:hover {
     display: block;
 
     padding: 10px;
-    font-size: 20px;
+    font-size: 1.5rem;
 }
 .top-news.container img{
     width: 100%;
@@ -352,7 +352,7 @@ article:hover {
 }
 .top-news.container i{
     font-weight: 100;
-    font-size: 20px;
+    font-size: 1rem;
     color: gray;
     margin-top: 10px;
 }
@@ -379,11 +379,11 @@ article:hover {
     object-fit: cover;
 }
 .list-news.container p{
-    font-size: 20px;
+    font-size: 1.2rem;
     font-weight: 100;
 }
 .list-news.container i{
-    font-size: 15px;
+    font-size: 1rem;
     font-weight: 100;
 }
 .list-news.container .news-title{
