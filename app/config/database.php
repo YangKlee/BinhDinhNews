@@ -3,7 +3,7 @@
         private static $nameserver = 'localhost:3306';
         private static $username = 'root';
         private static $password = '';
-        private  static $dbname = 'Binhdinhnews';
+        private  static $dbname = 'Binhdinhnewsbeta';
 
         public static function getConnection()
         {
