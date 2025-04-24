@@ -23,6 +23,7 @@
 }
 .header.header-logo img {
     width: 110px;
+    cursor: pointer;
 }
 .header.header-logo > * {
     margin-right: 20px;
@@ -50,6 +51,7 @@
     padding: 10px 20px;
     border-radius: 20px;
     margin-right: 10px;
+    cursor: pointer;
 }
 
 /* Nhóm định dạng cho thông tin người dùng đã đăng nhập */
@@ -202,7 +204,7 @@ nav li a{
 
 @keyframes subnavShow {
     from {
-        transform: translateY(30px);
+        transform: translateY(-30px);
         opacity: 0;
 
     }
@@ -218,7 +220,7 @@ nav li a{
 
     }
     to {
-        transform: translateY(30px);
+        transform: translateY(-30px);
         opacity: 0;
     }
 }

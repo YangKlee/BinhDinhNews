@@ -30,7 +30,6 @@
 <body>
     <form action="<?php $_SERVER['PHP_SELF'] ?>" method="post">
         <h3>Đăng ký</h3>
-        scr
         <label for="username">Tên đăng nhập</label>
         <input type="text" id="username" name="username_tb">
         <label for="username">Email:</label>
