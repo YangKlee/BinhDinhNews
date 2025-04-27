@@ -1,0 +1,81 @@
+.container-right {
+    margin-top: 30px;
+    margin-left: 5%;
+    margin-right: 10%;
+}
+.container-right > * {
+    margin-top: 10px;
+}
+.chu-tich {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: red;
+    color: white;
+    font-weight: bold;
+    font-size: 1.4rem;
+    width: 100%;
+}
+.chu-tich img {
+    width: 30%;
+}
+.chu-tich-info {
+    margin-left: 20px;
+    display: block;
+}
+.chu-tich-info > * {
+    margin-top: 10px;
+}
+.tra-cuu {
+    width: 100%;
+}
+.right-title {
+    background-color: var(--main_color);
+    width: 100%;
+    color: white;
+    font-size: 20px;
+    padding: 10px;
+}
+.right-list {
+    list-style: none;
+    color: black;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+.right-list li {
+    width: 100%;
+    border: 1px solid black;
+}
+.right-list a {
+    display: block;
+    width: 100%;
+    padding: 10px 15px;
+    color: black;
+    text-decoration: none;
+}
+.right-list li:hover a {
+    background-color: var(--main_color);
+    color: white;
+}
+.tien-ich {
+    width: 100%;
+}
+.tienich-title {
+}
+/* Nhóm định dạng cho bản đồ */
+.homepage-content.maps img {
+    width: 100%;
+}
+.homepage-content.maps .map-title {
+    display: flex;
+    background-color: var(--main_color);
+    width: 100%;
+    height: 50px;
+    color: white;
+    font-weight: bold;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px;
+}
+.homepage-content.maps .map-title h3 {
+}

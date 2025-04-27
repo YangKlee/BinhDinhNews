@@ -22,11 +22,23 @@ article {
     text-align: center;
 }
 .art-content p {
-    font-size: 20px;
+    font-size: 1.2rem;
     margin-top: 20px;
 }
-.art-content i {
-    font-size: 20px;
+.art-content .time_descrip {
+    font-size: 1.3rem;
+    color: rgba(0, 0, 0, 0.5);
+    display: block;
+    width: 100%;
+}
+.art-content .author_descrip {
+    font-size: 1.3rem;
+    color: blue;
+    display: block;
+    width: 100%;
+}
+.art-content .img_descrip {
+    font-size: 1.1rem;
     color: blue;
     display: block;
     text-align: center;

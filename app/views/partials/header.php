@@ -43,12 +43,23 @@
 
                     <li class="parent tin-tuc"><a  href="/index.php"> <i class="fa-solid fa-newspaper"></i> Tin tức <i class="fa-solid fa-caret-down"></i></a> 
                         <ul class="subnav tin-tuc">
-                            <li><a href="#">Thời sự</a></li>
+                            <?php
+                                require_once "../app/model/CategoryDAO.php";
+                                $catDAO = new CategoryDAO();
+                                $result = $catDAO->getAllCategory();
+                                while($row = mysqli_fetch_array( $result, MYSQLI_ASSOC)){
+                                    echo '<li><a href="./theloai.php?idcat='.$row['CategoryID'].'">'.$row['CategoryName'].'</a></li>';
+                                }
+                                mysqli_free_result($result); 
+
+                            
+                            ?>
+                            <!-- <li><a href="#">Thời sự</a></li>
                             <li><a href="#">Chính trị</a></li>
                             <li><a href="#">Kinh tế - tổng hợp</a></li>
                             <li><a href="#">Văn hóa - xã hội</a></li>
                             <li><a href="#">Thể loại 1</a></li>
-                            <li><a href="#">Thể loại 2</a></li>
+                            <li><a href="#">Thể loại 2</a></li> -->
                         </ul>
                     </li>
 

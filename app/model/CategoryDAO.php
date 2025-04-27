@@ -1,38 +1,25 @@
 <?php
     require_once '../app/config/database.php';
-    require_once '../app/model/Category.php';
     class CategoryDAO{
-        private $conn = null;
-        function __construct()
+        function getConnection()
         {
-            $this->conn = DatabaseConnection::getConnection();
+            $dbConnect =  new DatabaseConnection();
+            return $dbConnect->getConnection();
         }
-        function addCat($name)
+        function getAllCategory()
         {
-            $slug = strtolower($name);
-                // thay ký tự có dấu
-            $slug = strtr($slug, [
-                'à'=>'a','á'=>'a','ạ'=>'a','ả'=>'a','ã'=>'a',
-                'â'=>'a','ầ'=>'a','ấ'=>'a','ậ'=>'a','ẩ'=>'a','ẫ'=>'a',
-                'ă'=>'a','ằ'=>'a','ắ'=>'a','ặ'=>'a','ẳ'=>'a','ẵ'=>'a',
-                'è'=>'e','é'=>'e','ẹ'=>'e','ẻ'=>'e','ẽ'=>'e',
-                'ê'=>'e','ề'=>'e','ế'=>'e','ệ'=>'e','ể'=>'e','ễ'=>'e',
-                'ì'=>'i','í'=>'i','ị'=>'i','ỉ'=>'i','ĩ'=>'i',
-                'ò'=>'o','ó'=>'o','ọ'=>'o','ỏ'=>'o','õ'=>'o',
-                'ô'=>'o','ồ'=>'o','ố'=>'o','ộ'=>'o','ổ'=>'o','ỗ'=>'o',
-                'ơ'=>'o','ờ'=>'o','ớ'=>'o','ợ'=>'o','ở'=>'o','ỡ'=>'o',
-                'ù'=>'u','ú'=>'u','ụ'=>'u','ủ'=>'u','ũ'=>'u',
-                'ư'=>'u','ừ'=>'u','ứ'=>'u','ự'=>'u','ử'=>'u','ữ'=>'u',
-                'ỳ'=>'y','ý'=>'y','ỵ'=>'y','ỷ'=>'y','ỹ'=>'y',
-                'đ'=>'d',
-            ]);
-
-            $slug = preg_replace('/[^a-z0-9\s-]/', '', $slug);
-            $slug = preg_replace("#[\s]+#", "-", $slug);
-            $slug = trim($slug, "-");
-            $stm = $this->conn->prepare("insert into Category(NameCategory, Slug) values(?, ?)");
-            $stm->execute([$name, $slug]);
-
+            $conn = $this->getConnection();
+            $sql = "SELECT * FROM `category` WHERE 1";
+            $kqua = mysqli_query($conn, $sql);
+            mysqli_close($conn);
+            return $kqua;
+        }
+        function getCategory($id){
+            $conn = $this->getConnection();
+            $sql = "SELECT * FROM `category` WHERE CategoryID = ".$id."";
+            $kqua = mysqli_query($conn, $sql);
+            mysqli_close($conn);
+            return $kqua;
         }
     }
 

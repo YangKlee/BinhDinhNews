@@ -24,7 +24,13 @@
         }
         function getArticle($id)
         {
+            $conn = $this->getConnection();
+            // thực hiện query từ chuỗi query tham số
+            $kqua = mysqli_query($conn,"Select * from Article where ArticleID = ".$id."");
+            // đóng kết nối
+            mysqli_close($conn);
 
+            return $kqua;
         }
     }
 ?>
