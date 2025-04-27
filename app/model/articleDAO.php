@@ -1,26 +1,30 @@
 <?php
+    // Gọi thư viện đã xây sẵn
     require_once '../app/config/database.php';
-    require_once '../app/model/Article.php';
     class articleDAO{
-        private $conn;
-        function __construct()
+        // get connection thông qua lớp Database Connection để tiện lợi hơn
+        function getConnection()
         {
-            $this->conn = DatabaseConnection::getConnection();
+            $dbConnect =  new DatabaseConnection();
+            return $dbConnect->getConnection();
         }
-        function getListArticle($query)
+        // lấy dữ liệu bài báo và trả về dạng  ???
+        function getListArticleQuery($query)
         {
-            return mysqli_query($this->conn, $query);
+            // get connection
+            $conn = $this->getConnection();
+            // thực hiện query từ chuỗi query tham số
+            $kqua = mysqli_query($conn,$query);
+            // đóng kết nối
+            mysqli_close($conn);
+
+            return $kqua;
+
             
         }
         function getArticle($id)
         {
-            $stm = $this->conn->prepare("Select ID_Art, ID_Cat, Time_modify, StaffID, Title from Article
-             where ID_Art= ?");
-            $stm->execute([$id]);
-            $stm->bind_result($ArtID, $CatID, $TimeModify, $StaffID, $Title);
-            $stm->fetch();
-            return new Article($ArtID, $CatID, $TimeModify, $StaffID, $Title);
-            
+
         }
     }
 ?>

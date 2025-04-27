@@ -1,18 +1,16 @@
 <?php
     class DatabaseConnection{
-        private static $nameserver = 'localhost:3306';
-        private static $username = 'root';
-        private static $password = '';
-        private  static $dbname = 'Binhdinhnewsbeta';
+
 
         public static function getConnection()
         {
-            $conn = new mysqli(self::$nameserver, self::$username, self::$password, self::$dbname);
+            $conn = mysqli_connect("localhost", "root", "") or die("Hem kết nối được");
+            mysqli_select_db( $conn,"BinhDinhNewsBeta", ) or die("Đéo tìm thấy da");
             return $conn;
         }
         public static function closeConnection($conn)
         {
-            $conn->closeConnection();
+            mysqli_close($conn);
         }
 
     }
