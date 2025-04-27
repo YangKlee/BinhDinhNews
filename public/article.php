@@ -53,6 +53,7 @@
                     }
                 }
                 echo "<i class='author_descrip'>  Tác giả: ".$rawData['AuthorGuestName']."</i>";
+                fclose($f);
 
             }
 
