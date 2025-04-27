@@ -168,7 +168,7 @@
                     <div class="homepage-row-3">
                         <div class="homepage-content chinh-quyen">
                                 <i class="fa-solid fa-coins"></i>
-                                <h2 class="type-title" >Chính quyền<h1>
+                                <h2 class="type-title" >Kinh tế<h1>
                                 <hr class="hr_cat">
                                 <div class="row-3 module-1-container">
                                     <div class="module-1 top-news">
