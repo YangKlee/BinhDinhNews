@@ -151,32 +151,32 @@
     width: 100%;
 }
 .hr_article {
-    display: block;
+    color: rgba(0, 0, 0, 0.5);
 }
 
 /* Nhóm định dạng cho tin tức hiện tại */
 .homepage-content.current-news {
 }
 .current-news-container {
+    display: block;
     margin-top: 10px;
-    height: 80%;
-    overflow-x: auto;
+    height: 500px;
+    overflow-y: auto;
 }
-.article-news {
+.current-news-container .article-news {
+    display: block;
     text-decoration: none;
     color: black;
+    margin-bottom   : 10px;
 }
-.article-news .container-news {
-    display: flex;
-    justify-content: left;
-    align-items: center;
-    gap: 10px;
+.current-news-container .article-news p{
+    font-size: 1rem;
+    
 }
-.article-news img {
-    background-color: gray;
-    max-width: 100px;
-    height: 70px;
-    border-radius: 10px;
+.current-news-container .article-news i{
+    display: block;
+    margin-top: 5px;
+    font-size: 0.87rem;
 }
 
 /* Nhóm định dạng cho bản đồ */

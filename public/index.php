@@ -31,34 +31,29 @@
                 <div class="container__content">
                     <div class="homepage-row-1">
                     <div class="homepage-content hot-news">
-                        <i class="fa-solid fa-star"></i>
-                        <h2 class="type-title">Tin nóng</h2>
-                        <hr class="hr_cat">
+
                         
                         <div class="hot-article-container" id="slide-hot-news">
                             <button class="btn slide-left" onclick="loadArtNext(false);clearHotNewsTimer()"><i class="fa-solid fa-arrow-left"></i></button>
                             <?php
-                                    require_once "../app/model/article.php";
-                                    require_once "../app/model/articleDAO.php";
-                                    $conn = new articleDAO();
-                                    $artArray = $conn->getListArticle("Select * from article");
-                                    if (mysqli_num_rows($artArray) > 0)
-                                    {
-                                        while($row = mysqli_fetch_assoc($artArray))
-                                        {
-                                            echo '  <a href="./article.php?id='.$row['ID_Art'].'"  class="hot-article" id="art-hot-news">
-                                                <article>
-                                                    <img src="./images/article/'.$row['ImageTitle'].'" alt="">
-                                                    <h3> '.$row['Title'].'
-                                                    </h3>
-                                                    <i>'.$row['Time_modify'].'</i>
-                                                </article>
-                                            </a>';
-                                        }
-                                    }
-
-                                    
-                                ?>
+                                require_once("../app/model/articleDAO.php");
+                                $DAOArticle = new articleDAO();
+                                $sql = "SELECT ArticleID,Title, Time_modify, mainimage from article\n"
+                                . "where ArticleStatus = 1\n"
+                                . "ORDER BY Time_modify DESC\n"
+                                . "LIMIT 5;";
+                                $result = $DAOArticle->getListArticleQuery($sql);     
+                                while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){
+                                        echo '  <a href="./article.php?id='.$row['ArticleID'].'"  class="hot-article" id="art-hot-news">
+                                        <article>
+                                            <img src="./images/upload/'.$row['ArticleID'].'/'.$row['mainimage'].'" alt="">
+                                            <h3> '.$row['Title'].'
+                                            </h3>
+                                            <i>'.$row['Time_modify'].'</i>
+                                        </article>
+                                    </a>';
+                                }      
+                            ?>
 
                             <button class="btn slide-right" onclick="loadArtNext(true); clearHotNewsTimer()"><i class="fa-solid fa-arrow-right"></i></button>
                         </div>
@@ -70,90 +65,29 @@
                         <h2 class="type-title" >Tin mới</h2>
                         <hr class="hr_cat">
                         <div class="current-news-container">
-                            <a class="article-news">
-                                <article>    
-                                    <div class="container-news">
-                                        <div class="left">
-                                            <img src="" alt="">
-                                        </div>
-                                        <div class="right">
-                                            <h3>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Temporibus consectetur dolores minima provident culpa aliquid</h3>
-                                            <i>Time</i>
-                                        </div>
-                                    </div>
-                                    <hr class="hr_article">
-                                </article>
-                            </a>
-                            <a class="article-news">
-                                <article>    
-                                    <div class="container-news">
-                                        <div class="left">
-                                            <img src="" alt="">
-                                        </div>
-                                        <div class="right">
-                                            <h3>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Temporibus consectetur dolores minima provident culpa aliquid</h3>
-                                            <i>Time</i>
-                                        </div>
-                                    </div>
-                                    <hr class="hr_article">
-                                </article>
-                            </a>
-                            <a class="article-news">
-                                <article>    
-                                    <div class="container-news">
-                                        <div class="left">
-                                            <img src="" alt="">
-                                        </div>
-                                        <div class="right">
-                                            <h3>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Temporibus consectetur dolores minima provident culpa aliquid</h3>
-                                            <i>Time</i>
-                                        </div>
-                                    </div>
-                                    <hr class="hr_article">
-                                </article>
-                            </a>
-                            <a class="article-news">
-                                <article>    
-                                    <div class="container-news">
-                                        <div class="left">
-                                            <img src="" alt="">
-                                        </div>
-                                        <div class="right">
-                                            <h3>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Temporibus consectetur dolores minima provident culpa aliquid</h3>
-                                            <i>Time</i>
-                                        </div>
-                                    </div>
-                                    <hr class="hr_article">
-                                </article>
-                            </a>
-                            <a class="article-news">
-                                <article>    
-                                    <div class="container-news">
-                                        <div class="left">
-                                            <img src="" alt="">
-                                        </div>
-                                        <div class="right">
-                                            <h3>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Temporibus consectetur dolores minima provident culpa aliquid</h3>
-                                            <i>Time</i>
-                                        </div>
-                                    </div>
-                                    <hr class="hr_article">
-                                </article>
-                            </a>
-                            <a class="article-news">
-                                <article>    
-                                    <div class="container-news">
-                                        <div class="left">
-                                            <img src="" alt="">
-                                        </div>
-                                        <div class="right">
-                                            <h3>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Temporibus consectetur dolores minima provident culpa aliquid</h3>
-                                            <i>Time</i>
-                                        </div>
-                                    </div>
-                                    <hr class="hr_article">
-                                </article>
-                            </a>
+                        <?php
+                                require_once("../app/model/articleDAO.php");
+                                $DAOArticle = new articleDAO();
+                                $sql = "SELECT ArticleID,Title, Time_modify, mainimage from article\n"
+                                . "where ArticleStatus = 1\n"
+                                . "ORDER BY Time_modify DESC\n"
+                                . "LIMIT 20;";
+                                $result = $DAOArticle->getListArticleQuery($sql);     
+                                while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){
+                                        echo '
+                                        <a href="./article.php?id='.$row['ArticleID'].'" class="article-news">
+                                        <article>    
+                                                    <h3> '.$row['Title'].'
+                                                    </h3>
+                                                    <i>'.$row['Time_modify'].'</i>
+                                                    <hr class="hr_article">
+                                        </article>
+                                    </a>
+                                        
+                                        ';
+                                }      
+                            ?>
+                           
 
                         </div>
                     </div>
@@ -163,7 +97,7 @@
                             <div class="thoisu-head-container">
                                 <div class="thoisu-title-container">
                                     <i  class="fa-solid fa-globe"></i>
-                                    <h2 class="type-title" >Thời sự<h2>
+                                    <h2 class="type-title" >Chính trị<h2>
                                 </div>
                                 <div class="thoisu-button-container">
                                     <button onclick="loadArtThoiSuNext(false);clearHotNewsTimer()" class="left-btn"><i class="fa-solid fa-arrow-left"></i></button>
