@@ -109,25 +109,42 @@
                             <div class="article-thoisu-container">
                             <div class="thoisu-wrapper" id="thoisu-wrapper">
                                     <?php
-                                        for($i = 6; $i <= 10; $i++)
+                                        require_once("../app/model/articleDAO.php");
+                                        $DAOArticle = new articleDAO();
+                                        $sql = 'SELECT * FROM article INNER JOIN category ON article.CategoryID = category.CategoryID
+                                                        WHERE category.CategoryName = "Chính trị"
+                                                        LIMIT 5 offset 5';
+                                        $result = $DAOArticle->getListArticleQuery($sql);     
+                                        while($row = mysqli_fetch_array($result, MYSQLI_ASSOC))
                                         {
-                                            echo '                                <a href="" class="thoisu-article clone">
-                                                <img src=".\images\article\2.jpg" alt="ảnh">
-                                                <p>Tiêu đề bài báo '.$i.'</p> 
+                                            echo '<a href="./article.php?id='.$row['ArticleID'].'" class="thoisu-article clone">
+                                                <img src="./images/upload/'.$row['ArticleID'].'/'.$row['MainImage'].'" alt="">
+                                                <p>'.$row['Title'].'</p> 
+                                                <i>'.$row['Time_modify'].'</i>
                                                 </a>';
                                         }
-                                        for($i = 1; $i <= 10; $i++)
+                                        $sql = 'SELECT * FROM article INNER JOIN category ON article.CategoryID = category.CategoryID
+                                                        WHERE category.CategoryName = "Chính trị"
+                                                        LIMIT 10';
+                                        $result = $DAOArticle->getListArticleQuery($sql);     
+                                        while($row = mysqli_fetch_array($result, MYSQLI_ASSOC))
                                         {
-                                            echo '                                <a href="" class="thoisu-article">
-                                                <img src=".\images\article\2.jpg" alt="ảnh">
-                                                <p>Tiêu đề bài báo '.$i.'</p> 
+                                            echo '<a href="./article.php?id='.$row['ArticleID'].'" class="thoisu-article">
+                                                <img src="./images/upload/'.$row['ArticleID'].'/'.$row['MainImage'].'" alt="">
+                                                <p>'.$row['Title'].'</p> 
+                                                <i>'.$row['Time_modify'].'</i>
                                                 </a>';
                                         }
-                                        for($i = 1; $i <= 4; $i++)
+                                        $sql = 'SELECT * FROM article INNER JOIN category ON article.CategoryID = category.CategoryID
+                                                        WHERE category.CategoryName = "Chính trị"
+                                                        LIMIT 5';
+                                        $result = $DAOArticle->getListArticleQuery($sql);     
+                                        while($row = mysqli_fetch_array($result, MYSQLI_ASSOC))
                                         {
-                                            echo '                                <a href="" class="thoisu-article clone">
-                                                <img src=".\images\article\2.jpg" alt="ảnh">
-                                                <p>Tiêu đề bài báo '.$i.'</p> 
+                                            echo '<a href="./article.php?id='.$row['ArticleID'].'" class="thoisu-article clone">
+                                                <img src="./images/upload/'.$row['ArticleID'].'/'.$row['MainImage'].'" alt="">
+                                                <p>'.$row['Title'].'</p> 
+                                                <i>'.$row['Time_modify'].'</i>
                                                 </a>';
                                         }
                                     ?>
