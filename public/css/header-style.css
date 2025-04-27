@@ -185,8 +185,7 @@ nav li a{
     height: 100%;
     align-items: center;
 }
-.nav-pc .subnav{
-    
+.nav-pc .subnav{    
     color: black;
     box-shadow:0px 0px 10px -5px rgb(0, 0, 0);
     background-color: rgb(255, 255, 255);
@@ -199,9 +198,6 @@ nav li a{
 
 }
 
-
-
-
 @keyframes subnavShow {
     from {
         transform: translateY(-30px);
@@ -209,7 +205,7 @@ nav li a{
 
     }
     to {
-        transform: translateY(0px);
+        transform: translateY(0);
         opacity: 1;
     }
 }

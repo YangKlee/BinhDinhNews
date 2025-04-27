@@ -20,14 +20,11 @@
                 // login complete
                 echo "<script> alert('Dang nhap thanh cong')  window.location.href = `./index.php`</script>";
                 $nofi = "Đăng nhập thành công";
-
-
                 } 
             else
             {
                 echo "<script> alert('Dang nhap that bai') </script>";
                 $nofi = "Đăng nhập thất bại";
-
             }
         }
     }
@@ -57,11 +54,6 @@
         <a href="#">Quên mật khẩu ?</a>
     </form>
     <div class="login-nofication" style="display: <?php echo $displayNofi ?>;">
-        <script>
-            <?php
-    
-            ?>
-        </script>
     </div>
     <?php 
         //include("./partials/mini-footer.php");
