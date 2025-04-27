@@ -41,7 +41,7 @@
             <ul class="main">
                     <li><a  href="./index.php"> <i class="fa-solid fa-house"></i> Homepage</a></li>
 
-                    <li class="parent tin-tuc"><a  href="/index.php"> <i class="fa-solid fa-newspaper"></i> Tin tức <i class="fa-solid fa-caret-down"></i></a> 
+                    <li class="parent tin-tuc"><a  href="./index.php"> <i class="fa-solid fa-newspaper"></i> Tin tức <i class="fa-solid fa-caret-down"></i></a> 
                         <ul class="subnav tin-tuc">
                             <?php
                                 require_once "../app/model/CategoryDAO.php";

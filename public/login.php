@@ -37,6 +37,7 @@
     <title> Trang Đăng Nhập </title>
     <link rel="stylesheet" href="./css/login-style.css">
     <link rel="stylesheet" href="./css/mini-footer-style.css">
+    <link rel="icon" href="./images/logo.webp" type="image/x-icon">
 </head>
 
 <body>

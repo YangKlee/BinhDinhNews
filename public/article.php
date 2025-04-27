@@ -6,6 +6,20 @@
 	<link rel="stylesheet" href="./css/header-style.css">
     <link rel="stylesheet" href="./css/article-style.css">
     <script src="https://kit.fontawesome.com/8f5e4d2946.js" crossorigin="anonymous"></script>
+    <title><?php 
+        require_once('../app/model/ArticleDAO.php');
+        $artDAO = new articleDAO();
+        $result = $artDAO->getArticle($_GET['id']);
+        
+        // Kiểm tra xem bài viết có tồn tại khôngs
+        if (mysqli_num_rows($result) > 0) {
+            $title = mysqli_fetch_array($result, MYSQLI_ASSOC);
+            echo htmlspecialchars($title['Title'], ENT_QUOTES, 'UTF-8');
+        } else {
+            echo "Bài viết không tồn tại";
+        }
+    ?></title>
+    <link rel="icon" href="./images/logo.webp" type="image/x-icon">
 </head>
 <body>
     <?php
@@ -14,7 +28,7 @@
     ?>
     <div class="art-content">
         <?php
-            include('../app/model/ArticleDAO.php');
+            require_once('../app/model/ArticleDAO.php');
             $artDAO = new articleDAO();
             $result = $artDAO->getArticle($_GET['id']);
             // kiểm tra trong database có tồn tại bài báo với id đưa vào hay k
