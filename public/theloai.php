@@ -16,22 +16,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/rightmenu-style.css">
+
     <link rel="stylesheet" href="./css/category-style.css">
     <link rel="stylesheet" href="./css/reset.css">
 	<link rel="stylesheet" href="./css/footer-style.css">
 	<link rel="stylesheet" href="./css/header-style.css">
-    <link rel="stylesheet" href="./css/banner-style.css">
     <script src="https://kit.fontawesome.com/8f5e4d2946.js" crossorigin="anonymous"></script>
     <link rel="icon" href="./images/logo.webp" type="image/x-icon">
     <script src="./scripts/homePage.js"></script>
     <title><?php if(isset($nameCat)) echo $nameCat; else echo "404 Đéo tìm thấy" ?></title>
 </head>
 <?php
-        include('../app/views/partials/header.php');
-
-
-    ?>
+    include('../app/views/partials/header.php');
+?>
 <body>
+
     <div class="container-theloai">
         <div class="container-left"></div>
         <div class="container-mid">

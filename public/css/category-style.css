@@ -1,10 +1,12 @@
 :root {
     --main_color: rgb(0, 132, 255);
 }
-
+html{
+    font-size: 16px;
+}
 .container-theloai{
     display: grid;
-    grid-template-columns: 7% 60% 30% ;
+    grid-template-columns:  5% 65% 30% ;
 }
 .cat-title{
     color : var(--main_color);

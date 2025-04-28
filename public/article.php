@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="./css/footer-style.css">
 	<link rel="stylesheet" href="./css/header-style.css">
     <link rel="stylesheet" href="./css/article-style.css">
+    <link rel="stylesheet" href="./css/rightmenu-style.css">
     <script src="https://kit.fontawesome.com/8f5e4d2946.js" crossorigin="anonymous"></script>
     <title><?php 
         require_once('../app/model/ArticleDAO.php');
@@ -21,12 +22,15 @@
     ?></title>
     <link rel="icon" href="./images/logo.webp" type="image/x-icon">
 </head>
-<body>
-    <?php
+<?php
         include('../app/views/partials/header.php');
 
     ?>
-    <div class="art-content">
+<body>
+
+    <div class="container-article">
+        <div class="container-left"></div>
+        <div class="art-content">
         <?php
             require_once('../app/model/ArticleDAO.php');
             $artDAO = new articleDAO();
@@ -73,10 +77,18 @@
 
 
         ?>
+            </div>
+        <div class="container-right">
+            <?php
+                include("../app/views/right/homepage.php");
+            ?>
+        </div>
+
     </div>
 
-    <?php
+</body>
+   
+
+<?php
         include('../app/views/partials/footer.php');
     ?>  
-
-</body>

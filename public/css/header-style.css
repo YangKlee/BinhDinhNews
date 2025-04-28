@@ -193,6 +193,9 @@ nav li a{
     z-index: 100;
 
 }
+.nav-pc ul li{
+    height: 100%;
+}
 .nav-pc .subnav a{
     color: black;
 

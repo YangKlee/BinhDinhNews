@@ -1,7 +1,7 @@
 /* Nhóm định dạng cho banner ngang */
 .img-banner-h {
     display: block;
-    margin: 0px auto;
+    margin: 20px auto;
     width: 100%;
     height: auto;
     background-size: cover;
