@@ -48,7 +48,7 @@
                                 $catDAO = new CategoryDAO();
                                 $result = $catDAO->getAllCategory();
                                 while($row = mysqli_fetch_array( $result, MYSQLI_ASSOC)){
-                                    echo '<li><a href="./theloai.php?idcat='.$row['CategoryID'].'">'.$row['CategoryName'].'</a></li>';
+                                    echo '<li><a  href="./theloai.php?idcat='.$row['CategoryID'].'">'.$row['CategoryName'].'</a></li>';
                                 }
                                 mysqli_free_result($result); 
 

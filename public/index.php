@@ -87,7 +87,7 @@
                                         echo '
                                         <a href="./article.php?id='.$row['ArticleID'].'" class="article-news">
                                         <article>    
-                                                    <h3> '.$row['Title'].'
+                                                    <h3> <i class="fa-solid fa-caret-right" style="color: #f31212;"></i> '.$row['Title'].'
                                                     </h3>
                                                     <i>'.$row['Time_modify'].'</i>
                                                     <hr class="hr_article">

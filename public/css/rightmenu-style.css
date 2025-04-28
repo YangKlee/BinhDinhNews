@@ -44,7 +44,15 @@
 }
 .right-list li {
     width: 100%;
-    border: 1px solid black;
+    border-top:1px solid black;
+    border-left: 1px solid black ;
+    border-right:1px solid black  ;
+
+}
+.right-list li:last-child {
+    width: 100%;
+    border-bottom:1px solid black;
+
 }
 .right-list a {
     display: block;
