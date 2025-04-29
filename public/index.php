@@ -1,6 +1,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="./css/html.css"> -->
     <link rel="stylesheet" href="./css/HomePage-style.css">
     <link rel="stylesheet" href="./css/rightmenu-style.css">
     <link rel="stylesheet" href="./css/reset.css">

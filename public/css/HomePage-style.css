@@ -328,6 +328,7 @@ article:hover {
         grid-template-columns: 75% 25%;
         grid-template-rows: 100%;
     }
+
     .container-left {
         display: none;
     }
