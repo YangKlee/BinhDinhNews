@@ -48,21 +48,31 @@
                             // lấy file id từ tham số id
                 // mode r = read only
                 $f = fopen("../app/ArticleData/".$_GET['id'].".txt", 'r');
+                echo '<p><b>'.fgets($f).'</b></p>';
                 //kiểm tra xem đã đến cuối file (EOF: End Of File) chưa.
                 while(!feof($f))
                 {
+                    // get dòng đầu tiên và in đậm
+                    
                     // get từng dòng
                     $rows = fgets($f);
                     // lọc dấu cách
                     $rows = trim($rows);
                     // kiểm tra có phải là ảnh không
-                    if($rows == "[img]" && $imgCount < count($listimg))
+                    if($rows == "[img]" )
                     {
-                        // lấy ảnh
-                        echo '<img src="./images/upload/'.$rawData['ArticleID'].'/'.trim($listimg[$imgCount]).'" alt="">';
-                        // lấy mô tả hình ảnh
-                        echo '<i class="img_descrip">'.fgets($f).'</i>';
-                        $imgCount++;
+                        // kiểm tra còn hình ảnh nào chưa đc lấy
+                        if($imgCount < count($listimg))
+                        {
+                            // lấy ảnh
+                            echo '<img src="./images/upload/'.$rawData['ArticleID'].'/'.trim($listimg[$imgCount]).'" alt="">';
+                            // lấy mô tả hình ảnh
+                            echo '<i class="img_descrip">'.fgets($f).'</i>';
+                            $imgCount++;
+                        }
+                        // bỏ qua các mô tả hình ảnh còn lại
+                        fgets($f);
+                        
                     }
                     else
                     {
