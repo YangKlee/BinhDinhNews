@@ -15,8 +15,6 @@
 </head>
 <?php
 	include('../app/views/partials/header.php');
-
-
 ?>
 <body>
     <div class="main-container">

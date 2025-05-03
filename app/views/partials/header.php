@@ -87,7 +87,7 @@
                     </ul>
                 
                 </ul>
-                <form action="" class="search-bar">
+                <form action="../../../public/searchingsite.php" class="search-bar">
                     <input type="text" placeholder="Tìm kiếm..." name="search" id="search">
                     <i class="fa-solid fa-magnifying-glass"></i>
                 </form>
