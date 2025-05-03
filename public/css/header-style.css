@@ -272,6 +272,10 @@ nav li a{
     transition: color 0.3s ease;
 }
 
+button[type="submit"]{
+    background-color: rgba(228, 130, 112, 0);
+    border: none;
+}
 
 .fa-solid.fa-magnifying-glass{
     background: transparent;
