@@ -15,19 +15,11 @@
 </head>
 <?php
 	include('../app/views/partials/header.php');
-
-
 ?>
 <body>
     <div class="main-container">
         <div class="container-left"></div>
         <div class="container-mid">
-            <span>
-                    <?php
-                        //include('../app/views/partials/banner-horizon.php');
-                        //include('partials/banner-vetical.php');
-                    ?>
-                </span>
             <div class="homepage homepage-container">
 
                 <div class="container__content">

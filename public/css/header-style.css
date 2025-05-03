@@ -249,13 +249,11 @@ nav li a{
     justify-content: center;
     align-items: center;
     border-radius: 60px;
-    padding: 5px 5px;
-    background-color: white;
-    border: 1px solid black;
+    padding: 0.333px 0px 1px 5px;
 }
 
 .search-bar input[type="text"]{
-    width: 100%;
+    width: 80%;
     flex: 1;
     padding: 10px;
     border: none;
@@ -263,7 +261,9 @@ nav li a{
     outline: none;
     font-size: 1rem;
     background: transparent;
-    margin-right: 10px;
+    margin-right: 4px;
+    border: 1px solid black;
+    background-color: rgb(255, 255, 255);
 }
 
 .search-bar input[type="text"]::placeholder{
@@ -272,12 +272,15 @@ nav li a{
     transition: color 0.3s ease;
 }
 
+button[type="submit"]{
+    background-color: rgba(228, 130, 112, 0);
+    border: none;
+}
 
 .fa-solid.fa-magnifying-glass{
     background: transparent;
     border: none;
     cursor: pointer;
-    margin-right: 0px;
     border-radius: 30px;
     font-size: 1rem;
     transition: background-color 0.3s ease;

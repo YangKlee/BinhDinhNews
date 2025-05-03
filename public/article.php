@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="./css/article-style.css">
     <link rel="stylesheet" href="./css/rightmenu-style.css">
     <script src="https://kit.fontawesome.com/8f5e4d2946.js" crossorigin="anonymous"></script>
+    <script src="./scripts/zoomimg.js"></script>
     <title><?php 
         require_once('../app/model/ArticleDAO.php');
         $artDAO = new articleDAO();
@@ -47,7 +48,7 @@
                 echo "<i class='time_descrip'> ".$rawData['Time_modify']."</i>";
                             // lấy file id từ tham số id
                 // mode r = read only
-                $f = fopen("../app/ArticleData/".$_GET['id'].".txt", 'r');
+                $f = fopen("../app/ArticleData/".$_GET['id'].".txt", 'r') or die("<h1>Không tìm thấy bài báo</h1>   ");
                 echo '<p><b>'.fgets($f).'</b></p>';
                 //kiểm tra xem đã đến cuối file (EOF: End Of File) chưa.
                 while(!feof($f))
@@ -65,9 +66,11 @@
                         if($imgCount < count($listimg))
                         {
                             // lấy ảnh
-                            echo '<img src="./images/upload/'.$rawData['ArticleID'].'/'.trim($listimg[$imgCount]).'" alt="">';
+                            $imgName = trim($listimg[$imgCount]);
+                            $imgDescrip = trim(fgets($f));
+                            echo '<img src="./images/upload/'.$rawData['ArticleID'].'/'.$imgName.'" alt="'.$imgDescrip.'">';
                             // lấy mô tả hình ảnh
-                            echo '<i class="img_descrip">'.fgets($f).'</i>';
+                            echo '<i class="img_descrip">'.$imgDescrip.'</i>';
                             $imgCount++;
                         }
                         // bỏ qua các mô tả hình ảnh còn lại
