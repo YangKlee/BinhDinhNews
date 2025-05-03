@@ -48,7 +48,7 @@
                 echo "<i class='time_descrip'> ".$rawData['Time_modify']."</i>";
                             // lấy file id từ tham số id
                 // mode r = read only
-                $f = fopen("../app/ArticleData/".$_GET['id'].".txt", 'r') or die("<h1>Không tìm thấy bài báo</h1>");
+                $f = fopen("../app/ArticleData/".$_GET['id'].".txt", 'r') or die("<h1>Không tìm thấy bài báo</h1>   ");
                 echo '<p><b>'.fgets($f).'</b></p>';
                 //kiểm tra xem đã đến cuối file (EOF: End Of File) chưa.
                 while(!feof($f))
