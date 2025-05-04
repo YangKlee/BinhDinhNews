@@ -1,8 +1,8 @@
 <div class="chu-tich">
-    <img src="./images/eheee.jpg" alt="">
+    <img src="./images/image.jpg" alt="">
     <div class="chu-tich chu-tich-info">
-        <p class="title">Chủ tịch UBND tỉnh Bình Định</p>
-        <p class="name">Ông Nguyễn Khánh Dương</p>
+        <p class="title">Chủ tịch hội đồng wjbu</p>
+        <p class="name">Bà Nguyễn Liệt Dương</p>
     </div>
 </div>
 <div class="tra-cuu">
