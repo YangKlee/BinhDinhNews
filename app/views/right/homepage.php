@@ -35,7 +35,7 @@
 
 </div>
 <div class="co-quan">
-    <a href=""><img class="img-banner" src="./images/banner/soyte-baner.jpg" alt=""></a>
-    <a href=""><img class="img-banner" src="./images/banner/bgddt.png" alt=""></a>
-    <a href=""><img class="img-banner" src="./images/banner/untitled_3.png" alt=""></a>
+    <a href="https://syt.binhdinh.gov.vn/vi/van-ban-chi-dao-dieu-hanh/"><img class="img-banner" src="./images/banner/soyte-baner.jpg" alt=""></a>
+    <a href="https://sgddt.binhdinh.gov.vn/"><img class="img-banner" src="./images/banner/bgddt.png" alt=""></a>
+    <a href="https://dichvucong.binhdinh.gov.vn/?home=1"><img class="img-banner" src="./images/banner/untitled_3.png" alt=""></a>
 </div>
