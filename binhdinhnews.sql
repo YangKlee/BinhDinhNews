@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1:3306
--- Thời gian đã tạo: Th4 27, 2025 lúc 01:57 PM
+-- Thời gian đã tạo: Th5 05, 2025 lúc 08:05 AM
 -- Phiên bản máy phục vụ: 9.1.0
 -- Phiên bản PHP: 8.3.14
 
@@ -32,12 +32,12 @@ CREATE TABLE IF NOT EXISTS `article` (
   `ArticleID` int NOT NULL AUTO_INCREMENT,
   `Time_modify` datetime DEFAULT NULL,
   `AuthorID` int DEFAULT NULL,
-  `AuthorGuestName` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_vietnamese_ci DEFAULT NULL,
+  `AuthorGuestName` varchar(255) COLLATE utf8mb4_vietnamese_ci DEFAULT NULL,
   `CategoryID` int DEFAULT NULL,
-  `Title` varchar(1000) CHARACTER SET utf8mb4 COLLATE utf8mb4_vietnamese_ci DEFAULT NULL,
-  `Tags` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_vietnamese_ci DEFAULT NULL,
-  `MainImage` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_vietnamese_ci DEFAULT NULL,
-  `ListImage` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_vietnamese_ci DEFAULT NULL,
+  `Title` varchar(1000) COLLATE utf8mb4_vietnamese_ci DEFAULT NULL,
+  `Tags` varchar(255) COLLATE utf8mb4_vietnamese_ci DEFAULT NULL,
+  `MainImage` varchar(100) COLLATE utf8mb4_vietnamese_ci DEFAULT NULL,
+  `ListImage` varchar(255) COLLATE utf8mb4_vietnamese_ci DEFAULT NULL,
   `ArticleStatus` int DEFAULT '0',
   PRIMARY KEY (`ArticleID`),
   KEY `CategoryID` (`CategoryID`),
@@ -69,6 +69,16 @@ INSERT INTO `article` (`ArticleID`, `Time_modify`, `AuthorID`, `AuthorGuestName`
 (18, '2025-03-23 16:23:00', NULL, 'TIẾN TRUNG/NDO', 2, 'Quy định mức phí duy trì tên miền quốc gia .vn từ 3.5.2025', 'tên miền quốc gia .vn| Nghị định số 82/2023/NĐ-CP', '18.jpg', '18.jpg', 1),
 (19, '2025-03-19 21:46:00', NULL, 'THÀNH NGUYÊN', 2, 'Chuyển giao kỹ thuật thâm canh cây dừa theo tiêu chuẩn hữu cơ', 'thâm canh cây dừa theo tiêu chuẩn hữu cơ| Lớp tập huấn', '', '', 1),
 (20, '2025-04-22 10:44:00', NULL, 'XUÂN THỨC', 2, 'Ngư dân Nhơn Lý được mùa cá gần bờ', 'Nhơn Lý (TP Quy Nhơn)| đánh bắt trong ngày| Ngư dân', '20.jpg', '20.jpg', 1),
+(21, '2025-04-23 22:44:00', NULL, 'DUY KHANG', 7, 'Tiếng thơ tha thiết giữa đời thường', 'Tiếng thơ', '21.jpg', '21.jpg', 1),
+(22, '2025-04-23 09:44:00', NULL, 'HUỲNH VỸ', 7, 'Chương trình nghệ thuật “Bài ca thống nhất”', 'Bài ca thống nhất', '22.jpg', '22.jpg', 1),
+(23, '2025-04-24 09:44:00', NULL, 'LÊ NGỌC SƠN', 7, 'Chuyện tình của người lính trẻ Bắc Việt', 'người lính trẻ Bắc Việt', '23.jpg', '23.jpg', 1),
+(24, '2025-03-21 10:02:00', NULL, 'THÁI NGÂN', 7, 'Lễ đón nhận Bằng xếp hạng di tích cấp tỉnh “Nơi tưởng niệm liệt sĩ thanh niên xung phong tỉnh Bình Định”', 'liệt sĩ thanh niên xung phong', '24.jpg', '24.jpg', 1),
+(25, '2025-04-26 09:44:00', NULL, 'PHƯƠNG LAN/TTXVN', 7, 'Tổng Bí thư Tô Lâm dự Chương trình nghệ thuật đặc biệt \"Đảng trong mùa Xuân đại thắng\"', 'Đảng trong mùa Xuân đại thắng', '25.jpg', '25.jpg', 1),
+(26, '2025-04-28 18:48:00', NULL, 'ĐỖ THẢO', 7, 'Hội thi Tiếng hát người khuyết tật tỉnh Bình Định lần thứ III', 'Tiếng hát người khuyết tật', '26.jpg', '26.jpg', 1),
+(27, '2025-05-01 09:44:00', NULL, 'THANH HIỆP - VĂN TRUNG - BẢO TRÂN/TTO', 7, 'Pháo hoa rợp trời chào mừng 50 năm thống nhất đất nước', ' chào mừng 50 năm thống nhất đất nước', '27.jpg', '27.jpg', 1),
+(28, '2025-04-29 09:44:00', NULL, 'DUY KHANG', 7, 'Phát huy tư liệu địa chí Bình Định', 'tư liệu địa chí Bình Định', '28.jpg', '28.jpg', 1),
+(29, '2025-04-30 09:44:00', NULL, 'LÊ NGỌC SƠN', 7, 'Rạng rỡ sắc màu Thống nhất', ' Thống nhất', '29.jpg', '29.jpg', 1),
+(30, '2025-04-28 09:44:00', NULL, 'DUY KHANG', 7, 'Xá lợi Đức Phật đã đến Việt Nam', 'Xá lợi Đức Phật', '30.jpg', '30.jpg', 1),
 (31, '2025-04-24 09:52:00', NULL, 'KIỀU VY', 3, 'Giải việt dã Công đoàn UBND tỉnh năm 2025: Bệnh viện đa khoa tỉnh giành giải nhất toàn đoàn', 'chạy', '31_2.jpg', '31_1.jpg|31_2.jpg|31_3.jpg|31_4.jpg|31_5.jpg', 1),
 (32, '2025-04-23 15:25:00', NULL, 'HUỲNH VỸ', 3, 'Bình Định biểu diễn võ cổ truyền tại Chương trình giao lưu Việt Nam - Triều Tiên', 'võ', '32.jpg', '32.jpg', 1),
 (33, '2025-04-23 09:39:00', NULL, 'Trọng Đạt', 3, 'Việt Nam đăng cai ba giải đấu lớn cấp châu lục và khu vực của bóng đá nữ trong năm 2025', 'đá bóng| nữ', '33.jpg', '33.jpg', 1),
@@ -89,12 +99,12 @@ INSERT INTO `article` (`ArticleID`, `Time_modify`, `AuthorID`, `AuthorGuestName`
 (50, '2025-04-23 16:43:00', NULL, 'MINH NGỌC', 4, 'Kịp thời cứu nạn thanh niên nhảy cầu Thị Nại', 'nhảy cầu', 'anhbia50.jpg', '1-50.jpg', 1),
 (51, '2025-04-20 08:40:00', NULL, 'TRƯỜNG GIANG', 5, 'Bình Định tổ chức Lễ hội Văn hóa Ẩm thực lần II - 2025: Quảng bá tinh hoa ẩm thực và du lịch địa phương', 'ẩm thực| du lịch', 'anhbia51.jpg', '1-anh51.jpg', 1),
 (52, '2025-04-20 08:52:00', NULL, 'Đức Hồ', 5, 'Bầu trời Quy Nhơn rợp bóng sinh vật đại dương', 'sinh vật đại dương', 'anhbia52.jpg', '1-anh52.jpg| 2-anh52.jpg', 1),
-(53, '2025-04-21 18:52:00', NULL, 'Lê Trân', 5, 'Bình Định tổ chức chương trình tham quan cho đại biểu tham dự Liên hoan Truyền hình toàn quốc lần thứ 42 tại Bình Định', 'sự kiện quốc gia', ' anhbia53.jpg', '1-anh53.jpg| 2-anh53.jpg', 1),
+(53, '2025-04-21 18:52:00', NULL, 'Lê Trân', 5, 'Bình Định tổ chức chương trình tham quan cho đại biểu tham dự Liên hoan Truyền hình toàn quốc lần thứ 42 tại Bình Định', 'sự kiện quốc gia', 'anhbia53.jpg', '1-anh53.jpg| 2-anh53.jpg', 1),
 (54, '2025-03-24 16:47:00', NULL, 'Đức Hồ', 5, '“Cháy”… vé máy bay về Bình Định', 'vé máy bay về Bình Định', 'anhbia54.jpg', '1-anh54.jpg', 1),
 (55, '2025-03-25 10:47:00', NULL, 'Thu Dịu', 5, 'Vi vu cùng nắng, cát & gió', 'nắng| cát & gió', 'anhbia55.jpg', '1-anh55.jpg| 2-anh55.jpg| 3-anh55.jpg', 1),
-(56, '2025-04-20 10:16:00', NULL, 'TRƯỜNG GIANG', 5, 'Vóc dáng mới ở Cát Tiến', 'Cát Tiến', ' anhbia56.jpg', '1-anh56.jpg| 2-anh56.jpg', 1),
+(56, '2025-04-20 10:16:00', NULL, 'TRƯỜNG GIANG', 5, 'Vóc dáng mới ở Cát Tiến', 'Cát Tiến', 'anhbia56.jpg', '1-anh56.jpg| 2-anh56.jpg', 1),
 (57, '2025-03-12 17:07:00', NULL, ' Lê Trân', 5, 'Nhà thờ Đá Ghềnh Ráng', 'Nhà thờ Đá Ghềnh Ráng', 'anhbia57.jpg', '1-anh57.jpg| 2-anh57.jpg', 1),
-(58, '2025-04-01 14:19:00', NULL, 'Thị Trân', 5, 'Khu Du lịch Ghềnh Ráng Tiên Sa', 'Ghềnh Ráng Tiên Sa', ' anhbia58.jpg', '1-anh58.jpg| 2-anh58.jpg', 1),
+(58, '2025-04-01 14:19:00', NULL, 'Thị Trân', 5, 'Khu Du lịch Ghềnh Ráng Tiên Sa', 'Ghềnh Ráng Tiên Sa', 'anhbia58.jpg', '1-anh58.jpg| 2-anh58.jpg', 1),
 (59, '2025-03-23 18:20:00', NULL, 'Ngọc Hân', 5, 'Cầu Thị Nại - Top 10 cây cầu nổi tiếng được du khách thích chụp ảnh nhất', 'cầu thị nhại', 'anhbia59.jpg', '1-anh59.jpg| 2-anh59.jpg', 1),
 (60, '2025-03-20 18:21:00', NULL, 'Lê Trân', 5, 'Tháp Đôi - vẻ đẹp cổ kính trong lòng thành phố biển', 'tháp đôi', 'anhbia60.jpg', '1-anh60.jpg| 2-anh60.jpg', 1),
 (61, '2025-04-21 05:13:00', NULL, 'PHẠM TIẾN SỸ', 6, 'Phát triển hợp tác xã theo chuỗi giá trị', 'phát triển hợp tác xã', 'anhbia61.jpg', '1.jpg', 1),
@@ -118,10 +128,10 @@ DROP TABLE IF EXISTS `authordata`;
 CREATE TABLE IF NOT EXISTS `authordata` (
   `AuthorID` int NOT NULL,
   `CCCD` varchar(100) COLLATE utf8mb4_vietnamese_ci DEFAULT NULL,
-  `FullName` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_vietnamese_ci NOT NULL,
+  `FullName` varchar(100) COLLATE utf8mb4_vietnamese_ci NOT NULL,
   `Phones` varchar(10) COLLATE utf8mb4_vietnamese_ci DEFAULT NULL,
-  `Alias` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_vietnamese_ci DEFAULT NULL,
-  `Organzation` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_vietnamese_ci DEFAULT NULL,
+  `Alias` varchar(100) COLLATE utf8mb4_vietnamese_ci DEFAULT NULL,
+  `Organzation` varchar(255) COLLATE utf8mb4_vietnamese_ci DEFAULT NULL,
   `NumOfAricle` int DEFAULT '0',
   PRIMARY KEY (`AuthorID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
@@ -135,9 +145,9 @@ CREATE TABLE IF NOT EXISTS `authordata` (
 DROP TABLE IF EXISTS `category`;
 CREATE TABLE IF NOT EXISTS `category` (
   `CategoryID` int NOT NULL AUTO_INCREMENT,
-  `CategoryName` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_vietnamese_ci DEFAULT NULL,
+  `CategoryName` varchar(255) COLLATE utf8mb4_vietnamese_ci DEFAULT NULL,
   PRIMARY KEY (`CategoryID`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `category`
@@ -149,7 +159,8 @@ INSERT INTO `category` (`CategoryID`, `CategoryName`) VALUES
 (3, 'Thể thao'),
 (4, 'Pháp luật'),
 (5, 'Du lịch'),
-(6, 'Hội nhập quốc tế');
+(6, 'Hội nhập quốc tế'),
+(7, 'Văn hóa');
 
 -- --------------------------------------------------------
 
@@ -163,11 +174,264 @@ CREATE TABLE IF NOT EXISTS `comment` (
   `ArticleID` int DEFAULT NULL,
   `UserID` int DEFAULT NULL,
   `Timer` datetime DEFAULT CURRENT_TIMESTAMP,
-  `Content` varchar(1000) CHARACTER SET utf8mb4 COLLATE utf8mb4_vietnamese_ci DEFAULT NULL,
+  `Content` varchar(1000) COLLATE utf8mb4_vietnamese_ci DEFAULT NULL,
   PRIMARY KEY (`CommentID`),
   KEY `ArticleID` (`ArticleID`),
   KEY `UserID` (`UserID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `diadiemdulich`
+--
+
+DROP TABLE IF EXISTS `diadiemdulich`;
+CREATE TABLE IF NOT EXISTS `diadiemdulich` (
+  `IDDiaDiem` int NOT NULL AUTO_INCREMENT,
+  `IDLoaiDiaDiem` int DEFAULT NULL,
+  `IDQuanHuyen` int DEFAULT NULL,
+  `IDPhuongXa` int DEFAULT NULL,
+  `TenDiaDiem` varchar(255) COLLATE utf8mb4_vietnamese_ci DEFAULT NULL,
+  `ShortDecription` text COLLATE utf8mb4_vietnamese_ci,
+  `MapIframe` text COLLATE utf8mb4_vietnamese_ci,
+  `ListImage` text COLLATE utf8mb4_vietnamese_ci,
+  PRIMARY KEY (`IDDiaDiem`),
+  KEY `IDQuanHuyen` (`IDQuanHuyen`),
+  KEY `IDPhuongXa` (`IDPhuongXa`),
+  KEY `IDLoaiDiaDiem` (`IDLoaiDiaDiem`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `loaidiadiemdulich`
+--
+
+DROP TABLE IF EXISTS `loaidiadiemdulich`;
+CREATE TABLE IF NOT EXISTS `loaidiadiemdulich` (
+  `IDLoaiDiaDiem` int NOT NULL AUTO_INCREMENT,
+  `TenLoaiDiaDiem` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL,
+  PRIMARY KEY (`IDLoaiDiaDiem`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `loaidiadiemdulich`
+--
+
+INSERT INTO `loaidiadiemdulich` (`IDLoaiDiaDiem`, `TenLoaiDiaDiem`) VALUES
+(1, 'Danh lam thắng cảnh'),
+(2, 'Di tích lịch sử');
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `phuongxa`
+--
+
+DROP TABLE IF EXISTS `phuongxa`;
+CREATE TABLE IF NOT EXISTS `phuongxa` (
+  `IDQuanHuyen` int DEFAULT NULL,
+  `TenPhuongXa` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL,
+  `IDPhuongXa` int NOT NULL,
+  PRIMARY KEY (`IDPhuongXa`),
+  KEY `IDQuanHuyen` (`IDQuanHuyen`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `phuongxa`
+--
+
+INSERT INTO `phuongxa` (`IDQuanHuyen`, `TenPhuongXa`, `IDPhuongXa`) VALUES
+(540, 'Phường Nhơn Bình', 21550),
+(540, 'Phường Nhơn Phú', 21553),
+(540, 'Phường Đống Đa', 21556),
+(540, 'Phường Trần Quang Diệu', 21559),
+(540, 'Phường Hải Cảng', 21562),
+(540, 'Phường Quang Trung', 21565),
+(540, 'Phường Thị Nại', 21568),
+(540, 'Phường Lê Hồng Phong', 21571),
+(540, 'Phường Trần Hưng Đạo', 21574),
+(540, 'Phường Ngô Mây', 21577),
+(540, 'Phường Lý Thường Kiệt', 21580),
+(540, 'Phường Lê Lợi', 21583),
+(540, 'Phường Trần Phú', 21586),
+(540, 'Phường Bùi Thị Xuân', 21589),
+(540, 'Phường Nguyễn Văn Cừ', 21592),
+(540, 'Phường Ghềnh Ráng', 21595),
+(540, 'Xã Nhơn Lý', 21598),
+(540, 'Xã Nhơn Hội', 21601),
+(540, 'Xã Nhơn Hải', 21604),
+(540, 'Xã Nhơn Châu', 21607),
+(542, 'Thị trấn An Lão', 21609),
+(542, 'Xã An Hưng', 21610),
+(542, 'Xã An Trung', 21613),
+(542, 'Xã An Dũng', 21616),
+(542, 'Xã An Vinh', 21619),
+(542, 'Xã An Toàn', 21622),
+(542, 'Xã An Tân', 21625),
+(542, 'Xã An Hòa', 21628),
+(542, 'Xã An Quang', 21631),
+(542, 'Xã An Nghĩa', 21634),
+(543, 'Thị trấn  Tam Quan', 21637),
+(543, 'Thị trấn Bồng Sơn', 21640),
+(543, 'Xã Hoài Sơn', 21643),
+(543, 'Xã Hoài Châu Bắc', 21646),
+(543, 'Xã Hoài Châu', 21649),
+(543, 'Xã Hoài Phú', 21652),
+(543, 'Xã Tam Quan Bắc', 21655),
+(543, 'Xã Tam Quan Nam', 21658),
+(543, 'Xã Hoài Hảo', 21661),
+(543, 'Xã Hoài Thanh Tây', 21664),
+(543, 'Xã Hoài Thanh', 21667),
+(543, 'Xã Hoài Hương', 21670),
+(543, 'Xã Hoài Tân', 21673),
+(543, 'Xã Hoài Hải', 21676),
+(543, 'Xã Hoài Xuân', 21679),
+(543, 'Xã Hoài Mỹ', 21682),
+(543, 'Xã Hoài Đức', 21685),
+(544, 'Thị trấn Tăng Bạt Hổ', 21688),
+(544, 'Xã Ân Hảo Tây', 21690),
+(544, 'Xã Ân Hảo Đông', 21691),
+(544, 'Xã Ân Sơn', 21694),
+(544, 'Xã Ân Mỹ', 21697),
+(544, 'Xã Dak Mang', 21700),
+(544, 'Xã Ân Tín', 21703),
+(544, 'Xã Ân Thạnh', 21706),
+(544, 'Xã Ân Phong', 21709),
+(544, 'Xã Ân Đức', 21712),
+(544, 'Xã Ân Hữu', 21715),
+(544, 'Xã Bok Tới', 21718),
+(544, 'Xã Ân Tường Tây', 21721),
+(544, 'Xã Ân Tường Đông', 21724),
+(544, 'Xã Ân Nghĩa', 21727),
+(545, 'Thị trấn Phù Mỹ', 21730),
+(545, 'Thị trấn Bình Dương', 21733),
+(545, 'Xã Mỹ Đức', 21736),
+(545, 'Xã Mỹ Châu', 21739),
+(545, 'Xã Mỹ Thắng', 21742),
+(545, 'Xã Mỹ Lộc', 21745),
+(545, 'Xã Mỹ Lợi', 21748),
+(545, 'Xã Mỹ An', 21751),
+(545, 'Xã Mỹ Phong', 21754),
+(545, 'Xã Mỹ Trinh', 21757),
+(545, 'Xã Mỹ Thọ', 21760),
+(545, 'Xã Mỹ Hòa', 21763),
+(545, 'Xã Mỹ Thành', 21766),
+(545, 'Xã Mỹ Chánh', 21769),
+(545, 'Xã Mỹ Quang', 21772),
+(545, 'Xã Mỹ Hiệp', 21775),
+(545, 'Xã Mỹ Tài', 21778),
+(545, 'Xã Mỹ Cát', 21781),
+(545, 'Xã Mỹ Chánh Tây', 21784),
+(546, 'Thị trấn Vĩnh Thạnh', 21786),
+(546, 'Xã Vĩnh Sơn', 21787),
+(546, 'Xã Vĩnh Kim', 21790),
+(546, 'Xã Vĩnh Hiệp', 21796),
+(546, 'Xã Vĩnh Hảo', 21799),
+(546, 'Xã Vĩnh Hòa', 21801),
+(546, 'Xã Vĩnh Thịnh', 21802),
+(546, 'Xã Vĩnh Thuận', 21804),
+(546, 'Xã Vĩnh Quang', 21805),
+(547, 'Thị trấn Phú Phong', 21808),
+(547, 'Xã Bình Tân', 21811),
+(547, 'Xã Tây Thuận', 21814),
+(547, 'Xã Bình Thuận', 21817),
+(547, 'Xã Tây Giang', 21820),
+(547, 'Xã Bình Thành', 21823),
+(547, 'Xã Tây An', 21826),
+(547, 'Xã Bình Hòa', 21829),
+(547, 'Xã Tây Bình', 21832),
+(547, 'Xã Bình Tường', 21835),
+(547, 'Xã Tây Vinh', 21838),
+(547, 'Xã Vĩnh An', 21841),
+(547, 'Xã Tây Xuân', 21844),
+(547, 'Xã Bình Nghi', 21847),
+(547, 'Xã Tây Phú', 21850),
+(548, 'Thị trấn Ngô Mây', 21853),
+(548, 'Xã Cát Sơn', 21856),
+(548, 'Xã Cát Minh', 21859),
+(548, 'Xã Cát Khánh', 21862),
+(548, 'Xã Cát Tài', 21865),
+(548, 'Xã Cát Lâm', 21868),
+(548, 'Xã Cát Hanh', 21871),
+(548, 'Xã Cát Thành', 21874),
+(548, 'Xã Cát Trinh', 21877),
+(548, 'Xã Cát Hải', 21880),
+(548, 'Xã Cát Hiệp', 21883),
+(548, 'Xã Cát Nhơn', 21886),
+(548, 'Xã Cát Hưng', 21889),
+(548, 'Xã Cát Tường', 21892),
+(548, 'Xã Cát Tân', 21895),
+(548, 'Xã Cát Tiến', 21898),
+(548, 'Xã Cát Thắng', 21901),
+(548, 'Xã Cát Chánh', 21904),
+(549, 'Phường Bình Định', 21907),
+(549, 'Phường Đập Đá', 21910),
+(549, 'Xã Nhơn Mỹ', 21913),
+(549, 'Phường Nhơn Thành', 21916),
+(549, 'Xã Nhơn Hạnh', 21919),
+(549, 'Xã Nhơn Hậu', 21922),
+(549, 'Xã Nhơn Phong', 21925),
+(549, 'Xã Nhơn An', 21928),
+(549, 'Xã Nhơn Phúc', 21931),
+(549, 'Phường Nhơn Hưng', 21934),
+(549, 'Xã Nhơn Khánh', 21937),
+(549, 'Xã Nhơn Lộc', 21940),
+(549, 'Phường Nhơn Hoà', 21943),
+(549, 'Xã Nhơn Tân', 21946),
+(549, 'Xã Nhơn Thọ', 21949),
+(550, 'Thị trấn Tuy Phước', 21952),
+(550, 'Thị trấn Diêu Trì', 21955),
+(550, 'Xã Phước Thắng', 21958),
+(550, 'Xã Phước Hưng', 21961),
+(550, 'Xã Phước Quang', 21964),
+(550, 'Xã Phước Hòa', 21967),
+(550, 'Xã Phước Sơn', 21970),
+(550, 'Xã Phước Hiệp', 21973),
+(550, 'Xã Phước Lộc', 21976),
+(550, 'Xã Phước Nghĩa', 21979),
+(550, 'Xã Phước Thuận', 21982),
+(550, 'Xã Phước An', 21985),
+(550, 'Xã Phước Thành', 21988),
+(540, 'Xã Phước Mỹ', 21991),
+(551, 'Thị trấn Vân Canh', 21994),
+(551, 'Xã Canh Liên', 21997),
+(551, 'Xã Canh Hiệp', 22000),
+(551, 'Xã Canh Vinh', 22003),
+(551, 'Xã Canh Hiển', 22006),
+(551, 'Xã Canh Thuận', 22009),
+(551, 'Xã Canh Hòa', 22012);
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `quanhuyen`
+--
+
+DROP TABLE IF EXISTS `quanhuyen`;
+CREATE TABLE IF NOT EXISTS `quanhuyen` (
+  `TenQuanHuyen` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL,
+  `IDQuanHuyen` int NOT NULL,
+  PRIMARY KEY (`IDQuanHuyen`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `quanhuyen`
+--
+
+INSERT INTO `quanhuyen` (`TenQuanHuyen`, `IDQuanHuyen`) VALUES
+('Thành phố Qui Nhơn', 540),
+('Huyện An Lão', 542),
+('Huyện Hoài Nhơn', 543),
+('Huyện Hoài Ân', 544),
+('Huyện Phù Mỹ', 545),
+('Huyện Vĩnh Thạnh', 546),
+('Huyện Tây Sơn', 547),
+('Huyện Phù Cát', 548),
+('Thị xã An Nhơn', 549),
+('Huyện Tuy Phước', 550),
+('Huyện Vân Canh', 551);
 
 -- --------------------------------------------------------
 
@@ -178,7 +442,7 @@ CREATE TABLE IF NOT EXISTS `comment` (
 DROP TABLE IF EXISTS `staffdata`;
 CREATE TABLE IF NOT EXISTS `staffdata` (
   `UserID` int NOT NULL,
-  `FullName` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_vietnamese_ci NOT NULL,
+  `FullName` varchar(100) COLLATE utf8mb4_vietnamese_ci NOT NULL,
   `Phones` varchar(10) COLLATE utf8mb4_vietnamese_ci DEFAULT NULL,
   PRIMARY KEY (`UserID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
@@ -192,10 +456,10 @@ CREATE TABLE IF NOT EXISTS `staffdata` (
 DROP TABLE IF EXISTS `userdata`;
 CREATE TABLE IF NOT EXISTS `userdata` (
   `UserID` int NOT NULL AUTO_INCREMENT,
-  `UserName` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_vietnamese_ci DEFAULT NULL,
-  `PassWord` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_vietnamese_ci DEFAULT NULL,
+  `UserName` varchar(100) COLLATE utf8mb4_vietnamese_ci DEFAULT NULL,
+  `PassWord` varchar(255) COLLATE utf8mb4_vietnamese_ci DEFAULT NULL,
   `Email` varchar(50) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL,
-  `ROLE_ID` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_vietnamese_ci DEFAULT NULL,
+  `ROLE_ID` varchar(10) COLLATE utf8mb4_vietnamese_ci DEFAULT NULL,
   PRIMARY KEY (`UserID`),
   KEY `ROLE_ID` (`ROLE_ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
@@ -208,7 +472,7 @@ CREATE TABLE IF NOT EXISTS `userdata` (
 
 DROP TABLE IF EXISTS `user_role`;
 CREATE TABLE IF NOT EXISTS `user_role` (
-  `ROLE_ID` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_vietnamese_ci NOT NULL,
+  `ROLE_ID` varchar(10) COLLATE utf8mb4_vietnamese_ci NOT NULL,
   `ROLE_DESCRIPTION` varchar(100) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL,
   PRIMARY KEY (`ROLE_ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
@@ -238,6 +502,20 @@ ALTER TABLE `comment`
   ADD CONSTRAINT `comment_ibfk_2` FOREIGN KEY (`UserID`) REFERENCES `userdata` (`UserID`);
 
 --
+-- Các ràng buộc cho bảng `diadiemdulich`
+--
+ALTER TABLE `diadiemdulich`
+  ADD CONSTRAINT `diadiemdulich_ibfk_1` FOREIGN KEY (`IDQuanHuyen`) REFERENCES `quanhuyen` (`IDQuanHuyen`),
+  ADD CONSTRAINT `diadiemdulich_ibfk_2` FOREIGN KEY (`IDPhuongXa`) REFERENCES `phuongxa` (`IDPhuongXa`),
+  ADD CONSTRAINT `diadiemdulich_ibfk_3` FOREIGN KEY (`IDLoaiDiaDiem`) REFERENCES `loaidiadiemdulich` (`IDLoaiDiaDiem`);
+
+--
+-- Các ràng buộc cho bảng `phuongxa`
+--
+ALTER TABLE `phuongxa`
+  ADD CONSTRAINT `phuongxa_ibfk_1` FOREIGN KEY (`IDQuanHuyen`) REFERENCES `quanhuyen` (`IDQuanHuyen`);
+
+--
 -- Các ràng buộc cho bảng `staffdata`
 --
 ALTER TABLE `staffdata`
@@ -249,12 +527,6 @@ ALTER TABLE `staffdata`
 ALTER TABLE `userdata`
   ADD CONSTRAINT `userdata_ibfk_1` FOREIGN KEY (`ROLE_ID`) REFERENCES `user_role` (`ROLE_ID`);
 COMMIT;
-
--- xóa khoảng khoảng trắng của ảnh bìa (MainImage)
-UPDATE article
-SET MainImage = TRIM(MainImage);
-
-
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
