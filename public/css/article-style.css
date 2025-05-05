@@ -70,20 +70,7 @@ article {
     z-index: 1000;
 }
 
-/* Ảnh phóng to */
 .img-overlay img {
-    max-width: 90%;
-    max-height: 90%;
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
-    border-radius: 10px;
     cursor: zoom-out;
 }
-/* img {
-    transition: -webkit-transform 0.25s ease;
-    transition: transform 0.25s ease;
-}
 
-img:active {
-    -webkit-transform: scale(2);
-    transform: scale(2);
-} */

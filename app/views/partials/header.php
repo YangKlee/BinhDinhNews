@@ -87,7 +87,7 @@
                     </ul>
                 
                 </ul>
-                <form action="../../../public/searchingsite.php " class="search-bar">
+                <form action="/BinhDinhNews/public/searchingsite.php" class="search-bar">
                     <input type="text" placeholder="Tìm kiếm..." name="search" id="search">
                     <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
                 </form>

@@ -38,11 +38,6 @@
                         <i class="fas fa-envelope"></i>
                         <p>Liên hệ</p>
                     </div>
-
-                    <div class="footer-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <p>Bản đồ</p>
-                    </div>
                 </div>
 
                 <hr class="footer-divider">
@@ -55,17 +50,11 @@
                 </div>
 
                 <div class="auth-menu">
-                    <a href="#">Đăng nhập</a>
-                    <a href="#">Đăng ký</a>
+                    <a href="../public/login.php">Đăng nhập</a>
+                    <a href="../public/signin.php">Đăng ký</a>
                 </div>
             </div>
         </div>
 
-         <hr class="footer-special-divider">
-
-        <div class="footer-bottom">
-           
-            <p>Cộng Hòa Xã Hội Chủ Nghĩa Việt Nam</p>
-        </div>
     </footer>
 </body>

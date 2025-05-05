@@ -29,6 +29,14 @@
                         
                         <div class="hot-article-container" id="slide-hot-news">
                             <button class="btn slide-left" onclick="loadArtNext(false);clearHotNewsTimer()"><i class="fa-solid fa-arrow-left"></i></button>
+                            <a href="https://youtu.be/zyllHfITHhE?si=5ckAiqKR4moqQ18H"  class="hot-article" id="art-hot-news">
+                                        <article>
+                                            <img src="./images/upload/dm/image.jpg" alt="">
+                                            <h3> Phát hiện sinh viên có hành vi súc vật như đào mỏ, tra nam. Các bạn nữ nên chú ý
+                                            </h3>
+                                            <i></i>
+                                        </article>
+                                    </a>
                             <?php
                                 // import class xây dựng sẵn
                                 require_once("../app/model/articleDAO.php");
@@ -43,6 +51,7 @@
                                 // duyệt từng hàng  
                                 //Trả về 1 dòng dữ liệu trong $row dưới dạng 1 mảng các giá trị
                                 //MYSQL_ASSOC: các giá trị trong mảng trả về có thể truy cập qua $key là tên của các trường trong "bảng".
+                                
                                 while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){
                                     // áp giá trị vào template
                                         echo '  <a href="./article.php?id='.$row['ArticleID'].'"  class="hot-article" id="art-hot-news">
