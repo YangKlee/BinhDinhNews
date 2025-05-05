@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <?php
-
 	include('../app/model/CategoryDAO.php');
     $catDAO =  new CategoryDAO();
     $result = $catDAO->getCategory($_GET['idcat']);
