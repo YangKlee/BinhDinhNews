@@ -65,7 +65,7 @@
 
                     <li class="parent chinh-quyen"><a href="#"> <i class="fa-solid fa-circle-nodes"></i> Chính quyền <i class="fa-solid fa-caret-down"></i></a>
                         <ul class="subnav chinh-quyen">
-                            <li><a href="#">Tỉnh ủy</a></li>
+                            <li><a href="./tinhuy.php">Tỉnh ủy</a></li>
                             <li><a href="#">HDND Tỉnh</a></li>
                             <li><a href="#">UBMTTQVN Tỉnh</a></li>
                             <li><a href="#">Cơ quan chuyên môn</a></li>
