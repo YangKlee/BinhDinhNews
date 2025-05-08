@@ -90,7 +90,6 @@
             </div> -->
             
         </header>
-
         <nav class="nav-pc">
             <ul class="main">
                     <li><a  href="./index.php"> <i class="fa-solid fa-house"></i> Homepage</a></li>
@@ -147,4 +146,5 @@
                 </form>
             </nav>
 
+        
     </body>

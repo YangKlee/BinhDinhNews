@@ -33,7 +33,7 @@
                 }
                 else if($userData['ROLE'] == 1) // nhảy sang trang nhà báo
                 {
-                    header("Location: ./index.php");
+                    header("Location: ./admin/index.php");
                     exit();
                 }
                 else if($userData['ROLE' == 2])
