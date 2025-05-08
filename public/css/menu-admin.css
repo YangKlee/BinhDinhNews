@@ -1,15 +1,17 @@
-.left-container{
-    background-color: rgb(0, 81, 255);
-    display: block;
+.menu-container{
+    background-color: rgb(0, 132, 255);
+
     width: 20%;
     height: 100%;
     position: fixed;
-    text-align: center;
+
    
 }
 .user-info-container{
     width: 100%;
     margin-top: 20px;
+    text-align: center;
+    margin-bottom: 20px;
 }
 .user-info-container img{
     width: 150px;
@@ -21,4 +23,13 @@
 .user-info-container .username-tx{
     font-size: 2.4rem;
     color: white;
+}
+.function-list-container a{
+    color: white;
+
+}
+.function-list-container li{
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    border: 1px solid white;
 }
