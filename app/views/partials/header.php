@@ -1,3 +1,7 @@
+<?php 
+    require_once "../app/controller/loadsession.php"
+?>    
+    
     <header>
         <script src="../public/scripts/header-scripts.js"></script>
     </header>
@@ -11,20 +15,18 @@
                 </div>
             </div>
             <?php
-                if(isset($_COOKIE["auth"]))
+            
+                if(isset($_SESSION["role"]) && $_SESSION['role'] != -1)
                 {
-                    require '../app/model/userDAO.php';
-                    $userDAO = new UserDAO();
-                    $data = $userDAO->getUserByAuthCokkies($_COOKIE["auth"]);
-                    if($data['ROLE'] == 0)
+                    if($_SESSION['role'] == 0)
                     {
                         $role = "Đọc giả";
                     }
-                    else if($data['ROLE'] == 1)
+                    else if($_SESSION['role'] == 1)
                     {
                         $role = "Nhà báo";
                     }
-                    else if($data['ROLE'] == 2)
+                    else if($_SESSION['role'] == 2)
                     {
                         $role = "Admin";
                     }
@@ -35,7 +37,7 @@
                     '<div class="header header-Logined-Info">
 
                     <div class="user-label">
-                            <b id="user-label name">'.$data['UserName'].'</b>
+                            <b id="user-label name">'.$_SESSION['username'].'</b>
                             <i id = "user-label role">'.$role.'</i>  
                     </div>
                     <div class="user-profile">
