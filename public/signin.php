@@ -36,14 +36,23 @@
     <form action="<?php $_SERVER['PHP_SELF'] ?>" method="post">
 
         <h3>Đăng ký</h3>
-        <label for="username">Tên đăng nhập <span style="color: red;"> *</span></label>
-        <input type="text" id="username"  name="username_tb">
-        <label for="username">Email: <span style="color: red;"> *</span></label>
-        <input type="text" id="email" name="email_tb">
-        <label for="password">Mật khẩu <span style="color: red;"> *</span></label>
-        <input type="password"  id="password" name="password_tb">
-        <label for="password">Xác nhận mật khẩu <span style="color: red;"> *</span></label>
-        <input type="password" id="repassword" name="repassword_tb">
+        <div class="username-warper">
+            <label for="username">Tên đăng nhập <span style="color: red;"> *</span></label>
+            <input type="text" id="username"  name="username_tb">
+        </div>
+        <div class="email-warper">
+            <label for="username">Email: <span style="color: red;"> *</span></label>
+            <input type="text" id="email" name="email_tb">
+        </div>
+        <div class="password-warper">
+            <label for="password">Mật khẩu <span style="color: red;"> *</span></label>
+            <input type="password"  id="password" name="password_tb">
+        </div>
+        <div class="repassword-warper">
+            <label for="password">Xác nhận mật khẩu <span style="color: red;"> *</span></label>
+            <input type="password" id="repassword" name="repassword_tb">
+        </div>
+
         <div class="nofi-container">
             <?php echo '<i style="color: red;">'.$nofi.'</i>'  ?>
         </div>
@@ -55,25 +64,29 @@
                 if($_POST['username_tb'] == "")
                 {
                     echo '<script>
-                    document.querySelector("#username").className = "error-validation";
+                    document.querySelector("#username").className = "error-validation"
+                    document.querySelector(".username-warper").innerHTML += "<i class=\'message\'>Tên đăng nhập không đc để trống</i>";
                     </script>';
                 }
                 if($_POST['password_tb'] == "")
                 {
                     echo '<script>
                     document.querySelector("#password").className = "error-validation";
+                    document.querySelector(".password-warper").innerHTML += "<i class=\'message\'>Mật khẩu không đc để trống</i>";
                     </script>';
                 }
                 if($_POST['email_tb'] == "")
                 {
                     echo '<script>
                     document.querySelector("#email").className = "error-validation";
+                    document.querySelector(".email-warper").innerHTML += "<i class=\'message\'>Email không đc để trống</i>";
                     </script>';
                 }
-                if($_POST['password_tb'] != $_POST['password_tb'])
+                if($_POST['repassword_tb'] != $_POST['password_tb'])
                 {
                     echo '<script>
                     document.querySelector("#repassword").className = "error-validation";
+                    document.querySelector(".repassword-warper").innerHTML += "<i class=\'message\'>Mật khẩu không khớp</i>";
                     </script>';
                 }
             }

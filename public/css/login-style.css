@@ -106,3 +106,8 @@ form a:hover {
     height: 250px;
     background-color: white;
 }
+.message{
+    font-size: 0.9rem;
+    color: red;
+
+}

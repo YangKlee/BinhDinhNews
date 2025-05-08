@@ -99,3 +99,8 @@ form a:hover {
     color: #000000;
     text-decoration: underline;
 }
+.message{
+    font-size: 0.9rem;
+    color: red;
+
+}   
