@@ -56,7 +56,7 @@
 
 /* Nhóm định dạng cho thông tin người dùng đã đăng nhập */
 .header.header-Logined-Info {
-    display: none;
+    display: flex;
     justify-content: flex-end;
     align-items: self-start;
     gap: 10px;

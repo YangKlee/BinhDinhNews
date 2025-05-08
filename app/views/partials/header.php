@@ -10,11 +10,65 @@
                     <i>Nhanh - Chính xác - Trách nhiệm</i>
                 </div>
             </div>
-            <div class="header header-userinfo">
+            <?php
+                if(isset($_COOKIE["auth"]))
+                {
+                    require '../app/model/userDAO.php';
+                    $userDAO = new UserDAO();
+                    $data = $userDAO->getUserByAuthCokkies($_COOKIE["auth"]);
+                    if($data['ROLE'] == 0)
+                    {
+                        $role = "Đọc giả";
+                    }
+                    else if($data['ROLE'] == 1)
+                    {
+                        $role = "Nhà báo";
+                    }
+                    else if($data['ROLE'] == 2)
+                    {
+                        $role = "Admin";
+                    }
+                    else{
+                        $role = "Đéo biết";
+                    }
+                    echo
+                    '<div class="header header-Logined-Info">
+
+                    <div class="user-label">
+                            <b id="user-label name">'.$data['UserName'].'</b>
+                            <i id = "user-label role">'.$role.'</i>  
+                    </div>
+                    <div class="user-profile">
+                        <img id="user-profile-img" src="./images/user.png" alt="">
+                        <a href="../app/controller/dangxuat.php"><button type="button" id="btn-logout">Đăng xuất</button></a>
+                    </div>
+            </div>';
+                }
+                else
+                {
+                    echo 
+                    '<div class="header header-userinfo">
+                    <a href="./login.php"> <button type="button" id="btn-login"> Đăng nhập </button></a>
+                    <a href="./signin.php"> <button type="button" id="btn-res"> Đăng ký </button></a>
+                    </div>
+                    <div class="header userinfo-phone">
+                        <button><img src="./images/user.png" alt=""></button>
+                        <div class="user-phone-menu">
+                            <ul>
+                                <li>Đăng nhập</li>
+                                <li>Đăng ký</li>
+                            </ul>
+                        </div>
+                    </div>';
+                }
+            ?>
+            
+            <!-- <div class="header header-userinfo">
                 <button  id="btn-login" onclick="loadPageLoginBtb()">Đăng nhập</button>
                 <button id="btn-res">Đăng ký</button>
-            </div>
-            <div class="header header-Logined-Info">
+            </div> -->
+
+            <!-- <div class="header header-Logined-Info">
 
                 <div class="user-label">
                         <b id="user-label name">User name label</b>
@@ -24,8 +78,8 @@
                     <img id="user-profile-img" src="../app/data/user_profile_img/shikanoko.jpg" alt="">
                     <button id="btn-logout">Đăng xuất</button>
                 </div>
-            </div>
-            <div class="header userinfo-phone">
+            </div> -->
+            <!-- <div class="header userinfo-phone">
                 <button><img src="./images/user.png" alt=""></button>
                 <div class="user-phone-menu">
                     <ul>
@@ -33,7 +87,7 @@
                         <li>Đăng ký</li>
                     </ul>
                 </div>
-            </div>
+            </div> -->
             
         </header>
 
