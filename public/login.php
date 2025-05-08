@@ -9,21 +9,38 @@
         $db = new DatabaseConnection();
         $coon = $db->getConnection();
         if (!$coon->connect_error)
-        {
+        {   
             $statement = $coon->prepare("select username, email, password from UserData where (username = ? or email= ?) and password = ?");
-            $statement->bind_param("sss", $_POST['username'], $_POST['username'], $_POST['password']);
+            $passwordHash = hash("sha256",$_POST['password'] ) ;
+            $statement->bind_param("sss", $_POST['username'], $_POST['username'],$passwordHash );
             $statement->execute();
             $result = $statement->get_result();
             //$result = mysqli_query($coon ,$statement);  
             if ($result->num_rows != 0)
             {
+                $userData = mysqli_fetch_assoc($result);
                 // login complete
-                echo "<script> alert('Dang nhap thanh cong')  window.location.href = `./index.php`</script>";
-                $nofi = "Đăng nhập thành công";
+                echo "<script> alert('Dang nhap thanh cong')</script>";
+                if($userData['ROLE'] == 0) // nhảy sang trang người dùng
+                {
+                    header("Location: ./index.php");
+                    exit();
+                }
+                else if($userData['ROLE'] == 1) // nhảy sang trang nhà báo
+                {
+                    header("Location: ./Author/index.php");
+                    exit();
+                }
+                else if($userData['ROLE' == 2])
+                {
+                    header("Location: ./Admin/index.php");
+                    exit();
+                }
+                exit(0);
                 } 
             else
             {
-                echo "<script> alert('Dang nhap that bai') </script>";
+                echo "<script> alert('Dang nhap that bai') </>";
                 $nofi = "Đăng nhập thất bại";
             }
         }
