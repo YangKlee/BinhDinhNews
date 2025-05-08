@@ -92,6 +92,9 @@ form a {
     text-align: center;
     transition: color 0.3s ease;
 }
+.error-validation{
+    border: 1px solid red;
+}
 form a:hover {
     color: #000000;
     text-decoration: underline;

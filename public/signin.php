@@ -1,19 +1,24 @@
 <?php 
+    $nofi = "";
     if($_SERVER['REQUEST_METHOD'] == 'POST')
     {
-        require_once("../app/model/userDAO.php");
-        require_once("../app/model/user.php");
-        $newUser = new UserDAO();
-        $isSuccess = $newUser->addUserAccount(new User($_POST['username_tb'], 
-        $_POST['password_tb'],
-        $_POST['fullname_tb'],
-        $_POST['email_tb'], null, null));
-
-        if($isSuccess)
+        if(isset($_POST['username_tb']) && $_POST['username_tb'] != "" &&
+        isset($_POST['password_tb']) && $_POST['password_tb'] != "" &&
+        isset($_POST['email_tb']) && $_POST['email_tb'] != "" &&
+        $_POST['password_tb'] == $_POST['repassword_tb'] )
         {
-            echo "<script> alert('Dang ky thanh cong') </script>";
+            require "../app/config/database.php";
+            $db = new DatabaseConnection();
+            $conn = $db->getConnection();
+            $query= "Insert into UserData(UserName,PassWord,Email,ROLE) VALUES(?, ? , ?, 0)";
+            $sttm = mysqli_prepare($conn,$query);
+            mysqli_stmt_bind_param($sttm, "sss", $_POST['username_tb'], hash("sha256",  $_POST['password_tb']), $_POST['email_tb'] );
+            mysqli_stmt_execute($sttm);
+            echo '<script>        alert("Đăng ký thành công~~")</script>';
         }
-
+        else{
+            $nofi = "Sai thông tin";
+        }
 
     }
 ?>
@@ -29,20 +34,50 @@
 </head>
 <body>
     <form action="<?php $_SERVER['PHP_SELF'] ?>" method="post">
+
         <h3>Đăng ký</h3>
-        <label for="username">Tên đăng nhập</label>
-        <input type="text" id="username" name="username_tb">
-        <label for="username">Email:</label>
+        <label for="username">Tên đăng nhập <span style="color: red;"> *</span></label>
+        <input type="text" id="username"  name="username_tb">
+        <label for="username">Email: <span style="color: red;"> *</span></label>
         <input type="text" id="email" name="email_tb">
-        <label for="username">Họ và tên:</label>
-        <input type="text"  id="fullname" name="fullname_tb">
-        <label for="password">Mật khẩu</label>
+        <label for="password">Mật khẩu <span style="color: red;"> *</span></label>
         <input type="password"  id="password" name="password_tb">
-        <label for="password">Xác nhận mật khẩu</label>
-        <input type="password" id="password" name="Repassword_tb">
+        <label for="password">Xác nhận mật khẩu <span style="color: red;"> *</span></label>
+        <input type="password" id="repassword" name="repassword_tb">
+        <div class="nofi-container">
+            <?php echo '<i style="color: red;">'.$nofi.'</i>'  ?>
+        </div>
 
         <input id="submit_btn"  type="submit" value="Đăng ký">
-        
+        <?php
+            if($_SERVER['REQUEST_METHOD'] == "POST")
+            {
+                if($_POST['username_tb'] == "")
+                {
+                    echo '<script>
+                    document.querySelector("#username").className = "error-validation";
+                    </script>';
+                }
+                if($_POST['password_tb'] == "")
+                {
+                    echo '<script>
+                    document.querySelector("#password").className = "error-validation";
+                    </script>';
+                }
+                if($_POST['email_tb'] == "")
+                {
+                    echo '<script>
+                    document.querySelector("#email").className = "error-validation";
+                    </script>';
+                }
+                if($_POST['password_tb'] != $_POST['password_tb'])
+                {
+                    echo '<script>
+                    document.querySelector("#repassword").className = "error-validation";
+                    </script>';
+                }
+            }
+        ?>
         <a href="login.php">Đã có tài khoản ?</a>
         
     </form>
