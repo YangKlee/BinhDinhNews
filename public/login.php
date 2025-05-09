@@ -26,9 +26,7 @@
                 // lưu cookie hash vô db
                 $sql = "Update UserData set AuthCookies = '".$cookiesHash."' where UserID = ".$userData['UserID']."";
                 mysqli_query($coon, $sql);
-                session_start();
-                $_SESSION['UserName'] = $userData['UserName'];
-                $_SESSION['Role'] = $userData['Role '];
+
 
                 if($userData['ROLE'] == 0) // nhảy sang trang người dùng
                 {

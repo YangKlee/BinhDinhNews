@@ -15,7 +15,7 @@
                 </div>
             </div>
             <?php
-            
+                // echo '<h1> role='.$_SESSION['username'].'</h1>';
                 if(isset($_SESSION["role"]) && $_SESSION['role'] != -1)
                 {
                     if($_SESSION['role'] == 0)

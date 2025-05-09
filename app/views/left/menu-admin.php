@@ -1,7 +1,11 @@
+<?php
+    require "../../app/controller/loadsession.php"
+
+?>
 <div class="menu-container">
     <div class="user-info-container">
                 <img src="../images/user.png" alt="">
-                <h3 class="username-tx">Username
+                <h3 class="username-tx"><?php echo $_SESSION['username'] ?>
                 </h3>
 
     </div>
@@ -11,7 +15,8 @@
                     <a href="">THÔNG TIN CÁ NHÂN</a>
                 </li>
                 <li>
-                    <a href="">BÀI BÁO</a>
+                    <a href="">BÀI BÁO CỦA TÔI</a>
+
                 </li>
                 <li>
                     <a href="../../app/controller/dangxuat.php">ĐĂNG XUẤT</a>
