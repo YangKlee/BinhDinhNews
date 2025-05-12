@@ -42,7 +42,7 @@
                     
                     <select name="cat-selector" class="select-box-input">
                         <?php
-                            require_once "../../app/model/CategoryDAO.php";
+                            require_once "../../app/model/CategoryDAOAdmin.php";
                             $catDAO = new CategoryDAO();
                             $result = $catDAO->getAllCategory();
                             while($row = mysqli_fetch_assoc($result))
