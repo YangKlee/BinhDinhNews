@@ -29,9 +29,28 @@
 
         </div>
         <div class="right-container">
-            <h1>Chào mừng Username</h1>
-            <h1>Trang quản lý cho nhà báo</h1>
+            <div class="wellcome-title">
+                <?php echo "<h1 class='h1-wellcome'> Chào mừng " . $_SESSION['username']."</h1>" ?>
+            </div>
+            <div class="time-info">
+                <h3 class="time-info-title">Thời gian:</h3>
+                <div class="time-warpper">
+                    <div class="module-time-warpper quy">
+                        <label class="time-number" for="">00</label>
+                        <label class="detial-time-text" for="">Quý</label>
+                    </div>
+                    <div class="module-time-warpper thang">
+                        <label class="time-number" for="">00</label>
+                         <label class="detial-time-text" for="">Tháng</label>
+                    </div>
+                    <div class="module-time-warpper tuan">
+                        <label class="time-number" for="">00</label>
+                         <label class="detial-time-text" for="">Tuần</label>
+                    </div>
+                </div>
+             </div>
         </div>
+
     </div>
 </body>
 </html>
