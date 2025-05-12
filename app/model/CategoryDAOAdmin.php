@@ -1,4 +1,5 @@
 <?php
+    // cái này clone để fix lỗi đường dẫn file ở trang admin
     require_once '../../app/config/database.php';
     class CategoryDAO{
         function getConnection()
