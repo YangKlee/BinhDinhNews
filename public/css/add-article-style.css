@@ -1,0 +1,48 @@
+.main-container{
+    display: grid;
+    grid-template-columns: 20% 80%;
+    grid-template-rows: 100%;
+}
+.input-warpper{
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0px;
+}
+.input-warpper label{
+    font-size: 1.5rem;
+}
+.input-warpper input{
+    font-size: 1.2rem;
+    padding: 10px;
+    
+}
+.input-warpper input[type='text']
+{
+    
+}
+.form-article-input{
+    margin: 0px 40px;
+}
+.input-warpper select{
+    font-size: 1.2rem;
+    width: 400px;
+}
+.input-warpper textarea{
+    font-size: 1.2rem;
+    padding: 10px;
+    max-width: 100%;
+    min-height: 500px;
+    max-height: 1500px;
+}
+.input-warpper > *{
+    margin-top: 5px;
+}
+.input-warpper.content-warpper button{ 
+    width: 300px;
+
+}
+.btn{
+    font-size: 1.3rem;
+    padding: 10px 15px;
+    margin-right: 10px;
+}
