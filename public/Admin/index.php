@@ -76,6 +76,29 @@
                     </div>
                 </div>
              </div>
+            <div class="thong-ke-container">
+                <table class="table-thongke-article">
+                    <th colspan="2">
+                        <label class="article-table-title" for="">Bài báo</label>
+                    </th>
+                    <tr>
+                        <td><span class="dot-info-table" style="background-color: green;"></span>Đã đăng</td>
+                        <td class="table-result">0</td>
+                    </tr>
+                    <tr>
+                        <td><span class="dot-info-table" style="background-color: yellow;"> </span>Chờ duyệt</td>
+                        <td class="table-result">0</td>
+                    </tr>
+                    <tr>
+                        <td><span class="dot-info-table" style="background-color: red;"></span>Từ chối</td>
+                        <td class="table-result">0</td>
+                    </tr>
+                    <tr>
+                        <td> <span class="dot-info-table" style="background-color: gray;"></span>Nháp</td>
+                        <td class="table-result">0</td>
+                    </tr>
+                </table>
+            </div>
         </div>
 
     </div>

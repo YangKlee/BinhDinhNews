@@ -20,7 +20,7 @@
 
             return $kqua;
 
-            
+
         }
         function getArticle($id)
         {

@@ -19,7 +19,7 @@
 .time-info{
     margin: 20px 5%;
     padding: 30px;
-    background-color: rgb(253, 253, 245);
+    background-color: rgb(235, 235, 235);
     
 }
 .time-warpper{
@@ -27,7 +27,6 @@
     margin-top: 20px;
     justify-content: space-around;
     box-shadow: 1px;
-    
 }
 .time-warpper .module-time-warpper{
     display: flex;
@@ -61,4 +60,33 @@
     padding: 10px 0px;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
+}
+.dot-info-table{
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+    display: inline-block;
+    margin: 0px 5px;
+}
+.thong-ke-container{
+    margin: 20px 5%;
+        padding: 30px;
+    background-color: rgb(235, 235, 235);
+}
+.table-thongke-article{
+    width: 400px;
+}
+.table-thongke-article, td, tr{
+    border: 1px black solid;
+    border-collapse: collapse;
+}
+.table-thongke-article td{
+    padding: 10px 10px;
+    font-size: 1.6rem;
+}
+.table-thongke-article th{
+    font-size: 2.7rem;
+}
+.table-thongke-article .table-result{
+    text-align: center;
 }

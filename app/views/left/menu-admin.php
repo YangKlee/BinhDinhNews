@@ -9,12 +9,28 @@
             <hr>
     <ul class="function-list-container">
                 <li>
-                    <a href="">THÔNG TIN CÁ NHÂN</a>
+                    <a href="./index.php">TRANG CHỦ QUẢN LÝ</a>
                 </li>
                 <li>
-                    <a href="">BÀI BÁO CỦA TÔI</a>
-
+                    <a href="../index.php">TRANG CHỦ</a>
                 </li>
+                <li>
+                    <a href="">THÔNG TIN CÁ NHÂN</a>
+                </li>
+                <li class="li-parent article">
+                    <a for="">BÀI BÁO CỦA TÔI</a>
+                    <ul class="li-child article">
+                        <li><a href="">Danh sách bài báo</a></li>
+                        <li><a href="">Thêm bài báo</a></li>
+                    </ul>
+                </li>
+                <script>
+                    let articletag = document.querySelector(".li-parent.article");
+                    let articletagchild = document.querySelector(".li-child.article");
+                    articletag.addEventListener("click", function(e){
+                        articletagchild.classList.toggle("show")
+                    }); 
+                </script>
                 <li>
                     <a href="../../app/controller/dangxuat.php">ĐĂNG XUẤT</a>
                 </li>

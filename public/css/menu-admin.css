@@ -1,17 +1,21 @@
+:root{
+    --main-color: rgb(0, 132, 255);
+}
 .menu-container{
-    background-color: rgb(0, 132, 255);
-
+    background-color: var(--main-color);
     width: 20%;
     height: 100%;
-    position: fixed;
-
-   
+    position: fixed; 
+}
+ul li{
+    list-style-type: none;
 }
 .user-info-container{
     width: 100%;
     margin-top: 20px;
     text-align: center;
     margin-bottom: 20px;
+    
 }
 .user-info-container img{
     width: 150px;
@@ -28,8 +32,46 @@
     color: white;
 
 }
+.function-list-container{
+    color: white;
+
+}
 .function-list-container li{
-    padding: 10px 20px;
+
     font-size: 1.2rem;
     border: 1px solid white;
+}
+.function-list-container li a{
+    padding: 10px 20px
+}
+.li-child.article {
+
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.5s ease-in-out;
+  visibility: hidden;
+  margin: 0px;
+  
+}
+.li-child.article li{
+    border: none;
+}
+.li-parent.article:active .li-child.article {
+    
+}
+
+.li-child.article.show {
+
+  max-height: 500px; 
+  visibility: visible;
+}
+.function-list-container li a{
+    display: block;
+}
+.function-list-container li a:hover{
+    background-color: white ;
+    color: var(--main-color);
+}
+.li-parent:hover .li-child{
+    background-color: var(--main-color);
 }
