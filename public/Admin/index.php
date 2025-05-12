@@ -1,3 +1,13 @@
+<?php
+    require "../../app/controller/loadsession.php"
+
+?>
+<?php
+    if($_SESSION['role'] < 1)
+    {
+        header("Location: ./firewall.php");    
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,18 +17,9 @@
     <link rel="stylesheet" href="../css/index-admin.css">
     <link rel="stylesheet" href="../css/menu-admin.css">
     <link rel="stylesheet" href="../css/reset.css">
-    <style>
 
-  </style>
 </head>
-<style>
-    .main-container{
-        display: grid;
 
-        grid-template-columns: 20% 80%;
-        grid-template-rows: 100%;
-    }
-</style>
 <body>
 
     <div class="main-container">
@@ -28,6 +29,7 @@
             ?>
 
         </div>
+
         <?php 
             $quy = 0;
             $thang = 0;
