@@ -28,6 +28,31 @@
             ?>
 
         </div>
+        <?php 
+            $quy = 0;
+            $thang = 0;
+            $tuan  = 0;
+            $timeCurr = new DateTime();
+            $thang = $timeCurr->format('n');
+            if($thang <= 3){
+                $quy = 1;
+            }
+            else if($thang <= 6)
+            {
+                $quy = 2;
+            }
+            else if($thang <= 9)
+            {
+                $quy = 3;
+            }
+            else{
+                $quy = 4;
+            }
+            $dateOfMonth = new DateTime();
+            $dateOfMonth->setDate($timeCurr->format('y'), $thang, 1);
+            $tuan =$timeCurr->format("W") - $dateOfMonth->format("W");
+        
+        ?>
         <div class="right-container">
             <div class="wellcome-title">
                 <?php echo "<h1 class='h1-wellcome'> Chào mừng " . $_SESSION['username']."</h1>" ?>
@@ -36,15 +61,15 @@
                 <h3 class="time-info-title">Thời gian:</h3>
                 <div class="time-warpper">
                     <div class="module-time-warpper quy">
-                        <label class="time-number" for="">00</label>
+                        <label class="time-number" for=""><?php echo $quy ?></label>
                         <label class="detial-time-text" for="">Quý</label>
                     </div>
                     <div class="module-time-warpper thang">
-                        <label class="time-number" for="">00</label>
+                        <label class="time-number" for=""><?php echo $thang ?></label>
                          <label class="detial-time-text" for="">Tháng</label>
                     </div>
                     <div class="module-time-warpper tuan">
-                        <label class="time-number" for="">00</label>
+                        <label class="time-number" for=""><?php echo $tuan ?></label>
                          <label class="detial-time-text" for="">Tuần</label>
                     </div>
                 </div>
