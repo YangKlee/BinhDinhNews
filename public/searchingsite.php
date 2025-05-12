@@ -30,7 +30,7 @@
             require('../app/model/ArticleDAO.php');
             $artDAO = new articleDAO();
             $sql = "SELECT * FROM `article` WHERE Tags LIKE '%".$_POST['search']."%' 
-                    OR Title LIKE '%".$_POST['search']."%'
+                    OR Title LIKE '%".$_POST['search']."%' ORDER BY Time_modify DESC
                     LIMIT 10";
             $result = $artDAO->getListArticleQuery($sql);
             if(mysqli_num_rows($result) > 0)

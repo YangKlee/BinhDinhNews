@@ -39,7 +39,7 @@
                 <?php
                     include('../app/model/ArticleDAO.php');
                     $artDAO = new articleDAO();
-                    $sql = "SELECT * FROM `article` WHERE CategoryID = ".$_GET['idcat']."
+                    $sql = "SELECT * FROM `article` WHERE CategoryID = ".$_GET['idcat']." ORDER BY Time_modify DESC
                             LIMIT 10";
                     $result = $artDAO->getListArticleQuery($sql);
                     while($row = mysqli_fetch_array($result, MYSQLI_ASSOC))
