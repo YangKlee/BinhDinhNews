@@ -30,7 +30,7 @@
         </div>
         <div class="right-container">
             
-            <form class="form-article-input" action="#" method="post">
+            <form class="form-article-input" action="../../app/controller/submitBaiBao.php" method="post">
                 <h1>Thêm bài báo</h1>    
                 <div class="input-warpper tieude-warpper">
                     <label for="">Tiêu đề bài báo <span style="color:red">(*)</span></label>

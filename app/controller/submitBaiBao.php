@@ -19,6 +19,10 @@
      */
     if($_SERVER['REQUEST_METHOD'] == "POST")
     {
+        require_once "../model/articleDAOAdmin.php";
+        $artDAO = new articleDAO();
+        $artDAO->addArticleHeader($_POST['article-tittle'], $_POST['article-tags']
+        , NULL, "Test", $_POST['cat-selector'], 0 );
 
     }
 

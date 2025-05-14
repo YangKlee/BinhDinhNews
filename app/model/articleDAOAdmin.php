@@ -32,9 +32,22 @@
 
             return $kqua;
         }
-        function addArticleHeader($title, $tag,  $authorID, $authorGuestName ,$catID )
+        function addArticleHeader($title, $tag,  $authorID, $authorGuestName ,$catID, $status )
         {
+            $currTime = new DateTime();
+            $stringSQLTime = $currTime->format('d-m-Y');
+            $conn = $this->getConnection();
+            if($authorID == null)
+            {
+                mysqli_query($conn, "INSERT INTO `article`(`Time_modify`, `AuthorID`, `AuthorGuestName`, `CategoryID`, `Title`, `Tags`, `ArticleStatus`) 
+                VALUES ('".$stringSQLTime."', NULL, '".$authorGuestName."', '".$catID."', '".$title."', '".$tag."', '".$status."')");
+            }
+            else{
+                mysqli_query($conn, "INSERT INTO `article`(`Time_modify`, `AuthorID`, `AuthorGuestName`, `CategoryID`, `Title`, `Tags`, `ArticleStatus`) 
+            VALUES ('".$stringSQLTime."', ".$authorID.", NULL, '".$catID."', '".$title."', '".$tag."', '".$status."')");
+            }
             
+            mysqli_close($conn);
         }
     }
 ?>
