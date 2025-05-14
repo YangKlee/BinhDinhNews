@@ -64,7 +64,12 @@
                         else{
                             $content = "404 NOT FOUND FILE" . $filename;
                         }
-                        
+
+                        if (is_null($row['MainImage']) || $row['MainImage'] == '')
+                        {
+                            $row['MainImage'] = 'default.png';
+                            $row['ArticleID'] = 'default';
+                        }
                         echo '
                         <div class="article-container">
                             <a href="./article.php?id='.$row['ArticleID'].'" class="article-element">
@@ -80,6 +85,7 @@
                             <hr>
                         </div>
                         ';
+                        
                     }
                     mysqli_free_result($result);
                     require_once('../app/controller/paginationHelper.php');
