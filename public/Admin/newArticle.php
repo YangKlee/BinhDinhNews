@@ -17,7 +17,9 @@
     <link rel="stylesheet" href="../css/menu-admin.css">
     <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href="../css/add-article-style.css">
-
+    <script>
+        var indexUploadImages = 1;
+    </script>
 </head>
 <body>
     <div class="main-container">
@@ -27,17 +29,19 @@
             ?>
         </div>
         <div class="right-container">
-            <form class="form-article-input" action="#" method="post">
+            
+            <form class="form-article-input" action="../../app/controller/submitBaiBao.php" method="post">
+                <h1>Thêm bài báo</h1>    
                 <div class="input-warpper tieude-warpper">
-                    <label for="">Tiêu đề bài báo</label>
+                    <label for="">Tiêu đề bài báo <span style="color:red">(*)</span></label>
                     <input type="text" placeholder="Nhập tiêu đề..." name="article-tittle">
                 </div>
                 <div class="input-warpper tags-warpper">
-                    <label for="">Tags(Các tag cách nhau bằng dấu phẩy)</label>
+                    <label for="">Tags(Các tag cách nhau bằng dấu phẩy) </label>
                     <input type="text" placeholder="Nhập các tags" name="article-tags">
                 </div>
                 <div class="input-warpper category-warpper">
-                    <label for="">Chọn thể loại của bài báo</label>
+                    <label for="">Chọn thể loại của bài báo <span style="color:red">(*)</span> </label>
                     
                     
                     <select name="cat-selector" class="select-box-input">
@@ -53,12 +57,62 @@
                         ?>
                     </select>
                 </div>
+                <div class="input-warpper image-tittle">
+                    <label for="">Upload ảnh bìa <span style="color:red">(*)</span> </label>
+                    <input type="file" id="myfile" name="imageTitle">
+                </div>
                 <div class="input-warpper content-warpper">
-                    <label for="">Nội dung:</label>
-                    <button class="btn images">Danh sách hình ảnh</button>
+                    <label for="">Nội dung: <span style="color:red">(*)</span> </label>
+                    
                     <textarea name="content-article" id="content-article-area">
                     </textarea>
                 </div>
+                <div class="input-warpper imagesupload-warpper">
+                    <div class="image-list-upload-warpper">
+                        <label for="">Danh sách ảnh bài báo </label>
+                        <table class="image-upload-table">
+                            <tr>
+                                <td id="td1">
+                                    STT
+                                </td>
+                                <td id="td2">
+                                    Chọn ảnh
+                                </td>
+                                <td id="td3">
+                                    Mô tả ảnh
+                                </td>
+                                <td id="td4">
+                                    Dòng ảnh xuất hiện
+                                </td>
+                            </tr>
+
+                        </table>
+
+                    </div>    
+                        <button onclick="loadNewImageUpload()" type="button" class="btn addimg">Thêm hình ảnh</button>
+                </div>
+                <script>
+                    let imageuploadform = document.querySelector(".image-upload-table");
+                    function loadNewImageUpload()
+                    {
+                        let template = `                            <tr>
+                                <td>
+                                        ${indexUploadImages}
+                                </td>
+                                <td>
+                                    <input type="file" id="myfile" name="imageArticle_${indexUploadImages}">
+                                </td>
+                                <td>
+                                    <input type="text" placeholder="Nhập mô tả">
+                                </td>
+                                <td>
+                                    <input type="number" name="imageAticle_row_${indexUploadImages}" placeholder="Nhập số dòng">
+                                </td>
+                            </tr>`;
+                        imageuploadform.innerHTML +=template;
+                        indexUploadImages++;
+                    }
+                </script>
                 <div class="save-warpper isSaveDraf-chkb">  
                     
                     <input type="checkbox" name="isSaveDraf" >

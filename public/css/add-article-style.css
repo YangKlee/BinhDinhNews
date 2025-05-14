@@ -46,3 +46,29 @@
     padding: 10px 15px;
     margin-right: 10px;
 }
+.image-upload-table{
+    width: 100%;
+}
+.image-upload-table, tr, td{
+    font-size: 1.5rem;
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+.image-upload-table td{
+    padding: 10px 10px;
+}
+.image-upload-table td > *{
+    width: 100%;
+}
+.btn.addimg{
+    width: 300px;
+}
+.image-upload-table #td1{
+    width: 50px;
+}
+.image-upload-table #td2{
+    width: 400px;
+}
+.image-upload-table #td4{
+    width: 200px;
+}
