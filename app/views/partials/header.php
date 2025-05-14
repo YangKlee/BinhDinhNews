@@ -107,7 +107,6 @@
                                 }
                                 mysqli_free_result($result); 
 
-                            
                             ?>
                             <!-- <li><a href="#">Thời sự</a></li>
                             <li><a href="#">Chính trị</a></li>

@@ -15,7 +15,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/rightmenu-style.css">
-
     <link rel="stylesheet" href="./css/category-style.css">
     <link rel="stylesheet" href="./css/reset.css">
 	<link rel="stylesheet" href="./css/footer-style.css">
@@ -23,7 +22,7 @@
     <script src="https://kit.fontawesome.com/8f5e4d2946.js" crossorigin="anonymous"></script>
     <link rel="icon" href="./images/logo.webp" type="image/x-icon">
     <script src="./scripts/homePage.js"></script>
-    <title><?php if(isset($nameCat)) echo $nameCat; else echo "404 Đéo tìm thấy" ?></title>
+    <title><?php if(isset($nameCat)) echo $nameCat; else echo "Không tìm thấy" ?></title>
 </head>
 <?php
     include('../app/views/partials/header.php');
@@ -34,14 +33,19 @@
         <div class="container-left"></div>
         <div class="container-mid">
             <h1 class="cat-title">Tin tức <?php if(isset($nameCat)) 
-            echo $nameCat; else echo "404 Đéo tìm thấy" ?> </h1>
+            echo $nameCat; else echo "404 Không tìm thấy" ?> </h1>
             <div class = "container-article-list">
                 <?php
                     include('../app/model/ArticleDAO.php');
+                    $artilces_per_page = 2;
+                    $current_page = $_GET['page'] ?? 1;
                     $artDAO = new articleDAO();
                     $sql = "SELECT * FROM `article` WHERE CategoryID = ".$_GET['idcat']." ORDER BY Time_modify DESC
-                            LIMIT 10";
+                            LIMIT ".$artilces_per_page." OFFSET ".($current_page - 1) * $artilces_per_page."";
                     $result = $artDAO->getListArticleQuery($sql);
+                    $total_articles = mysqli_num_rows(mysqli_query($artDAO->getConnection(), "SELECT * FROM `article` WHERE CategoryID = ".$_GET['idcat'].""));
+                    $total_pages = ceil($total_articles / $artilces_per_page);
+
                     while($row = mysqli_fetch_array($result, MYSQLI_ASSOC))
                     {
                         $filename = '../app/ArticleData/'.$row['ArticleID'].'.txt';
@@ -78,6 +82,8 @@
                         ';
                     }
                     mysqli_free_result($result);
+                    require_once('../app/controller/paginationHelper.php');
+                    page_navigation($total_pages, $current_page);
                 ?>
                 <!-- <div class="article-container">
                     <a href="" class="article-element">
