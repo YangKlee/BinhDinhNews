@@ -103,13 +103,13 @@
                                     <input type="file" id="myfile" name="imageArticle_${indexUploadImages}">
                                 </td>
                                 <td>
-                                    <input type="text" placeholder="Nhập mô tả">
+                                    <input type="text" placeholder="Nhập mô tả" name="labelArticle_${indexUploadImages}">
                                 </td>
                                 <td>
-                                    <input type="number" name="imageAticle_row_${indexUploadImages}" placeholder="Nhập số dòng">
+                                    <input type="number" name="imageArticle_row_${indexUploadImages}" placeholder="Nhập số dòng">
                                 </td>
                             </tr>`;
-                        imageuploadform.innerHTML +=template;
+                        imageuploadform.insertAdjacentHTML("beforeend", template);
                         indexUploadImages++;
                     }
                 </script>

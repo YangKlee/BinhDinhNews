@@ -77,7 +77,7 @@
                             $imgCount++;
                         }
                         // bỏ qua các mô tả hình ảnh còn lại
-                        fgets($f);
+                        // fgets($f);
                         
                     }
                     else

@@ -67,5 +67,11 @@
             mysqli_query($conn, "Update Article set MainImage = '".$nameImage."' where ArticleID = ".$idArt."");
             mysqli_close($conn);
         }
+        function addListImage($idArt, $stringList)
+        {
+            $conn = $this->getConnection();
+            mysqli_query($conn, "Update Article set ListImage = '".$stringList."' where ArticleID = ".$idArt."");
+            mysqli_close($conn);
+        }
     }
 ?>
