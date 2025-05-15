@@ -41,7 +41,8 @@
             {
                 $rawData = mysqli_fetch_array($result, MYSQLI_ASSOC);
                 // tách chuỗi đường dẫn ảnh thành array
-                $listimg = explode("|", $rawData['ListImage']);
+                if($rawData['ListImage'] != null && $rawData['ListImage'] != "")
+                    $listimg = explode("|", $rawData['ListImage']);
                 $imgCount = 0;
                 // lấy tiêu đề
                 echo "<h1> ".$rawData['Title']."</h1>";

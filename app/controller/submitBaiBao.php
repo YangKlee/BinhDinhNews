@@ -17,12 +17,33 @@
      * 4. Lưu bài báo và hình ảnh vào các mục trên, đối với hình ảnh thì cộng thêm time() để tránh trùng lặp
      * 5. Lưu các tên hình ảnh đó vô databases
      */
+    
+    //Insert phần tiêu đề, tag, ... vào database
     if($_SERVER['REQUEST_METHOD'] == "POST")
     {
         require_once "../model/articleDAOAdmin.php";
         $artDAO = new articleDAO();
-        $artDAO->addArticleHeader($_POST['article-tittle'], $_POST['article-tags']
+        $lastIDInsert = $artDAO->addArticleHeader($_POST['article-tittle'], $_POST['article-tags']
         , NULL, "Test", $_POST['cat-selector'], 0 );
+        if($lastIDInsert != null)
+        {
+            $stringContentArticle = $_POST['content-article'];
+            $f = fopen("../ArticleData/".$lastIDInsert.".txt", "w+");
+            fwrite($f, $stringContentArticle);
+            fclose($f);
+            $floderNameImageArticle = "../../public/images/upload/".$lastIDInsert."";
+            if(!file_exists($floderNameImageArticle))
+            {
+                if(mkdir($floderNameImageArticle, 0755))
+                {
+                    require_once "./Upload.php";
+                    $uploader = new Upload();
+                    $uploader->UploadImageArticle($lastIDInsert, $_FILES['imageTitle']);
+                    
+                }
+            }
+        }
+        
 
     }
 

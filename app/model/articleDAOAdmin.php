@@ -35,19 +35,30 @@
         function addArticleHeader($title, $tag,  $authorID, $authorGuestName ,$catID, $status )
         {
             $currTime = new DateTime();
-            $stringSQLTime = $currTime->format('d-m-Y');
+            $stringSQLTime = $currTime->format('Y-m-d');
             $conn = $this->getConnection();
+            $isSuccess = false;
             if($authorID == null)
             {
-                mysqli_query($conn, "INSERT INTO `article`(`Time_modify`, `AuthorID`, `AuthorGuestName`, `CategoryID`, `Title`, `Tags`, `ArticleStatus`) 
+                $isSuccess = mysqli_query($conn, "INSERT INTO `article`(`Time_modify`, `AuthorID`, `AuthorGuestName`, `CategoryID`, `Title`, `Tags`, `ArticleStatus`) 
                 VALUES ('".$stringSQLTime."', NULL, '".$authorGuestName."', '".$catID."', '".$title."', '".$tag."', '".$status."')");
             }
             else{
-                mysqli_query($conn, "INSERT INTO `article`(`Time_modify`, `AuthorID`, `AuthorGuestName`, `CategoryID`, `Title`, `Tags`, `ArticleStatus`) 
+                $isSuccess = mysqli_query($conn, "INSERT INTO `article`(`Time_modify`, `AuthorID`, `AuthorGuestName`, `CategoryID`, `Title`, `Tags`, `ArticleStatus`) 
             VALUES ('".$stringSQLTime."', ".$authorID.", NULL, '".$catID."', '".$title."', '".$tag."', '".$status."')");
             }
-            
+            $lastIDInsert = null;
+            if($isSuccess === TRUE)
+            {
+                $lastIDInsert = $conn->insert_id;
+            }
             mysqli_close($conn);
+            return $lastIDInsert;
+        }
+        function addImageTitle($idArt, $nameImage)
+        {
+            $conn = $this->getConnection();
+            mysqli_query($conn, "Update Article set ")
         }
     }
 ?>
