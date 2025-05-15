@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1:3306
--- Thời gian đã tạo: Th5 08, 2025 lúc 02:31 AM
+-- Thời gian đã tạo: Th5 05, 2025 lúc 08:05 AM
 -- Phiên bản máy phục vụ: 9.1.0
 -- Phiên bản PHP: 8.3.14
 
@@ -32,12 +32,12 @@ CREATE TABLE IF NOT EXISTS `article` (
   `ArticleID` int NOT NULL AUTO_INCREMENT,
   `Time_modify` datetime DEFAULT NULL,
   `AuthorID` int DEFAULT NULL,
-  `AuthorGuestName` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_vietnamese_ci DEFAULT NULL,
+  `AuthorGuestName` varchar(255) COLLATE utf8mb4_vietnamese_ci DEFAULT NULL,
   `CategoryID` int DEFAULT NULL,
-  `Title` varchar(1000) CHARACTER SET utf8mb4 COLLATE utf8mb4_vietnamese_ci DEFAULT NULL,
-  `Tags` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_vietnamese_ci DEFAULT NULL,
-  `MainImage` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_vietnamese_ci DEFAULT NULL,
-  `ListImage` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_vietnamese_ci DEFAULT NULL,
+  `Title` varchar(1000) COLLATE utf8mb4_vietnamese_ci DEFAULT NULL,
+  `Tags` varchar(255) COLLATE utf8mb4_vietnamese_ci DEFAULT NULL,
+  `MainImage` varchar(100) COLLATE utf8mb4_vietnamese_ci DEFAULT NULL,
+  `ListImage` varchar(255) COLLATE utf8mb4_vietnamese_ci DEFAULT NULL,
   `ArticleStatus` int DEFAULT '0',
   PRIMARY KEY (`ArticleID`),
   KEY `CategoryID` (`CategoryID`),
@@ -127,11 +127,11 @@ INSERT INTO `article` (`ArticleID`, `Time_modify`, `AuthorID`, `AuthorGuestName`
 DROP TABLE IF EXISTS `authordata`;
 CREATE TABLE IF NOT EXISTS `authordata` (
   `AuthorID` int NOT NULL,
-  `CCCD` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_vietnamese_ci DEFAULT NULL,
-  `FullName` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_vietnamese_ci NOT NULL,
-  `Phones` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_vietnamese_ci DEFAULT NULL,
-  `Alias` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_vietnamese_ci DEFAULT NULL,
-  `Organzation` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_vietnamese_ci DEFAULT NULL,
+  `CCCD` varchar(100) COLLATE utf8mb4_vietnamese_ci DEFAULT NULL,
+  `FullName` varchar(100) COLLATE utf8mb4_vietnamese_ci NOT NULL,
+  `Phones` varchar(10) COLLATE utf8mb4_vietnamese_ci DEFAULT NULL,
+  `Alias` varchar(100) COLLATE utf8mb4_vietnamese_ci DEFAULT NULL,
+  `Organzation` varchar(255) COLLATE utf8mb4_vietnamese_ci DEFAULT NULL,
   `NumOfAricle` int DEFAULT '0',
   PRIMARY KEY (`AuthorID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
@@ -145,7 +145,7 @@ CREATE TABLE IF NOT EXISTS `authordata` (
 DROP TABLE IF EXISTS `category`;
 CREATE TABLE IF NOT EXISTS `category` (
   `CategoryID` int NOT NULL AUTO_INCREMENT,
-  `CategoryName` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_vietnamese_ci DEFAULT NULL,
+  `CategoryName` varchar(255) COLLATE utf8mb4_vietnamese_ci DEFAULT NULL,
   PRIMARY KEY (`CategoryID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
 
@@ -174,7 +174,7 @@ CREATE TABLE IF NOT EXISTS `comment` (
   `ArticleID` int DEFAULT NULL,
   `UserID` int DEFAULT NULL,
   `Timer` datetime DEFAULT CURRENT_TIMESTAMP,
-  `Content` varchar(1000) CHARACTER SET utf8mb4 COLLATE utf8mb4_vietnamese_ci DEFAULT NULL,
+  `Content` varchar(1000) COLLATE utf8mb4_vietnamese_ci DEFAULT NULL,
   PRIMARY KEY (`CommentID`),
   KEY `ArticleID` (`ArticleID`),
   KEY `UserID` (`UserID`)
@@ -192,10 +192,10 @@ CREATE TABLE IF NOT EXISTS `diadiemdulich` (
   `IDLoaiDiaDiem` int DEFAULT NULL,
   `IDQuanHuyen` int DEFAULT NULL,
   `IDPhuongXa` int DEFAULT NULL,
-  `TenDiaDiem` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_vietnamese_ci DEFAULT NULL,
-  `ShortDecription` text CHARACTER SET utf8mb4 COLLATE utf8mb4_vietnamese_ci,
-  `MapIframe` text CHARACTER SET utf8mb4 COLLATE utf8mb4_vietnamese_ci,
-  `ListImage` text CHARACTER SET utf8mb4 COLLATE utf8mb4_vietnamese_ci,
+  `TenDiaDiem` varchar(255) COLLATE utf8mb4_vietnamese_ci DEFAULT NULL,
+  `ShortDecription` text COLLATE utf8mb4_vietnamese_ci,
+  `MapIframe` text COLLATE utf8mb4_vietnamese_ci,
+  `ListImage` text COLLATE utf8mb4_vietnamese_ci,
   PRIMARY KEY (`IDDiaDiem`),
   KEY `IDQuanHuyen` (`IDQuanHuyen`),
   KEY `IDPhuongXa` (`IDPhuongXa`),
@@ -436,19 +436,45 @@ INSERT INTO `quanhuyen` (`TenQuanHuyen`, `IDQuanHuyen`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Cấu trúc bảng cho bảng `staffdata`
+--
+
+DROP TABLE IF EXISTS `staffdata`;
+CREATE TABLE IF NOT EXISTS `staffdata` (
+  `UserID` int NOT NULL,
+  `FullName` varchar(100) COLLATE utf8mb4_vietnamese_ci NOT NULL,
+  `Phones` varchar(10) COLLATE utf8mb4_vietnamese_ci DEFAULT NULL,
+  PRIMARY KEY (`UserID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Cấu trúc bảng cho bảng `userdata`
 --
 
 DROP TABLE IF EXISTS `userdata`;
 CREATE TABLE IF NOT EXISTS `userdata` (
   `UserID` int NOT NULL AUTO_INCREMENT,
-  `UserName` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_vietnamese_ci NOT NULL,
-  `PassWord` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_vietnamese_ci DEFAULT NULL,
-  `AuthCookies` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_vietnamese_ci DEFAULT NULL,
+  `UserName` varchar(100) COLLATE utf8mb4_vietnamese_ci DEFAULT NULL,
+  `PassWord` varchar(255) COLLATE utf8mb4_vietnamese_ci DEFAULT NULL,
   `Email` varchar(50) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL,
-  `ROLE` int NOT NULL,
+  `ROLE_ID` varchar(10) COLLATE utf8mb4_vietnamese_ci DEFAULT NULL,
   PRIMARY KEY (`UserID`),
-  UNIQUE KEY `ditmemay` (`UserName`)
+  KEY `ROLE_ID` (`ROLE_ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `user_role`
+--
+
+DROP TABLE IF EXISTS `user_role`;
+CREATE TABLE IF NOT EXISTS `user_role` (
+  `ROLE_ID` varchar(10) COLLATE utf8mb4_vietnamese_ci NOT NULL,
+  `ROLE_DESCRIPTION` varchar(100) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL,
+  PRIMARY KEY (`ROLE_ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
 
 --
@@ -488,6 +514,18 @@ ALTER TABLE `diadiemdulich`
 --
 ALTER TABLE `phuongxa`
   ADD CONSTRAINT `phuongxa_ibfk_1` FOREIGN KEY (`IDQuanHuyen`) REFERENCES `quanhuyen` (`IDQuanHuyen`);
+
+--
+-- Các ràng buộc cho bảng `staffdata`
+--
+ALTER TABLE `staffdata`
+  ADD CONSTRAINT `staffdata_ibfk_1` FOREIGN KEY (`UserID`) REFERENCES `userdata` (`UserID`);
+
+--
+-- Các ràng buộc cho bảng `userdata`
+--
+ALTER TABLE `userdata`
+  ADD CONSTRAINT `userdata_ibfk_1` FOREIGN KEY (`ROLE_ID`) REFERENCES `user_role` (`ROLE_ID`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

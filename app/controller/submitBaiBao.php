@@ -96,13 +96,13 @@
                 $imageLabel = $_POST["labelArticle_".$index];
                 for ($i = 0; $i < count($lineData); $i++)
                 {
-                    if($i == $rowDisplayImage -1)
+                    if($i ==( $rowDisplayImage -1))
                     {
                         $lineData[$i] .= ("\n[img]\n".$imageLabel."");
                         require_once "./Upload.php";
                         $uploader = new Upload();
                         $fileName = $uploader->UploadImageArticle($lastIDInsert, $FileImage);
-                        $arrayImage[$i] .= $fileName ."|";
+                        $arrayImage[$i+1] .= $fileName ."|";
                     }
                     
                 }

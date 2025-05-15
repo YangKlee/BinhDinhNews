@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1:3306
--- Thời gian đã tạo: Th5 05, 2025 lúc 08:05 AM
+-- Thời gian đã tạo: Th5 15, 2025 lúc 07:10 AM
 -- Phiên bản máy phục vụ: 9.1.0
 -- Phiên bản PHP: 8.3.14
 
@@ -32,17 +32,17 @@ CREATE TABLE IF NOT EXISTS `article` (
   `ArticleID` int NOT NULL AUTO_INCREMENT,
   `Time_modify` datetime DEFAULT NULL,
   `AuthorID` int DEFAULT NULL,
-  `AuthorGuestName` varchar(255) COLLATE utf8mb4_vietnamese_ci DEFAULT NULL,
+  `AuthorGuestName` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_vietnamese_ci DEFAULT NULL,
   `CategoryID` int DEFAULT NULL,
-  `Title` varchar(1000) COLLATE utf8mb4_vietnamese_ci DEFAULT NULL,
-  `Tags` varchar(255) COLLATE utf8mb4_vietnamese_ci DEFAULT NULL,
-  `MainImage` varchar(100) COLLATE utf8mb4_vietnamese_ci DEFAULT NULL,
-  `ListImage` varchar(255) COLLATE utf8mb4_vietnamese_ci DEFAULT NULL,
+  `Title` varchar(1000) CHARACTER SET utf8mb4 COLLATE utf8mb4_vietnamese_ci DEFAULT NULL,
+  `Tags` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_vietnamese_ci DEFAULT NULL,
+  `MainImage` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_vietnamese_ci DEFAULT NULL,
+  `ListImage` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_vietnamese_ci DEFAULT NULL,
   `ArticleStatus` int DEFAULT '0',
   PRIMARY KEY (`ArticleID`),
   KEY `CategoryID` (`CategoryID`),
   KEY `AuthorID` (`AuthorID`)
-) ENGINE=InnoDB AUTO_INCREMENT=15658 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=15696 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `article`
@@ -116,7 +116,8 @@ INSERT INTO `article` (`ArticleID`, `Time_modify`, `AuthorID`, `AuthorGuestName`
 (67, '2025-01-06 06:28:00', NULL, 'HẢI YẾN', 6, 'Doanh nghiệp tiên phong tham gia chuỗi cung ứng xanh', 'doanh nghiệp| chuỗi cung ứng xanh', 'anhbia67.jpg', '1-67.jpg', 1),
 (68, '2025-02-24 10:34:00', NULL, 'VĂN LỰC', 6, 'Công tác đo đạc, lập bản đồ địa chính: Góp phần nâng cao hiệu quả quản lý nhà nước về đất đai', 'quản lý nhà nước', 'anhbia68.jpg', '1-68.jpg', 1),
 (69, '2025-02-09 23:29:00', NULL, 'HẢI YẾN', 6, 'Công ty CP công nghiệp KAMADO: Nỗ lực đầu tư, đảm bảo sản xuất liên tục', 'đầu tư| sản xuất liên tục', 'anhbia69.jpg', '1-69.jpg', 1),
-(70, '2025-04-13 22:19:00', NULL, 'TRỌNG LỢI', 6, 'Dược liệu quý “bén rễ” vùng núi cao An Toàn', 'dược liệu quý| xuất khẩu dược liệu sạch', 'anhbia70.jpg', '1-70.jpg', 1);
+(70, '2025-04-13 22:19:00', NULL, 'TRỌNG LỢI', 6, 'Dược liệu quý “bén rễ” vùng núi cao An Toàn', 'dược liệu quý| xuất khẩu dược liệu sạch', 'anhbia70.jpg', '1-70.jpg', 1),
+(15695, '2025-05-15 00:00:00', 6, NULL, 7, 'Vì sao J97 không tiếc tiền. Vì anh ấy bỏ ‘coin’', 'j97, jack, đom đóm', '1747292305_ngan-ngam-thay-ca-si-jack-j97-72912.jpg', '1747292305_801c0a9f296fd140a40f94ba3eae5e35.jpg|1747292305_hqdefault (1).jpg|1747292305_saostar-08me2p79zru3fdfz.jpg|1747292305_statictttc.kinhtedothi.vn-zoom-1000-uploaded-luonghaiyen-2025_01_20-_jack3_mtga.jpg|', 0);
 
 -- --------------------------------------------------------
 
@@ -127,11 +128,11 @@ INSERT INTO `article` (`ArticleID`, `Time_modify`, `AuthorID`, `AuthorGuestName`
 DROP TABLE IF EXISTS `authordata`;
 CREATE TABLE IF NOT EXISTS `authordata` (
   `AuthorID` int NOT NULL,
-  `CCCD` varchar(100) COLLATE utf8mb4_vietnamese_ci DEFAULT NULL,
-  `FullName` varchar(100) COLLATE utf8mb4_vietnamese_ci NOT NULL,
-  `Phones` varchar(10) COLLATE utf8mb4_vietnamese_ci DEFAULT NULL,
-  `Alias` varchar(100) COLLATE utf8mb4_vietnamese_ci DEFAULT NULL,
-  `Organzation` varchar(255) COLLATE utf8mb4_vietnamese_ci DEFAULT NULL,
+  `CCCD` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_vietnamese_ci DEFAULT NULL,
+  `FullName` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_vietnamese_ci NOT NULL,
+  `Phones` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_vietnamese_ci DEFAULT NULL,
+  `Alias` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_vietnamese_ci DEFAULT NULL,
+  `Organzation` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_vietnamese_ci DEFAULT NULL,
   `NumOfAricle` int DEFAULT '0',
   PRIMARY KEY (`AuthorID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
@@ -145,7 +146,7 @@ CREATE TABLE IF NOT EXISTS `authordata` (
 DROP TABLE IF EXISTS `category`;
 CREATE TABLE IF NOT EXISTS `category` (
   `CategoryID` int NOT NULL AUTO_INCREMENT,
-  `CategoryName` varchar(255) COLLATE utf8mb4_vietnamese_ci DEFAULT NULL,
+  `CategoryName` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_vietnamese_ci DEFAULT NULL,
   PRIMARY KEY (`CategoryID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
 
@@ -174,7 +175,7 @@ CREATE TABLE IF NOT EXISTS `comment` (
   `ArticleID` int DEFAULT NULL,
   `UserID` int DEFAULT NULL,
   `Timer` datetime DEFAULT CURRENT_TIMESTAMP,
-  `Content` varchar(1000) COLLATE utf8mb4_vietnamese_ci DEFAULT NULL,
+  `Content` varchar(1000) CHARACTER SET utf8mb4 COLLATE utf8mb4_vietnamese_ci DEFAULT NULL,
   PRIMARY KEY (`CommentID`),
   KEY `ArticleID` (`ArticleID`),
   KEY `UserID` (`UserID`)
@@ -192,10 +193,10 @@ CREATE TABLE IF NOT EXISTS `diadiemdulich` (
   `IDLoaiDiaDiem` int DEFAULT NULL,
   `IDQuanHuyen` int DEFAULT NULL,
   `IDPhuongXa` int DEFAULT NULL,
-  `TenDiaDiem` varchar(255) COLLATE utf8mb4_vietnamese_ci DEFAULT NULL,
-  `ShortDecription` text COLLATE utf8mb4_vietnamese_ci,
-  `MapIframe` text COLLATE utf8mb4_vietnamese_ci,
-  `ListImage` text COLLATE utf8mb4_vietnamese_ci,
+  `TenDiaDiem` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_vietnamese_ci DEFAULT NULL,
+  `ShortDecription` text CHARACTER SET utf8mb4 COLLATE utf8mb4_vietnamese_ci,
+  `MapIframe` text CHARACTER SET utf8mb4 COLLATE utf8mb4_vietnamese_ci,
+  `ListImage` text CHARACTER SET utf8mb4 COLLATE utf8mb4_vietnamese_ci,
   PRIMARY KEY (`IDDiaDiem`),
   KEY `IDQuanHuyen` (`IDQuanHuyen`),
   KEY `IDPhuongXa` (`IDPhuongXa`),
@@ -436,46 +437,33 @@ INSERT INTO `quanhuyen` (`TenQuanHuyen`, `IDQuanHuyen`) VALUES
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `staffdata`
---
-
-DROP TABLE IF EXISTS `staffdata`;
-CREATE TABLE IF NOT EXISTS `staffdata` (
-  `UserID` int NOT NULL,
-  `FullName` varchar(100) COLLATE utf8mb4_vietnamese_ci NOT NULL,
-  `Phones` varchar(10) COLLATE utf8mb4_vietnamese_ci DEFAULT NULL,
-  PRIMARY KEY (`UserID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
-
--- --------------------------------------------------------
-
---
 -- Cấu trúc bảng cho bảng `userdata`
 --
 
 DROP TABLE IF EXISTS `userdata`;
 CREATE TABLE IF NOT EXISTS `userdata` (
   `UserID` int NOT NULL AUTO_INCREMENT,
-  `UserName` varchar(100) COLLATE utf8mb4_vietnamese_ci DEFAULT NULL,
-  `PassWord` varchar(255) COLLATE utf8mb4_vietnamese_ci DEFAULT NULL,
+  `UserName` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_vietnamese_ci NOT NULL,
+  `PassWord` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_vietnamese_ci DEFAULT NULL,
+  `AuthCookies` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_vietnamese_ci DEFAULT NULL,
   `Email` varchar(50) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL,
-  `ROLE_ID` varchar(10) COLLATE utf8mb4_vietnamese_ci DEFAULT NULL,
+  `ROLE` int NOT NULL,
   PRIMARY KEY (`UserID`),
-  KEY `ROLE_ID` (`ROLE_ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
-
--- --------------------------------------------------------
+  UNIQUE KEY `ditmemay` (`UserName`)
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
 
 --
--- Cấu trúc bảng cho bảng `user_role`
+-- Đang đổ dữ liệu cho bảng `userdata`
 --
 
-DROP TABLE IF EXISTS `user_role`;
-CREATE TABLE IF NOT EXISTS `user_role` (
-  `ROLE_ID` varchar(10) COLLATE utf8mb4_vietnamese_ci NOT NULL,
-  `ROLE_DESCRIPTION` varchar(100) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL,
-  PRIMARY KEY (`ROLE_ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
+INSERT INTO `userdata` (`UserID`, `UserName`, `PassWord`, `AuthCookies`, `Email`, `ROLE`) VALUES
+(6, 'YangKlee', '4f231459ddf38bcaa618bf72d7b752eb848e53321fd747b1678417aa55dd033b', '9414a3a54e8e934afa53fe0b5ff49edbd46e0813fd2ca46b6d8c2f6921ea3df6', 'khanhduong18072005@gmail.com', 1),
+(7, 'Haru', 'a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3', 'deb77aa6825d7fdfd1fac4f9415acb90b643c5d94a432df681a8da7028fcf75b', '111', 0),
+(8, 'trucluong837@gmail.com', '355b1bbfc96725cdce8f4a2708fda310a80e6d13315aec4e5eed2a75fe8032ce', '83413af552e380c701436ac160b26b2da20c58e2bf9288e02b75f965b620ccce', 'trucluong837@gmail.com', 0),
+(9, 'Yang', '9589262630f775d921bef5b9b2d36fa40f91afebeab887deefc721ff3c787b2c', '67067134e579835a666fbda6489da714e9688b3de9b8b61681a194ea252a0bd7', 'nguyennambao055@gmail.com', 0),
+(10, 'xxx', 'cd2eb0837c9b4c962c22d2ff8b5441b7b45805887f051d39bf133b583baf6860', '2c47d60fa303dce766060ca6307059306eb04b7a84645aa6cc9fbf88281be8c9', 'xxx', 0),
+(11, 'Sahua', '03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4', '46eab01945cabd358520165d1b1dbcb67881c3e835221193482f6d32604d1840', 'khanhduong18072005@gmail.com', 0),
+(12, 'CuongChimDai', '7a64ce427ce0ca963ce9c3ab0da2db27c1f3ac9620444e1b4312422af8e093b9', '8a158025a8e895133966fec97a71a9842aaaeb28eaddf1ac5b35f7d8f6463d95', 'duong4651050044@st.qnu.edu.vn', 0);
 
 --
 -- Các ràng buộc cho các bảng đã đổ
@@ -486,7 +474,7 @@ CREATE TABLE IF NOT EXISTS `user_role` (
 --
 ALTER TABLE `article`
   ADD CONSTRAINT `article_ibfk_1` FOREIGN KEY (`CategoryID`) REFERENCES `category` (`CategoryID`),
-  ADD CONSTRAINT `article_ibfk_2` FOREIGN KEY (`AuthorID`) REFERENCES `authordata` (`AuthorID`);
+  ADD CONSTRAINT `article_ibfk_2` FOREIGN KEY (`AuthorID`) REFERENCES `userdata` (`UserID`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 
 --
 -- Các ràng buộc cho bảng `authordata`
@@ -514,18 +502,6 @@ ALTER TABLE `diadiemdulich`
 --
 ALTER TABLE `phuongxa`
   ADD CONSTRAINT `phuongxa_ibfk_1` FOREIGN KEY (`IDQuanHuyen`) REFERENCES `quanhuyen` (`IDQuanHuyen`);
-
---
--- Các ràng buộc cho bảng `staffdata`
---
-ALTER TABLE `staffdata`
-  ADD CONSTRAINT `staffdata_ibfk_1` FOREIGN KEY (`UserID`) REFERENCES `userdata` (`UserID`);
-
---
--- Các ràng buộc cho bảng `userdata`
---
-ALTER TABLE `userdata`
-  ADD CONSTRAINT `userdata_ibfk_1` FOREIGN KEY (`ROLE_ID`) REFERENCES `user_role` (`ROLE_ID`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
