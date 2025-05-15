@@ -43,3 +43,41 @@ html{
 .article-element-right p{
     font-size: 1.1rem;
 }
+
+.page-navigation *{
+    font-size: 1.2rem;
+}
+
+.page-navigation {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.page-navigation span {
+    display: flex;
+    justify-content: center;
+    height: 2rem;
+    width: 2rem;
+    border-radius: 50%;
+    background-color: var(--main_color);
+    padding: 5px;
+    margin: 0px 5px;
+    color: white;
+    text-decoration: underline;
+}
+
+.page-navigation a {
+    padding: 5px;
+    margin: 0px 5px;
+}
+
+.page-navigation a:hover {
+    display: flex;
+    justify-content: center;
+    height: 2rem;
+    width: 2rem;
+    border-radius: 50%;
+    background-color: var(--main_color);
+    color: white;
+}
