@@ -58,7 +58,7 @@
         function addImageTitle($idArt, $nameImage)
         {
             $conn = $this->getConnection();
-            mysqli_query($conn, "Update Article set ")
+            mysqli_query($conn, "Update Article set ");
         }
     }
 ?>
