@@ -43,6 +43,8 @@
                 // tách chuỗi đường dẫn ảnh thành array
                 if($rawData['ListImage'] != null && $rawData['ListImage'] != "")
                     $listimg = explode("|", $rawData['ListImage']);
+                else
+                    $listimg = [];
                 $imgCount = 0;
                 // lấy tiêu đề
                 echo "<h1> ".$rawData['Title']."</h1>";

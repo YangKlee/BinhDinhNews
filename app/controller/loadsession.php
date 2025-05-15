@@ -12,6 +12,7 @@
             $data = mysqli_fetch_assoc($result);
             $_SESSION['role'] = $data['ROLE'];
             $_SESSION['username'] = $data['UserName'];  
+            $_SESSION['UID'] = $data['UserID'];
             mysqli_close($conn);
         }
 

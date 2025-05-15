@@ -1,6 +1,6 @@
 <?php
     // Gọi thư viện đã xây sẵn
-    require_once '../config/database.php';
+    require_once '../../app/config/database.php';
     class articleDAO{
         // get connection thông qua lớp Database Connection để tiện lợi hơn
         function getConnection()
@@ -54,12 +54,6 @@
             }
             mysqli_close($conn);
             return $lastIDInsert;
-        }
-        function deteteArticle($idArt)
-        {
-            $conn = $this->getConnection();
-            mysqli_query($conn, "Delete from Article where ArticleID = '".$idArt."'");
-            mysqli_close($conn);
         }
         function addImageTitle($idArt, $nameImage)
         {

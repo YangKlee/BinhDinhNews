@@ -30,7 +30,7 @@
         </div>
         <div class="right-container">
             
-            <form class="form-article-input" action="../../app/controller/submitBaiBao.php" method="post">
+            <form class="form-article-input" action="../../app/controller/submitBaiBao.php" method="post" enctype="multipart/form-data"> 
                 <h1>Thêm bài báo</h1>    
                 <div class="input-warpper tieude-warpper">
                     <label for="">Tiêu đề bài báo <span style="color:red">(*)</span></label>
@@ -119,7 +119,7 @@
                     <label for="">Lưu ở dạng nháp (có thể chỉnh sửa sau khi nộp)</label>
                 </div>
                 <input class="btn submit" type="submit" value="Nộp bài báo">
-                <button class="btn delete">Xóa nội dung</button>
+                <button type="button" class="btn delete">Xóa nội dung</button>
             </form>
         </div>
     </div>

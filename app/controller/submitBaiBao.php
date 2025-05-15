@@ -24,7 +24,7 @@
         require_once "../model/articleDAOAdmin.php";
         $artDAO = new articleDAO();
         $lastIDInsert = $artDAO->addArticleHeader($_POST['article-tittle'], $_POST['article-tags']
-        , NULL, "Test", $_POST['cat-selector'], 0 );
+        , $_SESSION['UID'], "", $_POST['cat-selector'], 0 );
         if($lastIDInsert != null)
         {
             $stringContentArticle = $_POST['content-article'];
@@ -38,13 +38,13 @@
                 {
                     require_once "./Upload.php";
                     $uploader = new Upload();
-                    $uploader->UploadImageArticle($lastIDInsert, $_FILES['imageTitle']);
-                    
+                    $fileName = $uploader->UploadImageArticle($lastIDInsert, $_FILES['imageTitle']);
+                    $artDAO->addImageTitle($lastIDInsert, $fileName);
                 }
             }
         }
         
 
     }
-
+    header("Location: ../../public/admin/listArticleAdmin.php");
 ?>

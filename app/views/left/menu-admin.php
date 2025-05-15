@@ -20,7 +20,7 @@
                 <li class="li-parent article">
                     <a for="">BÀI BÁO CỦA TÔI</a>
                     <ul class="li-child article">
-                        <li><a href="">Danh sách bài báo</a></li>
+                        <li><a href="./listArticleAdmin.php">Danh sách bài báo</a></li>
                         <li><a href="./newArticle.php">Thêm bài báo</a></li>
                     </ul>
                 </li>
