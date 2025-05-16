@@ -136,8 +136,13 @@
                             <li><a href="#">Bài viết du lịch</a></li>
                         </ul>
                     </li>
-
-                    <li><a href="#">Giới thiệu</a></li>
+                    <?php
+                        if($_SESSION['role'] == 1)
+                        {
+                            echo '<li><a href="./admin/index.php">Trang quản lý</a></li>';
+                        }
+                    ?>
+                    <!-- <li><a href="#">Giới thiệu</a></li> -->
                     </ul>
                 
                 </ul>
