@@ -109,8 +109,8 @@
                                     <input type="number" name="imageArticle_row_${indexUploadImages}" placeholder="Nhập số dòng">
                                 </td>
                             </tr>`;
-                        imageuploadform.innerHTML += template;
-                            // imageuploadform.insertAdjacentHTML("beforeend", template);
+                        //imageuploadform.innerHTML += template;
+                        imageuploadform.insertAdjacentHTML("beforeend", template);
                         indexUploadImages++;
                     }
                 </script>
