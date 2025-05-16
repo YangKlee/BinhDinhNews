@@ -57,7 +57,7 @@
 
         if($lastIDInsert != null)
         {
-            $floderNameImageArticle = "../../public/images/upload/".$lastIDInsert."";
+              $floderNameImageArticle = "../../public/images/upload/".$lastIDInsert."";
             if(!file_exists($floderNameImageArticle))
             {
                 if(mkdir($floderNameImageArticle, 0755))
@@ -130,5 +130,5 @@
         
 
     }
-    header("Location: ../../public/admin/listArticleAdmin.php");
+   header("Location: ../../public/admin/listArticleAdmin.php");
 ?>

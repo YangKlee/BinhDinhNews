@@ -33,7 +33,7 @@
             <div class = "container-article-list">
                 <h1>Danh sách bài báo của tôi</h1>
                 <?php
-                    include('../../app/model/ArticleDAOAdmin2.php');
+                    include( $_SERVER['DOCUMENT_ROOT'].'/BinhDinhNews/app/model/ArticleDAO.php');
                     $artilces_per_page = 2;
                     $current_page = $_GET['page'] ?? 1;
                     $artDAO = new articleDAO();
@@ -47,7 +47,7 @@
 
                     while($row = mysqli_fetch_array($result, MYSQLI_ASSOC))
                     {
-                        $filename = '../../app/ArticleData/'.$row['ArticleID'].'.txt';
+                        $filename =  $_SERVER['DOCUMENT_ROOT']. '/BinhDinhNews/app/ArticleData/'.$row['ArticleID'].'.txt';
                         $f = fopen($filename, 'r');
                         if($f)
                         {
@@ -96,7 +96,7 @@
                                 </div>
                                 <div class="article-element-rightfunction">
                                     <a href="../article.php?id='.$row['ArticleID'].'"><button class="btn btn-view">Xem bài báo</button></a>
-                                    <a id="delete-btn" href="../../app/controller/deleteArticle.php?idart='.$row['ArticleID'].'"><button class="btn btn-delete">Xóa</button></a>
+                                    <a id="delete-btn" href="/BinhDinhNews/app/controller/deleteArticle.php?idart='.$row['ArticleID'].'"><button class="btn btn-delete">Xóa</button></a>
                                     <a href=""> <button class="btn btn-modify">Sửa</button></a>
                                     
                                    

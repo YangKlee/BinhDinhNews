@@ -25,7 +25,7 @@
     <div class="main-container">
         <div class="left-container">
             <?php
-                include "../../app/views/left/menu-admin.php";
+                include $_SERVER['DOCUMENT_ROOT']."/BinhDinhNews/app/views/left/menu-admin.php";
             ?>
         </div>
         <div class="right-container">
@@ -46,7 +46,7 @@
                     
                     <select name="cat-selector" class="select-box-input">
                         <?php
-                            require_once "../../app/model/CategoryDAOAdmin.php";
+                            require_once  $_SERVER['DOCUMENT_ROOT']. "/BinhDinhNews/app/model/CategoryDAO.php";
                             $catDAO = new CategoryDAO();
                             $result = $catDAO->getAllCategory();
                             while($row = mysqli_fetch_assoc($result))
