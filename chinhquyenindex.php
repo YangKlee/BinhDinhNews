@@ -15,7 +15,7 @@
                     </span>
                     <span class="breadcrumb-separator">/</span>
                     <span class="breadcrumb-item">
-                        <a href="http://localhost/chinhquyen/chinhquyenindex.php" title="Chính quyền">Chính quyền</a>
+                        <a href="http://localhost/BinhDinhNews/chinhquyenindex.php" title="Chính quyền">Chính quyền</a>
                     </span>
                 </nav>
             </div>
@@ -23,7 +23,7 @@
         <div id="module13" class="ModuleWrapper" modulerootid="1"> 
             <div class="category-image-type-bd">   
                 <div class="item-category clearfix"> 
-                    <a class="article-img" href="http://localhost/BinhDinhNews/public/chinhquyen/indextinhuy.php" title="Tỉnh ủy"> 
+                    <a class="article-img" href="http://localhost/BinhDinhNews/chinhquyen/indextinhuy.php" title="Tỉnh ủy"> 
                         <div class="img-cate"> 
                             <img class="post-image" src="public/images/imgChinhquyen/logo/tinhuy.jpg" alt="Tỉnh ủy" style="height: 25px;>
                         </div> 
@@ -31,7 +31,7 @@
                     </a> 
                 </div>   
                 <div class="item-category clearfix"> 
-                    <a class="article-img" href="http://localhost/BinhDinhNews/public/chinhquyen/indexhdnd.php" title="HĐND tỉnh"> 
+                    <a class="article-img" href="http://localhost/BinhDinhNews/chinhquyen/indexhdnd.php" title="HĐND tỉnh"> 
                         <div class="img-cate"> 
                             <img class="post-image" src="public/images/imgChinhquyen/logo/hdnd.jpg" alt="HĐND tỉnh" style="height: 25px;>
                         </div> 
@@ -39,7 +39,7 @@
                     </a> 
                 </div>   
                 <div class="item-category clearfix"> 
-                    <a class="article-img" href="http://localhost/BinhDinhNews/public/chinhquyen/ubnd.php" title="UBND tỉnh"> 
+                    <a class="article-img" href="http://localhost/BinhDinhNews/chinhquyen/ubnd.php" title="UBND tỉnh"> 
                         <div class="img-cate"> 
                             <img class="post-image" src="public/images/imgChinhquyen/logo/ubnd.jpg" alt="UBND tỉnh" style="height: 25px;>
                         </div> 
@@ -47,7 +47,7 @@
                     </a> 
                 </div>   
                 <div class="item-category clearfix"> 
-                    <a class="article-img" href="http://localhost/BinhDinhNews/public/chinhquyen/ubmttqvn.php" title="UBMTTQVN tỉnh"> 
+                    <a class="article-img" href="http://localhost/BinhDinhNews/chinhquyen/ubmttqvn.php" title="UBMTTQVN tỉnh"> 
                         <div class="img-cate"> 
                             <img class="post-image" src="public/images/imgChinhquyen/logo/ubmt.jpg" alt="UBMTTQVN tỉnh" style="height: 25px;>
                         </div> 
@@ -55,7 +55,7 @@
                     </a> 
                 </div>   
                 <div class="item-category clearfix"> 
-                    <a class="article-img" href="http://localhost/BinhDinhNews/public/chinhquyen/coquanchuyenmon.php" title="Cơ quan chuyên môn"> 
+                    <a class="article-img" href="http://localhost/BinhDinhNews/chinhquyen/coquanchuyenmon.php" title="Cơ quan chuyên môn"> 
                         <div class="img-cate"> 
                             <img class="post-image" src="public/images/imgChinhquyen/logo/cqcm.jpg" alt="Cơ quan chuyên môn" style="height: 25px;>
                         </div> 
@@ -63,7 +63,7 @@
                     </a> 
                 </div>   
                 <div class="item-category clearfix"> 
-                    <a class="article-img" href="http://localhost/BinhDinhNews/public/chinhquyen/indexubnd.php" title="UBND các huyện, thị xã, thành phố"> 
+                    <a class="article-img" href="http://localhost/BinhDinhNews/chinhquyen/indexubnd.php" title="UBND các huyện, thị xã, thành phố"> 
                         <div class="img-cate"> 
                             <img class="post-image" src="public/images/imgChinhquyen/logo/huyen.jpg" alt="UBND các huyện, thị xã, thành phố" style="height: 25px;>
                         </div> 
@@ -71,7 +71,7 @@
                     </a> 
                 </div>   
                 <div class="item-category clearfix"> 
-                    <a class="article-img" href="http://localhost/BinhDinhNews/public/chinhquyen/indexsunghiep.php" title="Đơn vị Sự nghiệp"> 
+                    <a class="article-img" href="http://localhost/BinhDinhNews/chinhquyen/indexsunghiep.php" title="Đơn vị Sự nghiệp"> 
                         <div class="img-cate"> 
                             <img class="post-image" src="public/images/imgChinhquyen/logo/dvsn.jpg" alt="Đơn vị Sự nghiệp" style="height: 25px;>
                         </div> 
@@ -79,7 +79,7 @@
                     </a> 
                 </div>   
                 <div class="item-category clearfix"> 
-                    <a class="article-img" href="http://localhost/BinhDinhNews/public/chinhquyen/hiepquan.php" title="Đơn vị Hiệp quản"> 
+                    <a class="article-img" href="http://localhost/BinhDinhNews/chinhquyen/hiepquan.php" title="Đơn vị Hiệp quản"> 
                         <div class="img-cate"> 
                             <img class="post-image" src="public/images/imgChinhquyen/logo/dvhq.jpg" alt="Đơn vị Hiệp quản"style="height: 25px;>
                         </div> 
