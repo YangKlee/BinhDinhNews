@@ -96,7 +96,7 @@
                                 </div>
                                 <div class="article-element-rightfunction">
                                     <a href="../article.php?id='.$row['ArticleID'].'"><button class="btn btn-view">Xem bài báo</button></a>
-                                    <a href="../../app/controller/deleteArticle.php?idart='.$row['ArticleID'].'"><button class="btn btn-delete">Xóa</button></a>
+                                    <a id="delete-btn" href="../../app/controller/deleteArticle.php?idart='.$row['ArticleID'].'"><button class="btn btn-delete">Xóa</button></a>
                                     <a href=""> <button class="btn btn-modify">Sửa</button></a>
                                     
                                    
@@ -114,6 +114,19 @@
 
                 
             </div>
+            <script>
+                let deleteBtn = document.querySelectorAll("#delete-btn");
+                deleteBtn.forEach(function(element){
+                    element.addEventListener("click", function(e){
+                        const result = confirm("Bạn chắc chắn muốn xóa bài báo này chứ!");
+                        if(!result){
+                            e.preventDefault();
+                        }
+                    })
+                });
+
+                
+            </script>
        </div> 
     </div>
 </body>

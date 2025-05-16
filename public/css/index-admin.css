@@ -7,6 +7,9 @@
 .right-container{
     
 }
+body{
+    background-color: #EEEEEE;
+}
 .h1-wellcome{
     display: flex;
     justify-content: center;
@@ -19,7 +22,7 @@
 .time-info{
     margin: 20px 5%;
     padding: 30px;
-    background-color: rgb(235, 235, 235);
+    background-color: white;
     
 }
 .time-warpper{
@@ -71,7 +74,7 @@
 .thong-ke-container{
     margin: 20px 5%;
         padding: 30px;
-    background-color: rgb(235, 235, 235);
+    background-color: white ;
 }
 .table-thongke-article{
     width: 400px;

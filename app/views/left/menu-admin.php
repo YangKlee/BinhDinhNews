@@ -6,7 +6,7 @@
                 </h3>
 
     </div>
-            <hr>
+            
     <ul class="function-list-container">
                 <li>
                     <a href="./index.php">TRANG CHỦ QUẢN LÝ</a>

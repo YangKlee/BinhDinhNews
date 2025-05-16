@@ -1,11 +1,12 @@
 :root{
-    --main-color: rgb(0, 132, 255);
+    --main-color: #213448;
 }
 .menu-container{
     background-color: var(--main-color);
     width: 20%;
     height: 100%;
     position: fixed; 
+    font-weight: bold;
 }
 ul li{
     list-style-type: none;
@@ -22,6 +23,7 @@ ul li{
     height: 150px;
     object-fit: contain;
     border-radius: 100px;
+    
     border: 3px white solid;
 }
 .user-info-container .username-tx{
@@ -35,11 +37,16 @@ ul li{
 .function-list-container{
     color: white;
 
+
 }
 .function-list-container li{
 
     font-size: 1.2rem;
-    border: 1px solid white;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    /* border: 1px solid white; */
+}
+.function-list-container li:last-child{
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
 .function-list-container li a{
     padding: 10px 20px
@@ -69,8 +76,9 @@ ul li{
     display: block;
 }
 .function-list-container li a:hover{
-    background-color: white ;
-    color: var(--main-color);
+    /* background-color: white ;
+    color: var(--main-color); */
+    background-color: #547792;
 }
 .li-parent:hover .li-child{
     background-color: var(--main-color);

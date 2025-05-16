@@ -3,6 +3,10 @@
     --main_color: rgb(0, 132, 255);
 }
 
+.time-label{
+    color: rgba(0, 0, 0, 0.432);
+}
+
 /* Nhóm định dạng cho bài viết nổi bật */
 .homepage-content .hot-article {
     display: block;
@@ -315,7 +319,7 @@ article:hover {
     overflow-y: hidden;
     padding-right: 30px;
     transition: overflow 0.3s ease;
-    scrollbar-width: thin; 
+    scrollbar-width: none; 
 }
 .module-1.list-news:hover{
     overflow-y: auto;
