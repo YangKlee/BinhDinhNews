@@ -129,7 +129,7 @@
 
                     <li class="parent du-lich"><a href="#"> <i class="fa-solid fa-plane-departure"></i>  Du lịch Bình Định <i class="fa-solid fa-caret-down"></i></a>
                         <ul class="subnav du-lich">
-                            <li><a href="#">Danh lam thắng cảnh</a></li>
+                            <li><a href="./dulich.php">Danh lam thắng cảnh</a></li>
                             <li><a href="#">Di tích lịch sử</a></li>
                             <li><a href="#">Khu du lịch</a></li>
                             <li><a href="#">Ẩm thực Bình Định</a></li>
