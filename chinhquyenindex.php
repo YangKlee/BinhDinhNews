@@ -25,7 +25,7 @@
                 <div class="item-category clearfix"> 
                     <a class="article-img" href="http://localhost/chinhquyen/indextinhuy.php" title="Tỉnh ủy"> 
                         <div class="img-cate"> 
-                            <img class="post-image" src="imgChinhquyen/logo/tinhuy.jpg" alt="Tỉnh ủy" style="height: 25px;>
+                            <img class="post-image" src="public/images/imgChinhquyen/logo/tinhuy.jpg" alt="Tỉnh ủy" style="height: 25px;>
                         </div> 
                         <div class="article-info">Tỉnh ủy</div> 
                     </a> 
@@ -33,7 +33,7 @@
                 <div class="item-category clearfix"> 
                     <a class="article-img" href="http://localhost/chinhquyen/indexhdnd.php" title="HĐND tỉnh"> 
                         <div class="img-cate"> 
-                            <img class="post-image" src="imgChinhquyen/logo/hdnd.jpg" alt="HĐND tỉnh" style="height: 25px;>
+                            <img class="post-image" src="public/images/imgChinhquyen/logo/hdnd.jpg" alt="HĐND tỉnh" style="height: 25px;>
                         </div> 
                         <div class="article-info">HĐND tỉnh</div> 
                     </a> 
@@ -41,7 +41,7 @@
                 <div class="item-category clearfix"> 
                     <a class="article-img" href="http://localhost/chinhquyen/ubnd.php" title="UBND tỉnh"> 
                         <div class="img-cate"> 
-                            <img class="post-image" src="imgChinhquyen/logo/ubnd.jpg" alt="UBND tỉnh" style="height: 25px;>
+                            <img class="post-image" src="public/images/imgChinhquyen/logo/ubnd.jpg" alt="UBND tỉnh" style="height: 25px;>
                         </div> 
                         <div class="article-info">UBND tỉnh</div> 
                     </a> 
@@ -49,7 +49,7 @@
                 <div class="item-category clearfix"> 
                     <a class="article-img" href="http://localhost/chinhquyen/ubmttqvn.php" title="UBMTTQVN tỉnh"> 
                         <div class="img-cate"> 
-                            <img class="post-image" src="imgChinhquyen/logo/ubmt.jpg" alt="UBMTTQVN tỉnh" style="height: 25px;>
+                            <img class="post-image" src="public/images/imgChinhquyen/logo/ubmt.jpg" alt="UBMTTQVN tỉnh" style="height: 25px;>
                         </div> 
                         <div class="article-info">UBMTTQVN tỉnh</div> 
                     </a> 
@@ -57,7 +57,7 @@
                 <div class="item-category clearfix"> 
                     <a class="article-img" href="http://localhost/chinhquyen/coquanchuyenmon.php" title="Cơ quan chuyên môn"> 
                         <div class="img-cate"> 
-                            <img class="post-image" src="imgChinhquyen/logo/cqcm.jpg" alt="Cơ quan chuyên môn" style="height: 25px;>
+                            <img class="post-image" src="public/images/imgChinhquyen/logo/cqcm.jpg" alt="Cơ quan chuyên môn" style="height: 25px;>
                         </div> 
                         <div class="article-info">Cơ quan chuyên môn</div> 
                     </a> 
@@ -65,7 +65,7 @@
                 <div class="item-category clearfix"> 
                     <a class="article-img" href="http://localhost/chinhquyen/indexubnd.php" title="UBND các huyện, thị xã, thành phố"> 
                         <div class="img-cate"> 
-                            <img class="post-image" src="imgChinhquyen/logo/huyen.jpg" alt="UBND các huyện, thị xã, thành phố" style="height: 25px;>
+                            <img class="post-image" src="public/images/imgChinhquyen/logo/huyen.jpg" alt="UBND các huyện, thị xã, thành phố" style="height: 25px;>
                         </div> 
                         <div class="article-info">UBND các huyện, thị xã, thành phố</div> 
                     </a> 
@@ -73,7 +73,7 @@
                 <div class="item-category clearfix"> 
                     <a class="article-img" href="http://localhost/chinhquyen/indexsunghiep.php" title="Đơn vị Sự nghiệp"> 
                         <div class="img-cate"> 
-                            <img class="post-image" src="imgChinhquyen/logo/dvsn.jpg" alt="Đơn vị Sự nghiệp" style="height: 25px;>
+                            <img class="post-image" src="public/images/imgChinhquyen/logo/dvsn.jpg" alt="Đơn vị Sự nghiệp" style="height: 25px;>
                         </div> 
                         <div class="article-info">Đơn vị Sự nghiệp</div> 
                     </a> 
@@ -81,7 +81,7 @@
                 <div class="item-category clearfix"> 
                     <a class="article-img" href="http://localhost/chinhquyen/hiepquan.php" title="Đơn vị Hiệp quản"> 
                         <div class="img-cate"> 
-                            <img class="post-image" src="imgChinhquyen/logo/dvhq.jpg" alt="Đơn vị Hiệp quản"style="height: 25px;>
+                            <img class="post-image" src="public/images/imgChinhquyen/logo/dvhq.jpg" alt="Đơn vị Hiệp quản"style="height: 25px;>
                         </div> 
                         <div class="article-info">Đơn vị Hiệp quản</div> 
                     </a> 
