@@ -137,3 +137,6 @@ function hienThiCoQuan($conn, $coquan) {
 </html>
 
 <?php $conn->close(); ?>
+<?php
+	include($_SERVER['DOCUMENT_ROOT'].'/BinhDinhNews/app/views/partials/footer.php');
+?>

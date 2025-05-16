@@ -94,3 +94,6 @@ function hienThiCapUBND($conn, $capbac) {
 </body>
 </html>
 <?php $conn->close(); ?>
+<?php
+	include($_SERVER['DOCUMENT_ROOT'].'/BinhDinhNews/app/views/partials/footer.php');
+?>
