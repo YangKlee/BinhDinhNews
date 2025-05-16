@@ -3,7 +3,7 @@
         <div class="footer-top">
             <div class="footer-left">
                 <div class="head">
-                    <div><img src="./images/logo.webp" alt="Logo" class="footer-logo"></div>
+                    <div><img src="/BinhDinhNews/public/images/logo.webp" alt="Logo" class="footer-logo"></div>
                     <div>
                         <h2>
                             <span>© CỔNG THÔNG TIN BÌNH ĐỊNH</span>
@@ -55,6 +55,5 @@
                 </div>
             </div>
         </div>
-
     </footer>
 </body>

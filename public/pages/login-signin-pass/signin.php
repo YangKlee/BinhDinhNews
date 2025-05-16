@@ -7,7 +7,7 @@
         isset($_POST['email_tb']) && $_POST['email_tb'] != "" &&
         $_POST['password_tb'] == $_POST['repassword_tb'] )
         {
-            require "../app/config/database.php";
+            require "../../../app/config/database.php";
             $db = new DatabaseConnection();
             $conn = $db->getConnection();
             $query= "Insert into UserData(UserName,PassWord,Email,ROLE) VALUES(?, ? , ?, 0)";
@@ -25,12 +25,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="icon" href="./images/logo.webp" type="image/x-icon">
+    <link rel="icon" href="../../images/logo.webp" type="image/x-icon">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Trang Đăng Ký </title>
-    <link rel="stylesheet" href="./css/signin-style.css">
-    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="../../css/signin-style.css">
+    <link rel="stylesheet" href="../../css/reset.css">
 </head>
 <body>
     <form action="<?php $_SERVER['PHP_SELF'] ?>" method="post">

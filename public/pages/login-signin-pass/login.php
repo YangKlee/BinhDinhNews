@@ -5,7 +5,7 @@
     $displayNofi = 'none';
     if ($_SERVER['REQUEST_METHOD'] == 'POST')
     {
-        require "../app/config/database.php";
+        require "../../../app/config/database.php";
         $db = new DatabaseConnection();
         $coon = $db->getConnection();
         if (!$coon->connect_error)
@@ -30,17 +30,17 @@
 
                 if($userData['ROLE'] == 0) // nhảy sang trang người dùng
                 {
-                    header("Location: ./index.php");
+                    header("Location: ../../index.php");
                     exit();
                 }
                 else if($userData['ROLE'] == 1) // nhảy sang trang nhà báo
                 {
-                    header("Location: ./admin/index.php");
+                    header("Location: ../../admin/index.php");
                     exit();
                 }
                 else if($userData['ROLE' == 2])
                 {
-                    header("Location: ./Admin/index.php");
+                    header("Location: ../../Admin/index.php");
                     exit();
                 }
 
@@ -61,9 +61,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Trang Đăng Nhập </title>
-    <link rel="stylesheet" href="./css/login-style.css">
-    <link rel="stylesheet" href="./css/mini-footer-style.css">
-    <link rel="icon" href="./images/logo.webp" type="image/x-icon">
+    <link rel="stylesheet" href="../../css/login-style.css">
+    <link rel="stylesheet" href="../../css/mini-footer-style.css">
+    <link rel="icon" href="../../images/logo.webp" type="image/x-icon">
 </head>
 
 <body>

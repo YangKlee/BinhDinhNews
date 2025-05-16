@@ -51,8 +51,8 @@
                 {
                     echo 
                     '<div class="header header-userinfo">
-                    <a href="/BinhDinhNews/public/login.php"> <button type="button" id="btn-login"> Đăng nhập </button></a>
-                    <a href="/BinhDinhNews/public/signin.php"> <button type="button" id="btn-res"> Đăng ký </button></a>
+                    <a href="\BinhDinhNews\public\pages\login-signin-pass\login.php"> <button type="button" id="btn-login"> Đăng nhập </button></a>
+                    <a href="/BinhDinhNews/public/pages/login-signin-pass/signin.php"> <button type="button" id="btn-res"> Đăng ký </button></a>
                     </div>
                     <div class="header userinfo-phone">
                         <button><img src="/BinhDinhNews/public/images/user.png" alt=""></button>
@@ -95,9 +95,9 @@
         </header>
         <nav class="nav-pc">
             <ul class="main">
-                    <li><a  href="./index.php"> <i class="fa-solid fa-house"></i> Homepage</a></li>
+                    <li><a  href="/BinhDinhNews/public/index.php"> <i class="fa-solid fa-house"></i> Homepage</a></li>
 
-                    <li class="parent tin-tuc"><a  href="./index.php"> <i class="fa-solid fa-newspaper"></i> Tin tức <i class="fa-solid fa-caret-down"></i></a> 
+                    <li class="parent tin-tuc"><a  href="/BinhDinhNews/public/index.php"> <i class="fa-solid fa-newspaper"></i> Tin tức <i class="fa-solid fa-caret-down"></i></a> 
                         <ul class="subnav tin-tuc">
                             <?php
                                 require_once $_SERVER['DOCUMENT_ROOT']."/BinhDinhNews/app/model/CategoryDAO.php";
@@ -149,7 +149,7 @@
                     </ul>
                 
                 </ul>
-                <form action="/BinhDinhNews/public/searchingsite.php" class="search-bar" method="POST">
+                <form action="/BinhDinhNews/public/pages/site/searchingsite.php" class="search-bar" method="POST">
                     <input type="text" placeholder="Tìm kiếm..." name="search" id="search">
                     <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
                 </form>

@@ -1,5 +1,5 @@
 <div class="chu-tich">
-    <img src="./images/eheee.jpg" alt="">
+    <img src="/BinhDinhNews/public/images/image.jpg" alt="">
     <div class="chu-tich chu-tich-info">
         <p class="title">Chủ tịch hội đồng tỉnh Bình Định</p>
         <p class="name">Bà Nguyễn Khánh Dương</p>
