@@ -1,14 +1,15 @@
 <?php 
-    require_once "../app/controller/loadsession.php"
+    require_once $_SERVER['DOCUMENT_ROOT']."/BinhDinhNews/app/controller/loadsession.php"
 ?>    
     
     <header>
-        <script src="../public/scripts/header-scripts.js"></script>
+        <script src="/BinhDinhNews/public/scripts/header-scripts.js"></script>
+        <script src="https://kit.fontawesome.com/8f5e4d2946.js" crossorigin="anonymous"></script>
     </header>
     <body>
         <header class="header header-container">
             <div  class="header header-logo">
-                <img onclick="loadHomePage()" src="./images/logo.webp" alt="">
+                <img onclick="loadHomePage()" src="/BinhDinhNews/public/images/logo.webp" alt="">
                 <div  class="header-logo header-logo__description">
                     <h1>CỔNG THÔNG TIN BÌNH ĐỊNH</h1>
                     <i>Nhanh - Chính xác - Trách nhiệm</i>
@@ -41,8 +42,8 @@
                             <i id = "user-label role">'.$role.'</i>  
                     </div>
                     <div class="user-profile">
-                        <img id="user-profile-img" src="./images/user.png" alt="">
-                        <a href="../app/controller/dangxuat.php"><button type="button" id="btn-logout">Đăng xuất</button></a>
+                        <img id="user-profile-img" src="/BinhDinhNews/public/images/user.png" alt="">
+                        <a href="/BinhDinhNews/app/controller/dangxuat.php"><button type="button" id="btn-logout">Đăng xuất</button></a>
                     </div>
             </div>';
                 }
@@ -50,11 +51,11 @@
                 {
                     echo 
                     '<div class="header header-userinfo">
-                    <a href="./login.php"> <button type="button" id="btn-login"> Đăng nhập </button></a>
-                    <a href="./signin.php"> <button type="button" id="btn-res"> Đăng ký </button></a>
+                    <a href="/BinhDinhNews/public/login.php"> <button type="button" id="btn-login"> Đăng nhập </button></a>
+                    <a href="/BinhDinhNews/public/signin.php"> <button type="button" id="btn-res"> Đăng ký </button></a>
                     </div>
                     <div class="header userinfo-phone">
-                        <button><img src="./images/user.png" alt=""></button>
+                        <button><img src="/BinhDinhNews/public/images/user.png" alt=""></button>
                         <div class="user-phone-menu">
                             <ul>
                                 <li>Đăng nhập</li>
@@ -99,11 +100,11 @@
                     <li class="parent tin-tuc"><a  href="./index.php"> <i class="fa-solid fa-newspaper"></i> Tin tức <i class="fa-solid fa-caret-down"></i></a> 
                         <ul class="subnav tin-tuc">
                             <?php
-                                require_once "../app/model/CategoryDAO.php";
+                                require_once $_SERVER['DOCUMENT_ROOT']."/BinhDinhNews/app/model/CategoryDAO.php";
                                 $catDAO = new CategoryDAO();
                                 $result = $catDAO->getAllCategory();
                                 while($row = mysqli_fetch_array( $result, MYSQLI_ASSOC)){
-                                    echo '<li><a  href="./theloai.php?idcat='.$row['CategoryID'].'">'.$row['CategoryName'].'</a></li>';
+                                    echo '<li><a  href="/BinhDinhNews/public/theloai.php?idcat='.$row['CategoryID'].'">'.$row['CategoryName'].'</a></li>';
                                 }
                                 mysqli_free_result($result); 
 
@@ -117,7 +118,7 @@
                         </ul>
                     </li>
 
-                    <li class="parent chinh-quyen"><a href="#"> <i class="fa-solid fa-circle-nodes"></i> Chính quyền <i class="fa-solid fa-caret-down"></i></a>
+                    <li class="parent chinh-quyen"><a href="/BinhDinhNews/public/chinhquyenindex.php"> <i class="fa-solid fa-circle-nodes"></i> Chính quyền <i class="fa-solid fa-caret-down"></i></a>
                         <ul class="subnav chinh-quyen">
                             <li><a href="./tinhuy.php">Tỉnh ủy</a></li>
                             <li><a href="#">HDND Tỉnh</a></li>

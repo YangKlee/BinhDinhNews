@@ -1,6 +1,6 @@
 <?php
     // Gọi thư viện đã xây sẵn
-    require_once '../app/config/database.php';
+    require_once $_SERVER['DOCUMENT_ROOT']. '/BinhDinhNews/app/config/database.php';
     class articleDAO{
         // get connection thông qua lớp Database Connection để tiện lợi hơn
         function getConnection()

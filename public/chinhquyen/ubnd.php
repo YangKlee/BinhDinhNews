@@ -1,11 +1,14 @@
 <?php
-$conn = new mysqli("localhost", "root", "", "quanlylanhdao");
+	include($_SERVER['DOCUMENT_ROOT'].'/BinhDinhNews/app/views/partials/header.php');
+?>
+<?php
+$conn = new mysqli("localhost", "root", "", "BinhDinhNews");
 if ($conn->connect_error) {
     die("Không kết nối được CSDL: " . $conn->connect_error);
 }
 
 function hienThiCapUBND($conn, $capbac) {
-    $sql = "SELECT * FROM ubmttqvn WHERE capbac = $capbac ORDER BY id ASC";
+    $sql = "SELECT * FROM ubnd_tinh WHERE capbac = $capbac ORDER BY id ASC";
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
@@ -13,7 +16,7 @@ function hienThiCapUBND($conn, $capbac) {
         if ($capbac == 1) {
             while ($row = $result->fetch_assoc()) {
                 echo '<div class="card center">
-                        <img src="imgChinhquyen/UBMTTQVN/'.$row['hinhanh'].'" alt="'.$row['hoten'].'">
+                        <img src="../images/imgChinhquyen/UBNDtinh/'.$row['hinhanh'].'" alt="'.$row['hoten'].'">
                         <p class="chucvu">'.$row['chucvu'].'</p>
                         <h4>'.strtoupper($row['hoten']).'</h4>
                       </div>';
@@ -23,7 +26,7 @@ function hienThiCapUBND($conn, $capbac) {
             echo '<div class="grid">';
             while ($row = $result->fetch_assoc()) {
                 echo '<div class="card">
-                        <img src="imgChinhquyen/UBMTTQVN/'.$row['hinhanh'].'" alt="'.$row['hoten'].'">
+                        <img src="../images/imgChinhquyen/UBNDtinh/'.$row['hinhanh'].'" alt="'.$row['hoten'].'">
                         <p class="chucvu">'.$row['chucvu'].'</p>
                         <h4>'.strtoupper($row['hoten']).'</h4>
                       </div>';
@@ -37,7 +40,10 @@ function hienThiCapUBND($conn, $capbac) {
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>UBMTTQVN tỉnh</title>
+            <link rel="stylesheet" href="../css/reset.css">
+	<link rel="stylesheet" href="../css/footer-style.css">
+	<link rel="stylesheet" href="../css/header-style.css">
+    <title>UBND tỉnh</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -79,7 +85,7 @@ function hienThiCapUBND($conn, $capbac) {
 </head>
 <body>
     <div class="container">
-        <h3>LÃNH ĐẠO UBMTTQVN TỈNH</h3>
+        <h3>LÃNH ĐẠO UBND TỈNH</h3>
         <?php
             hienThiCapUBND($conn, 1); // Chủ tịch
             hienThiCapUBND($conn, 2); // Các Phó Chủ tịch

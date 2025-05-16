@@ -1,5 +1,8 @@
 <?php
-$conn = new mysqli("localhost", "root", "", "quanlylanhdao");
+	include($_SERVER['DOCUMENT_ROOT'].'/BinhDinhNews/app/views/partials/header.php');
+?>
+<?php
+$conn = new mysqli("localhost", "root", "", "BinhDinhNews");
 if ($conn->connect_error) {
     die("hem kết nối được: " . $conn->connect_error);
 }
@@ -12,7 +15,7 @@ function hienThiCap($conn, $capbac ) {
         echo '<div class="grid">';
         while ($row = $result->fetch_assoc()) {
             echo '<div class="card">
-                    <img src="public/images/imgChinhquyen/HĐND/'.$row['anh'].'" alt="'.$row['ten'].'">
+                    <img src="../images/imgChinhquyen/HĐND/'.$row['anh'].'" alt="'.$row['ten'].'">
                     <h4>'.$row['ten'].'</h4>
                     <p>'.$row['chucvu'].'</p>
                   </div>';
@@ -52,7 +55,9 @@ function hienThiCap($conn, $capbac ) {
             font-size: 14px;
         }
     </style>
-
+            <link rel="stylesheet" href="../css/reset.css">
+	<link rel="stylesheet" href="../css/footer-style.css">
+	<link rel="stylesheet" href="../css/header-style.css">
 </head>
 <body>
 <div class="container">

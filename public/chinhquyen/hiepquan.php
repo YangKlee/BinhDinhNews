@@ -1,5 +1,8 @@
 <?php
-$conn = new mysqli("localhost", "root", "", "quanlylanhdao");
+	include($_SERVER['DOCUMENT_ROOT'].'/BinhDinhNews/app/views/partials/header.php');
+?>
+<?php
+$conn = new mysqli("localhost", "root", "", "BinhDinhNews");
 if ($conn->connect_error) {
     die("Không kết nối được: " . $conn->connect_error);
 }
@@ -23,7 +26,7 @@ if ($result_ct->num_rows > 0) {
     echo '<div class="chutich-container">';
     while ($row = $result_ct->fetch_assoc()) {
         echo '<div class="item">
-                <img src="imgChinhquyen/donvihiepquan/'.$row['hinhanh'].'" alt="'.$row['hoten'].'">
+                <img src="../images/imgChinhquyen/donvihiepquan/'.$row['hinhanh'].'" alt="'.$row['hoten'].'">
                 <label><b>'.$row['chucvu'].'</b><br>'.$row['hoten'].'</label>
               </div>';
     }
@@ -34,7 +37,7 @@ if ($result_pho->num_rows > 0) {
     echo '<div class="pho-container">';
     while ($row = $result_pho->fetch_assoc()) {
         echo '<div class="item">
-                <img src="imgChinhquyen/donvihiepquan/'.$row['hinhanh'].'" alt="'.$row['hoten'].'">
+                <img src="../images/imgChinhquyen/donvihiepquan/'.$row['hinhanh'].'" alt="'.$row['hoten'].'">
                 <label><b>'.$row['chucvu'].'</b><br>'.$row['hoten'].'</label>
               </div>';
     }
@@ -47,6 +50,9 @@ if ($result_pho->num_rows > 0) {
 <html>
 <head>
     <meta charset="UTF-8">
+            <link rel="stylesheet" href="../css/reset.css">
+	<link rel="stylesheet" href="../css/footer-style.css">
+	<link rel="stylesheet" href="../css/header-style.css">
 <style>
     
 

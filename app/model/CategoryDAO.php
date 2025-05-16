@@ -1,5 +1,5 @@
 <?php
-    require_once '../app/config/database.php';
+    require_once $_SERVER['DOCUMENT_ROOT'].'/BinhDinhNews/app/config/database.php';
     class CategoryDAO{
         function getConnection()
         {

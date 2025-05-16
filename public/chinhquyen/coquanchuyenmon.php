@@ -1,5 +1,8 @@
 <?php
-$conn = new mysqli("localhost", "root", "", "quanlylanhdao");
+	include($_SERVER['DOCUMENT_ROOT'].'/BinhDinhNews/app/views/partials/header.php');
+?>
+<?php
+$conn = new mysqli("localhost", "root", "", "BinhDinhNews");
 if ($conn->connect_error) {
     die("Không kết nối được: " . $conn->connect_error);
 }
@@ -23,7 +26,7 @@ function hienThiCoQuan($conn, $coquan) {
         echo '<div class="giamdoc-container">';
         while ($row = $result_gd->fetch_assoc()) {
             echo '<div class="item">
-                        <img src="imgChinhquyen/coquanchuyenmon/'.$row['hinhanh'].'" alt="'.$row['hoten'].'">
+                        <img src="../images/imgChinhquyen/coquanchuyenmon/'.$row['hinhanh'].'" alt="'.$row['hoten'].'">
                         <label><b>'.$row['chucvu'].'</b><br>'.$row['hoten'].'</label>
                     </div>';
         }
@@ -38,7 +41,7 @@ function hienThiCoQuan($conn, $coquan) {
         echo '<div class="phogiamdoc-container">';
         while ($row = $result_phogd->fetch_assoc()) {
             echo '<div class="item">
-                        <img src="imgChinhquyen/coquanchuyenmon/'.$row['hinhanh'].'" alt="'.$row['hoten'].'">
+                        <img src="../images/imgChinhquyen/coquanchuyenmon/'.$row['hinhanh'].'" alt="'.$row['hoten'].'">
                         <label><b>'.$row['chucvu'].'</b><br>'.$row['hoten'].'</label>
                     </div>';
         }
@@ -53,7 +56,7 @@ function hienThiCoQuan($conn, $coquan) {
         echo '<div class="cap3-container">';
         while ($row = $result_cap3->fetch_assoc()) {
             echo '<div class="item">
-                        <img src="imgChinhquyen/coquanchuyenmon/'.$row['hinhanh'].'" alt="'.$row['hoten'].'">
+                        <img src="../images/imgChinhquyen/coquanchuyenmon/'.$row['hinhanh'].'" alt="'.$row['hoten'].'">
                         <label><b>'.$row['chucvu'].'</b><br>'.$row['hoten'].'</label>
                     </div>';
         }
@@ -69,6 +72,9 @@ function hienThiCoQuan($conn, $coquan) {
 <html>
 <head>
     <meta charset="UTF-8">
+        <link rel="stylesheet" href="../css/reset.css">
+	<link rel="stylesheet" href="../css/footer-style.css">
+	<link rel="stylesheet" href="../css/header-style.css">
     <style>
         .container {
             max-width: 1200px;
@@ -105,6 +111,7 @@ function hienThiCoQuan($conn, $coquan) {
         }
     </style>
 </head>
+
 <body>
     <div class="coquanchuyenmon-container">
         <?php
