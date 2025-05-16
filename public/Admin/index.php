@@ -1,12 +1,12 @@
 <?php
-    require "../../app/controller/loadsession.php"
+    require_once "../../app/controller/loadsession.php"
 
 ?>
 <?php
-    if($_SESSION['role'] < 1)
-    {
-        header("Location: ./firewall.php");    
-    }
+    // if($_SESSION['role'] < 1)
+    // {
+    //     header("Location: ./firewall.php");    
+    // }
 ?>
 <!DOCTYPE html>
 <html lang="en">

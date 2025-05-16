@@ -25,12 +25,12 @@
     <div class="main-container">
         <div class="left-container">
             <?php
-                include $_SERVER['DOCUMENT_ROOT']."/BinhDinhNews/app/views/left/menu-admin.php";
+                 include "../../app/views/left/menu-admin.php";
             ?>
         </div>
         <div class="right-container">
             
-            <form class="form-article-input" action="../../app/controller/submitBaiBao.php" method="post" enctype="multipart/form-data"> 
+            <form class="form-article-input" action="../../app/controller/submitBaiBao.php" method="POST" enctype="multipart/form-data"> 
                 <h1>Thêm bài báo</h1>    
                 <div class="input-warpper tieude-warpper">
                     <label for="">Tiêu đề bài báo <span style="color:red">(*)</span></label>
@@ -46,7 +46,7 @@
                     
                     <select name="cat-selector" class="select-box-input">
                         <?php
-                            require_once  $_SERVER['DOCUMENT_ROOT']. "/BinhDinhNews/app/model/CategoryDAO.php";
+                            require_once "../../app/model/CategoryDAO.php";
                             $catDAO = new CategoryDAO();
                             $result = $catDAO->getAllCategory();
                             while($row = mysqli_fetch_assoc($result))
@@ -100,7 +100,7 @@
                                         ${indexUploadImages}
                                 </td>
                                 <td>
-                                    <input type="file" id="myfile" name="imageArticle_${indexUploadImages}">
+                                    <input type="file" name="imageArticle_${indexUploadImages}">
                                 </td>
                                 <td>
                                     <input type="text" placeholder="Nhập mô tả" name="labelArticle_${indexUploadImages}">
@@ -109,15 +109,12 @@
                                     <input type="number" name="imageArticle_row_${indexUploadImages}" placeholder="Nhập số dòng">
                                 </td>
                             </tr>`;
+                        //imageuploadform.innerHTML += template;
                         imageuploadform.insertAdjacentHTML("beforeend", template);
                         indexUploadImages++;
                     }
                 </script>
-                <div class="save-warpper isSaveDraf-chkb">  
-                    
-                    <input type="checkbox" name="isSaveDraf" >
-                    <label for="">Lưu ở dạng nháp (có thể chỉnh sửa sau khi nộp)</label>
-                </div>
+
                 <input class="btn submit" type="submit" value="Nộp bài báo">
                 <button type="button" class="btn delete">Xóa nội dung</button>
             </form>
