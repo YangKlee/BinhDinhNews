@@ -1,6 +1,6 @@
 <head>
     
-    <link rel="stylesheet" href="cssChinhquyen/chinhquyen.css">
+    <link rel="stylesheet" href="public/css/chinhquyen.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 </head>
 <div class="col-left col-xs-12 col-md-9 col-sm-8">    
