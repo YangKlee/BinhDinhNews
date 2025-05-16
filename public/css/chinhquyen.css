@@ -1,0 +1,50 @@
+.category-image-type-bd {
+    display: flex;
+    flex-direction: column; /* mỗi item sẽ xuống dòng */
+    gap: 12px;
+    background-color: #008CFF;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.item-category {
+    width: 100%; /* mỗi item chiếm toàn bộ chiều ngang */
+    background-color: #1DA1F2;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+    overflow: hidden;
+}
+
+.item-category:hover {
+    background-color: #0d8ae5;
+}
+
+.article-img {
+    display: flex;
+    align-items: center;
+    padding: 10px 12px;
+    color: #fff;
+    text-decoration: none;
+}
+
+.article-img:hover {
+    text-decoration: none;
+}
+
+.img-cate {
+    margin-right: 12px;
+    flex-shrink: 0;
+}
+
+.img-cate img {
+    height: 30px;
+    width: auto;
+    display: block;
+}
+
+.article-info {
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.4;
+}
+
