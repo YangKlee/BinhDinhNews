@@ -51,7 +51,7 @@
                                             <img src="./images/upload/'.$row['ArticleID'].'/'.$row['mainimage'].'" alt="">
                                             <h3> '.$row['Title'].'
                                             </h3>
-                                            <i>'.$row['Time_modify'].'</i>
+                                            <i class="time-label">'.$row['Time_modify'].'</i>
                                         </article>
                                     </a>';
                                 }    
@@ -83,7 +83,7 @@
                                         <article>    
                                                     <h3> <i class="fa-solid fa-caret-right" style="color: #f31212;"></i> '.$row['Title'].'
                                                     </h3>
-                                                    <i>'.$row['Time_modify'].'</i>
+                                                    <i class="time-label">'.$row['Time_modify'].'</i>
                                                     <hr class="hr_article">
                                         </article>
                                     </a>
@@ -125,7 +125,7 @@
                                             echo '<a href="./article.php?id='.$row['ArticleID'].'" class="thoisu-article clone">
                                                 <img src="./images/upload/'.$row['ArticleID'].'/'.$row['MainImage'].'" alt="">
                                                 <p>'.$row['Title'].'</p> 
-                                                <i>'.$row['Time_modify'].'</i>
+                                                <i class="time-label">'.$row['Time_modify'].'</i>
                                                 </a>';
                                         }
                                         mysqli_free_result($result); 
@@ -140,7 +140,7 @@
                                             echo '<a href="./article.php?id='.$row['ArticleID'].'" class="thoisu-article">
                                                 <img src="./images/upload/'.$row['ArticleID'].'/'.$row['MainImage'].'" alt="">
                                                 <p>'.$row['Title'].'</p> 
-                                                <i>'.$row['Time_modify'].'</i>
+                                                <i class="time-label">'.$row['Time_modify'].'</i>
                                                 </a>';
                                         }
                                         mysqli_free_result($result); 
@@ -155,7 +155,7 @@
                                             echo '<a href="./article.php?id='.$row['ArticleID'].'" class="thoisu-article clone">
                                                 <img src="./images/upload/'.$row['ArticleID'].'/'.$row['MainImage'].'" alt="">
                                                 <p>'.$row['Title'].'</p> 
-                                                <i>'.$row['Time_modify'].'</i>
+                                                <i class="time-label">'.$row['Time_modify'].'</i>
                                                 </a>';
                                         }
                                         mysqli_free_result($result); 
@@ -184,26 +184,31 @@
                                 <hr class="hr_cat">
                                 <div class="row-3 module-1-container">
                                     <div class="module-1 top-news">
-                                        <a href="" class="top-news container">
-                                            <img src=".\images\article\1.jpg" alt="ảnh">
-                                            <p>Lên hồ sơ dự kiến sáp nhập các cơ quan hành chính tỉnh Bình Định</p>
-                                            <i>Thời gian...</i>
-                                        </a>
+                                        <?php
+                                            require_once("../app/model/articleDAO.php");
+                                            $DAOArticle = new articleDAO();
+                                            $sql = 'SELECT * FROM article INNER JOIN category ON article.CategoryID = category.CategoryID
+                                                     WHERE category.CategoryName = "Kinh tế"  
+                                                     ORDER BY Time_modify DESC LIMIT 6';
+                                            $result = $DAOArticle->getListArticleQuery($sql);  
+                                            $row = mysqli_fetch_assoc($result); 
+                                            echo '<a href="./article.php?id='.$row['ArticleID'].'" class="top-news container">
+                                             <img src="./images/upload/'.$row['ArticleID'].'/'.$row['MainImage'].'" alt="">
+                                            <p>'.$row['Title'].'</p>
+                                            <i class="time-label" >'.$row['Time_modify'].'</i>';
+                                        ?>
                                     </div>
                                     <div class="module-1 list-news">
                                         <?php
-                                            for($i = 0; $i <10; $i++)
-                                            {
-                                                echo '                                        <a href="" class="list-news container">
-                                                <img src=".\images\article\1.jpg" alt="ảnh">
+                                        while($row = mysqli_fetch_assoc($result))
+                                        {
+                                                echo '<a href="./article.php?id='.$row['ArticleID'].'" class="list-news container">
+                                               <img src="./images/upload/'.$row['ArticleID'].'/'.$row['MainImage'].'" alt="">
                                                 <div class="news-title">
-                                                    <p>Đéo biết viết gì nên cứ coi đây là tiêu đề tin tức số '.$i.' đi nha heheheheh</p>
-                                                    <i>Thời gian...</i>
-                                                    
-                                                </div>
-                                        </a>
-                                        <hr class="hr_article">';
-                                            }
+                                                <p>'.$row['Title'].'</p>
+                                                <i class="time-label" >'.$row['Time_modify'].'</i> </div> </a>';
+                                        }
+                                        mysqli_free_result($result);
                                         ?>
                                     </div>
                                 </div>
@@ -215,26 +220,31 @@
                             <hr class="hr_cat">
                             <div class="row-3 module-2-container">
                                     <div class="module-2 top-news">
-                                        <a href="" class="top-news container">
-                                            <img src=".\images\article\1.jpg" alt="ảnh">
-                                            <p>Lên hồ sơ dự kiến sáp nhập các cơ quan hành chính tỉnh Bình Định</p>
-                                            <i>Thời gian...</i>
-                                        </a>
+                                        <?php
+                                            require_once("../app/model/articleDAO.php");
+                                            $DAOArticle = new articleDAO();
+                                            $sql = 'SELECT * FROM article INNER JOIN category ON article.CategoryID = category.CategoryID
+                                                     WHERE category.CategoryName = "Văn hóa"  
+                                                     ORDER BY Time_modify DESC LIMIT 6';
+                                            $result = $DAOArticle->getListArticleQuery($sql);  
+                                            $row = mysqli_fetch_assoc($result); 
+                                            echo '<a href="./article.php?id='.$row['ArticleID'].'" class="top-news container">
+                                             <img src="./images/upload/'.$row['ArticleID'].'/'.$row['MainImage'].'" alt="">
+                                            <p>'.$row['Title'].'</p>
+                                            <i class="time-label" >'.$row['Time_modify'].'</i>';
+                                        ?>
                                     </div>
                                     <div class="module-1 list-news">
                                         <?php
-                                            for($i = 0; $i <10; $i++)
-                                            {
-                                                echo '                                        <a href="" class="list-news container">
-                                                <img src=".\images\article\1.jpg" alt="ảnh">
+                                        while($row = mysqli_fetch_assoc($result))
+                                        {
+                                                echo '<a href="./article.php?id='.$row['ArticleID'].'" class="list-news container">
+                                               <img src="./images/upload/'.$row['ArticleID'].'/'.$row['MainImage'].'" alt="">
                                                 <div class="news-title">
-                                                    <p>Đéo biết viết gì nên cứ coi đây là tiêu đề tin tức số '.$i.' đi nha heheheheh</p>
-                                                    <i>Thời gian...</i>
-                                                   
-                                                </div>
-                                        </a>
-                                         <hr class="hr_article">';
-                                            }
+                                                <p>'.$row['Title'].'</p>
+                                                <i class="time-label" >'.$row['Time_modify'].'</i> </div> </a>';
+                                        }
+                                        mysqli_free_result($result);
                                         ?>
                                     </div>
                                 </div>

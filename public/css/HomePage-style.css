@@ -3,6 +3,10 @@
     --main_color: rgb(0, 132, 255);
 }
 
+.time-label{
+    color: rgba(0, 0, 0, 0.432);
+}
+
 /* Nhóm định dạng cho bài viết nổi bật */
 .homepage-content .hot-article {
     display: block;
