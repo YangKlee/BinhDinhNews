@@ -1,5 +1,9 @@
 
 <?php
+        //         echo "<pre>";
+        // print_r($_FILES);
+        // print_r($_POST);
+        // exit;
     require "../../app/controller/loadsession.php";
 
 ?>
@@ -46,11 +50,8 @@
     //Insert phần tiêu đề, tag, ... vào database
     if($_SERVER['REQUEST_METHOD'] == "POST")
     {
-        //         echo "<pre>";
-        // print_r($_FILES);
-        // print_r($_POST);
-        // exit;
-        require_once "../model/articleDAOAdmin.php";
+
+        require_once  $_SERVER['DOCUMENT_ROOT']. "/BinhDinhNews/app/model/articleDAO.php";
         $artDAO = new articleDAO();
         $lastIDInsert = $artDAO->addArticleHeader($_POST['article-tittle'], $_POST['article-tags']
         , $_SESSION['UID'], "", $_POST['cat-selector'], 0 );

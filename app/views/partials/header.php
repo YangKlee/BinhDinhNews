@@ -140,7 +140,7 @@
                         </ul>
                     </li>
                     <?php
-                        if($_SESSION['role'] == 1)
+                        if($_SESSION['role'] >= 1)
                         {
                             echo '<li><a href="./admin/index.php">Trang quản lý</a></li>';
                         }

@@ -1,4 +1,7 @@
+<?php
+    require "../../app/controller/loadsession.php"
 
+?>
 <div class="menu-container">
     <div class="user-info-container">
                 <img src="../images/user.png" alt="">
