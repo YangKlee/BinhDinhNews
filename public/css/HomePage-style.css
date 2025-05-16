@@ -319,7 +319,7 @@ article:hover {
     overflow-y: hidden;
     padding-right: 30px;
     transition: overflow 0.3s ease;
-    scrollbar-width: thin; 
+    scrollbar-width: none; 
 }
 .module-1.list-news:hover{
     overflow-y: auto;
