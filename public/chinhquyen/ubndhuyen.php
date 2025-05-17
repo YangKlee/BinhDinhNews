@@ -53,14 +53,14 @@ if ($result_pho->num_rows > 0) {
 <style>
     
     .container {
-        padding: 0 20px; /* tạo khoảng cách 2 bên cho toàn bộ nội dung */
+        padding: 0 20px; 
         box-sizing: border-box;
     }
 
     .container h3 {
         text-align: left;
         margin: 20px 0;
-        padding-left: 10px; /* hoặc dùng margin-left nếu thích */
+        padding-left: 10px; 
         font-size: 22px;
     }
 
@@ -88,7 +88,7 @@ if ($result_pho->num_rows > 0) {
     .item label {
         display: block;
         margin-top: 10px;
-        font-size: 16px;
+        font-size: 18px;
     }
 
 </style>
@@ -97,17 +97,17 @@ if ($result_pho->num_rows > 0) {
 <body>
     <div class="container">
         <?php
-        hienThiDiaPhuong($conn, "TP Quy Nhơn");
-        hienThiDiaPhuong($conn, "TX An Nhơn");
-        hienThiDiaPhuong($conn, "TX Hoài Nhơn");
-        hienThiDiaPhuong($conn, "huyện Phù Mỹ");
-        hienThiDiaPhuong($conn, "huyện Vĩnh Thạnh");
-        hienThiDiaPhuong($conn, "huyện Hoài Ân");
-        hienThiDiaPhuong($conn, "huyện Vân Canh");
-        hienThiDiaPhuong($conn, "huyện Phù Cát");
-        hienThiDiaPhuong($conn, "huyện An Lão");
-        hienThiDiaPhuong($conn, "huyện Tuy Phước");
-        hienThiDiaPhuong($conn, "huyện Tây Sơn");
+        hienThiDiaPhuong($conn, "TP QUY NHƠN");
+        hienThiDiaPhuong($conn, "TX AN NHƠN");
+        hienThiDiaPhuong($conn, "TX HOÀI NHƠN");
+        hienThiDiaPhuong($conn, "HUYỆN PHÙ MỸ");
+        hienThiDiaPhuong($conn, "HUYỆN VĨNH THẠNH");
+        hienThiDiaPhuong($conn, "HUYỆN HOÀI ÂN");
+        hienThiDiaPhuong($conn, "HUYỆN VÂN CANH");
+        hienThiDiaPhuong($conn, "HUYỆN PHÙ CÁT");
+        hienThiDiaPhuong($conn, "HUYỆN AN LÃO");
+        hienThiDiaPhuong($conn, "HUYỆN TUY PHƯỚC");
+        hienThiDiaPhuong($conn, "HUYỆN TÂY SƠN");
         ?>
     </div>
 </body>
