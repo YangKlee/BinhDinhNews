@@ -16,7 +16,7 @@ function hienThihiepquan($conn, $coquan) {
     $sql_pho = "SELECT * FROM donvihiepquan WHERE tencoquan = '$coquan' AND capbac = 2";
     $result_pho = $conn->query($sql_pho);
 
-    echo "<h3> UBND {$coquan} </h3>";
+    echo "<h3> {$coquan} </h3>";
 
 if ($result_ct->num_rows > 0) {
     echo '<div class="chutich-container">';

@@ -20,7 +20,7 @@ function hienThiCoQuan($conn, $coquan) {
     $sql_cap3 = "SELECT * FROM coquanchuyenmon WHERE tencoquan = '$coquan' AND capbac = 3";
     $result_cap3 = $conn->query($sql_cap3);
 
-    echo "<h3> UBND {$coquan} </h3>";
+    echo "<h3> {$coquan} </h3>";
 
 if ($result_ct->num_rows > 0) {
     echo '<div class="chutich-container">';
