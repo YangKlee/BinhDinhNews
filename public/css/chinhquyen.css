@@ -25,6 +25,13 @@
   box-sizing: border-box;
 }
 
+.breadcrumb-item a:hover {
+    color: rgb(33, 33, 226) ;
+    text-decoration:underline;
+    transition: color 0.3s ease; 
+}
+
+
 /* Breadcrumb style */
 .breadcrumb {
   margin-left: 15px;
