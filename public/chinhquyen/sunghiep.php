@@ -53,14 +53,14 @@ if ($result_pho->num_rows > 0) {
 <style>
 
     .container {
-        padding: 0 20px; /* tạo khoảng cách 2 bên cho toàn bộ nội dung */
+        padding: 0 20px;
         box-sizing: border-box;
     }
 
     .container h3 {
         text-align: left;
         margin: 20px 0;
-        padding-left: 10px; /* hoặc dùng margin-left nếu thích */
+        padding-left: 10px; 
         font-size: 22px;
     }
 
@@ -88,7 +88,7 @@ if ($result_pho->num_rows > 0) {
     .item label {
         display: block;
         margin-top: 10px;
-        font-size: 16px;
+        font-size: 18px;
     }
 
 </style>
@@ -97,10 +97,10 @@ if ($result_pho->num_rows > 0) {
 <body>
     <div class="container">
         <?php
-        hienThisunghiep($conn, sunghiep: "Ban quản lý dự án các công trình giao thông và dân dụng");
-        hienThisunghiep($conn, sunghiep: "Trung tâm Phát triển quỹ đất tỉnh");
-        hienThisunghiep($conn, sunghiep: "Ban quản lý dự án Nông nghiệp và phát triển nông thôn");
-        hienThisunghiep($conn, sunghiep: "Đài phát thanh và truyền hình Bình Định");
+        hienThisunghiep($conn, sunghiep: "BAN QUẢN LÝ DỰ ÁN CÁC CÔNG TRÌNH GIAO THÔNG VÀ DÂN DỤNG");
+        hienThisunghiep($conn, sunghiep: "TRUNG TÂM PHÁT TRIỂN QUỸ ĐẤT TỈNH");
+        hienThisunghiep($conn, sunghiep: "BAN QUẢN LÝ DỰ ÁN NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN");
+        hienThisunghiep($conn, sunghiep: "ĐÀI PHÁT THANH VÀ TRUYỀN HÌNH BÌNH ĐỊNH");
        
         ?>
     </div>

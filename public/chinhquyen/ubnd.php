@@ -8,32 +8,36 @@ if ($conn->connect_error) {
 }
 
 function hienThiCapUBND($conn, $capbac) {
-    $sql = "SELECT * FROM ubnd_tinh WHERE capbac = $capbac ORDER BY id ASC";
-    $result = $conn->query($sql);
+    $sql_chutich = "SELECT * FROM ubnd_tinh WHERE  capbac = 1";
+    $result_ct = $conn->query($sql_chutich);
 
-    if ($result->num_rows > 0) {
-        // Nếu là Chủ tịch (capbac = 1) thì căn giữa
-        if ($capbac == 1) {
-            while ($row = $result->fetch_assoc()) {
-                echo '<div class="card center">
-                        <img src="../images/imgChinhquyen/UBNDtinh/'.$row['hinhanh'].'" alt="'.$row['hoten'].'">
-                        <p class="chucvu">'.$row['chucvu'].'</p>
-                        <h4>'.strtoupper($row['hoten']).'</h4>
-                      </div>';
-            }
-        } else {
-            // Nếu là các Phó Chủ tịch
-            echo '<div class="grid">';
-            while ($row = $result->fetch_assoc()) {
-                echo '<div class="card">
-                        <img src="../images/imgChinhquyen/UBNDtinh/'.$row['hinhanh'].'" alt="'.$row['hoten'].'">
-                        <p class="chucvu">'.$row['chucvu'].'</p>
-                        <h4>'.strtoupper($row['hoten']).'</h4>
-                      </div>';
-            }
-            echo '</div>';
-        }
+    // Phó Chủ tịch
+    $sql_pho = "SELECT * FROM ubnd_tinh WHERE  capbac = 2";
+    $result_pho = $conn->query($sql_pho);
+
+    echo "<h3> ỦY BAN NHÂN DÂN TỈNH </h3> ";
+
+if ($result_ct->num_rows > 0) {
+    echo '<div class="chutich-container">';
+    while ($row = $result_ct->fetch_assoc()) {
+        echo '<div class="item">
+                <img src="../images/imgChinhquyen/UBNDtinh/'.$row['hinhanh'].'" alt="'.$row['hoten'].'">
+                <label><b>'.$row['chucvu'].'</b><br>'.$row['hoten'].'</label>
+              </div>';
     }
+    echo '</div>';
+}
+
+if ($result_pho->num_rows > 0) {
+    echo '<div class="pho-container">';
+    while ($row = $result_pho->fetch_assoc()) {
+        echo '<div class="item">
+                <img src="../images/imgChinhquyen/UBNDtinh/'.$row['hinhanh'].'" alt="'.$row['hoten'].'">
+                <label><b>'.$row['chucvu'].'</b><br>'.$row['hoten'].'</label>
+              </div>';
+    }
+    echo '</div>';
+}
 }
 ?>
 <!DOCTYPE html>
@@ -45,50 +49,51 @@ function hienThiCapUBND($conn, $capbac) {
 	<link rel="stylesheet" href="../css/header-style.css">
     <title>UBND tỉnh</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-        }
         .container {
-            text-align: center;
-            margin: 0 auto;
-            width: 90%;
+        padding: 0 20px; /* tạo khoảng cách 2 bên cho toàn bộ nội dung */
+        box-sizing: border-box;
         }
-        .grid {
+
+        .container h3 {
+            text-align: left;
+            margin: 20px 0;
+            padding-left: 10px; /* hoặc dùng margin-left nếu thích */
+            font-size: 22px;
+        }
+
+        .chutich-container,
+        .pho-container {
             display: flex;
-            flex-wrap: wrap;
             justify-content: center;
+            flex-wrap: wrap;
             gap: 30px;
-            margin-top: 30px;
+            margin-bottom: 40px;
         }
-        .card {
-            width: 180px;
+
+        .item {
+            width: 160px;
+            text-align: center;
         }
-        .card img {
+
+        .item img {
             width: 100%;
             height: auto;
             border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
-        .card h4 {
-            margin: 10px 0 5px;
-            font-size: 16px;
-            font-weight: bold;
-        }
-        .card p.chucvu {
-            font-size: 14px;
-            margin: 5px 0;
-        }
-        .center {
-            margin: 0 auto;
-            margin-top: 30px;
+
+        .item label {
+            display: block;
+            margin-top: 10px;
+            font-size: 18px;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h3>LÃNH ĐẠO UBND TỈNH</h3>
         <?php
-            hienThiCapUBND($conn, 1); // Chủ tịch
-            hienThiCapUBND($conn, 2); // Các Phó Chủ tịch
+            hienThiCapUBND($conn, 1); 
+
         ?>
     </div>
 </body>

@@ -1,33 +1,37 @@
+/* Main layout: 3 cột trái - giữa - phải */
+.main-container {
+    display: grid;
+    grid-template-columns: 5% 65% 30%;
+    grid-template-rows: 100%;
+}
+
+
+/* Lưới danh mục */
 .category-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
   padding: 20px;
-  max-width: 1200px;
-  margin: 0 auto; /* căn giữa khung */
   box-sizing: border-box;
   width: 100%;
 }
 
+/* Breadcrumb container */
 .pathway-category {
-  padding-left: 15px; /* khoảng cách bên trái */
-  padding-right: 15px; /* khoảng cách bên phải */
+  text-align: left;
+  margin: 20px 0;
+  padding-left: 10px; /* hoặc dùng margin-left nếu thích */
+  font-size: 22px;
   box-sizing: border-box;
 }
 
-/* Hoặc nếu bạn muốn căn giữa breadcrumb trong khung chính, bạn có thể dùng margin: */
+/* Breadcrumb style */
 .breadcrumb {
   margin-left: 15px;
   margin-right: 15px;
 }
 
-
-.ModuleWrapper {
-  width: 100%;
-  font-size: 24px;
-  box-sizing: border-box;
-}
-
+/* Item trong danh mục */
 .item-category {
   background-color: #f9f9f9;
   padding: 15px;
@@ -41,28 +45,46 @@
 .item-category:hover {
   transform: translateY(-3px);
   background-color: dodgerblue;
-  
 }
 
+.item-category a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Hình ảnh trong danh mục */
 .item-category img {
   height: 40px;
   margin-bottom: 10px;
 }
 
+/* Tên danh mục */
 .article-info {
   font-weight: bold;
-  font-size: 18px;
+  font-size: 20px;
   color: #333;
 }
 
-/* Responsive: tablet */
+
+/* Responsive: Tablet */
 @media (max-width: 992px) {
+  .main-container {
+    flex-direction: column;
+  }
+
+  .container-left,
+  .container-mid,
+  .container-right {
+    width: 100%;
+  }
+
   .category-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-/* Responsive: mobile */
+/* Responsive: Mobile */
 @media (max-width: 576px) {
   .category-grid {
     grid-template-columns: 1fr;

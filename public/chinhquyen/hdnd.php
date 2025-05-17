@@ -16,7 +16,7 @@ function hienThiCap($conn, $sunghiep) {
     $sql_pho = "SELECT * FROM hdnd WHERE capbac = 2";
     $result_pho = $conn->query($sql_pho);
 
-    echo "<h3> Lãnh đạo Hội đồng nhân dân </h3> ";
+    echo "<h3> LÃNH ĐẠO HỘI ĐỒNG NHÂN DÂN </h3> ";
 
     if ($result_ct->num_rows > 0) {
         echo '<div class="chutich-container">';
@@ -84,7 +84,7 @@ function hienThiCap($conn, $sunghiep) {
     .item label {
         display: block;
         margin-top: 10px;
-        font-size: 16px;
+        font-size: 18px;
     }
     </style>
             <link rel="stylesheet" href="../css/reset.css">

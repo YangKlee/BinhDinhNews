@@ -54,14 +54,14 @@ if ($result_pho->num_rows > 0) {
     
 
     .container {
-        padding: 0 20px; /* tạo khoảng cách 2 bên cho toàn bộ nội dung */
+        padding: 0 20px; 
         box-sizing: border-box;
     }
 
     .container h3 {
         text-align: left;
         margin: 20px 0;
-        padding-left: 10px; /* hoặc dùng margin-left nếu thích */
+        padding-left: 10px; 
         font-size: 22px;
     }
 
@@ -89,7 +89,7 @@ if ($result_pho->num_rows > 0) {
     .item label {
         display: block;
         margin-top: 10px;
-        font-size: 16px;
+        font-size: 18px;
     }
 
 </style>
@@ -98,8 +98,8 @@ if ($result_pho->num_rows > 0) {
 <body>
     <div class="container">
         <?php
-        hienThiCap($conn, donvi: "Lãnh đạo Tỉnh ủy");
-        hienThiCap($conn, donvi: "Ban thường vụ Tỉnh ủy");
+        hienThiCap($conn, donvi: "LÃNH ĐẠO TỈNH ỦY");
+        hienThiCap($conn, donvi: "BAN THƯỜNG VỤ TỈNH ỦY");
         
         ?>
     </div>
