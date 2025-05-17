@@ -1,9 +1,9 @@
 /* Main layout: 3 cột trái - giữa - phải */
-.main-container {
+/* .main-container {
     display: grid;
     grid-template-columns: 5% 65% 30%;
     grid-template-rows: 100%;
-}
+} */
 
 
 /* Lưới danh mục */
@@ -14,6 +14,7 @@
   padding: 20px;
   box-sizing: border-box;
   width: 100%;
+  margin-bottom: 3rem;
 }
 
 /* Breadcrumb container */
@@ -41,9 +42,9 @@
 /* Item trong danh mục */
 .item-category {
   background-color: #f9f9f9;
-  padding: 15px;
+  padding: 1.5rem 15px;
   text-align: center;
-  border-radius: 10px;
+  border-radius: 20px 10px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s ease;
   height: 100%;
@@ -62,29 +63,23 @@
 
 /* Hình ảnh trong danh mục */
 .item-category img {
-  height: 40px;
+  height: 50px;
   margin-bottom: 10px;
 }
 
 /* Tên danh mục */
 .article-info {
   font-weight: bold;
-  font-size: 20px;
+  font-size: 25px;
   color: #333;
 }
 
 
 /* Responsive: Tablet */
 @media (max-width: 992px) {
-  .main-container {
+  /* .main-container {
     flex-direction: column;
-  }
-
-  .container-left,
-  .container-mid,
-  .container-right {
-    width: 100%;
-  }
+  } */
 
   .category-grid {
     grid-template-columns: repeat(2, 1fr);
