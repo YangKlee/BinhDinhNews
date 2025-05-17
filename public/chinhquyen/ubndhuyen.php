@@ -16,7 +16,7 @@ function hienThiDiaPhuong($conn, $diaphuong) {
     $sql_pho = "SELECT * FROM ubnd WHERE diaphuong = '$diaphuong' AND capbac = 2";
     $result_pho = $conn->query($sql_pho);
 
-    echo "<h3> UBND {$diaphuong} </h3> </div>";
+    echo "<h3> UBND {$diaphuong} </h3>";
 
 if ($result_ct->num_rows > 0) {
     echo '<div class="chutich-container">';
@@ -52,45 +52,50 @@ if ($result_pho->num_rows > 0) {
 	<link rel="stylesheet" href="../css/header-style.css">
 <style>
     
-
     .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 40px 20px;
-}
+        padding: 0 20px; /* tạo khoảng cách 2 bên cho toàn bộ nội dung */
+        box-sizing: border-box;
+    }
 
-.chutich-container,
-.pho-container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 30px;
-    margin-bottom: 40px;
-}
+    .container h3 {
+        text-align: left;
+        margin: 20px 0;
+        padding-left: 10px; /* hoặc dùng margin-left nếu thích */
+        font-size: 22px;
+    }
 
-.item {
-    width: 160px;
-    text-align: center;
-}
+    .chutich-container,
+    .pho-container {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 30px;
+        margin-bottom: 40px;
+    }
 
-.item img {
-    width: 100%;
-    height: auto;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
+    .item {
+        width: 160px;
+        text-align: center;
+    }
 
-.item label {
-    display: block;
-    margin-top: 10px;
-    font-size: 14px;
-}
+    .item img {
+        width: 100%;
+        height: auto;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .item label {
+        display: block;
+        margin-top: 10px;
+        font-size: 16px;
+    }
 
 </style>
 
 </head>
 <body>
-    <div class="lanhdao-container">
+    <div class="container">
         <?php
         hienThiDiaPhuong($conn, "TP Quy Nhơn");
         hienThiDiaPhuong($conn, "TX An Nhơn");

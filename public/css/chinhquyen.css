@@ -1,50 +1,70 @@
-.category-image-type-bd {
-    display: flex;
-    flex-direction: column; /* mỗi item sẽ xuống dòng */
-    gap: 12px;
-    background-color: #008CFF;
-    padding: 20px;
-    border-radius: 8px;
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto; /* căn giữa khung */
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.pathway-category {
+  padding-left: 15px; /* khoảng cách bên trái */
+  padding-right: 15px; /* khoảng cách bên phải */
+  box-sizing: border-box;
+}
+
+/* Hoặc nếu bạn muốn căn giữa breadcrumb trong khung chính, bạn có thể dùng margin: */
+.breadcrumb {
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+
+.ModuleWrapper {
+  width: 100%;
+  font-size: 24px;
+  box-sizing: border-box;
 }
 
 .item-category {
-    width: 100%; /* mỗi item chiếm toàn bộ chiều ngang */
-    background-color: #1DA1F2;
-    border-radius: 6px;
-    transition: background-color 0.3s ease;
-    overflow: hidden;
+  background-color: #f9f9f9;
+  padding: 15px;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+  height: 100%;
 }
 
 .item-category:hover {
-    background-color: #0d8ae5;
+  transform: translateY(-3px);
+  background-color: dodgerblue;
+  
 }
 
-.article-img {
-    display: flex;
-    align-items: center;
-    padding: 10px 12px;
-    color: #fff;
-    text-decoration: none;
-}
-
-.article-img:hover {
-    text-decoration: none;
-}
-
-.img-cate {
-    margin-right: 12px;
-    flex-shrink: 0;
-}
-
-.img-cate img {
-    height: 30px;
-    width: auto;
-    display: block;
+.item-category img {
+  height: 40px;
+  margin-bottom: 10px;
 }
 
 .article-info {
-    font-size: 16px;
-    font-weight: 300;
-    line-height: 1.4;
+  font-weight: bold;
+  font-size: 18px;
+  color: #333;
 }
 
+/* Responsive: tablet */
+@media (max-width: 992px) {
+  .category-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Responsive: mobile */
+@media (max-width: 576px) {
+  .category-grid {
+    grid-template-columns: 1fr;
+  }
+}
