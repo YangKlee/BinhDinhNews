@@ -16,11 +16,7 @@ function hienThihiepquan($conn, $coquan) {
     $sql_pho = "SELECT * FROM donvihiepquan WHERE tencoquan = '$coquan' AND capbac = 2";
     $result_pho = $conn->query($sql_pho);
 
-    // Cấp bậc 3 (Trưởng phòng, Phó phòng...)
-    $sql_cap3 = "SELECT * FROM coquanchuyenmon WHERE tencoquan = '$coquan' AND capbac = 3";
-    $result_cap3 = $conn->query($sql_cap3); // SỬA LỖI: Gán vào biến $result_cap3
-
-    echo "<h3>  {$coquan} </h3> </div>";
+    echo "<h3> UBND {$coquan} </h3>";
 
 if ($result_ct->num_rows > 0) {
     echo '<div class="chutich-container">';
@@ -42,7 +38,7 @@ if ($result_pho->num_rows > 0) {
               </div>';
     }
     echo '</div>';
-    }
+}
 }
 ?>
 
@@ -50,58 +46,62 @@ if ($result_pho->num_rows > 0) {
 <html>
 <head>
     <meta charset="UTF-8">
-            <link rel="stylesheet" href="../css/reset.css">
-	<link rel="stylesheet" href="../css/footer-style.css">
-	<link rel="stylesheet" href="../css/header-style.css">
-<style>
-    
-
+    <title>Đơn vị Hiệp quản</title>
+    <style>
     .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 40px 20px;
-}
+        padding: 0 20px; /* tạo khoảng cách 2 bên cho toàn bộ nội dung */
+        box-sizing: border-box;
+    }
 
-.chutich-container,
-.pho-container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 30px;
-    margin-bottom: 40px;
-}
+    .container h3 {
+        text-align: left;
+        margin: 20px 0;
+        padding-left: 10px; /* hoặc dùng margin-left nếu thích */
+        font-size: 22px;
+    }
 
-.item {
-    width: 160px;
-    text-align: center;
-}
+    .chutich-container,
+    .pho-container {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 30px;
+        margin-bottom: 40px;
+    }
 
-.item img {
-    width: 100%;
-    height: auto;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
+    .item {
+        width: 160px;
+        text-align: center;
+    }
 
-.item label {
-    display: block;
-    margin-top: 10px;
-    font-size: 14px;
-}
+    .item img {
+        width: 100%;
+        height: auto;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .item label {
+        display: block;
+        margin-top: 10px;
+        font-size: 18px;
+    }
 
 </style>
-
+    <link rel="stylesheet" href="../css/reset.css">
+	<link rel="stylesheet" href="../css/footer-style.css">
+	<link rel="stylesheet" href="../css/header-style.css">
 </head>
 <body>
-    <div class="lanhdao-container">
+    <div class="container">
         <?php
-        hienThihiepquan($conn, coquan: "Bộ chỉ huy Bộ đội biên phòng tỉnh");
-        hienThihiepquan($conn, coquan: "Bộ chỉ huy Quân sự tỉnh");
-        hienThihiepquan($conn, coquan: "Công an tỉnh");
-        hienThihiepquan($conn, coquan: "Chi cục thống kê tỉnh Bình Định");
-        hienThihiepquan($conn, coquan: "Tòa án nhân dân tỉnh Bình Định");
-        hienThihiepquan($conn, coquan: "Viện kiểm sát nhân dân tỉnh");
-        hienThihiepquan($conn, coquan: "Bảo hiểm xã hội khu vực XXIII");
+        hienThihiepquan($conn, coquan: "BỘ CHỈ HUY BỘ ĐỘI BIÊN PHÒNG TỈNH");
+        hienThihiepquan($conn, coquan: "BỘ CHỈ HUY QUÂN SỰ TỈNH");
+        hienThihiepquan($conn, coquan: "CÔNG AN TỈNH");
+        hienThihiepquan($conn, coquan: "CHI CỤC THỐNG KÊ TỈNH BÌNH ĐỊNH");
+        hienThihiepquan($conn, coquan: "TÒA ÁN NHÂN DÂN TỈNH BÌNH ĐỊNH");
+        hienThihiepquan($conn, coquan: "VIỆN KIỂM SÁT NHÂN DÂN TỈNH");
+        hienThihiepquan($conn, coquan: "BẢO HIỂM XÃ HỘI KHU VỰC XXIII");
         ?>
     </div>
 </body>
