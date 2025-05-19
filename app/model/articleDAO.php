@@ -32,7 +32,8 @@
 
             return $kqua;
         }
-                function addArticleHeader($title, $tag,  $authorID, $authorGuestName ,$catID, $status )
+        
+        function addArticleHeader($title, $tag,  $authorID, $authorGuestName ,$catID, $status )
         {
             $currTime = new DateTime();
             $stringSQLTime = $currTime->format('Y-m-d');

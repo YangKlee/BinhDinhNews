@@ -1,5 +1,4 @@
 <?php
-
     if (session_status() === PHP_SESSION_NONE) {
         session_start();
     }
@@ -32,8 +31,6 @@
 
     }
     else{
-
-        
         $_SESSION['username'] = "khach";
         $_SESSION['role'] = -1;
         $_SESSION['UID'] = null;
