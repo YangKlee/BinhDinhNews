@@ -131,19 +131,35 @@
                         </ul>
                     </li>
 
-                    <li class="parent du-lich"><a href="#"> <i class="fa-solid fa-plane-departure"></i>  Du lịch Bình Định <i class="fa-solid fa-caret-down"></i></a>
+                   
+                    <li class="parent du-lich"><a href="#"><i class="fa-solid fa-plane-departure"></i>Du lịch Bình Định <i class="fa-solid fa-caret-down"></i></a>
+                     
                         <ul class="subnav du-lich">
-                            <li><a href="./dulich.php">Danh lam thắng cảnh</a></li>
+                            <?php
+                                require_once $_SERVER['DOCUMENT_ROOT']."/BinhDinhNews/app/model/dulichDAO.php";
+                                $catDAO3 = new dulichDAO();
+                                $result3 = $catDAO3->getalltheloai();
+                                while($row = mysqli_fetch_array( $result3, MYSQLI_ASSOC)){
+                                    echo '<li><a  href="/BinhDinhNews/public/dulich.php?idcat='.$row['TheLoaiID'].'">'.$row['TenTheLoai'].'</a></li>';
+                                }
+                                mysqli_free_result($result3); 
+
+                            ?>
+    
+                        </ul>
+                          <!--<ul class="subnav du-lich">
+                            <li><a href="/BinhDinhNews/public/dulich.php">Danh lam thắng cảnh</a></li>
                             <li><a href="#">Di tích lịch sử</a></li>
                             <li><a href="#">Khu du lịch</a></li>
                             <li><a href="#">Ẩm thực Bình Định</a></li>
                             <li><a href="#">Bài viết du lịch</a></li>
-                        </ul>
+                        </ul> -->
+
                     </li>
                     <?php
                         if($_SESSION['role'] >= 1)
                         {
-                            echo '<li><a href="/BinhDinhNews/public/admin/index.php">Trang quản lý</a></li>';
+                            echo '<li><a href="./admin/index.php">Trang quản lý</a></li>';
                         }
                     ?>
                     <!-- <li><a href="#">Giới thiệu</a></li> -->
