@@ -137,13 +137,13 @@
                      
                         <ul class="subnav du-lich">
                             <?php
-                                require_once $_SERVER['DOCUMENT_ROOT']."/BinhDinhNews/app/model/dulichDAO.php";
-                                $catDAO3 = new dulichDAO();
-                                $result3 = $catDAO3->getalltheloai();
-                                while($row = mysqli_fetch_array( $result3, MYSQLI_ASSOC)){
-                                    echo '<li><a  href="/BinhDinhNews/public/dulich.php?idcat='.$row['TheLoaiID'].'">'.$row['TenTheLoai'].'</a></li>';
-                                }
-                                mysqli_free_result($result3); 
+                                // require_once $_SERVER['DOCUMENT_ROOT']."/BinhDinhNews/app/model/dulichDAO.php";
+                                // $catDAO3 = new dulichDAO();
+                                // $result3 = $catDAO3->getalltheloai();
+                                // while($row = mysqli_fetch_array( $result3, MYSQLI_ASSOC)){
+                                //     echo '<li><a  href="/BinhDinhNews/public/dulich.php?idcat='.$row['TheLoaiID'].'">'.$row['TenTheLoai'].'</a></li>';
+                                // }
+                                // mysqli_free_result($result3); 
 
                             ?>
     
