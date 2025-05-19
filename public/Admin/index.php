@@ -3,10 +3,10 @@
 
 ?>
 <?php
-    // if($_SESSION['role'] < 1)
-    // {
-    //     header("Location: ./firewall.php");    
-    // }
+    if($_SESSION['role'] < 1)
+    {
+        header("Location: ./firewall.php");    
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">

@@ -40,7 +40,16 @@
         a.card-link {
             text-decoration: none;
             color: inherit;
-        }
+            }
+                .dulich-container h1 {
+                font-size: 2.2rem;
+                margin: 30px 0;
+                text-align: center; /* đổi lại center */
+                font-weight: bold;
+            }
+            
+
+
         .diadiem-elemet{
             flex: 1 1 20%;
             max-width: 20%;
@@ -49,10 +58,11 @@
         .diadiem-elemet h5{
             font-size: 1.5rem;
         }
-        .dulich-container{
-            display: block;
-            margin: 0px 8%;
+            .dulich-container {
+        display: block;
+        padding: 0 8%; /* dùng padding thay vì margin */
         }
+
         .list-dulich-container{
             display: flex;
             justify-content: center;
@@ -71,7 +81,7 @@
 <body>
 
     <div class="dulich-container">
-        <h1 class="mb-4 text-center">Danh lam thắng cảnh Bình Định</h1>
+        <h1>Danh lam thắng cảnh Bình Định</h1>
 
         <div class="list-dulich-container">
             <?php
@@ -111,7 +121,43 @@
                     'image' => './images/imgDanhlamthangcanh/kyco.jpg',
                     'desc'  => 'Vẻ đẹp nguyên sơ quyến rũ với biển xanh, cát trắng, nắng vàng',
                     'link'  => 'chitiet_kyco.php'
-                ]
+                ],
+                 [
+                    'title' => 'Tháp Bánh Ít',
+                    'image' => './images/imgDanhlamthangcanh/thapbanhit.jpg',
+                    'desc'  => 'Các đền tháp đổ nát, um tùm cây cối, xây bằng gạch đỏ với tuổi đời hàng thế kỷ nằm trên sườn đồi và nhìn ra núi.',
+                    'link'  => 'chitiet_thapbanhit.php'
+                 ],
+                 [
+                    'title' => 'Chùa Long Khánh',
+                    'image' => './images/imgDanhlamthangcanh/chualongkhanh.jpg',
+                    'desc'  => 'Trải qua thăng trầm lịch sử, kiến trúc nơi đây đã thay đổi qua nhiều lần tu sửa. Đến nay, chùa vẫn giữ được sự trang nghiêm và là nơi thu hút đông đảo Phật tử',
+                    'link'  => 'chitiet_chualongkhanh.php'
+                 ],
+                  [
+                    'title' => 'Bãi tắm Hoàng Hậu',
+                    'image' => './images/imgDanhlamthangcanh/baitamhoanghau.jpg',
+                    'desc'  => 'Bãi tắm êm dịu với những phiến đá tròn cùng tầm nhìn bao quát bán đảo và làng phong cũ gần đó.',
+                    'link'  => 'chitiet_baitamhoanghau.php'
+                  ],
+                  [
+                    'title' => 'Cù Lao Xanh',
+                    'image' => './images/imgDanhlamthangcanh/culaoxanh.jpg',
+                    'desc'  => 'Biển Cù Lao Xanh nước xanh và sạch, chưa nhiều khách du lịch. Người dân ở đây chủ yếu sống trong làng chài ở bờ nam của đảo.',
+                    'link'  => 'chitiet_culaoxanh.php'
+                  ],
+                  [
+                    'title' => 'Chùa Thập Tháp',
+                    'image' => './images/imgDanhlamthangcanh/chuathapthap.jpg',
+                    'desc'  => 'Chùa Thập Tháp hay còn gọi là Thập Tháp Di Đà Tự, là một ngôi chùa được xây dựng từ thời Lê - Nguyễn vào năm Quý Hợi (1963) ở phía Bắc Thành cổ Đồ Bàn - Kinh đô của nhà nước Chiêm Thành xưa.',
+                    'link'  => 'chitiet_chuathapthap.php'
+                  ],
+                  [
+                    'title' => 'Hòn Sẹo',
+                    'image' => './images/imgDanhlamthangcanh/honseo.jpg',
+                    'desc'  => 'Chưa bị ảnh hưởng nhiều bởi khai thác du lịch, Hòn Sẹo Quy Nhơn vẫn còn sở hữu nguyên vẹn nét đẹp nên thơ, hoang dã mà thiên nhiên ban tặng.',
+                    'link'  => 'chitiet_honseo.php'
+                  ]
                 ];
 
             foreach ($places as $place) {
@@ -129,4 +175,7 @@
         </div>
     </div>
 </body>
+<?php
+    include('../app/views/partials/footer.php');
+    ?>
 </html>
