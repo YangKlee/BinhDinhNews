@@ -8,9 +8,7 @@
     mysqli_select_db( $conn,"BinhDinhNews") or die("Đéo tìm thấy db");
     if(isset($_COOKIE['auth'])){
         if(!isset($_SESSION['username']) ||  !isset($_SESSION['role']) ||  !isset($_SESSION['UID']))
-        {
-
-            
+        { 
             echo $_SESSION['username'];
             $sql = "Select * from UserData where AuthCookies = '".$_COOKIE['auth']."'";
             $result = mysqli_query($conn, $sql);
@@ -31,8 +29,6 @@
 
     }
     else{
-
-        
         $_SESSION['username'] = "khach";
         $_SESSION['role'] = -1;
         $_SESSION['UID'] = null;
