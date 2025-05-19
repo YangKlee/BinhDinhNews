@@ -13,8 +13,7 @@
     <link rel="icon" href="../../images/logo.webp" type="image/x-icon">
     <script src="./scripts/homePage.js"></script>
     <title>Tìm kiếm: 
-        <?php if(isset($_POST['search']) 
-        && $_POST['search'] != "") 
+        <?php if(isset($_POST['search']) && $_POST['search'] != "") 
             echo $_POST['search']; 
         else echo "? Troll à ?"
         ?> </title>
