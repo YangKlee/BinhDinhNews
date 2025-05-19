@@ -1,8 +1,8 @@
 <?php
 // Luôn khởi động session ở đầu file
-// if (session_status() === PHP_SESSION_NONE) {
-//     session_start();
-// }
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 
 // Xóa session OTP và email nếu truy cập trực tiếp vào trang mà không qua form
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
@@ -59,7 +59,7 @@ if (isset($_POST['verify-btn'])) {
         unset($_SESSION['email']);
         unset($_SESSION['otp_sent']);
         unset($_SESSION['otp_expiry']);
-        header('Location: reset-password.php?email=' . urlencode($email));
+        header('Location: login.php?email=' . urlencode($email));
         exit();
     } else {
         echo '<div class="error">Mã OTP không hợp lệ!</div>';
@@ -98,6 +98,7 @@ if (isset($_POST['verify-btn'])) {
             <a href="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>">Thử email khác</a>
             <a href="login.php">Nhớ lại mật khẩu?</a>
         </form>
+        
     <?php endif; ?>
 </body>
 </html>
