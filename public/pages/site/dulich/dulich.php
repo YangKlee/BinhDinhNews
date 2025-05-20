@@ -53,7 +53,7 @@
                     'title' => 'Chùa Thiên Hưng',
                     'image' => '/BinhDinhNews/public/images/imgDanhlamthangcanh/thienhung.jpg',
                     'desc'  => 'Ngôi chùa nổi tiếng linh thiêng và kiến trúc ấn tượng.',
-                    'link'  => '/BinhDinhNews/public/pages/site/dulich/danhlamthangcanh/chitiet_thienhung.php'
+                    'link'  => '/BinhDinhNews/public/pages/site/dulich/danhlamthangcanh/chitiet_chuathienhung.php'
                 ],
                 [
                     'title' => 'Kỳ Co',
