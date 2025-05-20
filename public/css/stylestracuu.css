@@ -1,66 +1,124 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
-
 .container-tracuudiem {
-    background-color: white;
+    flex: 1;
     padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 400px;
+    padding-top: 50px;
+    padding-bottom: 80px;
 }
 
-h1 {
-    text-align: center;
-    margin-bottom: 20px;
-}
 
-form {
+/* Đảm bảo form trông đẹp */
+.container-tracuudiem form {
+    margin-top: 20px;
     display: flex;
     flex-direction: column;
-    
+    align-items: center; 
+    background-color: #ffffff;         
+    padding: 40px 30px;                
+    border: 2px solid #bcdfff;         
+    border-radius: 16px;               
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    max-width: 1000px;                 
+    margin-left: auto;
+    margin-right: auto;                
+}
+.container-tracuudiem h1 {
+    text-align: center;
+    color: #080b0e;
+    font-size: 36px;
+    margin-bottom: 30px;
+    font-weight: bold;
 }
 
-label {
-    margin-bottom: 5px;
+.container-tracuudiem label {
+    margin-bottom: 15px;
+    font-size: 22px;
+    color: #070707;
 }
 
-input {
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+.container-tracuudiem input[type="text"] {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    padding: 16px 20px;
+    border: 2px solid #007bff;
+    border-radius: 12px;
+    transition: all 0.3s ease-in-out;
+    outline: none;
+    width: 300px;
 }
 
-button {
-    padding: 10px;
-    background-color: #12abf3;
-    color: white;
+.container-tracuudiem input[type="text"]::placeholder {
+    font-style: italic;
+    color: #aaa;
+}
+
+.container-tracuudiem input[type="text"]:focus {
+    border-color: #0056b3;
+    box-shadow: 0 0 12px rgba(0, 102, 204, 0.4);
+}
+
+.container-tracuudiem button {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    background-color: #1884c2;
+    color: rgb(9, 8, 8);
+    padding: 14px 30px;
     border: none;
-    border-radius: 4px;
+    border-radius: 12px;
     cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 23px;
 }
 
-button:hover {
-    background-color: #5ebfec;
+.container-tracuudiem button:hover {
+    background-color: #7aa8da;
+    transform: translateY(-2px);
 }
 
 .result {
-    margin-top: 20px;
-    padding: 10px;
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    display: none;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    background-color: #ffffff;
+    border: 1px solid #9fc8f3;
+    border-left: 5px solid #007bff;
+    padding: 25px;
+    border-radius: 10px;
+    font-size: 22px;
+    color: #333;
+    box-shadow: 0 4px 12px rgba(0, 123, 255, 0.1);
+    animation: fadeIn 0.5s ease-in-out forwards;
+    width: 1700px;
 }
+
+.result h2 {
+    margin-top: 0;
+    color: #122c48;
+    font-size: 26px;
+}
+
+.result table {
+    width: 95%;
+    border-collapse: collapse;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    background-color: #f8faff;
+}
+
+.result table th,
+.result table td {
+    border: 1px solid #dee2e6;
+    padding: 12px;
+    text-align: left;
+    font-size: 20px;
+}
+
+.result table th {
+    background-color: #e3f0fc;
+    color: #003b70;
+}
+
+.result p {
+    margin-top: 20px;
+    font-size: 22px;
+}
+

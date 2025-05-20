@@ -148,13 +148,13 @@
                             ?>
     
                         </ul>
-                          <!--<ul class="subnav du-lich">
+                          <ul class="subnav du-lich">
                             <li><a href="/BinhDinhNews/public/dulich.php">Danh lam thắng cảnh</a></li>
                             <li><a href="#">Di tích lịch sử</a></li>
                             <li><a href="#">Khu du lịch</a></li>
                             <li><a href="#">Ẩm thực Bình Định</a></li>
                             <li><a href="#">Bài viết du lịch</a></li>
-                        </ul> -->
+                        </ul>
 
                     </li>
                     <?php
