@@ -4,11 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Du lịch Bình Định</title>
-        <link rel="stylesheet" href="./css/footer-style.css">
-        <link rel="stylesheet" href="./css/reset.css">
+        <link rel="stylesheet" href="../../../../public/css/footer-style.css">
+        <link rel="stylesheet" href="../../../../public/css/reset.css">
     <script src="https://kit.fontawesome.com/8f5e4d2946.js" crossorigin="anonymous"></script>
-    <link rel="icon" href="./images/logo.webp" type="image/x-icon">
-    <link rel="stylesheet" href="./css/header-style.css">
+    <link rel="icon" href="../../../../public/images/logo.webp" type="image/x-icon">
+    <link rel="stylesheet" href="../../../../public/css/header-style.css">
     <style>
 
 
@@ -75,9 +75,8 @@
 
 <body>
 </head>
-    <?php
-    include('../app/views/partials/header.php');
-    ?>
+    <?php include($_SERVER['DOCUMENT_ROOT'].'/BinhDinhNews/app/views/partials/header.php'); ?>
+
 <body>
 
     <div class="dulich-container">
@@ -88,75 +87,75 @@
             $places = [
                 [
                     'title' => 'Hòn Khô',
-                    'image' => './images/imgDanhlamthangcanh/honkho.jpg',
+                    'image' => '/BinhDinhNews/public/images/imgDanhlamthangcanh/honkho.jpg',
                     'desc'  => 'Khung cảnh đẹp với những con nước sóng vỗ vào bờ.',
-                    'link'  => 'chitiet_honkho.php'
+                    'link'  => '/BinhDinhNews/public/pages/site/dulich/danhlamthangcanh/chitiet_honkho.php'
                 ],
                 [
                     'title' => 'Eo Gió',
-                    'image' => './images/imgDanhlamthangcanh/eogio.jpg',
+                    'image' => '/BinhDinhNews/public/images/imgDanhlamthangcanh/eogio.jpg',
                     'desc'  => 'Nơi lý tưởng để ngắm hoàng hôn và biển cả.',
-                    'link'  => 'chitiet_eogio.php'
+                    'link'  => '/BinhDinhNews/public/pages/site/dulich/danhlamthangcanh/chitiet_eogio.php'
                 ],
                 [
                     'title' => 'Hầm Hô',
-                    'image' => './images/imgDanhlamthangcanh/hamho.jpg',
+                    'image' => '/BinhDinhNews/public/images/imgDanhlamthangcanh/hamho.jpg',
                     'desc'  => 'Thắng cảnh nổi bật với suối đá và rừng xanh.',
-                    'link'  => 'chitiet_hamho.php'
+                    'link'  => '/BinhDinhNews/public/pages/site/dulich/danhlamthangcanh/chitiet_hamho.php'
                 ],
                 [
                     'title' => 'Bảo tàng Quang Trung',
-                    'image' => './images/imgDanhlamthangcanh/baotang.jpg',
+                    'image' => '/BinhDinhNews/public/images/imgDanhlamthangcanh/baotang.jpg',
                     'desc'  => 'Nơi lưu giữ hiện vật về vua Quang Trung và phong trào Tây Sơn.',
-                    'link'  => 'chitiet_baotang.php'
+                    'link'  => '/BinhDinhNews/public/pages/site/dulich/danhlamthangcanh/chitiet_baotang.php'
                 ],
                 [
                     'title' => 'Chùa Thiên Hưng',
-                    'image' => './images/imgDanhlamthangcanh/thienhung.jpg',
+                    'image' => '/BinhDinhNews/public/images/imgDanhlamthangcanh/thienhung.jpg',
                     'desc'  => 'Ngôi chùa nổi tiếng linh thiêng và kiến trúc ấn tượng.',
-                    'link'  => 'chitiet_thienhung.php'
+                    'link'  => '/BinhDinhNews/public/pages/site/dulich/danhlamthangcanh/chitiet_thienhung.php'
                 ],
                 [
                     'title' => 'Kỳ Co',
-                    'image' => './images/imgDanhlamthangcanh/kyco.jpg',
+                    'image' => '/BinhDinhNews/public/images/imgDanhlamthangcanh/kyco.jpg',
                     'desc'  => 'Vẻ đẹp nguyên sơ quyến rũ với biển xanh, cát trắng, nắng vàng',
-                    'link'  => 'chitiet_kyco.php'
+                    'link'  => '/BinhDinhNews/public/pages/site/dulich/danhlamthangcanh/chitiet_kyco.php'
                 ],
                  [
                     'title' => 'Tháp Bánh Ít',
-                    'image' => './images/imgDanhlamthangcanh/thapbanhit.jpg',
+                    'image' => '/BinhDinhNews/public/images/imgDanhlamthangcanh/thapbanhit.jpg',
                     'desc'  => 'Các đền tháp đổ nát, um tùm cây cối, xây bằng gạch đỏ với tuổi đời hàng thế kỷ nằm trên sườn đồi và nhìn ra núi.',
-                    'link'  => 'chitiet_thapbanhit.php'
+                    'link'  => '/BinhDinhNews/public/pages/site/dulich/danhlamthangcanh/chitiet_thapbanhit.php'
                  ],
                  [
                     'title' => 'Chùa Long Khánh',
-                    'image' => './images/imgDanhlamthangcanh/chualongkhanh.jpg',
+                    'image' => '/BinhDinhNews/public/images/imgDanhlamthangcanh/chualongkhanh.jpg',
                     'desc'  => 'Trải qua thăng trầm lịch sử, kiến trúc nơi đây đã thay đổi qua nhiều lần tu sửa. Đến nay, chùa vẫn giữ được sự trang nghiêm và là nơi thu hút đông đảo Phật tử',
-                    'link'  => 'chitiet_chualongkhanh.php'
+                    'link'  => '/BinhDinhNews/public/pages/site/dulich/danhlamthangcanh/chitiet_chualongkhanh.php'
                  ],
                   [
                     'title' => 'Bãi tắm Hoàng Hậu',
-                    'image' => './images/imgDanhlamthangcanh/baitamhoanghau.jpg',
+                    'image' => '/BinhDinhNews/public/images/imgDanhlamthangcanh/baitamhoanghau.jpg',
                     'desc'  => 'Bãi tắm êm dịu với những phiến đá tròn cùng tầm nhìn bao quát bán đảo và làng phong cũ gần đó.',
-                    'link'  => 'chitiet_baitamhoanghau.php'
+                    'link'  => '/BinhDinhNews/public/pages/site/dulich/danhlamthangcanh/chitiet_baitamhoanghau.php'
                   ],
                   [
                     'title' => 'Cù Lao Xanh',
-                    'image' => './images/imgDanhlamthangcanh/culaoxanh.jpg',
+                    'image' => '/BinhDinhNews/public/images/imgDanhlamthangcanh/culaoxanh.jpg',
                     'desc'  => 'Biển Cù Lao Xanh nước xanh và sạch, chưa nhiều khách du lịch. Người dân ở đây chủ yếu sống trong làng chài ở bờ nam của đảo.',
-                    'link'  => 'chitiet_culaoxanh.php'
+                    'link'  => '/BinhDinhNews/public/pages/site/dulich/danhlamthangcanh/chitiet_culaoxanh.php'
                   ],
                   [
                     'title' => 'Chùa Thập Tháp',
-                    'image' => './images/imgDanhlamthangcanh/chuathapthap.jpg',
+                    'image' => '/BinhDinhNews/public/images/imgDanhlamthangcanh/chuathapthap.jpg',
                     'desc'  => 'Chùa Thập Tháp hay còn gọi là Thập Tháp Di Đà Tự, là một ngôi chùa được xây dựng từ thời Lê - Nguyễn vào năm Quý Hợi (1963) ở phía Bắc Thành cổ Đồ Bàn - Kinh đô của nhà nước Chiêm Thành xưa.',
-                    'link'  => 'chitiet_chuathapthap.php'
+                    'link'  => '/BinhDinhNews/public/pages/site/dulich/danhlamthangcanh/chitiet_chuathapthap.php'
                   ],
                   [
                     'title' => 'Hòn Sẹo',
-                    'image' => './images/imgDanhlamthangcanh/honseo.jpg',
+                    'image' => '/BinhDinhNews/public/images/imgDanhlamthangcanh/honseo.jpg',
                     'desc'  => 'Chưa bị ảnh hưởng nhiều bởi khai thác du lịch, Hòn Sẹo Quy Nhơn vẫn còn sở hữu nguyên vẹn nét đẹp nên thơ, hoang dã mà thiên nhiên ban tặng.',
-                    'link'  => 'chitiet_honseo.php'
+                    'link'  => '/BinhDinhNews/public/pages/site/dulich/danhlamthangcanh/chitiet_honseo.php'
                   ]
                 ];
 
@@ -175,7 +174,6 @@
         </div>
     </div>
 </body>
-<?php
-    include('../app/views/partials/footer.php');
-    ?>
+<?php include($_SERVER['DOCUMENT_ROOT'].'/BinhDinhNews/app/views/partials/footer.php'); ?>
+
 </html>
