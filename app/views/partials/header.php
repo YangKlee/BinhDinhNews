@@ -119,16 +119,16 @@
                         </ul>
                     </li>
 
-                    <li class="parent chinh-quyen"><a href="/BinhDinhNews/public/chinhquyenindex.php"> <i class="fa-solid fa-circle-nodes"></i> Chính quyền <i class="fa-solid fa-caret-down"></i></a>
+                    <li class="parent chinh-quyen"><a href="/BinhDinhNews/public/pages/site/chinhquyen/chinhquyenindex.php"> <i class="fa-solid fa-circle-nodes"></i> Chính quyền <i class="fa-solid fa-caret-down"></i></a>
                         <ul class="subnav chinh-quyen">
-                            <li><a href="/BinhDinhNews/public/chinhquyen/tinhuy.php">Tỉnh ủy</a></li>
-                            <li><a href="/BinhDinhNews/public/chinhquyen/hdnd.php">HDND Tỉnh</a></li>
-                            <li><a href="/BinhDinhNews/public/chinhquyen/ubnd.php">UBND Tỉnh</a></li>
-                            <li><a href="/BinhDinhNews/public/chinhquyen/ubmttqvn.php">UBMTTQVN Tỉnh</a></li>
-                            <li><a href="/BinhDinhNews/public/chinhquyen/ubndhuyen.php">UBND Các huyện, thành phố</a></li>
-                            <li><a href="/BinhDinhNews/public/chinhquyen/coquanchuyenmon.php">Cơ quan chuyên môn</a></li>
-                            <li><a href="/BinhDinhNews/public/chinhquyen/sunghiep.php">Sự nghiệp</a></li>
-                            <li><a href="/BinhDinhNews/public/chinhquyen/hiepquan.php">Hiệp quản</a></li>
+                            <li><a href="/BinhDinhNews/public/pages/site/chinhquyen/tinhuy.php">Tỉnh ủy</a></li>
+                            <li><a href="/BinhDinhNews/public/pages/site/chinhquyen/hdnd.php">HDND Tỉnh</a></li>
+                            <li><a href="/BinhDinhNews/public/pages/site/chinhquyen/ubnd.php">UBND Tỉnh</a></li>
+                            <li><a href="/BinhDinhNews/public/pages/site/chinhquyen/ubmttqvn.php">UBMTTQVN Tỉnh</a></li>
+                            <li><a href="/BinhDinhNews/public/pages/site/chinhquyen/ubndhuyen.php">UBND Các huyện, thành phố</a></li>
+                            <li><a href="/BinhDinhNews/public/pages/site/chinhquyen/coquanchuyenmon.php">Cơ quan chuyên môn</a></li>
+                            <li><a href="/BinhDinhNews/public/pages/site/chinhquyen/sunghiep.php">Sự nghiệp</a></li>
+                            <li><a href="/BinhDinhNews/public/pages/site/chinhquyen/hiepquan.php">Hiệp quản</a></li>
                         </ul>
                     </li>
 
