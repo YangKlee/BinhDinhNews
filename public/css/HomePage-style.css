@@ -52,7 +52,7 @@
     display: block;
     left: 0px;
     top: 0px;
-    height: 600px;
+    min-height: 600px;
 }
 .hot-article-container:hover .btn {
     display: block;
@@ -389,3 +389,47 @@ article:hover {
         display: none;
     }
 }
+
+/* Nhóm định dạng cho các hình ảnh row 4 */
+.slideshow-container {
+    position: relative;
+    width: 100%;
+    max-width: 550px;
+    margin: 0px 10px;
+    overflow: hidden;
+}
+
+.slide {
+    display: none;
+    width: 100%;
+}
+
+.slide img {
+    width: 100%;
+    display: block;
+}
+
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.4);
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 3px;
+}
+
+.prev { left: 10px; }
+
+.next { right: 10px; }
+
+.prev:hover, .next:hover {
+    background: rgba(0,0,0,0.7);
+}
+
+
+
+
