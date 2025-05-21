@@ -37,6 +37,7 @@ form * {
     border: none;
 }
 form h3 {
+    margin: 1.2rem 0;
     font-size: 32px;
     font-weight: 500;
     line-height: 42px;
@@ -46,10 +47,10 @@ form h3 {
 /* Nhóm định dạng cho nhãn và trường nhập liệu */
 label {
     display: block;
+    width: 100%;
     margin-top: 30px;
     font-size: 16px;
     font-weight: 500;
-    margin-left: -10px;
 }
 input {
     display: block;
@@ -61,14 +62,14 @@ input {
     margin-top: 8px;
     font-size: 14px;
     font-weight: 300;
-    margin-left: -10px;
+    box-sizing: border-box;
 }
 ::placeholder {
     color: #ffffff;
 }
 
 /* Nhóm định dạng cho nút đăng nhập */
-#loginbtn {
+#login-btn {
     margin-top: 50px;
     width: 100%;
     background-color: #ffffff;
@@ -78,6 +79,13 @@ input {
     font-weight: 600;
     border-radius: 5px;
     cursor: pointer;
+}
+
+#login-btn:hover{
+    background-color: #080710;
+    color: #ffffff;
+    transition: all 0.3s ease;
+    transform: scale(1.02);
 }
 
 /* Nhóm định dạng cho liên kết trong form */
@@ -109,5 +117,19 @@ form a:hover {
 .message{
     font-size: 0.9rem;
     color: red;
-
 }
+
+    /* @media (max-width: 480px) {
+        form {
+            width: 90%;
+            padding: 20px;
+        }
+        form h3 {
+            font-size: 24px;
+            line-height: 32px;
+        }
+        #login-btn {
+            padding: 10px 0;
+            font-size: 15px;
+        }
+    } */

@@ -1,5 +1,5 @@
 <div class="chu-tich">
-    <img src="/BinhDinhNews/public/images/image.jpg" alt="">
+    <img src="/BinhDinhNews/public/images/eheee.jpg" alt="">
     <div class="chu-tich chu-tich-info">
         <p class="title">Chủ tịch hội đồng tỉnh Bình Định</p>
         <p class="name">Bà Nguyễn Khánh Dương</p>
@@ -9,7 +9,7 @@
 <div class="right-title tracuu-title"> TRA CỨU</div>
     <ul class="right-list tra-cuu">
         <li><a href="https://binhdinh.gov.vn/van-ban-chi-dao-dieu-hanh"> <i class="fa-solid fa-caret-right" style="color: #74C0FC;"></i> Văn bản hành chính</a></li>
-        <li><a href="..\app\views\tracuudiemthi.php"> <i class="fa-solid fa-caret-right" style="color: #74C0FC;"></i> Điểm thi THPTQG 2025</a></li>
+        <li><a href="../app/views/tracuudiemthi/tracuudiemthi.php"> <i class="fa-solid fa-caret-right" style="color: #74C0FC;"></i> Điểm thi THPTQG 2024</a></li>
         <li><a href="https://www.csgt.vn/tra-cuu-phuong-tien-vi-pham.html"> <i class="fa-solid fa-caret-right" style="color: #74C0FC;"></i>Phạt nguội ô tô, xe máy</a></li>
         <li><a href="https://tracuunnt.gdt.gov.vn/tcnnt/mstcn.jsp"><i class="fa-solid fa-caret-right" style="color: #74C0FC;"></i>Thông tin doanh nghiệp, mã số thuế</a></li>
         <li><a href="https://baohiemxahoi.gov.vn/tracuu/Pages"><i class="fa-solid fa-caret-right" style="color: #74C0FC;"></i>Tra cứu thông tin về BHYT</a></li>
