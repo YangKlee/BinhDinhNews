@@ -395,7 +395,7 @@ article:hover {
     position: relative;
     top: 0;
     width: 100%;
-    max-width: 550px;
+    max-width: 700px;
     margin: 0px 10px;
     overflow: hidden;
 }
@@ -431,6 +431,24 @@ article:hover {
     background: rgba(0,0,0,0.7);
 }
 
+.scroll-container {
+    scrollbar-width: thin;
+    scrollbar-color: #ccc #f0f0f0;
+    max-height: 466px; 
+    overflow-y: auto; 
+    padding: 5px;
+}
 
+.scroll-img {
+    width: 100%; 
+    margin-bottom: 10px;
+}
+
+.line-four-content-warpper {
+    display: flex;
+    overflow-x: auto;
+    margin-top: 10px;
+    
+}
 
 
