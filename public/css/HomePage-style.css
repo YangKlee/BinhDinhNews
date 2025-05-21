@@ -114,7 +114,7 @@
     padding: 0px 5px;
     display: grid;
     grid-template-columns: calc(100% - 10px);
-    grid-template-rows: auto auto auto auto 100px;
+    grid-template-rows: auto auto auto auto auto;
     column-gap: 10px;
 }
 .main-container {
@@ -393,6 +393,7 @@ article:hover {
 /* Nhóm định dạng cho các hình ảnh row 4 */
 .slideshow-container {
     position: relative;
+    top: 0;
     width: 100%;
     max-width: 550px;
     margin: 0px 10px;
