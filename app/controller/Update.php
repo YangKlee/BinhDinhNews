@@ -5,6 +5,7 @@
     {
         $user = new UserDAO();
         $conn = $user->getConnection();
+        $sql = "UPDATE `userdata` SET `Password`='" . $newPassword . "' WHERE `Email`='" . $email . "'";
         
     }
 ?>

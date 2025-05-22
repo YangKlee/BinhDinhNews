@@ -30,7 +30,7 @@
                 
                 if($userData['ROLE'] == 0) // nhảy sang trang người dùng
                 {
-                    header("Location: ../");
+                    header("Location: ../../index.php");
                     exit();
                 }
                 else if($userData['ROLE'] == 1) // nhảy sang trang nhà báo
@@ -44,7 +44,7 @@
                     exit();
                 }
 
-                } 
+            } 
 
             else
             {

@@ -72,6 +72,7 @@
              mysqli_close($conn);
              return false;
         }
+        
         function updateUserPassword($uid, $newPassword)
         {
 
