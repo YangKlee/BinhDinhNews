@@ -63,7 +63,7 @@
                     <a href="/BinhDinhNews/public/pages/login-signin-pass/signin.php"> <button type="button" id="btn-res"> Đăng ký </button></a>
                     </div>
                     <div class="header userinfo-phone">
-                        <button><img src="'.!empty($result['user_img']) ? "/BinhDinhNews/public/images/userAvatar/". $result['user_img'] : "/BinhDinhNews/public/images/user.png".'" alt=""></button>
+                        <button><img src="/BinhDinhNews/public/images/user.png" alt=""></button>
                         <div class="user-phone-menu">
                             <ul>
                                 <li>Đăng nhập</li>
