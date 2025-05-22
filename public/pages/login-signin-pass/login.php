@@ -27,10 +27,10 @@
                 $sql = "Update UserData set AuthCookies = '".$cookiesHash."' where UserID = ".$userData['UserID']."";
                 mysqli_query($coon, $sql);
                 session_destroy();
-
+                
                 if($userData['ROLE'] == 0) // nhảy sang trang người dùng
                 {
-                    header("Location: ../../index.php");
+                    header("Location: ../");
                     exit();
                 }
                 else if($userData['ROLE'] == 1) // nhảy sang trang nhà báo
@@ -38,7 +38,7 @@
                     header("Location: ../../admin/index.php");
                     exit();
                 }
-                else if($userData['ROLE' == 2])
+                else if($userData['ROLE']== 2)
                 {
                     header("Location: ../../Admin/index.php");
                     exit();
