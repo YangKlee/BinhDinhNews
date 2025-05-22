@@ -401,7 +401,7 @@ article:hover {
 }
 
 .slide {
-    display: none;
+    display: block;
     width: 100%;
 }
 
@@ -432,6 +432,7 @@ article:hover {
 }
 
 .scroll-container {
+
     scrollbar-width: thin;
     scrollbar-color: #ccc #f0f0f0;
     max-height: 466px; 
@@ -441,11 +442,15 @@ article:hover {
 
 .scroll-img {
     width: 100%; 
+    
     margin-bottom: 10px;
 }
 
 .line-four-content-warpper {
-    display: flex;
+    width: 100%;
+    /* display: flex; */
+    display: grid;
+    grid-template-columns: 70% 30%;
     overflow-x: auto;
     margin-top: 10px;
     

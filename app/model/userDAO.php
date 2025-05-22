@@ -1,5 +1,5 @@
 <?php
-    require_once '../app/config/database.php';
+    require_once $_SERVER['DOCUMENT_ROOT'].'/BinhDinhNews/app/config/database.php';
 
     class UserDAO{
         
@@ -17,6 +17,34 @@
             mysqli_close($conn);
             return $data;
             
+        }
+        function getAuthorInfo($uid)
+        {
+            $conn = $this->getConnection();
+            $sql = "Select * from UserData where UserID = " . $uid. "";
+            $result = mysqli_query($conn, $sql);
+            $data = mysqli_fetch_assoc($result);
+            mysqli_close($conn);
+            return $data;
+        }
+        function updateAuthorInfo($uid, $fullname, $sdt,$email , $cccd, $adias, $organ)
+        {
+            $conn = $this->getConnection();
+            $sql = "UPDATE `userdata` 
+            SET `Email`='".$email."',`FullName`='".$fullname."',`Phone`='".$sdt."',
+            `Alias`='".$adias."',`Organization`='".$organ."',
+            `CCCD`='".$cccd."'
+             WHERE `UserID`='".$uid."'";
+             if(mysqli_query($conn, $sql))
+             {
+                return true;
+             }
+             return false;
+
+        }
+        function updateUserPassword($uid, $newPassword)
+        {
+
         }
     }
 

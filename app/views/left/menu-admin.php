@@ -18,10 +18,18 @@
                     <a href="../index.php">TRANG CHỦ</a>
                 </li>
                 <li>
-                    <a href="">THÔNG TIN CÁ NHÂN</a>
+                    <a href="./userInfo.php">THÔNG TIN CÁ NHÂN</a>
                 </li>
+                <?php 
+                    if($_SESSION['role'] == 2)
+                    {
+                                    echo '                <li>
+                                <a href="">QUẢN LÝ NHÀ BÁO</a>
+                            </li>';
+                    }                
+                ?>
                 <li class="li-parent article">
-                    <a for="">BÀI BÁO CỦA TÔI</a>
+                    <a for="">QUẢN LÝ BÀI BÁO</a>
                     <ul class="li-child article">
                         <li><a href="./listArticleAdmin.php">Danh sách bài báo</a></li>
                         <li><a href="./newArticle.php">Thêm bài báo</a></li>

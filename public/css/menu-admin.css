@@ -2,10 +2,11 @@
     --main-color: #213448;
 }
 .menu-container{
+    position: fixed;
+    display: block;
     background-color: var(--main-color);
     width: 20%;
     height: 100%;
-    position: fixed; 
     font-weight: bold;
 }
 ul li{
