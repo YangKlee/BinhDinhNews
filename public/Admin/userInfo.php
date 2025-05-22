@@ -12,9 +12,25 @@
     if($_SERVER['REQUEST_METHOD'] == "POST")
     {
         require_once $_SERVER['DOCUMENT_ROOT'].'/BinhDinhNews/app/model/userDAO.php';
-        
+        require_once $_SERVER['DOCUMENT_ROOT'].'/BinhDinhNews/app/controller/Upload.php';
         $userDAO = new UserDAO();
-        if(isset($_SESSION['UID']) && $userDAO->updateAuthorInfo($_SESSION['UID'], $_POST['fullname_tx'], $_POST['phone_tx'], $_POST['email_tx'], $_POST['cccd_tx'], $_POST['adias_tx'], $_POST['organ_tx'])){
+        $fileUpload = new Upload();
+        if(isset($_FILES['avatar_img']) && !empty($_FILES['avatar_img']))
+        {
+            $filenameDir =  $fileUpload->UploadImageUserAvatar($_SESSION['UID'], $_FILES['avatar_img']);
+            $updateImageStatus = $userDAO->updateAuthorAvatar($_SESSION['UID'], $filenameDir);
+        }
+        else{
+            $updateImageStatus= true;
+        }
+
+        $updateInfoStatus = $userDAO->updateAuthorInfo($_SESSION['UID'],
+         $_POST['fullname_tx'], $_POST['phone_tx'], 
+         $_POST['email_tx'], $_POST['cccd_tx'], 
+         $_POST['adias_tx'], $_POST['organ_tx']);
+        
+        
+        if($updateImageStatus && $updateInfoStatus){
                     echo '    <script>
                 alert("Cập nhật thành công")
             </script>';
@@ -58,7 +74,7 @@
                     exit();
                 }           
             ?>
-            <form action="#" method="post" class="form-user-info">
+            <form action="#" method="post" class="form-user-info" enctype="multipart/form-data">
                 <div class="user-name-warpper">
                     <label for="">Username: </label>
                     <input type="text" class="txb txb-username" type="text" name="username_tx"  id="username_txb" value="<?php echo $result['UserName'] ?>">
@@ -83,9 +99,14 @@
                     <label for="">Bí danh (tênhiển thị khi đăng bài): </label>
                     <input  type="text" class="txb txb-adias" name="adias_tx" id="" value="<?php echo $result['Alias'] ?>">
                 </div>
-                <div class="organ-adias">
+                <div class="organ-warpper">
                     <label for="">Tổ chức: </label>
-                    <input class="txb txb-organ" name="organ_tx" id="" value="<?php echo $result['Organization'] ?>">
+                    <input type="text" class="txb txb-organ" name="organ_tx" id="" value="<?php echo $result['Organization'] ?>">
+                </div>
+                <div class="avatar-warpper">
+                    <label for="">Ảnh đại diện: </label>
+                    <img src="<?php echo !empty($result['user_img']) ? "/BinhDinhNews/public/images/userAvatar/". $result['user_img'] : "/BinhDinhNews/public/images/user.png"; ?>" alt="Ảnh đại diện">
+                    <input type="file" class="txb txb-avatar" name="avatar_img" id="" >
                 </div>
                 <button type="button" id="edit_btn">Sửa thông tin</button>
                 <input type="submit" name="btn-submit" id="submit_btn" value="Cập nhật thông tin">

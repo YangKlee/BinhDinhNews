@@ -1,10 +1,16 @@
 <?php
-    require "../../app/controller/loadsession.php"
-
+    require "../../app/controller/loadsession.php";
+                if(isset($_SESSION['UID']))
+                {
+                    require_once $_SERVER['DOCUMENT_ROOT'].'/BinhDinhNews/app/model/userDAO.php';
+                    $userDAO = new UserDAO();
+                    $result = $userDAO->getAuthorInfo($_SESSION['UID']);
+                    
+                } 
 ?>
 <div class="menu-container">
     <div class="user-info-container">
-                <img src="../images/user.png" alt="">
+                <img  src="<?php echo !empty($result['user_img']) ? "/BinhDinhNews/public/images/userAvatar/". $result['user_img'] : "/BinhDinhNews/public/images/user.png"?>"  alt="">
                 <h3 class="username-tx"><?php echo $_SESSION['username'] ?>
                 </h3>
 

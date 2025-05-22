@@ -31,16 +31,36 @@
         {
             $conn = $this->getConnection();
             $sql = "UPDATE `userdata` 
-            SET `Email`='".$email."',`FullName`='".$fullname."',`Phone`='".$sdt."',
-            `Alias`='".$adias."',`Organization`='".$organ."',
-            `CCCD`='".$cccd."'
+                    SET `Email`='" . $email . "',
+                        `FullName`='" . $fullname . "',
+                        `Phone`='" . $sdt . "',
+                        `Alias`='" . $adias . "',
+                        `Organization`='" . $organ . "',
+                        `CCCD`='" . $cccd . "'
+                    WHERE `UserID`='" . $uid . "'";
+             if(mysqli_query($conn, $sql))
+             {
+                mysqli_close($conn);
+                return true;
+             }
+             mysqli_close($conn);
+             return false;
+             
+
+        }
+        function updateAuthorAvatar($uid, $img)
+        {
+            $conn = $this->getConnection();
+            $sql = "UPDATE `userdata` 
+            SET `user_img` = '".$img."'
              WHERE `UserID`='".$uid."'";
              if(mysqli_query($conn, $sql))
              {
+                mysqli_close($conn);
                 return true;
              }
+             mysqli_close($conn);
              return false;
-
         }
         function updateUserPassword($uid, $newPassword)
         {
