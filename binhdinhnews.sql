@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1:3306
--- Thời gian đã tạo: Th5 16, 2025 lúc 12:26 PM
+-- Thời gian đã tạo: Th5 22, 2025 lúc 05:44 AM
 -- Phiên bản máy phục vụ: 9.1.0
 -- Phiên bản PHP: 8.3.14
 
@@ -42,7 +42,7 @@ CREATE TABLE IF NOT EXISTS `article` (
   PRIMARY KEY (`ArticleID`),
   KEY `CategoryID` (`CategoryID`),
   KEY `AuthorID` (`AuthorID`)
-) ENGINE=InnoDB AUTO_INCREMENT=15739 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=15741 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `article`
@@ -117,24 +117,6 @@ INSERT INTO `article` (`ArticleID`, `Time_modify`, `AuthorID`, `AuthorGuestName`
 (68, '2025-02-24 10:34:00', NULL, 'VĂN LỰC', 6, 'Công tác đo đạc, lập bản đồ địa chính: Góp phần nâng cao hiệu quả quản lý nhà nước về đất đai', 'quản lý nhà nước', 'anhbia68.jpg', '1-68.jpg', 1),
 (69, '2025-02-09 23:29:00', NULL, 'HẢI YẾN', 6, 'Công ty CP công nghiệp KAMADO: Nỗ lực đầu tư, đảm bảo sản xuất liên tục', 'đầu tư| sản xuất liên tục', 'anhbia69.jpg', '1-69.jpg', 1),
 (70, '2025-04-13 22:19:00', NULL, 'TRỌNG LỢI', 6, 'Dược liệu quý “bén rễ” vùng núi cao An Toàn', 'dược liệu quý| xuất khẩu dược liệu sạch', 'anhbia70.jpg', '1-70.jpg', 1);
-
--- --------------------------------------------------------
-
---
--- Cấu trúc bảng cho bảng `authordata`
---
-
-DROP TABLE IF EXISTS `authordata`;
-CREATE TABLE IF NOT EXISTS `authordata` (
-  `AuthorID` int NOT NULL,
-  `CCCD` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_vietnamese_ci DEFAULT NULL,
-  `FullName` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_vietnamese_ci NOT NULL,
-  `Phones` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_vietnamese_ci DEFAULT NULL,
-  `Alias` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_vietnamese_ci DEFAULT NULL,
-  `Organzation` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_vietnamese_ci DEFAULT NULL,
-  `NumOfAricle` int DEFAULT '0',
-  PRIMARY KEY (`AuthorID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
 
 -- --------------------------------------------------------
 
@@ -803,7 +785,13 @@ CREATE TABLE IF NOT EXISTS `userdata` (
   `UserName` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_vietnamese_ci NOT NULL,
   `PassWord` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_vietnamese_ci DEFAULT NULL,
   `AuthCookies` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_vietnamese_ci DEFAULT NULL,
+  `user_img` varchar(255) COLLATE utf8mb4_vietnamese_ci DEFAULT NULL,
   `Email` varchar(50) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL,
+  `FullName` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_vietnamese_ci DEFAULT NULL,
+  `Phone` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_vietnamese_ci DEFAULT NULL,
+  `Alias` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_vietnamese_ci DEFAULT NULL,
+  `Organization` varchar(266) CHARACTER SET utf8mb4 COLLATE utf8mb4_vietnamese_ci DEFAULT NULL,
+  `CCCD` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_vietnamese_ci DEFAULT NULL,
   `ROLE` int NOT NULL,
   PRIMARY KEY (`UserID`),
   UNIQUE KEY `ditmemay` (`UserName`)
@@ -813,14 +801,14 @@ CREATE TABLE IF NOT EXISTS `userdata` (
 -- Đang đổ dữ liệu cho bảng `userdata`
 --
 
-INSERT INTO `userdata` (`UserID`, `UserName`, `PassWord`, `AuthCookies`, `Email`, `ROLE`) VALUES
-(6, 'YangKlee', '4f231459ddf38bcaa618bf72d7b752eb848e53321fd747b1678417aa55dd033b', '713e21d09b1db2ad67afe62287c64a0d1d59554bf0bda0782e57fd70aa01c2bd', 'khanhduong18072005@gmail.com', 1),
-(7, 'Haru', 'a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3', 'deb77aa6825d7fdfd1fac4f9415acb90b643c5d94a432df681a8da7028fcf75b', '111', 0),
-(8, 'trucluong837@gmail.com', '355b1bbfc96725cdce8f4a2708fda310a80e6d13315aec4e5eed2a75fe8032ce', '83413af552e380c701436ac160b26b2da20c58e2bf9288e02b75f965b620ccce', 'trucluong837@gmail.com', 0),
-(9, 'Yang', '9589262630f775d921bef5b9b2d36fa40f91afebeab887deefc721ff3c787b2c', '67067134e579835a666fbda6489da714e9688b3de9b8b61681a194ea252a0bd7', 'nguyennambao055@gmail.com', 0),
-(10, 'xxx', 'cd2eb0837c9b4c962c22d2ff8b5441b7b45805887f051d39bf133b583baf6860', '2c47d60fa303dce766060ca6307059306eb04b7a84645aa6cc9fbf88281be8c9', 'xxx', 0),
-(11, 'Sahua', '03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4', '46eab01945cabd358520165d1b1dbcb67881c3e835221193482f6d32604d1840', 'khanhduong18072005@gmail.com', 0),
-(12, 'CuongChimDai', '7a64ce427ce0ca963ce9c3ab0da2db27c1f3ac9620444e1b4312422af8e093b9', '8a158025a8e895133966fec97a71a9842aaaeb28eaddf1ac5b35f7d8f6463d95', 'duong4651050044@st.qnu.edu.vn', 0);
+INSERT INTO `userdata` (`UserID`, `UserName`, `PassWord`, `AuthCookies`, `user_img`, `Email`, `FullName`, `Phone`, `Alias`, `Organization`, `CCCD`, `ROLE`) VALUES
+(6, 'YangKlee', '4f231459ddf38bcaa618bf72d7b752eb848e53321fd747b1678417aa55dd033b', '5b33fbeaadcf4cb4bf31faaa0e0eb58de22ac6e82ed85135574b996984d1975c', '1747892564_6_4651050044.jpg', 'khanhduong18072005@gmail.com', 'Nguyễn Khánh Dương', '035670105 ', 'Yang', 'Đại học Quy Nhơn', '052205006413', 1),
+(7, 'Haru', 'a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3', 'deb77aa6825d7fdfd1fac4f9415acb90b643c5d94a432df681a8da7028fcf75b', NULL, '111', NULL, NULL, NULL, NULL, NULL, 0),
+(8, 'trucluong837@gmail.com', '355b1bbfc96725cdce8f4a2708fda310a80e6d13315aec4e5eed2a75fe8032ce', '83413af552e380c701436ac160b26b2da20c58e2bf9288e02b75f965b620ccce', NULL, 'trucluong837@gmail.com', NULL, NULL, NULL, NULL, NULL, 0),
+(9, 'Yang', '9589262630f775d921bef5b9b2d36fa40f91afebeab887deefc721ff3c787b2c', '67067134e579835a666fbda6489da714e9688b3de9b8b61681a194ea252a0bd7', NULL, 'nguyennambao055@gmail.com', NULL, NULL, NULL, NULL, NULL, 0),
+(10, 'xxx', 'cd2eb0837c9b4c962c22d2ff8b5441b7b45805887f051d39bf133b583baf6860', '2c47d60fa303dce766060ca6307059306eb04b7a84645aa6cc9fbf88281be8c9', NULL, 'xxx', NULL, NULL, NULL, NULL, NULL, 0),
+(11, 'Sahua', '03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4', '46eab01945cabd358520165d1b1dbcb67881c3e835221193482f6d32604d1840', NULL, 'khanhduong18072005@gmail.com', NULL, NULL, NULL, NULL, NULL, 0),
+(12, 'CuongChimDai', '7a64ce427ce0ca963ce9c3ab0da2db27c1f3ac9620444e1b4312422af8e093b9', '8a158025a8e895133966fec97a71a9842aaaeb28eaddf1ac5b35f7d8f6463d95', NULL, 'duong4651050044@st.qnu.edu.vn', NULL, NULL, NULL, NULL, NULL, 0);
 
 --
 -- Các ràng buộc cho các bảng đã đổ
@@ -832,12 +820,6 @@ INSERT INTO `userdata` (`UserID`, `UserName`, `PassWord`, `AuthCookies`, `Email`
 ALTER TABLE `article`
   ADD CONSTRAINT `article_ibfk_1` FOREIGN KEY (`CategoryID`) REFERENCES `category` (`CategoryID`),
   ADD CONSTRAINT `article_ibfk_2` FOREIGN KEY (`AuthorID`) REFERENCES `userdata` (`UserID`) ON DELETE RESTRICT ON UPDATE RESTRICT;
-
---
--- Các ràng buộc cho bảng `authordata`
---
-ALTER TABLE `authordata`
-  ADD CONSTRAINT `authordata_ibfk_1` FOREIGN KEY (`AuthorID`) REFERENCES `userdata` (`UserID`);
 
 --
 -- Các ràng buộc cho bảng `comment`

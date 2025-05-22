@@ -64,6 +64,8 @@
 }
 .header.header-Logined-Info #user-profile-img {
     width: 80px;
+    height: 80px;
+    object-fit: cover;
     border-radius: 50%;
 }
 .header.header-Logined-Info .user-label {

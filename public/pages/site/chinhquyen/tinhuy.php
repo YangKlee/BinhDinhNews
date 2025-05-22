@@ -1,28 +1,27 @@
-<?php
-	include($_SERVER['DOCUMENT_ROOT'].'/BinhDinhNews/app/views/partials/header.php');
-?>
+<?php include($_SERVER['DOCUMENT_ROOT'].'/BinhDinhNews/app/views/partials/header.php'); ?>
+
 <?php
 $conn = new mysqli("localhost", "root", "", "BinhDinhNews");
 if ($conn->connect_error) {
     die("Không kết nối được: " . $conn->connect_error);
 }
 
-function hienThiDiaPhuong($conn, $diaphuong) {
+function hienThiCap($conn, $donvi) {
     // Chủ tịch
-    $sql_chutich = "SELECT * FROM ubnd WHERE diaphuong = '$diaphuong' AND capbac = 1";
+    $sql_chutich = "SELECT * FROM lanhdao WHERE donvi = '$donvi' AND capbac = 1";
     $result_ct = $conn->query($sql_chutich);
 
     // Phó Chủ tịch
-    $sql_pho = "SELECT * FROM ubnd WHERE diaphuong = '$diaphuong' AND capbac = 2";
+    $sql_pho = "SELECT * FROM lanhdao WHERE donvi = '$donvi' AND capbac = 2";
     $result_pho = $conn->query($sql_pho);
 
-    echo "<h3> UBND {$diaphuong} </h3>";
+    echo "<h3> UBND {$donvi} </h3>";
 
 if ($result_ct->num_rows > 0) {
     echo '<div class="chutich-container">';
     while ($row = $result_ct->fetch_assoc()) {
         echo '<div class="item">
-                <img src="../images/imgChinhquyen/UBND/'.$row['anh'].'" alt="'.$row['ten'].'">
+                <img src="../../../images/imgChinhquyen/tinhUy/'.$row['anh'].'" alt="'.$row['ten'].'">
                 <label><b>'.$row['chucvu'].'</b><br>'.$row['ten'].'</label>
               </div>';
     }
@@ -33,7 +32,7 @@ if ($result_pho->num_rows > 0) {
     echo '<div class="pho-container">';
     while ($row = $result_pho->fetch_assoc()) {
         echo '<div class="item">
-                <img src="../images/imgChinhquyen/UBND/'.$row['anh'].'" alt="'.$row['ten'].'">
+                <img src="../../../images/imgChinhquyen/tinhUy/'.$row['anh'].'" alt="'.$row['ten'].'">
                 <label><b>'.$row['chucvu'].'</b><br>'.$row['ten'].'</label>
               </div>';
     }
@@ -47,11 +46,12 @@ if ($result_pho->num_rows > 0) {
 <html>
 <head>
     <meta charset="UTF-8">
-            <link rel="stylesheet" href="../css/reset.css">
-	<link rel="stylesheet" href="../css/footer-style.css">
-	<link rel="stylesheet" href="../css/header-style.css">
+    <link rel="stylesheet" href="../../../../public/css/reset.css">
+	<link rel="stylesheet" href="../../../../public/css/footer-style.css">
+	<link rel="stylesheet" href="../../../../public/css/header-style.css">
 <style>
     
+
     .container {
         padding: 0 20px; 
         box-sizing: border-box;
@@ -97,23 +97,14 @@ if ($result_pho->num_rows > 0) {
 <body>
     <div class="container">
         <?php
-        hienThiDiaPhuong($conn, "TP QUY NHƠN");
-        hienThiDiaPhuong($conn, "TX AN NHƠN");
-        hienThiDiaPhuong($conn, "TX HOÀI NHƠN");
-        hienThiDiaPhuong($conn, "HUYỆN PHÙ MỸ");
-        hienThiDiaPhuong($conn, "HUYỆN VĨNH THẠNH");
-        hienThiDiaPhuong($conn, "HUYỆN HOÀI ÂN");
-        hienThiDiaPhuong($conn, "HUYỆN VÂN CANH");
-        hienThiDiaPhuong($conn, "HUYỆN PHÙ CÁT");
-        hienThiDiaPhuong($conn, "HUYỆN AN LÃO");
-        hienThiDiaPhuong($conn, "HUYỆN TUY PHƯỚC");
-        hienThiDiaPhuong($conn, "HUYỆN TÂY SƠN");
+        hienThiCap($conn, donvi: "LÃNH ĐẠO TỈNH ỦY");
+        hienThiCap($conn, donvi: "BAN THƯỜNG VỤ TỈNH ỦY");
+        
         ?>
     </div>
 </body>
 </html>
 
 <?php $conn->close(); ?>
-<?php
-	include($_SERVER['DOCUMENT_ROOT'].'/BinhDinhNews/app/views/partials/footer.php');
-?>
+
+<?php include($_SERVER['DOCUMENT_ROOT'].'/BinhDinhNews/app/views/partials/footer.php'); ?>

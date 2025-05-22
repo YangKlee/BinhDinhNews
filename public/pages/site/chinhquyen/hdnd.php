@@ -1,27 +1,28 @@
-<?php
-	include($_SERVER['DOCUMENT_ROOT'].'/BinhDinhNews/app/views/partials/header.php');
-?>
+<?php include($_SERVER['DOCUMENT_ROOT'].'/BinhDinhNews/app/views/partials/header.php'); ?>
+
 <?php
 $conn = new mysqli("localhost", "root", "", "BinhDinhNews");
 if ($conn->connect_error) {
-    die("Không kết nối được CSDL: " . $conn->connect_error);
+    die("hem kết nối được: " . $conn->connect_error);
 }
 
-function hienThiCapUBMTTQVN($conn, $scapbac) {
+function hienThiCap($conn, $sunghiep) {
     // Chủ tịch
-    $sql_chutich = "SELECT * FROM ubmttqvn WHERE capbac = 1";
+    $sql_chutich = "SELECT * FROM hdnd WHERE capbac = 1";
     $result_ct = $conn->query($sql_chutich);
 
     // Phó Chủ tịch
-    $sql_pho = "SELECT * FROM ubmttqvn WHERE capbac = 2";
+    $sql_pho = "SELECT * FROM hdnd WHERE capbac = 2";
     $result_pho = $conn->query($sql_pho);
+
+    echo "<h3> LÃNH ĐẠO HỘI ĐỒNG NHÂN DÂN </h3> ";
 
     if ($result_ct->num_rows > 0) {
         echo '<div class="chutich-container">';
         while ($row = $result_ct->fetch_assoc()) {
             echo '<div class="item">
-                    <img src="../images/imgChinhquyen/UBMTTQVN/'.$row['hinhanh'].'" alt="'.$row['hoten'].'">
-                    <label><b>'.$row['chucvu'].'</b><br>'.$row['hoten'].'</label>
+                    <img src="../../../images/imgChinhquyen/HĐND/'.$row['anh'].'" alt="'.$row['ten'].'">
+                    <label><b>'.$row['ten'].'</b><br>'.$row['chucvu'].'</label>
                 </div>';
         }
         echo '</div>';
@@ -31,22 +32,20 @@ function hienThiCapUBMTTQVN($conn, $scapbac) {
         echo '<div class="pho-container">';
         while ($row = $result_pho->fetch_assoc()) {
             echo '<div class="item">
-                    <img src="../images/imgChinhquyen/UBMTTQVN/'.$row['hinhanh'].'" alt="'.$row['hoten'].'">
-                    <label><b>'.$row['chucvu'].'</b><br>'.$row['hoten'].'</label>
+                    <img src="../../../images/imgChinhquyen/HĐND/'.$row['anh'].'" alt="'.$row['ten'].'">
+                    <label><b>'.$row['ten'].'</b><br>'.$row['chucvu'].'</label>
                 </div>';
         }
         echo '</div>';
     }
 }
+
 ?>
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
-            <link rel="stylesheet" href="../css/reset.css">
-	<link rel="stylesheet" href="../css/footer-style.css">
-	<link rel="stylesheet" href="../css/header-style.css">
-    <title>UBMTTQVN tỉnh</title>
+    <title>Lãnh đạo Hội đồng nhân dân</title>
     <style>
     .container {
         padding: 0 20px;
@@ -87,17 +86,19 @@ function hienThiCapUBMTTQVN($conn, $scapbac) {
         font-size: 18px;
     }
     </style>
+            <link rel="stylesheet" href="../../../../public/css/reset.css">
+	<link rel="stylesheet" href="../../../../public/css/footer-style.css">
+	<link rel="stylesheet" href="../../../../public/css/header-style.css">
 </head>
 <body>
-    <div class="container">
-        <h3>LÃNH ĐẠO UBMTTQVN TỈNH</h3>
-        <?php
-            hienThiCapUBMTTQVN($conn, 1); // Chủ tịch
-        ?>
-    </div>
+<div class="container">
+    <?php
+        hienThiCap($conn, 1);
+                
+    ?>
+    
+</div>
 </body>
 </html>
 <?php $conn->close(); ?>
-<?php
-	include($_SERVER['DOCUMENT_ROOT'].'/BinhDinhNews/app/views/partials/footer.php');
-?>
+<?php include($_SERVER['DOCUMENT_ROOT'].'/BinhDinhNews/app/views/partials/footer.php'); ?>

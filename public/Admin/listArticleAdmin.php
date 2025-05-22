@@ -24,7 +24,7 @@
          <div class="left-container">
             <?php
                 include "../../app/views/left/menu-admin.php";
-
+                
             ?>
 
         </div>

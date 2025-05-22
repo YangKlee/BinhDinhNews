@@ -253,8 +253,35 @@
                     <div class="homepage-row-4">
                         <div class="homepage-content du-lich">
                             <i class="fa-solid fa-plane"></i>
-                            <h2 class="type-title">Du lịch<h1>
+                            <h2 class="type-title">Du lịch</h2>
                             <hr class="hr_cat">
+                            <div class="line-four-content-warpper">
+                            
+                            <div class="col-md-9 slideshow-container">
+                                <?php
+                                    $dir = "./images/imgDemoDulich/";
+                                    $files = scandir($dir);
+                                    foreach ($files as $file) {
+                                        if (in_array(pathinfo($file, PATHINFO_EXTENSION), ['jpg', 'jpeg', 'png', 'gif'])) {
+                                            echo '<div class="slide"><img src="'.$dir.$file.'" alt=""></div>';
+                                        }
+                                    }
+                                ?>
+                                <button class="prev">&#10094;</button>
+                                <button class="next">&#10095;</button>
+                            </div>
+
+                            <div class="col-md-3 scroll-container">
+                                <?php
+                                    foreach ($files as $file) {
+                                        if (in_array(pathinfo($file, PATHINFO_EXTENSION), ['jpg', 'jpeg', 'png', 'gif'])) {
+                                            echo '<div class="scroll-img"><img src="'.$dir.$file.'" alt=""></div>';
+                                        }
+                                    }
+                                ?>
+                            </div>
+                        </div>
+
                         </div>
                     </div>
 

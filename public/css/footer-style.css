@@ -1,5 +1,6 @@
 /* Nhóm định dạng cho footer chính */
 .footer {
+
     display: flex;
     flex-direction: column;
     background-color: rgb(0, 132, 255);

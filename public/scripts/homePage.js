@@ -119,3 +119,43 @@ window.onload = function(){
     listHotArt[0].classList.add('show');
 
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+  const slides = document.querySelectorAll('.slideshow-container .slide');
+  const prevBtn = document.querySelector('.slideshow-container .prev');
+  const nextBtn = document.querySelector('.slideshow-container .next');
+  let current = 0;
+  const total = slides.length;
+
+  function showSlide(idx) {
+    slides.forEach((s,i) => {
+      s.style.display = (i === idx) ? 'block' : 'none';
+    });
+  }
+
+  function goNext() {
+    current = (current + 1) % total;
+    showSlide(current);
+  }
+
+  function goPrev() {
+    current = (current - 1 + total) % total;
+    showSlide(current);
+  }
+
+  showSlide(current);
+  let timer = setInterval(goNext, 4000);
+
+  nextBtn.addEventListener('click', () => {
+    clearInterval(timer);
+    goNext();
+    timer = setInterval(goNext, 4000);
+  });
+  prevBtn.addEventListener('click', () => {
+    clearInterval(timer);
+    goPrev();
+    timer = setInterval(goNext, 4000);
+  });
+});
+
+

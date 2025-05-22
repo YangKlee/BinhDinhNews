@@ -1,6 +1,5 @@
-<?php
-	include($_SERVER['DOCUMENT_ROOT'].'/BinhDinhNews/app/views/partials/header.php');
-?>
+<?php include($_SERVER['DOCUMENT_ROOT'].'/BinhDinhNews/app/views/partials/header.php'); ?>
+
 <?php
 $conn = new mysqli("localhost", "root", "", "BinhDinhNews");
 if ($conn->connect_error) {
@@ -22,7 +21,7 @@ if ($result_ct->num_rows > 0) {
     echo '<div class="chutich-container">';
     while ($row = $result_ct->fetch_assoc()) {
         echo '<div class="item">
-                <img src="../images/imgChinhquyen/donvihiepquan/'.$row['hinhanh'].'" alt="'.$row['hoten'].'">
+                <img src="../../../images/imgChinhquyen/donvihiepquan/'.$row['hinhanh'].'" alt="'.$row['hoten'].'">
                 <label><b>'.$row['chucvu'].'</b><br>'.$row['hoten'].'</label>
               </div>';
     }
@@ -33,7 +32,7 @@ if ($result_pho->num_rows > 0) {
     echo '<div class="pho-container">';
     while ($row = $result_pho->fetch_assoc()) {
         echo '<div class="item">
-                <img src="../images/imgChinhquyen/donvihiepquan/'.$row['hinhanh'].'" alt="'.$row['hoten'].'">
+                <img src="../../../images/imgChinhquyen/donvihiepquan/'.$row['hinhanh'].'" alt="'.$row['hoten'].'">
                 <label><b>'.$row['chucvu'].'</b><br>'.$row['hoten'].'</label>
               </div>';
     }
@@ -88,9 +87,9 @@ if ($result_pho->num_rows > 0) {
     }
 
 </style>
-    <link rel="stylesheet" href="../css/reset.css">
-	<link rel="stylesheet" href="../css/footer-style.css">
-	<link rel="stylesheet" href="../css/header-style.css">
+    <link rel="stylesheet" href="../../../../public/css/reset.css">
+	<link rel="stylesheet" href="../../../../public/css/footer-style.css">
+	<link rel="stylesheet" href="../../../../public/css/header-style.css">
 </head>
 <body>
     <div class="container">
@@ -108,6 +107,4 @@ if ($result_pho->num_rows > 0) {
 </html>
 
 <?php $conn->close(); ?>
-<?php
-	include($_SERVER['DOCUMENT_ROOT'].'/BinhDinhNews/app/views/partials/footer.php');
-?>
+<?php include($_SERVER['DOCUMENT_ROOT'].'/BinhDinhNews/app/views/partials/footer.php'); ?>
