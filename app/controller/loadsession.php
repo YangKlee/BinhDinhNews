@@ -34,5 +34,4 @@
         $_SESSION['role'] = -1;
         $_SESSION['UID'] = null;
     }
-
 ?>
