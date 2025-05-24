@@ -30,7 +30,7 @@
                     if($_SESSION['role'] == 2)
                     {
                                     echo '                <li>
-                                <a href="">QUẢN LÝ NHÀ BÁO</a>
+                                <a href="./listUser.php">QUẢN LÝ NGƯỜi DÙNG</a>
                             </li>';
                     }                
                 ?>

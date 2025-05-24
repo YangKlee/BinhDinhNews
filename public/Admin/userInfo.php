@@ -9,6 +9,7 @@
     }
 ?>
 <?php
+   
     if($_SERVER['REQUEST_METHOD'] == "POST")
     {
         require_once $_SERVER['DOCUMENT_ROOT'].'/BinhDinhNews/app/model/userDAO.php';
@@ -27,7 +28,7 @@
         $updateInfoStatus = $userDAO->updateAuthorInfo($_SESSION['UID'],
          $_POST['fullname_tx'], $_POST['phone_tx'], 
          $_POST['email_tx'], $_POST['cccd_tx'], 
-         $_POST['adias_tx'], $_POST['organ_tx']);
+         $_POST['adias_tx'], $_POST['organ_tx'], $_POST['role_select']);
         
         
         if($updateImageStatus && $updateInfoStatus){
@@ -62,11 +63,22 @@
         </div>
         <div class="right-container">
             <?php
-                
-                if(isset($_SESSION['UID']))
+                require_once $_SERVER['DOCUMENT_ROOT'].'/BinhDinhNews/app/model/userDAO.php';
+                $userDAO = new UserDAO();
+                if(isset($_GET['user_id']))
                 {
-                    require_once $_SERVER['DOCUMENT_ROOT'].'/BinhDinhNews/app/model/userDAO.php';
-                    $userDAO = new UserDAO();
+                        $user_id = $_GET['user_id'];
+
+                    $result = $userDAO->getAuthorInfo($_GET['user_id']);
+                    if($result == 0)
+                    {
+                        echo "Không tìm thấy user";
+                        exit;
+                    }
+                }
+                else if(isset($_SESSION['UID']))
+                {
+
                     $result = $userDAO->getAuthorInfo($_SESSION['UID']);
                     
                 } 
@@ -103,6 +115,28 @@
                     <label for="">Tổ chức: </label>
                     <input type="text" class="txb txb-organ" name="organ_tx" id="" value="<?php echo $result['Organization'] ?>">
                 </div>
+
+                <div class="role-warpper">
+                    <label for="">Vai trò:</label>
+                    <select name="role_select" class="txb" id="role_select" >
+                        <option value="1">Tác giả</option >
+                        <option value="2">Admin</option>
+                    </select>
+                </div>
+                <?php
+                    if($_SESSION['role'] != 2)
+                    {
+                        echo "<script> document.querySelector('.role-warpper').classList.add('hidden') </script>";
+                    }
+                    if($result['ROLE'] == 1)
+                    {
+                        echo "<script> document.querySelector('#role_select').value = 1 </script>";
+                    }
+                    else if($result['ROLE'] == 2)
+                    {
+                        echo "<script> document.querySelector('#role_select').value = 2 </script>";
+                    }
+                ?>
                 <div class="avatar-warpper">
                     <label for="">Ảnh đại diện: </label>
                     <img src="<?php echo !empty($result['user_img']) ? "/BinhDinhNews/public/images/userAvatar/". $result['user_img'] : "/BinhDinhNews/public/images/user.png"; ?>" alt="Ảnh đại diện">

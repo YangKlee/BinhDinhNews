@@ -37,7 +37,7 @@
             mysqli_close($conn);
             return $data;
         }
-        function updateAuthorInfo($uid, $fullname, $sdt,$email , $cccd, $adias, $organ)
+        function updateAuthorInfo($uid, $fullname, $sdt,$email , $cccd, $adias, $organ, $role )
         {
             $conn = $this->getConnection();
             $sql = "UPDATE `userdata` 
@@ -46,7 +46,8 @@
                         `Phone`='" . $sdt . "',
                         `Alias`='" . $adias . "',
                         `Organization`='" . $organ . "',
-                        `CCCD`='" . $cccd . "'
+                        `CCCD`='" . $cccd . "',
+                         `ROLE` = '".$role."'   
                     WHERE `UserID`='" . $uid . "'";
              if(mysqli_query($conn, $sql))
              {
