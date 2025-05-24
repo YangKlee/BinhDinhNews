@@ -77,7 +77,7 @@
         function allowArticle($idArt)
         {
             $conn = $this->getConnection();
-            mysqli_query($conn, "Update Article set ArticleStatus = 1 where Ar2ticleID = ".$idArt."");
+            mysqli_query($conn, "Update Article set ArticleStatus = 1 where ArticleID = ".$idArt."");
             mysqli_close($conn);
         }
         // UID = 0 is all user
