@@ -3,7 +3,7 @@
         <div class="footer-top">
             <div class="footer-left">
                 <div class="head">
-                    <div><img src="/BinhDinhNews/public/images/logo.webp" alt="Logo" class="footer-logo"></div>
+                    <div><img onclick="loadHomePage()" style="cursor: pointer;" src="/BinhDinhNews/public/images/logo.webp" alt="Logo" class="footer-logo"></div>
                     <div>
                         <h2>
                             <span>© CỔNG THÔNG TIN BÌNH ĐỊNH</span>
@@ -25,7 +25,7 @@
             <div class="footer-right">
                 <div class="top-menu">
                     <div class="footer-item">
-                        <i class="fas fa-search"></i>
+                        <i onclick="document.getElementById('search').focus();" class="fas fa-search" id="icon" style="cursor: pointer;";></i>
                         <p>Tra cứu</p>
                     </div>
 
