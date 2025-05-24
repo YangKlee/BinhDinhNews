@@ -30,7 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $error = "Mật khẩu và xác nhận mật khẩu không khớp.";
     } else {
         // Hash mật khẩu
-        $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+        $hashedPassword = hash( "sha256",$password);
 
         // Xử lý ảnh đại diện
         if (isset($_FILES['user_img']) && $_FILES['user_img']['error'] === 0) {

@@ -72,7 +72,7 @@
                         </div>
                     </div>';
                 }
-                session_destroy();
+                
             ?>
             
             <!-- <div class="header header-userinfo">
