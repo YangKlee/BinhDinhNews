@@ -91,15 +91,18 @@
                 return $result->num_rows > 0;
             }
 
-        public function createUser($username, $email, $role, $img) {
-            $sql = "INSERT INTO userdata (UserName, Email, Role, user_img) VALUES (?, ?, ?, ?)";
+        public function createUser($username, $email, $role, $hashedPassword, $img, $fullname, $phone, $alias, $organization, $cccd) {
+            $sql = "INSERT INTO userdata (UserName, Email, Role, PassWord, user_img, FullName, Phone, Alias, Organization, CCCD)
+                    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+
             $stmt = $this->conn->prepare($sql);
-            if (!$stmt) {
-                die("Prepare failed: " . $this->conn->error);
-            }
-            $stmt->bind_param("ssis", $username, $email, $role, $img);
+            if (!$stmt) return false;
+
+            $stmt->bind_param("ssisssssss", $username, $email, $role, $hashedPassword, $img, $fullname, $phone, $alias, $organization, $cccd);
             return $stmt->execute();
         }
+
+
 
         public function getAllUsers() {
             $conn = $this->getConnection();
