@@ -52,7 +52,7 @@ label {
     font-size: 16px;
     font-weight: 500;
 }
-input {
+input:not([type="checkbox"]) {
     display: block;
     height: 50px;
     width: 100%;
@@ -117,6 +117,10 @@ form a:hover {
 .message{
     font-size: 0.9rem;
     color: red;
+}
+.checkbox-rememberpass-warper{
+    display:flex;
+    justify-content: flex-start
 }
 
     /* @media (max-width: 480px) {

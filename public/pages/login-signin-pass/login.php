@@ -22,11 +22,27 @@
                 // login complete
                 echo "<script> alert('Dang nhap thanh cong')</script>";
                 $cookiesHash = hash("sha256", time() . $userData['UserName'] . $userData['PassWord']);
-                setcookie("auth", $cookiesHash, time() + 60 * 60 * 24 , "/");
-                // lưu cookie hash vô db
-                $sql = "Update UserData set AuthCookies = '".$cookiesHash."' where UserID = ".$userData['UserID']."";
-                mysqli_query($coon, $sql);
-                session_destroy();
+                
+                // xóa session cũ
+                    if (session_status() === PHP_SESSION_ACTIVE) {
+                        session_destroy();
+                    }
+                // nếu chọn nhớ pass
+                if($_POST['remember-pass']){
+                    setcookie("auth", $cookiesHash, time() + 60 * 60 * 24 , "/");
+                    // lưu cookie hash vô db
+                    $sql = "Update UserData set AuthCookies = '".$cookiesHash."' where UserID = ".$userData['UserID']."";
+                    mysqli_query($coon, $sql);
+
+                }
+                else{
+                    session_start();
+                    $_SESSION['role'] = $userData['ROLE'];
+                    $_SESSION['username'] = $userData['UserName'];  
+                    $_SESSION['UID'] = $userData['UserID'];
+                }
+                
+
                 
                 if($userData['ROLE'] == 0) // nhảy sang trang người dùng
                 {
@@ -75,8 +91,14 @@
 
         <label for="password">Mật khẩu</label>
         <input type="password" placeholder="Mật khẩu" id="password" name="password">
+        <label class="checkbox-rememberpass-warper">
+            <input type="checkbox" name="remember-pass">
+            Nhớ mật khẩu
+            
+        </label>
         <input type="submit" value="Đăng nhập" id="login-btn" name="loginbtn">
 
+        
         <a href="signin.php">Chưa có tài khoản ?</a>
         <a href="fogot-password.php">Quên mật khẩu ?</a>
     </form>
