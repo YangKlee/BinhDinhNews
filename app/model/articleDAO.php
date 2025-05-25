@@ -80,6 +80,14 @@
             mysqli_query($conn, "Update Article set ArticleStatus = 1 where ArticleID = ".$idArt."");
             mysqli_close($conn);
         }
+        function coutOfQuery($sql){
+            $conn = $this->getConnection();
+            $result = mysqli_query($conn, $sql);
+            $numrow = mysqli_num_rows($result);
+            mysqli_free_result($result);
+            mysqli_close($conn);
+            return $numrow;
+        }
         // UID = 0 is all user
         function getNumArticle($UID){
             $conn = $this->getConnection();
