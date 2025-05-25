@@ -1,6 +1,7 @@
 <?php
     setcookie("auth", "", time() - 3600, "/");
-    header("Location: ../../public/index.php");
+    session_start();
     session_destroy();
+    header("Location: ../../public/index.php");
     exit();
 ?>
