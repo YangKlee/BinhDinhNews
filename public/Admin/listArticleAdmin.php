@@ -81,7 +81,7 @@
                         if (is_null($row['MainImage']) || $row['MainImage'] == '')
                         {
                             $row['MainImage'] = 'default.png';
-                            $row['ArticleID'] = 'default';
+                            // $row['ArticleID'] = 'default';
                         }
                         $statusArticle = null;
                         if($row['ArticleStatus'] == 0)
