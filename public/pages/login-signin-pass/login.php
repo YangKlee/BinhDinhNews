@@ -37,8 +37,6 @@
                 }
                 else{
                     session_start();
-                    $_SESSION['role'] = $userData['ROLE'];
-                    $_SESSION['username'] = $userData['UserName'];  
                     $_SESSION['UID'] = $userData['UserID'];
                 }
                 
