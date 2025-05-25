@@ -74,7 +74,8 @@
                 }
                 mysqli_free_result($result);
                 require_once( $_SERVER['DOCUMENT_ROOT'] . '/BinhDinhNews/app/controller/pagination.php');
-                page_navigation($total_pages, $current_page,  $_SERVER['REQUEST_URI']);
+                page_navigation_Argument($total_pages, $current_page,  
+                "/BinhDinhNews/public/pages/site/searchingsite.php?search=".$_GET['search']."");
             }
             else{
                 echo '<h1 class="cat-title">Không tìm thấy kết quả nào</h1>';
