@@ -43,27 +43,55 @@
             mysqli_close($conn);
             return $data;
         }
-        function updateAuthorInfo($uid, $fullname, $sdt,$email , $cccd, $adias, $organ, $role )
-        {
-            $conn = $this->getConnection();
-            $sql = "UPDATE `userdata` 
-                    SET `Email`='" . $email . "',
-                        `FullName`='" . $fullname . "',
-                        `Phone`='" . $sdt . "',
-                        `Alias`='" . $adias . "',
-                        `Organization`='" . $organ . "',
-                        `CCCD`='" . $cccd . "',
-                         `ROLE` = '".$role."'   
-                    WHERE `UserID`='" . $uid . "'";
-             if(mysqli_query($conn, $sql))
-             {
-                mysqli_close($conn);
-                return true;
-             }
-             mysqli_close($conn);
-             return false;
+        // function updateAuthorInfo($uid, $fullname, $sdt,$email , $cccd, $adias, $organ, $role )
+        // {
+        //     $conn = $this->getConnection();
+        //     $sql = "UPDATE `userdata` 
+        //             SET `Email`='" . $email . "',
+        //                 `FullName`='" . $fullname . "',
+        //                 `Phone`='" . $sdt . "',
+        //                 `Alias`='" . $adias . "',
+        //                 `Organization`='" . $organ . "',
+        //                 `CCCD`='" . $cccd . "',
+        //                  `ROLE` = '".$role."'   
+        //             WHERE `UserID`='" . $uid . "'";
+        //      if(mysqli_query($conn, $sql))
+        //      {
+        //         mysqli_close($conn);
+        //         return true;
+        //      }
+        //      mysqli_close($conn);
+        //      return false;
              
 
+        // }
+        function updateAuthorInfo($uid, $fullname, $sdt, $email, $cccd, $adias, $organ, $role)
+        {
+            $conn = $this->getConnection();
+
+            $sql = "UPDATE `userdata` 
+                    SET `Email` = ?, 
+                        `FullName` = ?, 
+                        `Phone` = ?, 
+                        `Alias` = ?, 
+                        `Organization` = ?, 
+                        `CCCD` = ?, 
+                        `ROLE` = ?
+                    WHERE `UserID` = ?";
+
+            $stmt = $conn->prepare($sql);
+            if (!$stmt) {
+                mysqli_close($conn);
+                return false;
+            }
+
+            $stmt->bind_param("ssssssss", $email, $fullname, $sdt, $adias, $organ, $cccd, $role, $uid);
+
+            $result = $stmt->execute();
+            $stmt->close();
+            mysqli_close($conn);
+
+            return $result;
         }
         function updateAuthorAvatar($uid, $img)
         {

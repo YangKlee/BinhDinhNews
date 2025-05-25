@@ -27,10 +27,15 @@
         <div class="container-mid">
             <?php
             require('../../../app/model/ArticleDAO.php');
+            $element_per_page = 5;
+            $current_page = $_GET['page'] ?? 1;
             $artDAO = new articleDAO();
-            $sql = "SELECT * FROM `article` WHERE (Tags LIKE '%".$_POST['search']."%' 
-                    OR Title LIKE '%".$_POST['search']."%') AND articleStatus = 1 ORDER BY Time_modify DESC
-                    LIMIT 10";
+            $sql = "SELECT * FROM `article` WHERE (Tags LIKE '%".$_GET['search']."%' 
+                    OR Title LIKE '%".$_GET['search']."%') AND articleStatus = 1 ORDER BY Time_modify DESC
+                    LIMIT ".$element_per_page." OFFSET ".($current_page - 1) * $element_per_page."";
+            $total_element = $artDAO->coutOfQuery("SELECT * FROM `article` WHERE (Tags LIKE '%".$_GET['search']."%' 
+                    OR Title LIKE '%".$_GET['search']."%') AND articleStatus = 1");
+            $total_pages = ceil($total_element/$element_per_page);
             $result = $artDAO->getListArticleQuery($sql);
             if(mysqli_num_rows($result) > 0)
             {
@@ -67,6 +72,10 @@
                             </div>
                             ';
                 }
+                mysqli_free_result($result);
+                require_once( $_SERVER['DOCUMENT_ROOT'] . '/BinhDinhNews/app/controller/pagination.php');
+                page_navigation_Argument($total_pages, $current_page,  
+                "/BinhDinhNews/public/pages/site/searchingsite.php?search=".$_GET['search']."");
             }
             else{
                 echo '<h1 class="cat-title">Không tìm thấy kết quả nào</h1>';

@@ -32,30 +32,65 @@
 
             return $kqua;
         }
-        
-        function addArticleHeader($title, $tag,  $authorID, $authorGuestName ,$catID, $status )
-        {
-            $currTime = new DateTime();
-            $stringSQLTime = $currTime->format('Y-m-d');
-            $conn = $this->getConnection();
-            $isSuccess = false;
-            if($authorID == null)
-            {
-                $isSuccess = mysqli_query($conn, "INSERT INTO `article`(`Time_modify`, `AuthorID`, `AuthorGuestName`, `CategoryID`, `Title`, `Tags`, `ArticleStatus`) 
-                VALUES ('".$stringSQLTime."', NULL, '".$authorGuestName."', '".$catID."', '".$title."', '".$tag."', '".$status."')");
+    function addArticleHeader($title, $tag, $authorID, $authorGuestName, $catID, $status)
+    {
+        $currTime = new DateTime();
+        $stringSQLTime = $currTime->format('Y-m-d H:i:s');
+        $conn = $this->getConnection();
+        $lastIDInsert = null;
+
+        if ($authorID === null) {
+            $sql = "INSERT INTO `article` (
+                        `Time_modify`, `AuthorID`, `AuthorGuestName`, `CategoryID`, `Title`, `Tags`, `ArticleStatus`
+                    ) VALUES (?, NULL, ?, ?, ?, ?, ?)";
+            $stmt = $conn->prepare($sql);
+            if ($stmt) {
+                $stmt->bind_param("ssssss", $stringSQLTime, $authorGuestName, $catID, $title, $tag, $status);
             }
-            else{
-                $isSuccess = mysqli_query($conn, "INSERT INTO `article`(`Time_modify`, `AuthorID`, `AuthorGuestName`, `CategoryID`, `Title`, `Tags`, `ArticleStatus`) 
-            VALUES ('".$stringSQLTime."', ".$authorID.", NULL, '".$catID."', '".$title."', '".$tag."', '".$status."')");
+        } else {
+            $sql = "INSERT INTO `article` (
+                        `Time_modify`, `AuthorID`, `AuthorGuestName`, `CategoryID`, `Title`, `Tags`, `ArticleStatus`
+                    ) VALUES (?, ?, NULL, ?, ?, ?, ?)";
+            $stmt = $conn->prepare($sql);
+            if ($stmt) {
+                $stmt->bind_param("ssssss", $stringSQLTime, $authorID, $catID, $title, $tag, $status);
             }
-            $lastIDInsert = null;
-            if($isSuccess === TRUE)
-            {
-                $lastIDInsert = $conn->insert_id;
-            }
-            mysqli_close($conn);
-            return $lastIDInsert;
         }
+
+        if (isset($stmt) && $stmt->execute()) {
+            $lastIDInsert = $conn->insert_id;
+        }
+
+        if (isset($stmt)) {
+            $stmt->close();
+        }
+        mysqli_close($conn);
+        return $lastIDInsert;
+    }
+
+        // function addArticleHeader($title, $tag,  $authorID, $authorGuestName ,$catID, $status )
+        // {
+        //     $currTime = new DateTime();
+        //     $stringSQLTime = $currTime->format('Y-m-d');
+        //     $conn = $this->getConnection();
+        //     $isSuccess = false;
+        //     if($authorID == null)
+        //     {
+        //         $isSuccess = mysqli_query($conn, "INSERT INTO `article`(`Time_modify`, `AuthorID`, `AuthorGuestName`, `CategoryID`, `Title`, `Tags`, `ArticleStatus`) 
+        //         VALUES ('".$stringSQLTime."', NULL, '".$authorGuestName."', '".$catID."', '".$title."', '".$tag."', '".$status."')");
+        //     }
+        //     else{
+        //         $isSuccess = mysqli_query($conn, "INSERT INTO `article`(`Time_modify`, `AuthorID`, `AuthorGuestName`, `CategoryID`, `Title`, `Tags`, `ArticleStatus`) 
+        //     VALUES ('".$stringSQLTime."', ".$authorID.", NULL, '".$catID."', '".$title."', '".$tag."', '".$status."')");
+        //     }
+        //     $lastIDInsert = null;
+        //     if($isSuccess === TRUE)
+        //     {
+        //         $lastIDInsert = $conn->insert_id;
+        //     }
+        //     mysqli_close($conn);
+        //     return $lastIDInsert;
+        // }
         function deteteArticle($idArt)
         {
             $conn = $this->getConnection();
@@ -79,6 +114,14 @@
             $conn = $this->getConnection();
             mysqli_query($conn, "Update Article set ArticleStatus = 1 where ArticleID = ".$idArt."");
             mysqli_close($conn);
+        }
+        function coutOfQuery($sql){
+            $conn = $this->getConnection();
+            $result = mysqli_query($conn, $sql);
+            $numrow = mysqli_num_rows($result);
+            mysqli_free_result($result);
+            mysqli_close($conn);
+            return $numrow;
         }
         // UID = 0 is all user
         function getNumArticle($UID){
