@@ -53,17 +53,30 @@ if (isset($_POST['verify-btn'])) {
         unset($_SESSION['email']);
         unset($_SESSION['otp_sent']);
     } elseif ($input_otp === (string)$_SESSION['otp']) {
-        // OTP hợp lệ, chuyển hướng đến trang đặt lại mật khẩu
-        $email = $_SESSION['email'];
-        unset($_SESSION['otp']);
-        unset($_SESSION['email']);
-        unset($_SESSION['otp_sent']);
-        unset($_SESSION['otp_expiry']);
-        header('Location: login.php?email=' . urlencode($email));
-        exit();
+        $_SESSION['reset_password'] = true; // Đánh dấu đã xác minh OTP
     } else {
         echo '<div class="error">Mã OTP không hợp lệ!</div>';
     }
+}
+
+if (isset($_POST['reset-btn'])) {
+    $new_password = $_POST['new-password'] ?? '';
+    $email = $_POST['email'] ?? '';
+    require_once '../../../app/model/userDAO.php';
+    $userDAO = new UserDAO();
+    if($userDAO->updateUserPassword($email, $new_password)){
+        unset($_SESSION['reset_password']);
+        unset($_SESSION['email']);
+        unset($_SESSION['otp']);
+        unset($_SESSION['otp_sent']);
+        unset($_SESSION['otp_expiry']);
+        echo "<script> alert('Đặt lại mật khẩu thành công');</script>";
+        header("Location: login.php");
+        exit();
+    } else {
+        echo '<div class="error">Đặt lại mật khẩu không thành công. Vui lòng thử lại.</div>';
+    }
+    
 }
 ?>
 <!DOCTYPE html>
@@ -87,18 +100,26 @@ if (isset($_POST['verify-btn'])) {
             <input type="email" placeholder="Nhập email để nhận mã OTP" id="email" name="email" required>
             <input type="submit" value="Gửi" id="confirm-btn" name="email-btn">
             <a href="signin.php">Chưa có tài khoản?</a>
-            <a href="login.php">Nhớ lại mật khẩu?</a>
+            <a href="login.php">Quay lại trang đăng nhập</a>
         </form>
-    <?php else: ?>
+    <?php elseif (!isset($_SESSION['reset_password']) && isset($_SESSION['otp_sent'])): ?>
         <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST">
             <h3>Nhập mã OTP</h3>
             <label for="otp">Mã OTP đã gửi đến <?php echo htmlspecialchars($_SESSION['email']); ?></label>
             <input type="text" placeholder="Nhập mã OTP" id="otp" name="otp" required>
             <input type="submit" value="Xác nhận" id="confirm-btn" name="verify-btn">
             <a href="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>">Thử email khác</a>
-            <a href="login.php">Nhớ lại mật khẩu?</a>
+            <a href="login.php">Quay lại trang đăng nhập</a>
         </form>
-        
+    <?php elseif (isset($_SESSION['reset_password'])): ?>
+        <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST">
+            <h3>Đặt lại mật khẩu</h3>
+            <input type="hidden" name="email" value="<?php echo htmlspecialchars($_SESSION['email']); ?>">
+            <label for="new-password">Mật khẩu mới</label>
+            <input type="password" placeholder="Nhập mật khẩu mới" id="new-password" name="new-password" required>
+            <input type="submit" value="reset-btn" id="confirm-btn" name="reset-btn">
+            <a href="login.php">Quay lại trang đăng nhập</a>
+        </form>
     <?php endif; ?>
 </body>
 </html>

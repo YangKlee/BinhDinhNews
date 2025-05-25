@@ -33,6 +33,7 @@
             mysqli_close($conn);
             return $data;
         }
+
         function getAuthorInfo($uid)
         {
             $conn = $this->getConnection();
@@ -116,10 +117,20 @@
             return $users;
         }
         
-        function updateUserPassword($uid, $newPassword)
-        {
-
+        function updateUserPassword($email, $newPassword)
+        {   
+            $conn = $this->getConnection();
+            $sql = "UPDATE userdata SET PassWord = ? WHERE Email = ?";
+            $stmt = $conn->prepare($sql);
+            if (!$stmt) {
+                return false;
+            }
+            $newPassword = hash('sha256', $newPassword);
+            $stmt->bind_param("ss", $newPassword, $email);
+            $result = $stmt->execute();
+            $stmt->close();
+            mysqli_close($conn);
+            return $result;
         }
     }
-
 ?>
