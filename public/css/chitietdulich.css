@@ -1,0 +1,65 @@
+/* Cấu hình chung */
+/* Tiêu đề */
+.title {
+    text-align: center;
+    font-size: 45px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+/* Tiêu đề phần */
+.section-title {
+    font-size: 25px;
+    line-height: 1.8;
+    text-align: justify;
+    width: 80%;
+    margin: 20px auto;
+}
+
+a {
+    text-align: left;
+}
+
+/* Nội dung mô tả */
+.location-text, .description-box {
+    font-size: 22px;
+    line-height: 1.8;
+    text-align: justify;
+    width: 80%;
+    margin: 20px auto;
+}
+
+/* Ảnh chính */
+.main-image-container {
+    width: 80%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    line-height: 1.8;
+    margin: 20px auto;
+}
+
+.main-image-container img {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    display: block;
+    border-radius: 10px;
+}
+
+/* Liên kết quay lại */
+.back-link {
+    display: block;
+    text-align: center;
+    font-size: 25px;
+    color: #007bff;
+    text-decoration: none;
+    margin-top: 20px;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
