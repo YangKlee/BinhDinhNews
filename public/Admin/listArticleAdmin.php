@@ -24,7 +24,7 @@
          <div class="left-container">
             <?php
                 include "../../app/views/left/menu-admin.php";
-
+                
             ?>
 
         </div>
@@ -39,11 +39,12 @@
                     $artDAO = new articleDAO();
                     // $sql = "SELECT * FROM `article` WHERE AuthorID = ".$_SESSION['UID']." ORDER BY Time_modify DESC
                     //         LIMIT ".$artilces_per_page." OFFSET ".($current_page - 1) * $artilces_per_page."";
-                    $sql = "SELECT * FROM `article` WHERE AuthorID = ".$_SESSION['UID']." ORDER BY Time_modify DESC
-                    ";
+                    if($_SESSION['role'] == 1)
+                        $sql = "SELECT * FROM `article` WHERE AuthorID = ".$_SESSION['UID']." ORDER BY Time_modify DESC";
+                    else if($_SESSION['role'] == 2)
+                        $sql = "SELECT * FROM `article`  ORDER BY Time_modify DESC";
                     $result = $artDAO->getListArticleQuery($sql);
                     $total_articles = mysqli_num_rows(mysqli_query($artDAO->getConnection(), "SELECT * FROM `article` WHERE AuthorID = ".$_SESSION['UID']." "));
-                    $total_pages = ceil($total_articles / $artilces_per_page);
 
                     while($row = mysqli_fetch_array($result, MYSQLI_ASSOC))
                     {
@@ -94,12 +95,17 @@
                                     '.$statusArticle.'
 
                                 </div>
+                                ';   
+                        echo '
                                 <div class="article-element-rightfunction">
                                     <a href="../article.php?id='.$row['ArticleID'].'"><button class="btn btn-view">Xem bài báo</button></a>
                                     <a id="delete-btn" href="/BinhDinhNews/app/controller/deleteArticle.php?idart='.$row['ArticleID'].'"><button class="btn btn-delete">Xóa</button></a>
-                                    <a href=""> <button class="btn btn-modify">Sửa</button></a>
-                                    
-                                   
+                                    ';
+                        if($row['ArticleStatus'] == 0)
+                        {
+                            echo '<a id="delete-btn" href="/BinhDinhNews/app/controller/allowArticle.php?idart='.$row['ArticleID'].'"><button class="btn btn-allow">Duyệt bài báo</button></a>';
+                        }           
+                        echo'           
                                 </div>
                             </article>
                             <hr>
@@ -108,8 +114,6 @@
                         
                     }
                     mysqli_free_result($result);
-                    // require_once('../../app/controller/paginationHelper.php');
-                    // page_navigation($total_pages, $current_page);
                 ?>
 
                 

@@ -15,7 +15,15 @@
                     <i>Nhanh - Chính xác - Trách nhiệm</i>
                 </div>
             </div>
+            
             <?php
+                if(isset($_SESSION['UID']))
+                {
+                    require_once $_SERVER['DOCUMENT_ROOT'].'/BinhDinhNews/app/model/userDAO.php';
+                    $userDAO = new UserDAO();
+                    $result = $userDAO->getAuthorInfo($_SESSION['UID']);
+                    
+                } 
                 // echo '<h1> role='.$_SESSION['username'].'</h1>';
                 if(isset($_SESSION["role"]) && $_SESSION['role'] != -1)
                 {
@@ -34,18 +42,18 @@
                     else{
                         $role = "Đéo biết";
                     }
-                    echo
-                    '<div class="header header-Logined-Info">
+                    echo '
+                    <div class="header header-Logined-Info">
+                        <div class="user-label">
+                            <b id="user-label-name">' . $_SESSION['username'] . '</b>
+                            <i id="user-label-role">' . $role . '</i>  
+                        </div>
+                        <div class="user-profile">
+                            <img id="user-profile-img" src="' . (!empty($result['user_img']) ? '/BinhDinhNews/public/images/userAvatar/' . $result['user_img'] : '/BinhDinhNews/public/images/user.png') . '" alt="">
+                            <a href="/BinhDinhNews/app/controller/dangxuat.php"><button type="button" id="btn-logout">Đăng xuất</button></a>
+                        </div>
+                    </div>';
 
-                    <div class="user-label">
-                            <b id="user-label name">'.$_SESSION['username'].'</b>
-                            <i id = "user-label role">'.$role.'</i>  
-                    </div>
-                    <div class="user-profile">
-                        <img id="user-profile-img" src="/BinhDinhNews/public/images/user.png" alt="">
-                        <a href="/BinhDinhNews/app/controller/dangxuat.php"><button type="button" id="btn-logout">Đăng xuất</button></a>
-                    </div>
-            </div>';
                 }
                 else
                 {
@@ -64,7 +72,7 @@
                         </div>
                     </div>';
                 }
-                session_destroy();
+                
             ?>
             
             <!-- <div class="header header-userinfo">
@@ -131,7 +139,7 @@
                             <li><a href="/BinhDinhNews/public/pages/site/chinhquyen/hiepquan.php">Hiệp quản</a></li>
                         </ul>
                     </li>
-
+                    
                    
                     <li class="parent du-lich"><a href="#"><i class="fa-solid fa-plane-departure"></i>Du lịch Bình Định <i class="fa-solid fa-caret-down"></i></a>
                      

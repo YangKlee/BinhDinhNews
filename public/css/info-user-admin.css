@@ -1,0 +1,11 @@
+body{
+    background-color: #EEEEEE;
+}
+.main-container{
+    display: grid;
+    grid-template-columns: 20% 80%;
+    grid-template-rows: 100%;
+}
+.hidden{
+    display: none;
+}

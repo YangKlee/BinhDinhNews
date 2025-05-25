@@ -74,5 +74,43 @@
             mysqli_query($conn, "Update Article set ListImage = '".$stringList."' where ArticleID = ".$idArt."");
             mysqli_close($conn);
         }
+        function allowArticle($idArt)
+        {
+            $conn = $this->getConnection();
+            mysqli_query($conn, "Update Article set ArticleStatus = 1 where ArticleID = ".$idArt."");
+            mysqli_close($conn);
+        }
+        // UID = 0 is all user
+        function getNumArticle($UID){
+            $conn = $this->getConnection();
+            $data = array("Public"=> 0, "Pending"=>0, "Reject"=>0);
+            if($UID == 0)
+            {
+                $sql = " 
+                    SELECT 
+                        SUM(CASE WHEN ArticleStatus = 1 THEN 1 ELSE 0 END) AS public,
+                        SUM(CASE WHEN ArticleStatus = 0 THEN 1 ELSE 0 END) AS pending,
+                        SUM(CASE WHEN ArticleStatus = -1 THEN 1 ELSE 0 END) AS reject
+                    FROM Article;
+                ";
+
+            }
+            else{
+                $sql = " 
+                    SELECT 
+                        SUM(CASE WHEN ArticleStatus = 1 THEN 1 ELSE 0 END) AS public,
+                        SUM(CASE WHEN ArticleStatus = 0 THEN 1 ELSE 0 END) AS pending,
+                        SUM(CASE WHEN ArticleStatus = -1 THEN 1 ELSE 0 END) AS reject
+                    FROM Article
+                    WHERE AuthorID = ".$UID.";
+                ";
+                
+            }
+            $result = mysqli_query($conn, $sql);
+            $data = mysqli_fetch_assoc($result);
+            mysqli_close($conn);
+            return $data;
+        }
     }
+
 ?>

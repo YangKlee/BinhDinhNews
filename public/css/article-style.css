@@ -22,6 +22,7 @@ article {
     object-fit: contain;
     margin: 20px 0px;
     text-align: center;
+    cursor: zoom-in;
 }
 .art-content p {
     font-size: 1.2rem;
