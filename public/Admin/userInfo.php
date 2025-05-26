@@ -108,7 +108,7 @@
                     <input type="text" class="txb txb-phone" name="phone_tx" id="" value="<?php echo $result['Phone'] ?> ">
                 </div>
                 <div class="adias-warpper">
-                    <label for="">Bí danh (tênhiển thị khi đăng bài): </label>
+                    <label for="">Bí danh (tên hiển thị khi đăng bài): </label>
                     <input  type="text" class="txb txb-adias" name="adias_tx" id="" value="<?php echo $result['Alias'] ?>">
                 </div>
                 <div class="organ-warpper">
