@@ -25,13 +25,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="icon" href="../../images/logo.webp" type="image/x-icon">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Trang Đăng Ký </title>
     <link rel="stylesheet" href="../../css/signin-style.css">
     <link rel="stylesheet" href="../../css/reset.css">
-    <link rel="shortcut icon" href="../../images/logo.webp" type="image/x-icon">
+    <link rel="stylesheet" href="../../css/mini-footer-style.css">
+    <link rel="icon" href="../../images/logo.webp" type="image/x-icon">
 </head>
 <body>
     <form action="<?php $_SERVER['PHP_SELF'] ?>" method="post">
@@ -39,7 +39,7 @@
         <h3>Đăng ký</h3>
         <div class="username-warper">
             <label for="username">Tên đăng nhập <span style="color: red;"> *</span></label>
-            <input type="text" id="username"  name="username_tb">
+            <input type="text" id="username"  name="username_tb" required>
         </div>
         <div class="email-warper">
             <label for="username">Email: <span style="color: red;"> *</span></label>
@@ -47,11 +47,11 @@
         </div>
         <div class="password-warper">
             <label for="password">Mật khẩu <span style="color: red;"> *</span></label>
-            <input type="password"  id="password" name="password_tb">
+            <input type="password"  id="password" name="password_tb" required>
         </div>
         <div class="repassword-warper">
             <label for="password">Xác nhận mật khẩu <span style="color: red;"> *</span></label>
-            <input type="password" id="repassword" name="repassword_tb">
+            <input type="password" id="repassword" name="repassword_tb" required>
         </div>
 
         <div class="nofi-container">
@@ -93,7 +93,9 @@
             }
         ?>
         <a href="login.php">Đã có tài khoản ?</a>
-        
     </form>
+    <?php 
+        include("../../../app/views/partials/mini-footer.php");
+    ?>
 </body>
 </html>

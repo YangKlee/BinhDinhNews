@@ -20,7 +20,6 @@
     </style>
 </head>
 <body>
-    <h1>Đi đâu đấy ku?</h1>
     <h1>You không có quyền vào đây~</h1>
     <img src="../images/meme.jpeg" alt="">
     <a href="../index.php">Về trang chủ</a>

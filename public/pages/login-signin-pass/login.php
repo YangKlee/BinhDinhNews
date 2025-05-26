@@ -75,7 +75,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Trang Đăng Nhập </title>
     <link rel="stylesheet" href="../../css/login-style.css">
-    <!-- <link rel="stylesheet" href="../../css/mini-footer-style.css"> -->
+    <link rel="stylesheet" href="../../css/mini-footer-style.css">
     <link rel="icon" href="../../images/logo.webp" type="image/x-icon">
 </head>
 
@@ -100,7 +100,7 @@
     <div class="login-nofication" style="display: <?php echo $displayNofi ?>;">
     </div>
     <?php 
-        //include("./partials/mini-footer.php");
+        include("../../../app/views/partials/mini-footer.php");
     ?>
 </body>
 </html>
