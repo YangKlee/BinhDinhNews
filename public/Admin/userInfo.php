@@ -25,7 +25,7 @@
             $updateImageStatus= true;
         }
 
-        $updateInfoStatus = $userDAO->updateAuthorInfo($_SESSION['UID'],
+        $updateInfoStatus = $userDAO->updateAuthorInfo($_POST['uid_tx'],
          $_POST['fullname_tx'], $_POST['phone_tx'], 
          $_POST['email_tx'], $_POST['cccd_tx'], 
          $_POST['adias_tx'], $_POST['organ_tx'], $_POST['role_select']);
@@ -87,17 +87,20 @@
                     exit();
                 }           
             ?>
-            <form action="#" method="post" class="form-user-info" enctype="multipart/form-data">
+            <form action="<?php $_SERVER['PHP_SELF'] ?>" method="post" class="form-user-info" enctype="multipart/form-data">
                 <?php
                     if(isset($_GET['user_id']))
                     {
                         echo '<input type="text" name="uid_tx" hidden value="'.$_GET['user_id'].'">';
                     }
-                    else{
-                         echo '<input type="text" name="uid_tx" hidden value="'.$_SESSION['UID'].'">';
+                    else if(isset($_SESSION['UID'])){
+                        echo '<input type="text" name="uid_tx" hidden value="'.$_SESSION['UID'].'">';
                     }
+
+                    
+                
                 ?>
-                <input type="text" name="uid_tx" hidden value="">
+
                 <div class="user-name-warpper">
                     <label for="">Username: </label>
                     <input type="text" class="txb txb-username" type="text" name="username_tx"  id="username_txb" value="<?php echo $result['UserName'] ?>">

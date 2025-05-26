@@ -105,7 +105,7 @@
                                         ${indexUploadImages}
                                 </td>
                                 <td>
-                                    <input type="file" name="imageArticle_${indexUploadImages} " required >
+                                    <input type="file" name="imageArticle_${indexUploadImages}" required >
                                 </td>
                                 <td>
                                     <input type="text" placeholder="Nhập mô tả" name="labelArticle_${indexUploadImages}" required>
