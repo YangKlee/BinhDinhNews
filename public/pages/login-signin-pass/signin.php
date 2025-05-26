@@ -12,9 +12,9 @@
             $conn = $db->getConnection();
             $query= "Insert into UserData(UserName,PassWord,Email,ROLE) VALUES(?, ? , ?, 0)";
             $sttm = mysqli_prepare($conn,$query);
-            mysqli_stmt_bind_param($sttm, "sss", $_POST['username_tb'], hash("sha256",  $_POST['password_tb']), $_POST['email_tb'] );
+            mysqli_stmt_bind_param($sttm, "sss", $_POST['username_tb'], hash("sha256", $_POST['password_tb']), $_POST['email_tb'] );
             mysqli_stmt_execute($sttm);
-            echo '<script>        alert("Đăng ký thành công~~")</script>';
+            echo '<script>alert("Đăng ký thành công~~")</script>';
         }
         else{
             $nofi = "Sai thông tin";
@@ -31,6 +31,7 @@
     <title> Trang Đăng Ký </title>
     <link rel="stylesheet" href="../../css/signin-style.css">
     <link rel="stylesheet" href="../../css/reset.css">
+    <link rel="shortcut icon" href="../../images/logo.webp" type="image/x-icon">
 </head>
 <body>
     <form action="<?php $_SERVER['PHP_SELF'] ?>" method="post">
@@ -42,7 +43,7 @@
         </div>
         <div class="email-warper">
             <label for="username">Email: <span style="color: red;"> *</span></label>
-            <input type="text" id="email" name="email_tb">
+            <input type="email" id="email" name="email_tb" required>
         </div>
         <div class="password-warper">
             <label for="password">Mật khẩu <span style="color: red;"> *</span></label>
