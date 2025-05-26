@@ -27,7 +27,7 @@
                 $_SESSION['role'] = -1;
                 $_SESSION['UID'] = null;
             }
-                mysqli_close($conn);
+                
         }
 
     }

@@ -96,6 +96,14 @@
                          echo '<input type="text" name="uid_tx" hidden value="'.$_SESSION['UID'].'">';
                     }
                 ?>
+                <?php
+                    if(isset($_))
+                    if(isset($_SESSION['UID'])){
+                        echo '<input type="text" name="uid_tx" hidden value="'.$_SESSION['UID'].'">';
+                    }
+                    
+                
+                ?>
                 <input type="text" name="uid_tx" hidden value="">
                 <div class="user-name-warpper">
                     <label for="">Username: </label>

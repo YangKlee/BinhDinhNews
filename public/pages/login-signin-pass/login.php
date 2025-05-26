@@ -91,7 +91,7 @@
         <input type="password" placeholder="Mật khẩu" id="password" name="password">
         <label class="checkbox-rememberpass-warper">
             <input type="checkbox" name="remember-pass">
-            Nhớ mật khẩu
+            Lưu đăng nhập
             
         </label>
         <input type="submit" value="Đăng nhập" id="login-btn" name="loginbtn">
