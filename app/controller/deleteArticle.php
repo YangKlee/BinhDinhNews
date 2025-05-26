@@ -16,11 +16,18 @@
         }
         // xóa các hình ảnh của bài báo
         // xóa ảnh bìa
-        if(file_exists($imageArticledir.$data['MainImages']))
+        if(file_exists($imageArticledir.$data['MainImage']))
         {
-            unlink($imageArticledir.$data['MainImages']);
+            unlink($imageArticledir.$data['MainImage']);
         }
-        // mai viết tiếp bố m đi làm cái lọ đây
+        // xóa các hình ảnh trong bài báo
+        $listImage = explode("|", $data['ListImage']);
+        foreach($listImage as $img){
+            if(file_exists($imageArticledir.$img))
+            {
+                unlink($imageArticledir.$img);
+            }
+        }
         mysqli_free_result($result);
         header("Location: ../../public/admin/listArticleAdmin.php");    
     }

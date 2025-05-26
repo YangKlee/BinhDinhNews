@@ -118,7 +118,7 @@
                                         $DAOArticle = new articleDAO();
                                         $sql = 'SELECT * FROM article INNER JOIN category ON article.CategoryID = category.CategoryID
                                                         WHERE category.CategoryName = "Chính trị"
-                                                        LIMIT 5 offset 5';
+                                                        LIMIT 5 OFFSET 5';
                                         $result = $DAOArticle->getListArticleQuery($sql);     
                                         while($row = mysqli_fetch_array($result, MYSQLI_ASSOC))
                                         {

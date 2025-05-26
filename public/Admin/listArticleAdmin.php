@@ -114,9 +114,9 @@
                                     <a href="../article.php?id='.$row['ArticleID'].'"><button class="btn btn-view">Xem bài báo</button></a>
                                     <a id="delete-btn" href="/BinhDinhNews/app/controller/deleteArticle.php?idart='.$row['ArticleID'].'"><button class="btn btn-delete">Xóa</button></a>
                                     ';
-                        if($row['ArticleStatus'] == 0)
+                        if($row['ArticleStatus'] == 0 && $_SESSION['role'] == 2)
                         {
-                            echo '<a id="delete-btn" href="/BinhDinhNews/app/controller/allowArticle.php?idart='.$row['ArticleID'].'"><button class="btn btn-allow">Duyệt bài báo</button></a>';
+                            echo '<a id="allow-btn" href="/BinhDinhNews/app/controller/allowArticle.php?idart='.$row['ArticleID'].'"><button class="btn btn-allow">Duyệt bài báo</button></a>';
                         }           
                         echo'           
                                 </div>

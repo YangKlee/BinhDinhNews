@@ -18,8 +18,8 @@
         $fileUpload = new Upload();
         if(isset($_FILES['avatar_img']) && !empty($_FILES['avatar_img']))
         {
-            $filenameDir =  $fileUpload->UploadImageUserAvatar($_SESSION['UID'], $_FILES['avatar_img']);
-            $updateImageStatus = $userDAO->updateAuthorAvatar($_SESSION['UID'], $filenameDir);
+            $filenameDir =  $fileUpload->UploadImageUserAvatar($_POST['uid_tx'], $_FILES['avatar_img']);
+            $updateImageStatus = $userDAO->updateAuthorAvatar($_POST['uid_tx'], $filenameDir);
         }
         else{
             $updateImageStatus= true;
@@ -87,12 +87,23 @@
                 }           
             ?>
             <form action="#" method="post" class="form-user-info" enctype="multipart/form-data">
+                <?php
+                    if(isset($_GET['user_id']))
+                    {
+                        echo '<input type="text" name="uid_tx" hidden value="'.$_GET['user_id'].'">';
+                    }
+                    else{
+                         echo '<input type="text" name="uid_tx" hidden value="'.$_SESSION['UID'].'">';
+                    }
+                ?>
+                <input type="text" name="uid_tx" hidden value="">
                 <div class="user-name-warpper">
                     <label for="">Username: </label>
                     <input type="text" class="txb txb-username" type="text" name="username_tx"  id="username_txb" value="<?php echo $result['UserName'] ?>">
                 </div>
                 <div class="full-name-warpper">
                     <label for="">Họ và tên: </label>
+                    <?php echo $result['FullName'] ?>
                     <input type="text" class="txb txb-fullname" name="fullname_tx" id="" value="<?php echo $result['FullName'] ?>">
                 </div>
                 <div class="email-warpper">
