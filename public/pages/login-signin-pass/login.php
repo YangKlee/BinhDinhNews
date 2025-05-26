@@ -33,7 +33,6 @@
                     // lưu cookie hash vô db
                     $sql = "Update UserData set AuthCookies = '".$cookiesHash."' where UserID = ".$userData['UserID']."";
                     mysqli_query($coon, $sql);
-
                 }
                 else{
                     session_start();
@@ -92,11 +91,8 @@
         <label class="checkbox-rememberpass-warper">
             <input type="checkbox" name="remember-pass">
             Nhớ mật khẩu
-            
         </label>
         <input type="submit" value="Đăng nhập" id="login-btn" name="loginbtn">
-
-        
         <a href="signin.php">Chưa có tài khoản ?</a>
         <a href="fogot-password.php">Quên mật khẩu ?</a>
     </form>
