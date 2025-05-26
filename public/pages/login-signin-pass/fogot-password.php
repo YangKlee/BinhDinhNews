@@ -53,6 +53,9 @@ if (isset($_POST['verify-btn'])) {
         unset($_SESSION['email']);
         unset($_SESSION['otp_sent']);
     } elseif ($input_otp === (string)$_SESSION['otp']) {
+        unset($_SESSION['otp']);
+        unset($_SESSION['otp_sent']);
+        unset($_SESSION['otp_expiry']);
         $_SESSION['reset_password'] = true; // Đánh dấu đã xác minh OTP
     } else {
         echo '<div class="error">Mã OTP không hợp lệ!</div>';
@@ -67,9 +70,6 @@ if (isset($_POST['reset-btn'])) {
     if($userDAO->updateUserPassword($email, $new_password)){
         unset($_SESSION['reset_password']);
         unset($_SESSION['email']);
-        unset($_SESSION['otp']);
-        unset($_SESSION['otp_sent']);
-        unset($_SESSION['otp_expiry']);
         echo "<script> alert('Đặt lại mật khẩu thành công');</script>";
         header("Location: login.php");
         exit();
@@ -117,7 +117,7 @@ if (isset($_POST['reset-btn'])) {
             <input type="hidden" name="email" value="<?php echo htmlspecialchars($_SESSION['email']); ?>">
             <label for="new-password">Mật khẩu mới</label>
             <input type="password" placeholder="Nhập mật khẩu mới" id="new-password" name="new-password" required>
-            <input type="submit" value="reset-btn" id="confirm-btn" name="reset-btn">
+            <input type="submit" value="Đặt lại mật khẩu" id="confirm-btn" name="reset-btn">
             <a href="login.php">Quay lại trang đăng nhập</a>
         </form>
     <?php endif; ?>
