@@ -8,7 +8,7 @@ body {
 .main-container {
     display: grid;
     grid-template-columns: 430px auto;
-    min-height: 100vh;
+    
 }
 .form-user-info input.txb,
 .form-user-info select.txb,
@@ -65,4 +65,8 @@ body {
 .form-user-info input[type="submit"]:hover {
     background-color: #0056b3;
 }
+    
 
+.role-warpper.hidden {
+    display: none !important;
+}

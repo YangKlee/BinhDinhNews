@@ -107,7 +107,6 @@
                 </div>
                 <div class="full-name-warpper">
                     <label for="">Họ và tên: </label>
-                    <?php echo $result['FullName'] ?>
                     <input type="text" class="txb txb-fullname" name="fullname_tx" id="" value="<?php echo $result['FullName'] ?>">
                 </div>
                 <div class="email-warpper">
