@@ -22,7 +22,6 @@ function sendOTP($email, $otp) {
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS; // Mã hóa TLS
         $mail->Port = 587; // Cổng SMTP
         $mail->CharSet = 'UTF-8'; // Thiết lập mã hóa ký tự
-        // Thiết lập người gửi và người nhận
         $mail->setFrom('cutechatchoinguoidoi@gmail.com', 'Admin BinhDinhNews'); // Tên gửi chuyên nghiệp
         $mail->addAddress($email);
         $mail->addReplyTo('cutechatchoinguoidoi@gmail.com', 'Cuong Tran'); // Không dùng nội dung nhạy cảm

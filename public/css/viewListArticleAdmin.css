@@ -54,7 +54,7 @@
     height: 2rem;
     width: 2rem;
     border-radius: 50%;
-    background-color: var(--main_color);
+    background-color: blue;
     padding: 5px;
     margin: 0px 5px;
     color: white;
@@ -72,8 +72,9 @@
     height: 2rem;
     width: 2rem;
     border-radius: 50%;
-    background-color: var(--main_color);
+    background-color: rgb(204, 204, 255);
     color: white;
+
 }
 .article-element-rightfunction{
     display: flex;

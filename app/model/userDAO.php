@@ -18,9 +18,9 @@
             $conn = $this->getConnection();
             $sql = "Select * from UserData where AuthCookies = '".$authcode."'";
             $result = mysqli_query($conn, $sql);
-            $data = mysqli_fetch_assoc($result);
+
             mysqli_close($conn);
-            return $data;
+            return $result;
         }
 
         function getUserByEmail($email){
@@ -33,6 +33,7 @@
             mysqli_close($conn);
             return $data;
         }
+
         function getAuthorInfo($uid)
         {
             $conn = $this->getConnection();
@@ -42,27 +43,55 @@
             mysqli_close($conn);
             return $data;
         }
-        function updateAuthorInfo($uid, $fullname, $sdt,$email , $cccd, $adias, $organ, $role )
-        {
-            $conn = $this->getConnection();
-            $sql = "UPDATE `userdata` 
-                    SET `Email`='" . $email . "',
-                        `FullName`='" . $fullname . "',
-                        `Phone`='" . $sdt . "',
-                        `Alias`='" . $adias . "',
-                        `Organization`='" . $organ . "',
-                        `CCCD`='" . $cccd . "',
-                         `ROLE` = '".$role."'   
-                    WHERE `UserID`='" . $uid . "'";
-             if(mysqli_query($conn, $sql))
-             {
-                mysqli_close($conn);
-                return true;
-             }
-             mysqli_close($conn);
-             return false;
+        // function updateAuthorInfo($uid, $fullname, $sdt,$email , $cccd, $adias, $organ, $role )
+        // {
+        //     $conn = $this->getConnection();
+        //     $sql = "UPDATE `userdata` 
+        //             SET `Email`='" . $email . "',
+        //                 `FullName`='" . $fullname . "',
+        //                 `Phone`='" . $sdt . "',
+        //                 `Alias`='" . $adias . "',
+        //                 `Organization`='" . $organ . "',
+        //                 `CCCD`='" . $cccd . "',
+        //                  `ROLE` = '".$role."'   
+        //             WHERE `UserID`='" . $uid . "'";
+        //      if(mysqli_query($conn, $sql))
+        //      {
+        //         mysqli_close($conn);
+        //         return true;
+        //      }
+        //      mysqli_close($conn);
+        //      return false;
              
 
+        // }
+        function updateAuthorInfo($uid, $fullname, $sdt, $email, $cccd, $adias, $organ, $role)
+        {
+            $conn = $this->getConnection();
+
+            $sql = "UPDATE `userdata` 
+                    SET `Email` = ?, 
+                        `FullName` = ?, 
+                        `Phone` = ?, 
+                        `Alias` = ?, 
+                        `Organization` = ?, 
+                        `CCCD` = ?, 
+                        `ROLE` = ?
+                    WHERE `UserID` = ?";
+
+            $stmt = $conn->prepare($sql);
+            if (!$stmt) {
+                mysqli_close($conn);
+                return false;
+            }
+
+            $stmt->bind_param("ssssssss", $email, $fullname, $sdt, $adias, $organ, $cccd, $role, $uid);
+
+            $result = $stmt->execute();
+            $stmt->close();
+            mysqli_close($conn);
+
+            return $result;
         }
         function updateAuthorAvatar($uid, $img)
         {
@@ -116,10 +145,20 @@
             return $users;
         }
         
-        function updateUserPassword($uid, $newPassword)
-        {
-
+        function updateUserPassword($email, $newPassword)
+        {   
+            $conn = $this->getConnection();
+            $sql = "UPDATE userdata SET PassWord = ? WHERE Email = ?";
+            $stmt = $conn->prepare($sql);
+            if (!$stmt) {
+                return false;
+            }
+            $newPassword = hash('sha256', $newPassword);
+            $stmt->bind_param("ss", $newPassword, $email);
+            $result = $stmt->execute();
+            $stmt->close();
+            mysqli_close($conn);
+            return $result;
         }
     }
-
 ?>

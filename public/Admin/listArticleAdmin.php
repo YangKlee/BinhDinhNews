@@ -17,6 +17,7 @@
 
     <link rel="stylesheet" href="../css/menu-admin.css">
     <link rel="stylesheet" href="../css/reset.css">
+    <link rel="shortcut icon" href="../../../../../BinhDinhNews/public/images/logo.webp" type="image/x-icon">
     <title>Document</title>
 </head>
 <body>
@@ -39,10 +40,23 @@
                     $artDAO = new articleDAO();
                     // $sql = "SELECT * FROM `article` WHERE AuthorID = ".$_SESSION['UID']." ORDER BY Time_modify DESC
                     //         LIMIT ".$artilces_per_page." OFFSET ".($current_page - 1) * $artilces_per_page."";
+                    $element_per_page = 5;
+                    $current_page = $_GET['page'] ?? 1;
+                    $total_element = 0;
                     if($_SESSION['role'] == 1)
-                        $sql = "SELECT * FROM `article` WHERE AuthorID = ".$_SESSION['UID']." ORDER BY Time_modify DESC";
-                    else if($_SESSION['role'] == 2)
-                        $sql = "SELECT * FROM `article`  ORDER BY Time_modify DESC";
+                    {
+                        $sql = "SELECT * FROM `article` WHERE AuthorID = ".$_SESSION['UID']." ORDER BY Time_modify DESC
+                        LIMIT ".$element_per_page." OFFSET ".($current_page-1)*$element_per_page."";
+                        $total_element = $artDAO->coutOfQuery("SELECT * FROM `article` WHERE AuthorID = ".$_SESSION['UID']."");
+
+                    }  
+                    else if($_SESSION['role'] == 2)        
+                    {
+                        $sql = "SELECT * FROM `article`  ORDER BY Time_modify DESC
+                        LIMIT ".$element_per_page." OFFSET ".($current_page-1)*$element_per_page."";
+                        $total_element = $artDAO->coutOfQuery("SELECT * FROM `article` ");    
+                    }
+                    $total_pages = ceil($total_element/$element_per_page);
                     $result = $artDAO->getListArticleQuery($sql);
                     $total_articles = mysqli_num_rows(mysqli_query($artDAO->getConnection(), "SELECT * FROM `article` WHERE AuthorID = ".$_SESSION['UID']." "));
 
@@ -68,7 +82,7 @@
                         if (is_null($row['MainImage']) || $row['MainImage'] == '')
                         {
                             $row['MainImage'] = 'default.png';
-                            $row['ArticleID'] = 'default';
+                            // $row['ArticleID'] = 'default';
                         }
                         $statusArticle = null;
                         if($row['ArticleStatus'] == 0)
@@ -101,9 +115,9 @@
                                     <a href="../article.php?id='.$row['ArticleID'].'"><button class="btn btn-view">Xem bài báo</button></a>
                                     <a id="delete-btn" href="/BinhDinhNews/app/controller/deleteArticle.php?idart='.$row['ArticleID'].'"><button class="btn btn-delete">Xóa</button></a>
                                     ';
-                        if($row['ArticleStatus'] == 0)
+                        if($row['ArticleStatus'] == 0 && $_SESSION['role'] == 2)
                         {
-                            echo '<a id="delete-btn" href="/BinhDinhNews/app/controller/allowArticle.php?idart='.$row['ArticleID'].'"><button class="btn btn-allow">Duyệt bài báo</button></a>';
+                            echo '<a id="allow-btn" href="/BinhDinhNews/app/controller/allowArticle.php?idart='.$row['ArticleID'].'"><button class="btn btn-allow">Duyệt bài báo</button></a>';
                         }           
                         echo'           
                                 </div>
@@ -114,6 +128,8 @@
                         
                     }
                     mysqli_free_result($result);
+                    require_once( $_SERVER['DOCUMENT_ROOT'] . '/BinhDinhNews/app/controller/pagination.php');
+                    page_navigation($total_pages, $current_page,  "/BinhDinhNews/public/admin/listArticleAdmin.php");
                 ?>
 
                 

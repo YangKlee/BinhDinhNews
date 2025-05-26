@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="../css/menu-admin.css">
     <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href="../css/add-article-style.css">
+    <link rel="shortcut icon" href="../../../../../BinhDinhNews/public/images/logo.webp" type="image/x-icon">
     <script>
         var indexUploadImages = 1;
     </script>
@@ -34,7 +35,7 @@
                 <h1>Thêm bài báo</h1>    
                 <div class="input-warpper tieude-warpper">
                     <label for="">Tiêu đề bài báo <span style="color:red">(*)</span></label>
-                    <input type="text" placeholder="Nhập tiêu đề..." name="article-tittle">
+                    <input type="text" placeholder="Nhập tiêu đề..." name="article-tittle" required>
                 </div>
                 <div class="input-warpper tags-warpper">
                     <label for="">Tags(Các tag cách nhau bằng dấu phẩy) </label>
@@ -44,7 +45,7 @@
                     <label for="">Chọn thể loại của bài báo <span style="color:red">(*)</span> </label>
                     
                     
-                    <select name="cat-selector" class="select-box-input">
+                    <select name="cat-selector" class="select-box-input" required>
                         <?php
                             require_once "../../app/model/CategoryDAO.php";
                             $catDAO = new CategoryDAO();
@@ -57,14 +58,14 @@
                         ?>
                     </select>
                 </div>
-                <div class="input-warpper image-tittle">
+                <div class="input-warpper image-tittle" >
                     <label for="">Upload ảnh bìa <span style="color:red">(*)</span> </label>
-                    <input type="file" id="myfile" name="imageTitle">
+                    <input type="file" id="myfile" name="imageTitle" required>
                 </div>
                 <div class="input-warpper content-warpper">
                     <label for="">Nội dung: <span style="color:red">(*)</span> </label>
                     
-                    <textarea name="content-article" id="content-article-area">
+                    <textarea name="content-article" id="content-article-area" required>
                     </textarea>
                 </div>
                 <div class="input-warpper imagesupload-warpper">
@@ -89,29 +90,38 @@
                         </table>
 
                     </div>    
+                    <div class="btn-modify-warper">
                         <button onclick="loadNewImageUpload()" type="button" class="btn addimg">Thêm hình ảnh</button>
+                        <button onclick="deleteImages(indexUploadImages-1)" type="button" class="btn deleteimg">Xóa hình ảnh</button>
+                    </div>
+                        
                 </div>
                 <script>
                     let imageuploadform = document.querySelector(".image-upload-table");
                     function loadNewImageUpload()
                     {
-                        let template = `                            <tr>
+                        let template = `                            <tr class='table-row-${indexUploadImages}'>
                                 <td>
                                         ${indexUploadImages}
                                 </td>
                                 <td>
-                                    <input type="file" name="imageArticle_${indexUploadImages}">
+                                    <input type="file" name="imageArticle_${indexUploadImages}" required >
                                 </td>
                                 <td>
-                                    <input type="text" placeholder="Nhập mô tả" name="labelArticle_${indexUploadImages}">
+                                    <input type="text" placeholder="Nhập mô tả" name="labelArticle_${indexUploadImages}" required>
                                 </td>
                                 <td>
-                                    <input type="number" name="imageArticle_row_${indexUploadImages}" placeholder="Nhập số dòng">
+                                    <input type="number" name="imageArticle_row_${indexUploadImages}" placeholder="Nhập số dòng" required>
                                 </td>
+
                             </tr>`;
                         //imageuploadform.innerHTML += template;
                         imageuploadform.insertAdjacentHTML("beforeend", template);
                         indexUploadImages++;
+                    }
+                    function deleteImages(index){
+                        document.querySelector(`.table-row-${index}`).outerHTML= "";
+                        indexUploadImages--;
                     }
                 </script>
 

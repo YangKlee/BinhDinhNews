@@ -37,7 +37,7 @@
             <div class = "container-article-list">
                 <?php
                     include('../app/model/ArticleDAO.php');
-                    $artilces_per_page = 2;
+                    $artilces_per_page = 5;
                     $current_page = $_GET['page'] ?? 1;
                     $artDAO = new articleDAO();
                     $sql = "SELECT * FROM `article` WHERE CategoryID = ".$_GET['idcat']." AND ArticleStatus = 1 ORDER BY Time_modify DESC
@@ -89,7 +89,7 @@
                     }
                     mysqli_free_result($result);
                     require_once('../app/controller/paginationHelper.php');
-                    page_navigation($total_pages, $current_page);
+                    page_navigation_Cat($total_pages, $current_page);
                 ?>
                 <!-- <div class="article-container">
                     <a href="" class="article-element">
