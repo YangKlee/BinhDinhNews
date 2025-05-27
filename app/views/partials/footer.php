@@ -50,8 +50,8 @@
                 </div>
 
                 <div class="auth-menu">
-                    <a href="../public/login.php">Đăng nhập</a>
-                    <a href="../public/signin.php">Đăng ký</a>
+                    <a href="\BinhDinhNews\public\pages\login-signin-pass\login.php">Đăng nhập</a>
+                    <a href="/BinhDinhNews/public/pages/login-signin-pass/signin.php">Đăng ký</a>
                 </div>
             </div>
         </div>
