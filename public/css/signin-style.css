@@ -14,9 +14,15 @@ body::before {
     background-color: rgba(0, 0, 0, 0.61);
 }
 
+html, body, body::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 /* Nhóm định dạng cho form đăng ký */
 form {
-    height: 750px;
+    height: 700px;
     width: 500px;
     background-color: rgba(255, 255, 255, 0.11);
     position: absolute;
@@ -40,6 +46,7 @@ form * {
 
 /* Nhóm định dạng cho tiêu đề trong form */
 form h3 {
+    margin-top: 1.5rem;
     font-size: 32px;
     font-weight: 500;
     line-height: 42px;

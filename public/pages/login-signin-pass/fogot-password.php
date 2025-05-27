@@ -86,6 +86,7 @@ if (isset($_POST['reset-btn'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../css/forgot-password-style.css">
     <link rel="icon" href="../../images/logo.webp" type="image/x-icon">
+    <link rel="stylesheet" href="../../css/mini-footer-style.css">
     <title>Quên mật khẩu</title>
     <style>
         form { height: 350px; }
@@ -121,5 +122,8 @@ if (isset($_POST['reset-btn'])) {
             <a href="login.php">Quay lại trang đăng nhập</a>
         </form>
     <?php endif; ?>
+    <?php 
+        include("../../../app/views/partials/mini-footer.php");
+    ?>
 </body>
 </html>
