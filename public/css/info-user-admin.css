@@ -1,13 +1,13 @@
 body {
     background-color: #e9ecef;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   
     margin: 0;
     padding: 0;
 }
 
 .main-container {
     display: grid;
-    grid-template-columns: 430px auto;
+    grid-template-columns: 20% 80%;
     
 }
 .form-user-info input.txb,
@@ -35,16 +35,20 @@ body {
     display: block;
     color: #333;
 }
-
+.avatar-warpper{
+    
+}
 .avatar-warpper img {
-    width: 74px;
-    height: 74px;
+    display: block;
+    margin: 0px auto;
+    width: 150px;
+    height: 150px;
     object-fit: cover;
     border-radius: 50%;
     border: 2px solid #e5e7eb;
     background: #f3f4f6;
     margin-bottom: 10px;
-    display: block;
+    
 }
 
 .form-user-info button,
@@ -59,14 +63,29 @@ body {
     cursor: pointer;
     margin-top: 24px;
     transition: background-color 0.3s ease;
+    margin: 0px auto;
 }
-
+.form-user-info input[type="text"]
+{
+    width: 400px;
+} 
 .form-user-info button:hover,
 .form-user-info input[type="submit"]:hover {
     background-color: #0056b3;
 }
     
+form{
 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+    width: auto;
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
 .role-warpper.hidden {
     display: none !important;
+}
+.form-input-warpper{
+    display: flex;
+    gap: 30px;
 }

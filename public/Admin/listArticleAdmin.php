@@ -128,7 +128,7 @@
                         
                     }
                     mysqli_free_result($result);
-                    require_once( $_SERVER['DOCUMENT_ROOT'] . '/BinhDinhNews/app/controller/pagination.php');
+                    require_once( $_SERVER['DOCUMENT_ROOT'] . '/BinhDinhNews/app/controller/paginationHelper.php');
                     page_navigation($total_pages, $current_page,  "/BinhDinhNews/public/admin/listArticleAdmin.php");
                 ?>
 

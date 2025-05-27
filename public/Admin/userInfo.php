@@ -6,6 +6,7 @@
     if($_SESSION['role'] < 1)
     {
         header("Location: ./firewall.php");    
+        exit;
     }
 ?>
 <?php
@@ -16,7 +17,7 @@
         require_once $_SERVER['DOCUMENT_ROOT'].'/BinhDinhNews/app/controller/Upload.php';
         $userDAO = new UserDAO();
         $fileUpload = new Upload();
-        if(isset($_FILES['avatar_img']) && !empty($_FILES['avatar_img']))
+        if(isset($_FILES['avatar_img']) && !empty($_FILES['avatar_img']['name']))
         {
             $filenameDir =  $fileUpload->UploadImageUserAvatar($_POST['uid_tx'], $_FILES['avatar_img']);
             $updateImageStatus = $userDAO->updateAuthorAvatar($_POST['uid_tx'], $filenameDir);
@@ -69,7 +70,11 @@
                 if(isset($_GET['user_id']))
                 {
                         $user_id = $_GET['user_id'];
-
+                    if($_SESSION['role'] !=2)
+                    {
+                        header("Location: ./firewall.php");    
+                        exit;
+                    }
                     $result = $userDAO->getAuthorInfo($_GET['user_id']);
                     if($result == 0)
                     {
@@ -97,65 +102,70 @@
                         echo '<input type="text" name="uid_tx" hidden value="'.$_SESSION['UID'].'">';
                     }
 
+                ?>
+                <h1 style="text-align: center;">THÔNG TIN NGƯỜI DÙNG</h1>    
+                <div class="form-input-warpper">
                     
-                
-                ?>
+                    <div class="form-basic-info">
+                        <div class="user-name-warpper">
+                            <label for="">Username: </label>
+                            <input type="text" class="txb txb-username" type="text" name="username_tx"  id="username_txb" value="<?php echo $result['UserName'] ?>">
+                        </div>
+                        <div class="full-name-warpper">
+                            <label for="">Họ và tên: </label>
+                            <input type="text" class="txb txb-fullname" name="fullname_tx" id="" value="<?php echo $result['FullName'] ?>">
+                        </div>
+                        <div class="email-warpper">
+                            <label for="">Email: </label>
+                            <input type="text" class="txb txb-email" name="email_tx" id="" value="<?php echo $result['Email'] ?>">
+                        </div>
+                        <div class="cccd-warpper">
+                            <label for="">Số CCCD: </label>
+                            <input type="text" class="txb txb-cccd" name="cccd_tx" id="" value="<?php echo $result['CCCD'] ?>">
+                        </div>
+                        <div class="phone-warpper">
+                            <label for="">Số điện thoại: </label>
+                            <input type="text" class="txb txb-phone" name="phone_tx" id="" value="<?php echo $result['Phone'] ?> ">
+                        </div>
+                        <div class="adias-warpper">
+                            <label for="">Bí danh (tênhiển thị khi đăng bài): </label>
+                            <input  type="text" class="txb txb-adias" name="adias_tx" id="" value="<?php echo $result['Alias'] ?>">
+                        </div>
+                        <div class="organ-warpper">
+                            <label for="">Tổ chức: </label>
+                            <input type="text" class="txb txb-organ" name="organ_tx" id="" value="<?php echo $result['Organization'] ?>">
+                        </div>
+                        <div class="role-warpper"> 
+                                    <label for="">Vai trò:</label>
+                                    <select name="role_select" class="txb" id="role_select" >
+                                        <option value="1">Tác giả</option >
+                                        <option value="2">Admin</option>
+                                    </select>
+                        </div>
 
-                <div class="user-name-warpper">
-                    <label for="">Username: </label>
-                    <input type="text" class="txb txb-username" type="text" name="username_tx"  id="username_txb" value="<?php echo $result['UserName'] ?>">
-                </div>
-                <div class="full-name-warpper">
-                    <label for="">Họ và tên: </label>
-                    <input type="text" class="txb txb-fullname" name="fullname_tx" id="" value="<?php echo $result['FullName'] ?>">
-                </div>
-                <div class="email-warpper">
-                    <label for="">Email: </label>
-                    <input type="text" class="txb txb-email" name="email_tx" id="" value="<?php echo $result['Email'] ?>">
-                </div>
-                <div class="cccd-warpper">
-                    <label for="">Số CCCD: </label>
-                    <input type="text" class="txb txb-cccd" name="cccd_tx" id="" value="<?php echo $result['CCCD'] ?>">
-                </div>
-                <div class="phone-warpper">
-                    <label for="">Số điện thoại: </label>
-                    <input type="text" class="txb txb-phone" name="phone_tx" id="" value="<?php echo $result['Phone'] ?> ">
-                </div>
-                <div class="adias-warpper">
-                    <label for="">Bí danh (tên hiển thị khi đăng bài): </label>
-                    <input  type="text" class="txb txb-adias" name="adias_tx" id="" value="<?php echo $result['Alias'] ?>">
-                </div>
-                <div class="organ-warpper">
-                    <label for="">Tổ chức: </label>
-                    <input type="text" class="txb txb-organ" name="organ_tx" id="" value="<?php echo $result['Organization'] ?>">
+                        <?php
+                            if($_SESSION['role'] != 2 || !isset($_GET['user_id']))
+                            {
+                                echo "<script> document.querySelector('.role-warpper').classList.add('hidden') </script>";
+                            }
+
+                            if($result['ROLE'] == 1)
+                            {
+                                echo "<script> document.querySelector('#role_select').value = 1 </script>";
+                            }
+                            else if($result['ROLE'] == 2)
+                            {
+                                echo "<script> document.querySelector('#role_select').value = 2 </script>";
+                            }
+                        ?>
+                    </div>
+                    <div class="avatar-warpper">
+                        <label for="">Ảnh đại diện: </label>
+                        <img src="<?php echo !empty($result['user_img']) ? "/BinhDinhNews/public/images/userAvatar/". $result['user_img'] : "/BinhDinhNews/public/images/user.png"; ?>" alt="Ảnh đại diện">
+                        <input type="file" class="txb txb-avatar" name="avatar_img" id="" >
+                    </div>
                 </div>
 
-                <div class="role-warpper">
-                    <label for="">Vai trò:</label>
-                    <select name="role_select" class="txb" id="role_select" >
-                        <option value="1">Tác giả</option >
-                        <option value="2">Admin</option>
-                    </select>
-                </div>
-                <?php
-                    if($_SESSION['role'] != 2)
-                    {
-                        echo "<script> document.querySelector('.role-warpper').classList.add('hidden') </script>";
-                    }
-                    if($result['ROLE'] == 1)
-                    {
-                        echo "<script> document.querySelector('#role_select').value = 1 </script>";
-                    }
-                    else if($result['ROLE'] == 2)
-                    {
-                        echo "<script> document.querySelector('#role_select').value = 2 </script>";
-                    }
-                ?>
-                <div class="avatar-warpper">
-                    <label for="">Ảnh đại diện: </label>
-                    <img src="<?php echo !empty($result['user_img']) ? "/BinhDinhNews/public/images/userAvatar/". $result['user_img'] : "/BinhDinhNews/public/images/user.png"; ?>" alt="Ảnh đại diện">
-                    <input type="file" class="txb txb-avatar" name="avatar_img" id="" >
-                </div>
                 <button type="button" id="edit_btn">Sửa thông tin</button>
                 <input type="submit" name="btn-submit" id="submit_btn" value="Cập nhật thông tin">
             </form>

@@ -50,9 +50,9 @@
                             <td><?php echo htmlspecialchars($user['UserName']); ?></td>
                             <td><?php echo ($user['Role'] == 2) ? 'Admin' : 'Nhà báo'; ?></td>
                             <td>
-                                <a href="userinfo.php?user_id=<?php echo $user['UserID']; ?>" class="btn-view">Xem/Sửa</a>
+                                <a href="userinfo.php?user_id=<?php echo $user['UserID']; ?>" <?php if($user['UserID'] == $_SESSION['UID']) echo 'hidden'?> class="btn-view">Xem/Sửa</a>
                                 <a href="deleteUser.php?user_id=<?php echo $user['UserID']; ?>" 
-                                   class="btn-delete" onclick="return confirm('Bạn có chắc muốn xóa tài khoản này?');">Xóa</a>
+                                   class="btn-delete" <?php if($user['UserID'] == $_SESSION['UID']) echo 'hidden'?> onclick="return confirm('Bạn có chắc muốn xóa tài khoản này?');">Xóa</a>
                             </td>
                         </tr>
                         <?php endforeach; ?>
