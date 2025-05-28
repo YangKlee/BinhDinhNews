@@ -1,5 +1,6 @@
 <?php
 // Luôn khởi động session ở đầu file
+
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
@@ -11,6 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 }
 
 require_once '../../../app/controller/mail-sender.php';
+require_once '../../../app/model/userDAO.php';
 
 // Xử lý gửi OTP qua email
 if (isset($_POST['email-btn'])) {
@@ -20,21 +22,27 @@ if (isset($_POST['email-btn'])) {
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         echo '<div class="error">Email không hợp lệ!</div>';
     } else {
-        // Tạo OTP an toàn hơn
-        $otp = random_int(100000, 999999);
-        $_SESSION['otp'] = $otp;
-        $_SESSION['email'] = $email;
-        $_SESSION['otp_expiry'] = time() + 300; // OTP hết hạn sau 5 phút
+        // Kiểm tra email có tồn tại trong database
+        $userDAO = new UserDAO();
+        if (!$userDAO->isEmailExists($email)) {
+            echo '<div class="error">Email không tồn tại trong hệ thống!</div>';
+        } else {
+            // Tạo OTP an toàn
+            $otp = random_int(100000, 999999);
+            $_SESSION['otp'] = $otp;
+            $_SESSION['email'] = $email;
+            $_SESSION['otp_expiry'] = time() + 300; // OTP hết hạn sau 5 phút
 
-        // Gửi OTP qua email
-        try {
-            sendOTP($email, $otp);
-            $_SESSION['otp_sent'] = true; // Đánh dấu OTP đã gửi
-        } catch (Exception $e) {
-            echo '<div class="error">Lỗi khi gửi email: ' . htmlspecialchars($e->getMessage()) . '</div>';
-            unset($_SESSION['otp']);
-            unset($_SESSION['email']);
-            unset($_SESSION['otp_sent']);
+            // Gửi OTP qua email
+            try {
+                sendOTP($email, $otp);
+                $_SESSION['otp_sent'] = true; // Đánh dấu OTP đã gửi
+            } catch (Exception $e) {
+                echo '<div class="error">Lỗi khi gửi email: ' . htmlspecialchars($e->getMessage()) . '</div>';
+                unset($_SESSION['otp']);
+                unset($_SESSION['email']);
+                unset($_SESSION['otp_sent']);
+            }
         }
     }
 }
@@ -76,7 +84,6 @@ if (isset($_POST['reset-btn'])) {
     } else {
         echo '<div class="error">Đặt lại mật khẩu không thành công. Vui lòng thử lại.</div>';
     }
-    
 }
 ?>
 <!DOCTYPE html>

@@ -160,5 +160,21 @@
             mysqli_close($conn);
             return $result;
         }
+
+        public function isEmailExists($email) {
+            $conn = $this->getConnection();
+            $sql = "SELECT * FROM userdata WHERE Email = ?";
+            $stmt = $conn->prepare($sql);
+            if (!$stmt) {
+                die("Không kết nối được: " . $conn->error);
+            }
+            $stmt->bind_param("s", $email);
+            $stmt->execute();
+            $result = $stmt->get_result();
+            $exists = $result->num_rows > 0;
+            $stmt->close();
+            mysqli_close($conn);
+            return $exists;
+    }
     }
 ?>
