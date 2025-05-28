@@ -115,7 +115,7 @@
             mysqli_query($conn, "Update Article set ArticleStatus = 1 where ArticleID = ".$idArt."");
             mysqli_close($conn);
         }
-        function coutOfQuery($sql){
+        function countOfQuery($sql){
             $conn = $this->getConnection();
             $result = mysqli_query($conn, $sql);
             $numrow = mysqli_num_rows($result);

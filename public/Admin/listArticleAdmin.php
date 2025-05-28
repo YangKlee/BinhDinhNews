@@ -47,14 +47,14 @@
                     {
                         $sql = "SELECT * FROM `article` WHERE AuthorID = ".$_SESSION['UID']." ORDER BY Time_modify DESC
                         LIMIT ".$element_per_page." OFFSET ".($current_page-1)*$element_per_page."";
-                        $total_element = $artDAO->coutOfQuery("SELECT * FROM `article` WHERE AuthorID = ".$_SESSION['UID']."");
+                        $total_element = $artDAO->countOfQuery("SELECT * FROM `article` WHERE AuthorID = ".$_SESSION['UID']."");
 
                     }  
                     else if($_SESSION['role'] == 2)        
                     {
                         $sql = "SELECT * FROM `article`  ORDER BY Time_modify DESC
                         LIMIT ".$element_per_page." OFFSET ".($current_page-1)*$element_per_page."";
-                        $total_element = $artDAO->coutOfQuery("SELECT * FROM `article` ");    
+                        $total_element = $artDAO->countOfQuery("SELECT * FROM `article` ");    
                     }
                     $total_pages = ceil($total_element/$element_per_page);
                     $result = $artDAO->getListArticleQuery($sql);

@@ -4,7 +4,7 @@
         echo '<div class="page-navigation">';
         if($current_page > 1)
         {
-            echo '<a href="./theloai.php?idcat='.$_GET['idcat'].'&page='.($current_page - 1).'"><</a>';
+            echo '<a href="./theloai.php?idcat='.$_GET['idcat'].'&page='.($current_page - 1).'">&#8592;</a>';
         }
         for($i = 1; $i <= $total_pages; $i++)
         {
@@ -23,7 +23,7 @@
         }
         if($current_page < $total_pages)
         {
-            echo '<a href="./theloai.php?idcat='.$_GET['idcat'].'&page='.($current_page + 1).'">></a>';
+            echo '<a href="./theloai.php?idcat='.$_GET['idcat'].'&page='.($current_page + 1).'">&#8594;</a>';
         }
         echo '</div>';
     }
@@ -33,7 +33,7 @@
         echo '<div class="page-navigation">';
         if($current_page > 1)
         {
-            echo '<a href="'.$current_url.'?page='.($current_page - 1).'"><</a>';
+            echo '<a href="'.$current_url.'?page='.($current_page - 1).'">&#8592;</a>';
         }
         for($i = 1; $i <= $total_pages; $i++)
         {
@@ -51,7 +51,7 @@
         }
         if($current_page < $total_pages)
         {
-            echo '<a href="'.$current_url.'?page='.($current_page + 1).'">></a>';
+            echo '<a href="'.$current_url.'?page='.($current_page + 1).'">&#8594;</a>';
         }
         echo '</div>';
     }
@@ -62,7 +62,7 @@
         echo '<div class="page-navigation">';
         if($current_page > 1)
         {
-            echo '<a href="'.$current_url.'&page='.($current_page - 1).'"><</a>';
+            echo '<a href="'.$current_url.'&page='.($current_page - 1).'">&#8592;</a>';
         }
         for($i = 1; $i <= $total_pages; $i++)
         {
@@ -81,7 +81,7 @@
         }
         if($current_page < $total_pages)
         {
-            echo '<a href="'.$current_url.'&page='.($current_page + 1).'">></a>';
+            echo '<a href="'.$current_url.'&page='.($current_page + 1).'">&#8594;</a>';
         }
         echo '</div>';
     }

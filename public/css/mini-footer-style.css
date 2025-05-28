@@ -47,10 +47,10 @@
     box-shadow: 0 2px 8px rgba(0,0,0,0.12);
     background: #fff;
     padding: 2px;
-    transition: transform 0.2s;
+    transition: transform 0.5s;
 }
 .footer-logo:hover {
-    transform: scale(1.08) rotate(-2deg);
+    transform: scale(1.43) rotate(-360deg);
     box-shadow: 0 4px 16px rgba(0,0,0,0.18);
 }
 
