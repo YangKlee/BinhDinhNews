@@ -46,7 +46,7 @@
                             </div>
                             <div class="article-info">' . $item["label"] . '</div>
                         </a>
-                      </div>';
+                    </div>';
             }
             ?>
         </div>

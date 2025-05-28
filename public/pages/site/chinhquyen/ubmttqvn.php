@@ -45,6 +45,8 @@ function hienThiCapUBMTTQVN($conn, $scapbac) {
             <link rel="stylesheet" href="../../../../public/css/reset.css">
 	<link rel="stylesheet" href="../../../../public/css/footer-style.css">
 	<link rel="stylesheet" href="../../../../public/css/header-style.css">
+    <link rel="shortcut icon" href="../../../../../BinhDinhNews/public/images/logo.webp" type="image/x-icon">
+
     <title>UBMTTQVN tỉnh</title>
     <style>
     .container {
