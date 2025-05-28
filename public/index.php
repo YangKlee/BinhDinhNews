@@ -21,12 +21,9 @@
         <div class="container-left"></div>
         <div class="container-mid">
             <div class="homepage homepage-container">
-
                 <div class="container__content">
                     <div class="homepage-row-1">
                     <div class="homepage-content hot-news">
-
-                        
                         <div class="hot-article-container" id="slide-hot-news">
                             <button class="btn slide-left" onclick="loadArtNext(false);clearHotNewsTimer()"><i class="fa-solid fa-arrow-left"></i></button>
                             <?php
