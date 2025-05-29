@@ -254,7 +254,7 @@
                             <hr class="hr_cat">
                             <div class="line-four-content-warpper">
                             
-                            <div class="col-md-9 slideshow-container">
+                            <div class="slideshow-container">
                                 <?php
                                     $dir = "./images/imgDemoDulich/";
                                     $files = scandir($dir);
@@ -268,7 +268,7 @@
                                 <button class="next">&#10095;</button>
                             </div>
 
-                            <div class="col-md-3 scroll-container">
+                            <div class="scroll-container">
                                 <?php
                                     foreach ($files as $file) {
                                         if (in_array(pathinfo($file, PATHINFO_EXTENSION), ['jpg', 'jpeg', 'png', 'gif'])) {

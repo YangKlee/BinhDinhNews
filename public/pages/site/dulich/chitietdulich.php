@@ -45,7 +45,7 @@ if (file_exists($desc_path)) {
     <h1 class="title"><?php echo htmlspecialchars($row['name']); ?></h1>
 
     <?php if (!empty($image_url)): ?>
-        <div class="main-image-container"> <!-- ✅ Đổi `large-image` thành `main-image-container` -->
+        <div class="main-image-container">
             <img src="<?php echo htmlspecialchars($image_url); ?>" alt="Ảnh chính">
         </div>
     <?php else: ?>
@@ -53,10 +53,10 @@ if (file_exists($desc_path)) {
     <?php endif; ?>
 
     <h2 class="section-title">Vị trí:</h2>
-    <p class="location-text"><?php echo htmlspecialchars($row['location']); ?></p> <!-- ✅ Đổi `p` phần vị trí thành `location-text` -->
+    <p class="location-text"><?php echo htmlspecialchars($row['location']); ?></p>
 
     <h2 class="section-title">Mô tả:</h2>
-    <p class="description-box"><?php echo $description; ?></p> <!-- ✅ Đổi `p` phần mô tả thành `description-box` -->
+    <p class="description-box"><?php echo $description; ?></p> 
 
     <a class="back-link" href="places.php">← Quay lại danh sách địa điểm</a>
 </body>

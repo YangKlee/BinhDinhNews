@@ -1,103 +1,67 @@
-/* Nhóm định dạng cho footer chính */
+/* Footer Layout */
 .footer {
-    border-radius: 10px 10px 0 0;;
+    border-radius: 10px 10px 0 0;
     display: flex;
     flex-direction: column;
     background-color: rgb(0, 132, 255);
     color: white;
-    padding: 10px;
+    padding: 10px 0;
     font-family: Arial, sans-serif;
 }
 
-/* Nhóm định dạng cho các phần tử trong footer-top */
-.footer-top {
+.footer-menu {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
+    width: 100%;
+    padding: 0 40px;
+    box-sizing: border-box;
 }
 
-/* Nhóm định dạng cho các phần tử trong footer-left */
+/* Footer Left */
 .footer-left {
-    display: block;
-    width: fit-content;
-    margin: 0 100px;
+    min-width: 320px;
+    margin-right: 40px;
 }
 
-/* Nhóm định dạng cho các phần tử trong head */
-.head {
+.footer-head {
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
-/* Nhóm định dạng cho các phần tử văn bản trong footer */
-.footer span {
-    display: block;
-    font-size: 14px;
-    font-weight: bold;
-    margin-right: 10px;
-}
-.footer p {
-    margin: 5px 0;
-    font-size: 14px;
-}
-.footer h2 {
-    font-size: 18px;
-    font-weight: bold;
-}
-
-/* Nhóm định dạng cho nội dung footer */
-.footer-content {
-    display: block;
-    text-align: left;
-    gap: 10px;
-}
-
-/* Nhóm định dạng cho logo trong footer */
 .footer-logo {
     width: 100px;
     height: auto;
     margin-bottom: 10px;
 }
 
-/* Nhóm định dạng cho footer-right */
+.footer-content {
+    margin-top: 10px;
+    font-size: 14px;
+}
+.footer-content p {
+    line-height: 1.5;
+    font-size: 14px;
+    color: white;
+}
+
+/* Footer Right */
 .footer-right {
     display: flex;
     flex-direction: column;
-    align-items: flex-end; 
-    text-align: right; 
-    gap: 10px;
+    align-items: center;
+    flex: 1;
+    min-width: 400px;
     padding-top: 30px;
-    margin: 0 100px;
 }
 
-/* Nhóm định dạng cho các menu trong footer */
+/* Top Menu */
 .top-menu {
     display: flex;
     gap: 30px;
 }
-.bottom-menu {
-    display: flex;
-    gap: 20px;
-}
-.bottom-menu a {
-    color: white;
-    text-decoration: none;
-    font-size: 13px;
-}
-.auth-menu {
-    display: flex;
-    gap: 20px;
-    margin-top: 5px;
-    color: white;
-    font-size: 13px;
-}
-.auth-menu a {
-    color: white;
-    text-decoration: none;
-}
 
-/* Nhóm định dạng cho các mục trong footer */
 .footer-item {
     display: flex;
     flex-direction: column;
@@ -105,14 +69,114 @@
     color: white;
     font-size: 14px;
 }
+.footer-item > i {
+    cursor: pointer;
+    font-size: 20px;
+    margin-bottom: 5px;
+}
 
-/* Nhóm định dạng cho các đường phân cách trong footer */
 .footer-divider {
     width: 100%;
-    margin: 10px 0;
+    max-width: 400px;
+    margin: 20px 0 10px 0;
     border: 0.5px solid rgba(255, 255, 255, 0.3);
 }
 
-.footer-item > i {
-    cursor: pointer;
+/* Bottom Menu */
+.bottom-menu {
+    display: flex;
+    gap: 30px;
+    margin-top: 10px;
+}
+.bottom-menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+    transition: text-decoration 0.2s;
+}
+.bottom-menu a:hover {
+    text-decoration: underline;
+}
+
+/*  Auth Menu */
+.auth-menu {
+    margin-top: 10px;
+}
+.auth-menu a:hover {
+    text-decoration: underline;
+}
+
+/*  User Info */
+.footer-Logined-Info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    color: white;
+    gap: 2px;
+}
+.footer-user-label {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    font-size: 25px;
+}
+.footer-user-label b {
+    font-weight: bold;
+    color: #fff;
+}
+.footer-user-label i {
+    font-style: italic;
+    color: #e0e0e0;
+}
+.footer-profile {
+    display: flex;
+    align-items: center;
+    color: #fff;
+    margin-top: 10px;
+    font-size: 16px;
+}
+.footer-profile a {
+    color: #fff;
+}
+
+/* Login/Signin */
+.footer-login-signin {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    color: #fff;
+    font-size: 20px;
+    margin: 50px 50px;
+}
+.footer-login-signin a {
+    color: #fff;
+    padding: 2px 8px;
+}
+.footer-login-signin a:hover {
+    text-decoration: underline;
+}
+
+/* Logout */
+.footer-logout {
+    margin-top: 10px;
+}
+.footer-logout a {
+    color: #fff;
+    font-size: 15px;
+    text-decoration: none;
+    transition: text-decoration 0.2s;
+}
+.footer-logout a:hover {
+    text-decoration: underline;
+}
+
+/* User Profile Image */
+#user-profile-img {
+    width: 102px;
+    height: 102px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    margin-left: 8px;
+    background: #eee;
 }
