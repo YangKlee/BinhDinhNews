@@ -76,3 +76,6 @@ body{
 .image-upload-table #td4{
     width: 200px;
 }
+.hidden{
+    display: none;
+}

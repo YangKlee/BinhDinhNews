@@ -53,8 +53,17 @@
 
         require_once  $_SERVER['DOCUMENT_ROOT']. "/BinhDinhNews/app/model/articleDAO.php";
         $artDAO = new articleDAO();
-        $lastIDInsert = $artDAO->addArticleHeader($_POST['article-tittle'], $_POST['article-tags']
-        , $_SESSION['UID'], "", $_POST['cat-selector'], 0 );
+        if($_SESSION['role'] == 2)
+        {
+            $lastIDInsert = $artDAO->addArticleHeader($_POST['article-tittle'], $_POST['article-tags']
+            , NULL, $_POST['article-author'], $_POST['cat-selector'], 1 );
+        }
+        else if($_SESSION['role'] == 1)
+        {
+            $lastIDInsert = $artDAO->addArticleHeader($_POST['article-tittle'], $_POST['article-tags']
+            , $_SESSION['UID'], "", $_POST['cat-selector'], 0 );
+        }
+
 
         if($lastIDInsert != null)
         {

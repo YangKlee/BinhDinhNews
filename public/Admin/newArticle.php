@@ -41,6 +41,20 @@
                     <label for="">Tags(Các tag cách nhau bằng dấu phẩy) </label>
                     <input type="text" placeholder="Nhập các tags" name="article-tags">
                 </div>
+
+                <div class="input-warpper author-warpper">
+                    <label for="">Tác giả: </label>
+                    <input type="text" placeholder="Nhập tác giả:" name="article-author">
+                </div>
+                <?php 
+                    if($_SESSION['role'] != 2)
+                    {
+                        echo '                <script>
+                    document.querySelector(".input-warpper.author-warpper").classList.add("hidden");
+                </script>';
+                    }
+                ?>
+            
                 <div class="input-warpper category-warpper">
                     <label for="">Chọn thể loại của bài báo <span style="color:red">(*)</span> </label>
                     

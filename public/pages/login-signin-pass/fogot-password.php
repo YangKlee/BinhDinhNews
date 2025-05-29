@@ -50,7 +50,6 @@ if (isset($_POST['email-btn'])) {
 // Xử lý xác minh OTP
 if (isset($_POST['verify-btn'])) {
     $input_otp = trim($_POST['otp']);
-    
     // Kiểm tra OTP và thời gian hết hạn
     if (!isset($_SESSION['otp']) || !isset($_SESSION['email'])) {
         echo '<div class="error">Phiên OTP đã hết hạn hoặc không tồn tại!</div>';
@@ -62,7 +61,6 @@ if (isset($_POST['verify-btn'])) {
         unset($_SESSION['otp_sent']);
     } elseif ($input_otp === (string)$_SESSION['otp']) {
         unset($_SESSION['otp']);
-        unset($_SESSION['otp_sent']);
         unset($_SESSION['otp_expiry']);
         $_SESSION['reset_password'] = true; // Đánh dấu đã xác minh OTP
     } else {
@@ -78,6 +76,7 @@ if (isset($_POST['reset-btn'])) {
     if($userDAO->updateUserPassword($email, $new_password)){
         unset($_SESSION['reset_password']);
         unset($_SESSION['email']);
+        unset($_SESSION['otp_sent']);
         echo "<script> alert('Đặt lại mật khẩu thành công');</script>";
         header("Location: login.php");
         exit();
