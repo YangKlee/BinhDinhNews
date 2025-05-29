@@ -175,6 +175,7 @@
             $stmt->close();
             mysqli_close($conn);
             return $exists;
-    }
+        }
+        
     }
 ?>

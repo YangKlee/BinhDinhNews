@@ -17,6 +17,15 @@
         require_once $_SERVER['DOCUMENT_ROOT'].'/BinhDinhNews/app/controller/Upload.php';
         $userDAO = new UserDAO();
         $fileUpload = new Upload();
+        if ($userDAO->isEmailExists($_POST['email_tx']) 
+            && $userDAO->getUserByEmail($_POST['email_tx'])['UserID'] != $_POST['uid_tx']) {
+
+            echo '<script>
+                alert("Email đã tồn tại và thuộc về người dùng khác!");
+                window.history.back(); // hoặc chuyển về trang cụ thể
+            </script>';
+            exit; 
+        }
         if(isset($_FILES['avatar_img']) && !empty($_FILES['avatar_img']['name']))
         {
             $filenameDir =  $fileUpload->UploadImageUserAvatar($_POST['uid_tx'], $_FILES['avatar_img']);
@@ -117,7 +126,7 @@
                         </div>
                         <div class="email-warpper">
                             <label for="">Email: </label>
-                            <input type="text" class="txb txb-email" name="email_tx" id="" value="<?php echo $result['Email'] ?>">
+                            <input type="text" class="txb txb-email" name="email_tx" id="email_txb" value="<?php echo $result['Email'] ?>">
                         </div>
                         <div class="cccd-warpper">
                             <label for="">Số CCCD: </label>
@@ -186,10 +195,12 @@
                     txb_input[i].removeAttribute("disabled", true)
                 }
                 document.getElementById("username_txb").setAttribute("disabled", true);
+                
                 bt_submit.style.display = "block";
                 txt_modify.style.display = "none";
             });
         </script>
+
     </div>
 </body>
 </html>

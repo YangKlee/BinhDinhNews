@@ -48,6 +48,7 @@
                         articletagchild.classList.toggle("show")
                     }); 
                 </script>
+                <?php if($_SESSION['role'] == 2): ?>
                 <li class="li-parent place">
                     <a for="">QUẢN LÝ ĐỊA ĐIỂM</a>
                     <ul class="li-child place">
@@ -55,6 +56,7 @@
                         <li><a href="./themPlaces.php">Thêm địa điểm</a></li>
                     </ul>
                 </li>
+                <?php endif ?>
                 <script>
                     let placetag = document.querySelector(".li-parent.place");
                     let placetagchild = document.querySelector(".li-child.place");
