@@ -37,18 +37,15 @@
                 ["link" => "./ubndhuyen.php", "img" => "huyen.jpg", "label" => "UBND các huyện, thị xã, thành phố"],
                 ["link" => "./sunghiep.php", "img" => "dvsn.jpg", "label" => "Đơn vị Sự nghiệp"],
                 ["link" => "./hiepquan.php", "img" => "dvhq.jpg", "label" => "Đơn vị Hiệp quản"],
-            ];
+            ];         
             foreach ($items as $item) {
-                echo '<div class="item-category">
-                        <a class="article-img" href="' . $item["link"] . '" title="' . $item["label"] . '">
-                            <div class="img-cate">
-                                <img class="post-image" src="../../../images/imgChinhquyen/logo/' . $item["img"] . '" alt="' . $item["label"] . '">
-                            </div>
-                            <div class="article-info">' . $item["label"] . '</div>
-                        </a>
-                    </div>';
+                echo '<a class="item-category" href="' . $item["link"] . '" title="' . $item["label"] . '">
+                        <img class="post-image" src="../../../images/imgChinhquyen/logo/' . $item["img"] . '" alt="' . $item["label"] . '">
+                        <div class="article-info">' . $item["label"] . '</div>
+                    </a>';
             }
             ?>
+
         </div>
     </div>
 </body>
