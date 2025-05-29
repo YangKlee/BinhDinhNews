@@ -92,6 +92,14 @@
     background-color: green;
     color: white;
 }
+.article-element-rightfunction .btn-allow{
+    background-color: green;
+    color: white;
+}
+.article-element-rightfunction .btn-reject{
+    background-color: red;
+    color: white;
+}
 .article-element-rightfunction .btn-view{
     background-color: blue;
     color: white;

@@ -185,7 +185,7 @@
                                             require_once("../app/model/articleDAO.php");
                                             $DAOArticle = new articleDAO();
                                             $sql = 'SELECT * FROM article INNER JOIN category ON article.CategoryID = category.CategoryID
-                                                     WHERE category.CategoryName = "Kinh tế"  
+                                                     WHERE category.CategoryName = "Kinh tế" AND ArticleStatus = 1
                                                      ORDER BY Time_modify DESC LIMIT 6';
                                             $result = $DAOArticle->getListArticleQuery($sql);  
                                             $row = mysqli_fetch_assoc($result); 
@@ -221,7 +221,7 @@
                                             require_once("../app/model/articleDAO.php");
                                             $DAOArticle = new articleDAO();
                                             $sql = 'SELECT * FROM article INNER JOIN category ON article.CategoryID = category.CategoryID
-                                                     WHERE category.CategoryName = "Văn hóa"  
+                                                     WHERE category.CategoryName = "Văn hóa" AND ArticleStatus = 1
                                                      ORDER BY Time_modify DESC LIMIT 6';
                                             $result = $DAOArticle->getListArticleQuery($sql);  
                                             $row = mysqli_fetch_assoc($result); 

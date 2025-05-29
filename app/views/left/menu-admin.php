@@ -48,6 +48,21 @@
                         articletagchild.classList.toggle("show")
                     }); 
                 </script>
+                <li class="li-parent place">
+                    <a for="">QUẢN LÝ ĐỊA ĐIỂM</a>
+                    <ul class="li-child place">
+                        <li><a href="./listPlaces.php">Danh sách địa điểm</a></li>
+                        <li><a href="./themPlaces.php">Thêm địa điểm</a></li>
+                    </ul>
+                </li>
+                <script>
+                    let placetag = document.querySelector(".li-parent.place");
+                    let placetagchild = document.querySelector(".li-child.place");
+                    placetag.addEventListener("click", function(e){
+                        placetagchild.classList.toggle("show")
+                    }); 
+                </script>
+
                 <li>
                     <a href="../../app/controller/dangxuat.php">ĐĂNG XUẤT</a>
                 </li>

@@ -21,7 +21,7 @@ body{
 }
 .input-warpper input[type='text']
 {
-    
+
 }
 .form-article-input{
     margin: 0px 40px;
@@ -33,6 +33,7 @@ body{
 .input-warpper textarea{
     font-size: 1.2rem;
     padding: 10px;
+    min-width: 100%;
     max-width: 100%;
     min-height: 500px;
     max-height: 1500px;

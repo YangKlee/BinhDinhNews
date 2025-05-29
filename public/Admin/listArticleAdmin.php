@@ -87,13 +87,13 @@
                         $statusArticle = null;
                         if($row['ArticleStatus'] == 0)
                         {
-                            $statusArticle = '<label style="color:yellow;font-size:1.8rem">Chờ duyệt</label>';
+                            $statusArticle = '<label style="color:rgb(230, 138, 0);font-size:1.8rem">Chờ duyệt</label>';
                         }
                         else if($row['ArticleStatus'] == 1){
                             $statusArticle = '<label style="color:green;font-size:1.8rem">Đã đăng</label>';
                         }
                         else if($row['ArticleStatus'] == -1){
-                            $statusArticle = '<label style="color:red;font-size:1.8 rem">Đã bị hủy</label>';
+                            $statusArticle = '<label style="color:red;font-size:1.8rem">Đã bị hủy</label>';
                         }
                         echo '
                         
@@ -113,11 +113,19 @@
                         echo '
                                 <div class="article-element-rightfunction">
                                     <a href="../article.php?id='.$row['ArticleID'].'"><button class="btn btn-view">Xem bài báo</button></a>
+                                    ';
+                        if($row['ArticleStatus'] == 0 || $_SESSION['role'] == 2){
+                                    echo'
                                     <a id="delete-btn" href="/BinhDinhNews/app/controller/deleteArticle.php?idart='.$row['ArticleID'].'"><button class="btn btn-delete">Xóa</button></a>
                                     ';
+                        }
+
                         if($row['ArticleStatus'] == 0 && $_SESSION['role'] == 2)
                         {
+                            echo "<div>";
                             echo '<a id="allow-btn" href="/BinhDinhNews/app/controller/allowArticle.php?idart='.$row['ArticleID'].'"><button class="btn btn-allow">Duyệt bài báo</button></a>';
+                             echo '<a id="reject-btn" href="/BinhDinhNews/app/controller/rejectArticle.php?idart='.$row['ArticleID'].'"><button class="btn btn-reject">Từ chối bài báo</button></a>';
+                             echo "</div>";
                         }           
                         echo'           
                                 </div>

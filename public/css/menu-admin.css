@@ -85,3 +85,9 @@ ul li{
 .li-parent:hover .li-child{
     background-color: var(--main-color);
 }
+ .li-child.place {
+    display: none; 
+}
+.li-child.place.show {
+    display: block;
+}
