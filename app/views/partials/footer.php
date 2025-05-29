@@ -90,11 +90,16 @@
                             <i id="user-label-role">' . $role . '</i>  
                             <img id="user-profile-img" src="' . (isset($result['user_img']) && !empty($result['user_img']) ? '/BinhDinhNews/public/images/userAvatar/' . $result['user_img'] : '/BinhDinhNews/public/images/user.png') . '" alt="">
                             
-                        </div>
-                        <div class="footer-profile">
-                            <a href="./admin/index.php">Thông tin cá nhân</a>
-                        </div>
-
+                        </div>';
+                        
+                        if($_SESSION['role'] != 0) {
+                            echo '
+                            <div class="footer-profile">
+                                <a href="./admin/index.php">Trung tâm tài khoảng</a>
+                            </div>';
+                        }
+                        
+                    echo '
                         <div class="footer-logout">
                             <a href="/BinhDinhNews/app/controller/dangxuat.php">Đăng xuất</a>
                         </div>
