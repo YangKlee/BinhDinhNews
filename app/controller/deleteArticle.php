@@ -1,10 +1,27 @@
 <?php
+    require "./loadsession.php"
+
+?>
+<?php
+    if($_SESSION['role'] < 1)
+    {
+        header("Location: ".$_SERVER['DOCUMENT_ROOT']."/BinhDinhNews/public/admin/firewall.php");    
+        exit;
+    }
+?>
+<?php
+
     if(isset($_GET['idart']) && $_SERVER['REQUEST_METHOD'] == 'GET')
     {
             require_once "../model/articleDAO.php";
         $artDAO = new articleDAO();
         $result = $artDAO->getArticle($_GET['idart']);
         $data = mysqli_fetch_assoc($result);
+        if($_SESSION['role'] != 2 && $_SESSION['UID'] != $data['AuthorID'])
+        {
+            header("Location: ".$_SERVER['DOCUMENT_ROOT']."/BinhDinhNews/public/admin/firewall.php");    
+            exit;
+        }
         $artDAO->deteteArticle($_GET['idart']);
         // dọn dẹp tài nguyên
         $articleDir = $_SERVER['DOCUMENT_ROOT']."/BinhDinhNews/app/ArticleData/".$_GET['idart'].".txt";

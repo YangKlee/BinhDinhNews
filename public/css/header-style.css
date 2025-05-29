@@ -153,6 +153,7 @@
     font-size: 1.3rem;
     padding: 0px 5%;
     text-transform: uppercase;
+    border-radius: 0px 0px 10px 10px;
 }
 .nav-pc .subnav{
     display: none;

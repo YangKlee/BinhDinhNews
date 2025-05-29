@@ -17,6 +17,7 @@
 
     <link rel="stylesheet" href="../css/menu-admin.css">
     <link rel="stylesheet" href="../css/reset.css">
+    <link rel="shortcut icon" href="../../../../../BinhDinhNews/public/images/logo.webp" type="image/x-icon">
     <title>Document</title>
 </head>
 <body>
@@ -46,14 +47,14 @@
                     {
                         $sql = "SELECT * FROM `article` WHERE AuthorID = ".$_SESSION['UID']." ORDER BY Time_modify DESC
                         LIMIT ".$element_per_page." OFFSET ".($current_page-1)*$element_per_page."";
-                        $total_element = $artDAO->coutOfQuery("SELECT * FROM `article` WHERE AuthorID = ".$_SESSION['UID']."");
+                        $total_element = $artDAO->countOfQuery("SELECT * FROM `article` WHERE AuthorID = ".$_SESSION['UID']."");
 
                     }  
                     else if($_SESSION['role'] == 2)        
                     {
                         $sql = "SELECT * FROM `article`  ORDER BY Time_modify DESC
                         LIMIT ".$element_per_page." OFFSET ".($current_page-1)*$element_per_page."";
-                        $total_element = $artDAO->coutOfQuery("SELECT * FROM `article` ");    
+                        $total_element = $artDAO->countOfQuery("SELECT * FROM `article` ");    
                     }
                     $total_pages = ceil($total_element/$element_per_page);
                     $result = $artDAO->getListArticleQuery($sql);
@@ -86,13 +87,13 @@
                         $statusArticle = null;
                         if($row['ArticleStatus'] == 0)
                         {
-                            $statusArticle = '<label style="color:yellow;font-size:1.8rem">Chờ duyệt</label>';
+                            $statusArticle = '<label style="color:rgb(230, 138, 0);font-size:1.8rem">Chờ duyệt</label>';
                         }
                         else if($row['ArticleStatus'] == 1){
                             $statusArticle = '<label style="color:green;font-size:1.8rem">Đã đăng</label>';
                         }
                         else if($row['ArticleStatus'] == -1){
-                            $statusArticle = '<label style="color:red;font-size:1.8 rem">Đã bị hủy</label>';
+                            $statusArticle = '<label style="color:red;font-size:1.8rem">Đã bị hủy</label>';
                         }
                         echo '
                         
@@ -112,11 +113,19 @@
                         echo '
                                 <div class="article-element-rightfunction">
                                     <a href="../article.php?id='.$row['ArticleID'].'"><button class="btn btn-view">Xem bài báo</button></a>
+                                    ';
+                        if($row['ArticleStatus'] == 0 || $_SESSION['role'] == 2){
+                                    echo'
                                     <a id="delete-btn" href="/BinhDinhNews/app/controller/deleteArticle.php?idart='.$row['ArticleID'].'"><button class="btn btn-delete">Xóa</button></a>
                                     ';
+                        }
+
                         if($row['ArticleStatus'] == 0 && $_SESSION['role'] == 2)
                         {
+                            echo "<div>";
                             echo '<a id="allow-btn" href="/BinhDinhNews/app/controller/allowArticle.php?idart='.$row['ArticleID'].'"><button class="btn btn-allow">Duyệt bài báo</button></a>';
+                             echo '<a id="reject-btn" href="/BinhDinhNews/app/controller/rejectArticle.php?idart='.$row['ArticleID'].'"><button class="btn btn-reject">Từ chối bài báo</button></a>';
+                             echo "</div>";
                         }           
                         echo'           
                                 </div>
@@ -127,7 +136,7 @@
                         
                     }
                     mysqli_free_result($result);
-                    require_once( $_SERVER['DOCUMENT_ROOT'] . '/BinhDinhNews/app/controller/pagination.php');
+                    require_once( $_SERVER['DOCUMENT_ROOT'] . '/BinhDinhNews/app/controller/paginationHelper.php');
                     page_navigation($total_pages, $current_page,  "/BinhDinhNews/public/admin/listArticleAdmin.php");
                 ?>
 

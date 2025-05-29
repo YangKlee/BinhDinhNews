@@ -1,11 +1,70 @@
-.mini-footer{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+/* Mini Footer Styles */
+.mini-footer {
     width: 100%;
+    background: rgba(8, 7, 16, 0.95);
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 40px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    z-index: 100;
+    box-sizing: border-box;
+}
 
-    background-color: white;
-    position: relative;
-    bottom: 0px;
-    left: 0px;
+.mini-footer-left h3 {
+    margin: 0 0 4px 0;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.mini-footer-left p {
+    margin: 0;
+    font-size: 15px;
+    color: #e0e0e0;
+}
+
+.footer-icon {
+    margin-right: 4px;
+    font-size: 1.1em;
+    vertical-align: middle;
+}
+
+.mini-footer-right {
+    display: flex;
+    align-items: center;
+}
+
+.footer-logo {
+    height: 38px;
+    width: auto;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+    background: #fff;
+    padding: 2px;
+    transition: transform 0.5s;
+}
+.footer-logo:hover {
+    transform: scale(1.43) rotate(-360deg);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+}
+
+@media (max-width: 600px) {
+    .mini-footer {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 14px 10px;
+        font-size: 13px;
+    }
+    .mini-footer-right {
+        margin-top: 8px;
+    }
+    .mini-footer-left h3 {
+        font-size: 16px;
+    }
 }

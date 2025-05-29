@@ -1,9 +1,11 @@
 /* Nhóm định dạng cho body và overlay */
+
 body {
     background-color: rgba(0, 0, 0, 0.233);
     background: url('../images/du-lich-binh-dinh-ivivu1.jpg') no-repeat center center fixed;
     background-size: cover;
 }
+
 body::before {
     content: '';
     position: fixed;
@@ -12,6 +14,12 @@ body::before {
     height: 100%;
     width: 100%;
     background-color: rgba(0, 0, 0, 0.61);
+}
+
+html, body, body::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 /* Nhóm định dạng cho form đăng nhập */
@@ -121,6 +129,36 @@ form a:hover {
 .checkbox-rememberpass-warper{
     display:flex;
     justify-content: flex-start
+}
+
+.input-icon-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.input-icon-wrapper input {
+    /* width: 100%; */
+    padding-right: 44px;
+    box-sizing: border-box;
+}
+
+.icon-eye {
+    position: absolute;
+    top: 50%;
+    right: 12px;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    height: 24px;
+    width: 24px;
+}
+
+.icon-eye svg {
+    width: 24px;
+    height: 24px;
+    color: #888;
+    background: transparent;
 }
 
     /* @media (max-width: 480px) {

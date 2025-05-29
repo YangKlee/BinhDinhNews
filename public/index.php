@@ -21,12 +21,9 @@
         <div class="container-left"></div>
         <div class="container-mid">
             <div class="homepage homepage-container">
-
                 <div class="container__content">
                     <div class="homepage-row-1">
                     <div class="homepage-content hot-news">
-
-                        
                         <div class="hot-article-container" id="slide-hot-news">
                             <button class="btn slide-left" onclick="loadArtNext(false);clearHotNewsTimer()"><i class="fa-solid fa-arrow-left"></i></button>
                             <?php
@@ -118,7 +115,7 @@
                                         $DAOArticle = new articleDAO();
                                         $sql = 'SELECT * FROM article INNER JOIN category ON article.CategoryID = category.CategoryID
                                                         WHERE category.CategoryName = "Chính trị"
-                                                        LIMIT 5 offset 5';
+                                                        LIMIT 5 OFFSET 5';
                                         $result = $DAOArticle->getListArticleQuery($sql);     
                                         while($row = mysqli_fetch_array($result, MYSQLI_ASSOC))
                                         {
@@ -188,7 +185,7 @@
                                             require_once("../app/model/articleDAO.php");
                                             $DAOArticle = new articleDAO();
                                             $sql = 'SELECT * FROM article INNER JOIN category ON article.CategoryID = category.CategoryID
-                                                     WHERE category.CategoryName = "Kinh tế"  
+                                                     WHERE category.CategoryName = "Kinh tế" AND ArticleStatus = 1
                                                      ORDER BY Time_modify DESC LIMIT 6';
                                             $result = $DAOArticle->getListArticleQuery($sql);  
                                             $row = mysqli_fetch_assoc($result); 
@@ -224,7 +221,7 @@
                                             require_once("../app/model/articleDAO.php");
                                             $DAOArticle = new articleDAO();
                                             $sql = 'SELECT * FROM article INNER JOIN category ON article.CategoryID = category.CategoryID
-                                                     WHERE category.CategoryName = "Văn hóa"  
+                                                     WHERE category.CategoryName = "Văn hóa" AND ArticleStatus = 1
                                                      ORDER BY Time_modify DESC LIMIT 6';
                                             $result = $DAOArticle->getListArticleQuery($sql);  
                                             $row = mysqli_fetch_assoc($result); 

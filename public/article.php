@@ -86,7 +86,22 @@
                         echo '<p>'.$rows.'</p>';
                     }
                 }
-                echo "<i class='author_descrip'>  Tác giả: ".$rawData['AuthorGuestName']."</i>";
+                if(empty($rawData['AuthorGuestName'])){
+                    require_once('../app/model/userDAO.php');
+                    $authorDAO = new UserDAO();
+                    $dataAuthor = $authorDAO->getAuthorInfo($rawData["AuthorID"]);
+                    if(!empty($dataAuthor['Alias'])){
+                        echo "<i class='author_descrip'>  Tác giả: ".$dataAuthor['Alias']."</i>";
+                    }
+                    else{
+                        echo "<i class='author_descrip'>  Tác giả: ".$dataAuthor['UserName']."</i>";
+                    }
+
+                }
+                else{
+                    echo "<i class='author_descrip'>  Tác giả: ".$rawData['AuthorGuestName']."</i>";
+                }
+
                 fclose($f);
 
             }
@@ -101,7 +116,7 @@
         </div>
 
     </div>
-
+            
     <div class="img-overlay">
         <img src="" alt="Hình ảnh phóng to">
     </div>

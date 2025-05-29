@@ -12,9 +12,9 @@
             $conn = $db->getConnection();
             $query= "Insert into UserData(UserName,PassWord,Email,ROLE) VALUES(?, ? , ?, 0)";
             $sttm = mysqli_prepare($conn,$query);
-            mysqli_stmt_bind_param($sttm, "sss", $_POST['username_tb'], hash("sha256",  $_POST['password_tb']), $_POST['email_tb'] );
+            mysqli_stmt_bind_param($sttm, "sss", $_POST['username_tb'], hash("sha256", $_POST['password_tb']), $_POST['email_tb'] );
             mysqli_stmt_execute($sttm);
-            echo '<script>        alert("Đăng ký thành công~~")</script>';
+            echo '<script>alert("Đăng ký thành công~~")</script>';
         }
         else{
             $nofi = "Sai thông tin";
@@ -25,12 +25,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="icon" href="../../images/logo.webp" type="image/x-icon">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Trang Đăng Ký </title>
     <link rel="stylesheet" href="../../css/signin-style.css">
     <link rel="stylesheet" href="../../css/reset.css">
+    <link rel="stylesheet" href="../../css/mini-footer-style.css">
+    <link rel="icon" href="../../images/logo.webp" type="image/x-icon">
 </head>
 <body>
     <form action="<?php $_SERVER['PHP_SELF'] ?>" method="post">
@@ -38,19 +39,19 @@
         <h3>Đăng ký</h3>
         <div class="username-warper">
             <label for="username">Tên đăng nhập <span style="color: red;"> *</span></label>
-            <input type="text" id="username"  name="username_tb">
+            <input type="text" id="username"  name="username_tb" required>
         </div>
         <div class="email-warper">
             <label for="username">Email: <span style="color: red;"> *</span></label>
-            <input type="text" id="email" name="email_tb">
+            <input type="email" id="email" name="email_tb" required>
         </div>
         <div class="password-warper">
             <label for="password">Mật khẩu <span style="color: red;"> *</span></label>
-            <input type="password"  id="password" name="password_tb">
+            <input type="password"  id="password" name="password_tb" required>
         </div>
         <div class="repassword-warper">
             <label for="password">Xác nhận mật khẩu <span style="color: red;"> *</span></label>
-            <input type="password" id="repassword" name="repassword_tb">
+            <input type="password" id="repassword" name="repassword_tb" required>
         </div>
 
         <div class="nofi-container">
@@ -92,7 +93,9 @@
             }
         ?>
         <a href="login.php">Đã có tài khoản ?</a>
-        
     </form>
+    <?php 
+        include("../../../app/views/partials/mini-footer.php");
+    ?>
 </body>
 </html>

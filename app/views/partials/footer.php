@@ -25,17 +25,17 @@
             <div class="footer-right">
                 <div class="top-menu">
                     <div class="footer-item">
-                        <i onclick="document.getElementById('search').focus();" class="fas fa-search" id="icon" style="cursor: pointer;";></i>
+                        <i onclick="document.getElementById('search').focus();" class="fas fa-search" id="icon" ></i>
                         <p>Tra cứu</p>
                     </div>
 
                     <div class="footer-item">
-                        <i class="fas fa-info-circle"></i>
+                        <i onclick="window.location.href = './admin/index.php'" class="fas fa-info-circle"></i>
                         <p>Thông tin</p>
                     </div>
 
                     <div class="footer-item">
-                        <i class="fas fa-envelope"></i>
+                        <i onclick="window.location.href = 'mailto:cutechatchoinguoidoi@gmail.com'" class="fas fa-envelope"></i>
                         <p>Liên hệ</p>
                     </div>
                 </div>
@@ -50,8 +50,8 @@
                 </div>
 
                 <div class="auth-menu">
-                    <a href="../public/login.php">Đăng nhập</a>
-                    <a href="../public/signin.php">Đăng ký</a>
+                    <a href="\BinhDinhNews\public\pages\login-signin-pass\login.php">Đăng nhập</a>
+                    <a href="/BinhDinhNews/public/pages/login-signin-pass/signin.php">Đăng ký</a>
                 </div>
             </div>
         </div>

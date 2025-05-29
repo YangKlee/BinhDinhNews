@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="../css/menu-admin.css">
     <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href="../css/add-article-style.css">
+    <link rel="shortcut icon" href="../../../../../BinhDinhNews/public/images/logo.webp" type="image/x-icon">
     <script>
         var indexUploadImages = 1;
     </script>
@@ -104,7 +105,7 @@
                                         ${indexUploadImages}
                                 </td>
                                 <td>
-                                    <input type="file" name="imageArticle_${indexUploadImages} " required >
+                                    <input type="file" name="imageArticle_${indexUploadImages}" required >
                                 </td>
                                 <td>
                                     <input type="text" placeholder="Nhập mô tả" name="labelArticle_${indexUploadImages}" required>

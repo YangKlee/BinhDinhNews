@@ -2,6 +2,7 @@
     --main-color: #213448;
 }
 .menu-container{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     position: fixed;
     display: block;
     background-color: var(--main-color);

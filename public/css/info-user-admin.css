@@ -1,11 +1,91 @@
-body{
-    background-color: #EEEEEE;
+body {
+    background-color: #e9ecef;
+   
+    margin: 0;
+    padding: 0;
 }
-.main-container{
+
+.main-container {
     display: grid;
     grid-template-columns: 20% 80%;
-    grid-template-rows: 100%;
+    
 }
-.hidden{
-    display: none;
+.form-user-info input.txb,
+.form-user-info select.txb,
+.form-user-info input[type="file"].txb {
+    padding: 10px 14px;
+    margin-top: 6px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 17px;
+    background: #f8fafc;
+    transition: border-color 0.3s;
+    box-sizing: border-box;
+}
+
+.form-user-info input.txb:focus,
+.form-user-info select.txb:focus {
+    border-color: #007bff;
+    outline: none;
+    background: #fff;
+}
+.form-user-info label {
+    font-weight: 600;
+    margin-top: 16px;
+    display: block;
+    color: #333;
+}
+.avatar-warpper{
+    
+}
+.avatar-warpper img {
+    display: block;
+    margin: 0px auto;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid #e5e7eb;
+    background: #f3f4f6;
+    margin-bottom: 10px;
+    
+}
+
+.form-user-info button,
+.form-user-info input[type="submit"] {
+    display: block;
+    padding: 12px;
+    background-color: #007bff;
+    border: none;
+    color: white;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 24px;
+    transition: background-color 0.3s ease;
+    margin: 10px auto;
+}
+.form-user-info input[type="text"]
+{
+    width: 400px;
+} 
+.form-user-info button:hover,
+.form-user-info input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+    
+form{
+
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+    width: auto;
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
+.role-warpper.hidden {
+    display: none !important;
+}
+.form-input-warpper{
+    display: flex;
+    gap: 30px;
 }
