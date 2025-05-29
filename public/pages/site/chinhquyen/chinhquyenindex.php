@@ -5,7 +5,6 @@
     <link rel="stylesheet" href="../../../../../BinhDinhNews/public/css/chinhquyen.css">
     <link rel="shortcut icon" href="../../../../../BinhDinhNews/public/images/logo.webp" type="image/x-icon">
     <title>Chính quyền</title>
-    <link rel="shortcut icon" href="../../../../../BinhDinhNews/public/images/logo.webp" type="image/x-icon">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 </head>
 
@@ -39,7 +38,7 @@
                 ["link" => "./hiepquan.php", "img" => "dvhq.jpg", "label" => "Đơn vị Hiệp quản"],
             ];         
             foreach ($items as $item) {
-                echo '<a class="item-category" href="' . $item["link"] . '" title="' . $item["label"] . '">
+                echo '<a class="item-category" href="' . $item["link"] . '">
                         <img class="post-image" src="../../../images/imgChinhquyen/logo/' . $item["img"] . '" alt="' . $item["label"] . '">
                         <div class="article-info">' . $item["label"] . '</div>
                     </a>';
