@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Kiểm tra nếu overlay không tồn tại
     if (!overlay) {
-        console.error('Overlay element not found in DOM.');
+        console.error('Không thấy Overlay.');
         return;
     }
 

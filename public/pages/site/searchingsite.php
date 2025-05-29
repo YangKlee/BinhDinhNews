@@ -13,9 +13,13 @@
     <link rel="icon" href="../../images/logo.webp" type="image/x-icon">
     <script src="./scripts/homePage.js"></script>
     <title>Tìm kiếm: 
-        <?php if(isset($_POST['search']) && $_POST['search'] != "") 
-            echo $_POST['search']; 
-        else echo "? Troll à ?"
+        <?php
+        $searchKeyword = isset($_GET['search']) ? $_GET['search'] : null;
+        if(!is_null($searchKeyword)) {
+            echo htmlspecialchars($searchKeyword);
+        } else {
+            echo "Nothing";
+        }
         ?> </title>
 </head>
 <body>
@@ -33,7 +37,7 @@
             $sql = "SELECT * FROM `article` WHERE (Tags LIKE '%".$_GET['search']."%' 
                     OR Title LIKE '%".$_GET['search']."%') AND articleStatus = 1 ORDER BY Time_modify DESC
                     LIMIT ".$element_per_page." OFFSET ".($current_page - 1) * $element_per_page."";
-            $total_element = $artDAO->coutOfQuery("SELECT * FROM `article` WHERE (Tags LIKE '%".$_GET['search']."%' 
+            $total_element = $artDAO->countOfQuery("SELECT * FROM `article` WHERE (Tags LIKE '%".$_GET['search']."%' 
                     OR Title LIKE '%".$_GET['search']."%') AND articleStatus = 1");
             $total_pages = ceil($total_element/$element_per_page);
             $result = $artDAO->getListArticleQuery($sql);

@@ -30,7 +30,7 @@
                     </div>
 
                     <div class="footer-item">
-                        <i class="fas fa-info-circle"></i>
+                        <i onclick="window.location.href = './admin/index.php'" class="fas fa-info-circle"></i>
                         <p>Thông tin</p>
                     </div>
 
