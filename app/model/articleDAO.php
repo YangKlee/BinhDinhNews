@@ -115,6 +115,12 @@
             mysqli_query($conn, "Update Article set ArticleStatus = 1 where ArticleID = ".$idArt."");
             mysqli_close($conn);
         }
+        function rejectArticle($idArt)
+        {
+            $conn = $this->getConnection();
+            mysqli_query($conn, "Update Article set ArticleStatus = -1 where ArticleID = ".$idArt."");
+            mysqli_close($conn);
+        }
         function countOfQuery($sql){
             $conn = $this->getConnection();
             $result = mysqli_query($conn, $sql);
