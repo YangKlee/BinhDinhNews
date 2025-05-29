@@ -15,13 +15,13 @@
         <div class="pathway-category">
             <nav class="breadcrumb" aria-label="breadcrumb">
                 <span class="breadcrumb-item">
-                    <a href="../../../index.php" title="Trang chủ">
+                    <a href="../../../index.php" >
                         <i class="fas fa-home"></i> Trang chủ
                     </a>
                 </span>
                 <span class="breadcrumb-separator">/</span>
                 <span class="breadcrumb-item">
-                    <a href="./chinhquyenindex.php" title="Chính quyền">Chính quyền</a>
+                    <a href="./chinhquyenindex.php" > Chính quyền</a>
                 </span>
             </nav>
         </div>
