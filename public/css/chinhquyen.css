@@ -9,7 +9,7 @@
 /* Lưới danh mục */
 .category-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, 1fr); /* 4 cột có chiều rộng bằng nhau*/
   gap: 20px;
   padding: 20px;
   box-sizing: border-box;
@@ -29,7 +29,7 @@
 
 .breadcrumb-item a:hover {
     color: rgb(33, 33, 226) ;
-    text-decoration:underline;
+    text-decoration:underline; /* Gạch chân văn bản */ 
     transition: color 0.3s ease; 
 }
 
@@ -42,30 +42,31 @@
 
 /* Item trong danh mục */
 .item-category {
-  background-color: #f9f9f9;
-  padding: 1.5rem 15px;
-  text-align: center;
-  border-radius: 20px 10px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s ease;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  color: inherit;
+  background-color: #f9f9f9;              
+  padding: 1.5rem 15px;                   /* Khoảng cách bên trong */
+  text-align: center;                    
+  border-radius: 20px;              /* Bo góc */
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Đổ bóng nhẹ */
+  transition: transform 0.2s ease;       /* Hiệu ứng khi hover */
+  height: 100%;                          /* Chiều cao chiếm toàn bộ khung cha */
+  display: flex;                         /* Flex layout để căn giữa nội dung */
+  flex-direction: column;               /* Sắp xếp theo chiều dọc */
+  align-items: center;                  /* Căn giữa theo chiều ngang */
+  justify-content: center;              /* Căn giữa theo chiều dọc */
+  text-decoration: none;                /* Bỏ gạch chân (nếu là thẻ a) */
+  color: inherit;                        /* Giữ màu chữ theo cha */
 }
 
+
 .item-category:hover {
-  transform: translateY(-3px);
+  transform: translateY(-3px); /* Di chuyển phần tử lên trên 3px theo trục dọc */
   background-color: dodgerblue;
 }
 
 .item-category a {
-  display: block;
-  text-decoration: none;
-  color: inherit;
+  display: block; /* Hiển thị phần tử dưới dạng block để chiếm toàn bộ chiều ngang */
+  text-decoration: none; /* Loại bỏ gạch chân mặc định của liên kết */
+  color: inherit; /* Kế thừa màu chữ từ phần tử cha */
 }
 
 /* Hình ảnh trong danh mục */

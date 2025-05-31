@@ -46,21 +46,24 @@ if ($result_pho->num_rows > 0) {
 <html>
 <head>
     <meta charset="UTF-8">
-            <link rel="stylesheet" href="../../../../public/css/reset.css">
+    <link rel="stylesheet" href="../../../../public/css/reset.css">
 	<link rel="stylesheet" href="../../../../public/css/footer-style.css">
 	<link rel="stylesheet" href="../../../../public/css/header-style.css">
     <link rel="shortcut icon" href="../../../../../BinhDinhNews/public/images/logo.webp" type="image/x-icon">
-<style>
+    <link rel="stylesheet" href="../../../../../BinhDinhNews/public/css/rightmenu-style.css">
 
+    <title>Đơn vị sự nghiệp</title>
+<style>
     .container {
+        display: grid;
+        grid-template-columns: 5% 65% 30%;
         padding: 0 20px;
         box-sizing: border-box;
     }
 
-    .container h3 {
+    .container-mid h3 {
         text-align: left;
         margin: 20px 0;
-        padding-left: 10px; 
         font-size: 22px;
     }
 
@@ -74,7 +77,7 @@ if ($result_pho->num_rows > 0) {
     }
 
     .item {
-        width: 160px;
+        width: 220px;
         text-align: center;
     }
 
@@ -90,19 +93,23 @@ if ($result_pho->num_rows > 0) {
         margin-top: 10px;
         font-size: 18px;
     }
-
 </style>
 
 </head>
 <body>
     <div class="container">
-        <?php
-        hienThisunghiep($conn, sunghiep: "BAN QUẢN LÝ DỰ ÁN CÁC CÔNG TRÌNH GIAO THÔNG VÀ DÂN DỤNG");
-        hienThisunghiep($conn, sunghiep: "TRUNG TÂM PHÁT TRIỂN QUỸ ĐẤT TỈNH");
-        hienThisunghiep($conn, sunghiep: "BAN QUẢN LÝ DỰ ÁN NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN");
-        hienThisunghiep($conn, sunghiep: "ĐÀI PHÁT THANH VÀ TRUYỀN HÌNH BÌNH ĐỊNH");
-       
-        ?>
+        <div class="container-left"></div>
+        <div class="container-mid">
+            <?php
+                hienThisunghiep($conn, sunghiep: "BAN QUẢN LÝ DỰ ÁN CÁC CÔNG TRÌNH GIAO THÔNG VÀ DÂN DỤNG");
+                hienThisunghiep($conn, sunghiep: "TRUNG TÂM PHÁT TRIỂN QUỸ ĐẤT TỈNH");
+                hienThisunghiep($conn, sunghiep: "BAN QUẢN LÝ DỰ ÁN NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN");
+                hienThisunghiep($conn, sunghiep: "ĐÀI PHÁT THANH VÀ TRUYỀN HÌNH BÌNH ĐỊNH");
+            ?>
+        </div>
+        <div class="container-right">
+            <?php include($_SERVER['DOCUMENT_ROOT'].'/BinhDinhNews/app/views/right/homepage.php'); ?>
+        </div>
     </div>
 </body>
 </html>

@@ -2,7 +2,7 @@ body{
     background-color: #EEEEEE;
 }
 .main-container{
-    display: grid;
+    display: grid; /* để bố trí con theo lưới */
     grid-template-columns: 20% 80%;
     grid-template-rows: 100%;
 }

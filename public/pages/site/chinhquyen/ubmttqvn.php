@@ -15,6 +15,8 @@ function hienThiCapUBMTTQVN($conn, $scapbac) {
     $sql_pho = "SELECT * FROM ubmttqvn WHERE capbac = 2";
     $result_pho = $conn->query($sql_pho);
 
+    echo "<h3>LÃNH ĐẠO UBMTTQVN TỈNH</h3>";
+
     if ($result_ct->num_rows > 0) {
         echo '<div class="chutich-container">';
         while ($row = $result_ct->fetch_assoc()) {
@@ -42,22 +44,24 @@ function hienThiCapUBMTTQVN($conn, $scapbac) {
 <html>
 <head>
     <meta charset="UTF-8">
-            <link rel="stylesheet" href="../../../../public/css/reset.css">
+    <link rel="stylesheet" href="../../../../public/css/reset.css">
 	<link rel="stylesheet" href="../../../../public/css/footer-style.css">
 	<link rel="stylesheet" href="../../../../public/css/header-style.css">
     <link rel="shortcut icon" href="../../../../../BinhDinhNews/public/images/logo.webp" type="image/x-icon">
+    <link rel="stylesheet" href="../../../../../BinhDinhNews/public/css/rightmenu-style.css">
 
     <title>UBMTTQVN tỉnh</title>
     <style>
     .container {
+        display: grid;
+        grid-template-columns: 5% 65% 30%;
         padding: 0 20px;
         box-sizing: border-box;
     }
 
-    .container h3 {
+    .container-mid h3 {
         text-align: left;
         margin: 20px 0;
-        padding-left: 10px;
         font-size: 22px;
     }
 
@@ -71,7 +75,7 @@ function hienThiCapUBMTTQVN($conn, $scapbac) {
     }
 
     .item {
-        width: 160px;
+        width: 220px;
         text-align: center;
     }
 
@@ -91,10 +95,15 @@ function hienThiCapUBMTTQVN($conn, $scapbac) {
 </head>
 <body>
     <div class="container">
-        <h3>LÃNH ĐẠO UBMTTQVN TỈNH</h3>
-        <?php
-            hienThiCapUBMTTQVN($conn, 1); // Chủ tịch
-        ?>
+        <div class=" container-left"></div>
+        <div class="container-mid">
+            <?php
+                hienThiCapUBMTTQVN($conn, 1); // Chủ tịch
+            ?>
+        </div>
+        <div class="container-right">
+            <?php include($_SERVER['DOCUMENT_ROOT'].'/BinhDinhNews/app/views/right/homepage.php'); ?>
+        </div>
     </div>
 </body>
 </html>
