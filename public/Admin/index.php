@@ -93,10 +93,7 @@
                         <td><span class="dot-info-table" style="background-color: red;"></span>Từ chối</td>
                         <td class="table-result"><?php echo $result['reject'] ?></td>
                     </tr>
-                    <tr>
-                        <td> <span class="dot-info-table" style="background-color: gray;"></span>Nháp</td>
-                        <td class="table-result">0</td>
-                    </tr>
+
                 </table>
             </div>
         </div>
