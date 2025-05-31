@@ -2,11 +2,25 @@
     class Upload{
         function UploadImageArticle($idArt,$file)
         {
+            $isUploadSuccess = false;
+            $floderSave = "../../public/images/upload/".$idArt."/";
+            if(!is_dir($floderSave))
+                mkdir($floderSave, 0755, true);
             $newFileName = time() . "_" . basename($file['name']);
-            $targetPath = "../../public/images/upload/".$idArt."/".$newFileName;
-            move_uploaded_file($file['tmp_name'], $targetPath );
+            $targetPath = $floderSave.$newFileName;
+            if ((($file['type'] == 'image/gif') || 
+            ($file['type'] == 'image/jpeg')) && 
+            ($file['size'] < 5120000)) {
+                $isUploadSuccess = move_uploaded_file($file['tmp_name'], $targetPath );
+            }
+            if($isUploadSuccess)
+            {
+                return $newFileName;
+            }
+            else{
+                return false;
+            }
 
-            return $newFileName;
         }
         function UploadImageUserAvatar($uid, $file)
         {

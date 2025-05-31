@@ -153,6 +153,12 @@
                         </div>
 
                         <?php
+                            if(!isset($_GET['user_id']))
+                            {
+                                echo ' <script>
+                                    document.querySelector("#func3").classList.add("active");
+                                </script>';
+                            }
                             if($_SESSION['role'] != 2 || !isset($_GET['user_id']))
                             {
                                 echo "<script> document.querySelector('.role-warpper').classList.add('hidden') </script>";

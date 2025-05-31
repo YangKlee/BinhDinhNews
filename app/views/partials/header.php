@@ -104,9 +104,9 @@
         </header>
         <nav class="nav-pc">
             <ul class="main">
-                    <li><a  href="/BinhDinhNews/public/index.php"> <i class="fa-solid fa-house"></i> Homepage</a></li>
+                    <li id="f1"><a  href="/BinhDinhNews/public/index.php"> <i class="fa-solid fa-house"></i> Homepage</a></li>
 
-                    <li class="parent tin-tuc"><a  href="/BinhDinhNews/public/index.php"> <i class="fa-solid fa-newspaper"></i> Tin tức <i class="fa-solid fa-caret-down"></i></a> 
+                    <li id="f2" class="parent tin-tuc"><a  href="/BinhDinhNews/public/index.php"> <i class="fa-solid fa-newspaper"></i> Tin tức <i class="fa-solid fa-caret-down"></i></a> 
                         <ul class="subnav tin-tuc">
                             <?php
                                 require_once $_SERVER['DOCUMENT_ROOT']."/BinhDinhNews/app/model/CategoryDAO.php";
@@ -127,7 +127,7 @@
                         </ul>
                     </li>
 
-                    <li class="parent chinh-quyen"><a href="/BinhDinhNews/public/pages/site/chinhquyen/chinhquyenindex.php"> <i class="fa-solid fa-circle-nodes"></i> Chính quyền <i class="fa-solid fa-caret-down"></i></a>
+                    <li id="f3" class="parent chinh-quyen"><a href="/BinhDinhNews/public/pages/site/chinhquyen/chinhquyenindex.php"> <i class="fa-solid fa-circle-nodes"></i> Chính quyền <i class="fa-solid fa-caret-down"></i></a>
                         <ul class="subnav chinh-quyen">
                             <li><a href="/BinhDinhNews/public/pages/site/chinhquyen/tinhuy.php">Tỉnh ủy</a></li>
                             <li><a href="/BinhDinhNews/public/pages/site/chinhquyen/hdnd.php">HDND Tỉnh</a></li>

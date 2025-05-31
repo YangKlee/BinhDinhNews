@@ -90,6 +90,9 @@ function hienThiCapUBMTTQVN($conn, $scapbac) {
     </style>
 </head>
 <body>
+        <script>
+        document.querySelector("nav #f3").classList.add('active');
+    </script>
     <div class="container">
         <h3>LÃNH ĐẠO UBMTTQVN TỈNH</h3>
         <?php

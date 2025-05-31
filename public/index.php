@@ -16,7 +16,11 @@
 <?php
 	include('../app/views/partials/header.php');
 ?>
+
 <body>
+    <script>
+        document.querySelector("nav #f1").classList.add('active');
+    </script>
     <div class="main-container">
         <div class="container-left"></div>
         <div class="container-mid">

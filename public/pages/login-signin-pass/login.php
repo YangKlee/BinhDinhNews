@@ -19,7 +19,7 @@
             {
                 $userData = mysqli_fetch_array($result, MYSQLI_ASSOC);
                 // login complete
-                echo "<script> alert('Dang nhap thanh cong')</script>";
+                echo "<script> alert('Đăng nhập thành công')</script>";
                 $cookiesHash = hash("sha256", time() . $userData['UserName'] . $userData['PassWord']);
                 
                 // xóa session cũ
@@ -60,7 +60,7 @@
 
             else
             {
-                echo "<script> alert('Dang nhap that bai') </script>";
+                echo "<script> alert('Sai tài khoản hoặc mật khẩu') </script>";
                 $nofi = "Đăng nhập thất bại";
             }
             mysqli_close($coon);

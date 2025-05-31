@@ -92,6 +92,9 @@ function hienThiCap($conn, $sunghiep) {
     <link rel="shortcut icon" href="../../../../../BinhDinhNews/public/images/logo.webp" type="image/x-icon">
 </head>
 <body>
+        <script>
+        document.querySelector("nav #f3").classList.add('active');
+    </script>
 <div class="container">
     <?php
         hienThiCap($conn, 1);

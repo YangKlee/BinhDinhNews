@@ -28,7 +28,9 @@
     include('../app/views/partials/header.php');
 ?>
 <body>
-
+    <script>
+        document.querySelector("nav #f2").classList.add('active');
+    </script>
     <div class="container-theloai">
         <div class="container-left"></div>
         <div class="container-mid">

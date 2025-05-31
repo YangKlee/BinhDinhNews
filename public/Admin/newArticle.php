@@ -30,7 +30,10 @@
             ?>
         </div>
         <div class="right-container">
-            
+        <script>
+            document.querySelector(".li-child.article").classList.add("show");
+            document.querySelector("#func4-2").classList.add("active");
+        </script>
             <form class="form-article-input" action="../../app/controller/submitBaiBao.php" method="POST" enctype="multipart/form-data"> 
                 <h1>Thêm bài báo</h1>    
                 <div class="input-warpper tieude-warpper">

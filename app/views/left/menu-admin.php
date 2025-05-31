@@ -17,13 +17,13 @@
     </div>
             
     <ul class="function-list-container">
-                <li>
+                <li id="func1">
                     <a href="./index.php">TRANG CHỦ QUẢN LÝ</a>
                 </li>
-                <li>
+                <li id="func2" >
                     <a href="../index.php">TRANG CHỦ</a>
                 </li>
-                <li>
+                <li id="func3">
                     <a href="./userInfo.php">THÔNG TIN CÁ NHÂN</a>
                 </li>
                 <?php 
@@ -34,11 +34,11 @@
                             </li>';
                     }                
                 ?>
-                <li class="li-parent article">
+                <li id="func4" class="li-parent article">
                     <a for="">QUẢN LÝ BÀI BÁO</a>
                     <ul class="li-child article">
-                        <li><a href="./listArticleAdmin.php">Danh sách bài báo</a></li>
-                        <li><a href="./newArticle.php">Thêm bài báo</a></li>
+                        <li id="func4-1"><a href="./listArticleAdmin.php">Danh sách bài báo</a></li>
+                        <li id="func4-2"><a href="./newArticle.php">Thêm bài báo</a></li>
                     </ul>
                 </li>
                 <script>

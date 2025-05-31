@@ -23,6 +23,11 @@
 
 <body>
 
+    <!-- <style>
+        .function-list-container .func1{
+
+        }
+    </style> -->
     <div class="main-container">
         <div class="left-container">
             <?php
@@ -30,31 +35,13 @@
             ?>
 
         </div>
-
+        <script>
+            document.querySelector("#func1").classList.add("active");
+        </script>
         <?php 
-            $quy = 0;
-            $thang = 0;
-            $tuan  = 0;
+
             $timeCurr = new DateTime();
-            $thang = $timeCurr->format('n');
-            if($thang <= 3){
-                $quy = 1;
-            }
-            else if($thang <= 6)
-            {
-                $quy = 2;
-            }
-            else if($thang <= 9)
-            {
-                $quy = 3;
-            }
-            else{
-                $quy = 4;
-            }
-            $dateOfMonth = new DateTime();
-            $dateOfMonth->setDate($timeCurr->format('y'), $thang, 1);
-            $tuan =$timeCurr->format("W") - $dateOfMonth->format("W");
-        
+
         ?>
         <div class="right-container">
             <div class="wellcome-title">
@@ -64,16 +51,16 @@
                 <h3 class="time-info-title">Thời gian:</h3>
                 <div class="time-warpper">
                     <div class="module-time-warpper quy">
-                        <label class="time-number" for=""><?php echo $quy ?></label>
-                        <label class="detial-time-text" for="">Quý</label>
+                        <label class="time-number" for=""><?php echo $timeCurr->format('d') ?></label>
+                        <label class="detial-time-text" for="">Ngày</label>
                     </div>
                     <div class="module-time-warpper thang">
-                        <label class="time-number" for=""><?php echo $thang ?></label>
+                        <label class="time-number" for=""><?php echo $timeCurr->format('m') ?></label>
                          <label class="detial-time-text" for="">Tháng</label>
                     </div>
                     <div class="module-time-warpper tuan">
-                        <label class="time-number" for=""><?php echo $tuan ?></label>
-                         <label class="detial-time-text" for="">Tuần</label>
+                        <label class="time-number" for=""><?php echo $timeCurr->format('Y') ?></label>
+                         <label class="detial-time-text" for="">Năm</label>
                     </div>
                 </div>
              </div>

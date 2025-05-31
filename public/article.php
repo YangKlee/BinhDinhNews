@@ -28,7 +28,9 @@
 
     ?>
 <body>
-
+    <script>
+        document.querySelector("nav #f2").classList.add('active');
+    </script>
     <div class="container-article">
         <div class="container-left"></div>
         <div class="art-content">

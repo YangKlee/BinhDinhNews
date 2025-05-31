@@ -93,6 +93,9 @@ if ($result_pho->num_rows > 0) {
     <link rel="shortcut icon" href="../../../../../BinhDinhNews/public/images/logo.webp" type="image/x-icon">
 </head>
 <body>
+        <script>
+        document.querySelector("nav #f3").classList.add('active');
+    </script>
     <div class="container">
         <?php
         hienThihiepquan($conn, coquan: "BỘ CHỈ HUY BỘ ĐỘI BIÊN PHÒNG TỈNH");

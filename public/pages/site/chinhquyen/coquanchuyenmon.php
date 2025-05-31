@@ -108,6 +108,9 @@ if ($result_cap3->num_rows > 0) {
 </head>
 
 <body>
+    <script>
+        document.querySelector("nav #f3").classList.add('active');
+    </script>
     <div class="container">
         <?php
             hienThiCoQuan($conn, "VĂN PHÒNG UBND");

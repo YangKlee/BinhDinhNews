@@ -20,6 +20,7 @@
     <link rel="shortcut icon" href="../../../../../BinhDinhNews/public/images/logo.webp" type="image/x-icon">
     <title>Document</title>
 </head>
+
 <body>
     <div class="main-container">
          <div class="left-container">
@@ -29,7 +30,10 @@
             ?>
 
         </div>
-        
+        <script>
+            document.querySelector(".li-child.article").classList.add("show");
+            document.querySelector("#func4-1").classList.add("active");
+        </script>
        <div class="right-container">
             <div class = "container-article-list">
                 <h1>Danh sách bài báo của tôi</h1>

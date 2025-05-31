@@ -11,6 +11,9 @@
 <?php include($_SERVER['DOCUMENT_ROOT'].'/BinhDinhNews/app/views/partials/header.php'); ?>
 
 <body>
+    <script>
+        document.querySelector("nav #f3").classList.add('active');
+    </script>
     <div class="main-container">
         <div class="pathway-category">
             <nav class="breadcrumb" aria-label="breadcrumb">

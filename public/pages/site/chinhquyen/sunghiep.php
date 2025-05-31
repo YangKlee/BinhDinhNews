@@ -95,6 +95,9 @@ if ($result_pho->num_rows > 0) {
 
 </head>
 <body>
+        <script>
+        document.querySelector("nav #f3").classList.add('active');
+    </script>
     <div class="container">
         <?php
         hienThisunghiep($conn, sunghiep: "BAN QUẢN LÝ DỰ ÁN CÁC CÔNG TRÌNH GIAO THÔNG VÀ DÂN DỤNG");

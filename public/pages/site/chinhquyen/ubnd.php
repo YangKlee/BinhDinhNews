@@ -91,6 +91,9 @@ if ($result_pho->num_rows > 0) {
     </style>
 </head>
 <body>
+        <script>
+        document.querySelector("nav #f3").classList.add('active');
+    </script>
     <div class="container">
         <?php
             hienThiCapUBND($conn, 1); 
