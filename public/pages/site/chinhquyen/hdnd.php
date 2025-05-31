@@ -22,7 +22,7 @@ function hienThiCap($conn, $sunghiep) {
         while ($row = $result_ct->fetch_assoc()) {
             echo '<div class="item">
                     <img src="../../../images/imgChinhquyen/HĐND/'.$row['anh'].'" alt="'.$row['ten'].'">
-                    <label><b>'.$row['ten'].'</b><br>'.$row['chucvu'].'</label>
+                    <label><b>'.$row['chucvu'].'</b><br>'.$row['ten'].'</label>
                 </div>';
         }
         echo '</div>';
@@ -33,7 +33,7 @@ function hienThiCap($conn, $sunghiep) {
         while ($row = $result_pho->fetch_assoc()) {
             echo '<div class="item">
                     <img src="../../../images/imgChinhquyen/HĐND/'.$row['anh'].'" alt="'.$row['ten'].'">
-                    <label><b>'.$row['ten'].'</b><br>'.$row['chucvu'].'</label>
+                    <label><b>'.$row['chucvu'].'</b><br>'.$row['ten'].'</label>
                 </div>';
         }
         echo '</div>';
@@ -45,17 +45,24 @@ function hienThiCap($conn, $sunghiep) {
 <html>
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="../../../../public/css/reset.css">
+	<link rel="stylesheet" href="../../../../public/css/footer-style.css">
+	<link rel="stylesheet" href="../../../../public/css/header-style.css">
+    <link rel="shortcut icon" href="../../../../../BinhDinhNews/public/images/logo.webp" type="image/x-icon">
+    <link rel="stylesheet" href="../../../../../BinhDinhNews/public/css/rightmenu-style.css">
+    
     <title>Lãnh đạo Hội đồng nhân dân</title>
     <style>
     .container {
+        display: grid;
+        grid-template-columns: 5% 65% 30%;
         padding: 0 20px;
         box-sizing: border-box;
     }
 
-    .container h3 {
+    .container-mid h3 {
         text-align: left;
         margin: 20px 0;
-        padding-left: 10px;
         font-size: 22px;
     }
 
@@ -69,7 +76,7 @@ function hienThiCap($conn, $sunghiep) {
     }
 
     .item {
-        width: 160px;
+        width: 220px;
         text-align: center;
     }
 
@@ -86,20 +93,21 @@ function hienThiCap($conn, $sunghiep) {
         font-size: 18px;
     }
     </style>
-    <link rel="stylesheet" href="../../../../public/css/reset.css">
-	<link rel="stylesheet" href="../../../../public/css/footer-style.css">
-	<link rel="stylesheet" href="../../../../public/css/header-style.css">
-    <link rel="shortcut icon" href="../../../../../BinhDinhNews/public/images/logo.webp" type="image/x-icon">
 </head>
 <body>
         <script>
         document.querySelector("nav #f3").classList.add('active');
     </script>
 <div class="container">
-    <?php
-        hienThiCap($conn, 1);
-                
-    ?>
+    <div class="container-left"></div>
+    <div class="container-mid">
+        <?php
+            hienThiCap($conn, 1);        
+        ?>
+    </div>
+    <div class="container-right">
+        <?php include($_SERVER['DOCUMENT_ROOT'].'/BinhDinhNews/app/views/right/homepage.php'); ?>
+    </div>
     
 </div>
 </body>

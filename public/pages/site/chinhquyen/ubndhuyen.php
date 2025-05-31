@@ -15,7 +15,7 @@ function hienThiDiaPhuong($conn, $diaphuong) {
     $sql_pho = "SELECT * FROM ubnd WHERE diaphuong = '$diaphuong' AND capbac = 2";
     $result_pho = $conn->query($sql_pho);
 
-    echo "<h3> UBND {$diaphuong} </h3>";
+    echo "<h3> {$diaphuong} </h3>";
 
 if ($result_ct->num_rows > 0) {
     echo '<div class="chutich-container">';
@@ -46,22 +46,25 @@ if ($result_pho->num_rows > 0) {
 <html>
 <head>
     <meta charset="UTF-8">
-            <link rel="stylesheet" href="../../../../public/css/reset.css">
+    <link rel="stylesheet" href="../../../../public/css/reset.css">
 	<link rel="stylesheet" href="../../../../public/css/footer-style.css">
 	<link rel="stylesheet" href="../../../../public/css/header-style.css">
     <link rel="shortcut icon" href="../../../../../BinhDinhNews/public/images/logo.webp" type="image/x-icon">
+    <link rel="stylesheet" href="../../../../../BinhDinhNews/public/css/rightmenu-style.css">
 
+    <title>UBND các huyện, thị xã, thành phố</title>
 <style>
     
     .container {
+        display: grid;
+        grid-template-columns: 5% 65% 30%;
         padding: 0 20px; 
         box-sizing: border-box;
     }
 
-    .container h3 {
+    .container-mid h3 {
         text-align: left;
         margin: 20px 0;
-        padding-left: 10px; 
         font-size: 22px;
     }
 
@@ -75,7 +78,7 @@ if ($result_pho->num_rows > 0) {
     }
 
     .item {
-        width: 160px;
+        width: 220px;
         text-align: center;
     }
 
@@ -100,19 +103,25 @@ if ($result_pho->num_rows > 0) {
         document.querySelector("nav #f3").classList.add('active');
     </script>
     <div class="container">
-        <?php
-        hienThiDiaPhuong($conn, "TP QUY NHƠN");
-        hienThiDiaPhuong($conn, "TX AN NHƠN");
-        hienThiDiaPhuong($conn, "TX HOÀI NHƠN");
-        hienThiDiaPhuong($conn, "HUYỆN PHÙ MỸ");
-        hienThiDiaPhuong($conn, "HUYỆN VĨNH THẠNH");
-        hienThiDiaPhuong($conn, "HUYỆN HOÀI ÂN");
-        hienThiDiaPhuong($conn, "HUYỆN VÂN CANH");
-        hienThiDiaPhuong($conn, "HUYỆN PHÙ CÁT");
-        hienThiDiaPhuong($conn, "HUYỆN AN LÃO");
-        hienThiDiaPhuong($conn, "HUYỆN TUY PHƯỚC");
-        hienThiDiaPhuong($conn, "HUYỆN TÂY SƠN");
-        ?>
+        <div class="container-left"></div>
+        <div class="container-mid">
+            <?php
+                hienThiDiaPhuong($conn, "TP QUY NHƠN");
+                hienThiDiaPhuong($conn, "TX AN NHƠN");
+                hienThiDiaPhuong($conn, "TX HOÀI NHƠN");
+                hienThiDiaPhuong($conn, "HUYỆN PHÙ MỸ");
+                hienThiDiaPhuong($conn, "HUYỆN VĨNH THẠNH");
+                hienThiDiaPhuong($conn, "HUYỆN HOÀI ÂN");
+                hienThiDiaPhuong($conn, "HUYỆN VÂN CANH");
+                hienThiDiaPhuong($conn, "HUYỆN PHÙ CÁT");
+                hienThiDiaPhuong($conn, "HUYỆN AN LÃO");
+                hienThiDiaPhuong($conn, "HUYỆN TUY PHƯỚC");
+                hienThiDiaPhuong($conn, "HUYỆN TÂY SƠN");
+            ?>
+        </div>
+        <div class="container-right">
+            <?php include($_SERVER['DOCUMENT_ROOT'].'/BinhDinhNews/app/views/right/homepage.php'); ?>
+        </div>
     </div>
 </body>
 </html>

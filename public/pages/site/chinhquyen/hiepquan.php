@@ -45,17 +45,24 @@ if ($result_pho->num_rows > 0) {
 <html>
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="../../../../public/css/reset.css">
+	<link rel="stylesheet" href="../../../../public/css/footer-style.css">
+	<link rel="stylesheet" href="../../../../public/css/header-style.css">
+    <link rel="shortcut icon" href="../../../../../BinhDinhNews/public/images/logo.webp" type="image/x-icon">
+    <link rel="stylesheet" href="../../../../../BinhDinhNews/public/css/rightmenu-style.css">
+
     <title>Đơn vị Hiệp quản</title>
     <style>
     .container {
+        display: grid;
+        grid-template-columns: 5% 65% 30%;
         padding: 0 20px; /* tạo khoảng cách 2 bên cho toàn bộ nội dung */
         box-sizing: border-box;
     }
 
-    .container h3 {
+    .container-mid h3 {
         text-align: left;
         margin: 20px 0;
-        padding-left: 10px; /* hoặc dùng margin-left nếu thích */
         font-size: 22px;
     }
 
@@ -69,7 +76,7 @@ if ($result_pho->num_rows > 0) {
     }
 
     .item {
-        width: 160px;
+        width: 220px;
         text-align: center;
     }
 
@@ -85,27 +92,28 @@ if ($result_pho->num_rows > 0) {
         margin-top: 10px;
         font-size: 18px;
     }
-
-</style>
-    <link rel="stylesheet" href="../../../../public/css/reset.css">
-	<link rel="stylesheet" href="../../../../public/css/footer-style.css">
-	<link rel="stylesheet" href="../../../../public/css/header-style.css">
-    <link rel="shortcut icon" href="../../../../../BinhDinhNews/public/images/logo.webp" type="image/x-icon">
+    </style>
 </head>
 <body>
         <script>
         document.querySelector("nav #f3").classList.add('active');
     </script>
     <div class="container">
-        <?php
-        hienThihiepquan($conn, coquan: "BỘ CHỈ HUY BỘ ĐỘI BIÊN PHÒNG TỈNH");
-        hienThihiepquan($conn, coquan: "BỘ CHỈ HUY QUÂN SỰ TỈNH");
-        hienThihiepquan($conn, coquan: "CÔNG AN TỈNH");
-        hienThihiepquan($conn, coquan: "CHI CỤC THỐNG KÊ TỈNH BÌNH ĐỊNH");
-        hienThihiepquan($conn, coquan: "TÒA ÁN NHÂN DÂN TỈNH BÌNH ĐỊNH");
-        hienThihiepquan($conn, coquan: "VIỆN KIỂM SÁT NHÂN DÂN TỈNH");
-        hienThihiepquan($conn, coquan: "BẢO HIỂM XÃ HỘI KHU VỰC XXIII");
-        ?>
+        <div class="container-left"></div>
+        <div class="container-mid">
+            <?php
+                hienThihiepquan($conn, coquan: "BỘ CHỈ HUY BỘ ĐỘI BIÊN PHÒNG TỈNH");
+                hienThihiepquan($conn, coquan: "BỘ CHỈ HUY QUÂN SỰ TỈNH");
+                hienThihiepquan($conn, coquan: "CÔNG AN TỈNH");
+                hienThihiepquan($conn, coquan: "CHI CỤC THỐNG KÊ TỈNH BÌNH ĐỊNH");
+                hienThihiepquan($conn, coquan: "TÒA ÁN NHÂN DÂN TỈNH BÌNH ĐỊNH");
+                hienThihiepquan($conn, coquan: "VIỆN KIỂM SÁT NHÂN DÂN TỈNH");
+                hienThihiepquan($conn, coquan: "BẢO HIỂM XÃ HỘI KHU VỰC XXIII");
+            ?>
+        </div>
+        <div class="container-right">
+            <?php include($_SERVER['DOCUMENT_ROOT'].'/BinhDinhNews/app/views/right/homepage.php'); ?>
+        </div>
     </div>
 </body>
 </html>
