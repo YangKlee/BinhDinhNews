@@ -88,6 +88,13 @@ input {
     cursor: pointer;
 }
 
+#submit_btn:hover{
+    background-color: #080710;
+    color: #ffffff;
+    transition: all 0.3s ease;
+    transform: scale(1.02);
+}
+
 /* Nhóm định dạng cho liên kết trong form */
 form a {
     color: #ffffff;
