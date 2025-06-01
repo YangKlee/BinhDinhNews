@@ -73,7 +73,7 @@ if (isset($_POST['reset-btn'])) {
     $email = $_POST['email'] ?? '';
     require_once '../../../app/model/userDAO.php';
     $userDAO = new UserDAO();
-    if($userDAO->updateUserPassword($email, $new_password)){
+    if($userDAO->updateUserPasswordByEmail($email, $new_password)){
         unset($_SESSION['reset_password']);
         unset($_SESSION['email']);
         unset($_SESSION['otp_sent']);
@@ -94,10 +94,6 @@ if (isset($_POST['reset-btn'])) {
     <link rel="icon" href="../../images/logo.webp" type="image/x-icon">
     <link rel="stylesheet" href="../../css/mini-footer-style.css">
     <title>Quên mật khẩu</title>
-    <style>
-        form { height: 350px; }
-        .error { color: red; text-align: center; margin-bottom: 10px; }
-    </style>
 </head>
 <body>
     <?php if (!isset($_SESSION['otp_sent'])): ?>

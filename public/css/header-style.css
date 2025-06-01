@@ -257,7 +257,7 @@ nav li a{
     padding: 0.333px 0px 1px 5px;
 }
 
-.search-bar input[type="text"]{
+.search-bar input[type="search"]{
     width: 80%;
     flex: 1;
     padding: 10px;

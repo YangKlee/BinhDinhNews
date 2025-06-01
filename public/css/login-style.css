@@ -160,18 +160,3 @@ form a:hover {
     color: #888;
     background: transparent;
 }
-
-    /* @media (max-width: 480px) {
-        form {
-            width: 90%;
-            padding: 20px;
-        }
-        form h3 {
-            font-size: 24px;
-            line-height: 32px;
-        }
-        #login-btn {
-            padding: 10px 0;
-            font-size: 15px;
-        }
-    } */

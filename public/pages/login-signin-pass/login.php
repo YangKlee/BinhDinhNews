@@ -55,13 +55,11 @@
                     header("Location: ../../Admin/index.php");
                     exit();
                 }
-
             } 
 
             else
             {
-                echo "<script> alert('Sai tài khoản hoặc mật khẩu') </script>";
-                $nofi = "Đăng nhập thất bại";
+                echo "<script> alert('Dang nhap that bai') </script>";
             }
             mysqli_close($coon);
         }
@@ -115,7 +113,6 @@
         <a href="fogot-password.php">Quên mật khẩu ?</a>
     </form>
 
-    <div class="login-nofication" style="display: <?php echo $displayNofi ?>;">
     </div>
     <?php 
         include("../../../app/views/partials/mini-footer.php");

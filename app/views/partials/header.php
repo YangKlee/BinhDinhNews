@@ -176,7 +176,7 @@
                 
                 </ul>
                 <form action="/BinhDinhNews/public/pages/site/searchingsite.php" class="search-bar" method="GET">
-                    <input type="text" placeholder="Tìm kiếm..." name="search" id="search">
+                    <input type="search" placeholder="Tìm kiếm..." name="search" id="search">
                     <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
                 </form>
             </nav>
