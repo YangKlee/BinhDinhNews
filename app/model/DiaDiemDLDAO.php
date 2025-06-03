@@ -45,11 +45,11 @@
                 mysqli_query($conn, $sql);
                 
                 // lấy id từ cột vừa thêm có kiểu dữ liệu là AUTO_INCREMENT để trả về cho tên file txt và tên thư mục
-				$id = mysqli_insert_id($conn);
+				$iddiadiem_moi = mysqli_insert_id($conn);
                 // đóng kết nối
                 mysqli_close($conn);
                 // trả về id
-			 	return $id;
+			 	return $iddiadiem_moi; //trả về cho tên file txt và tên thư mục
            }
 		} 		
 
@@ -65,9 +65,9 @@
 
 
 		
-		public function capnhat_diadiem($iddiadiem, $status, $ten, $diachi, $loaihinhid, $hinhanh) {
+		public function capnhat_diadiem($iddiadiem, $status, $ten_moi, $diachi_moi, $loaihinhid_moi, $hinhanh) {
 			$conn = $this->getConnection();
-			$sql = "UPDATE diadiem_dulich SET Status = $status, TenDiaDiem = '$ten' , DiaChi = '$diachi', LoaiHinhID = '$loaihinhid', HinhAnh = '$hinhanh' WHERE DiaDiemID = " .$iddiadiem;
+			$sql = "UPDATE diadiem_dulich SET Status = $status, TenDiaDiem = '$ten_moi' , DiaChi = '$diachi_moi', LoaiHinhID = '$loaihinhid_moi', HinhAnh = '$hinhanh' WHERE DiaDiemID = " .$iddiadiem;
             mysqli_query($conn, $sql);
 			mysqli_close($conn);
 		}
