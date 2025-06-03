@@ -67,6 +67,28 @@
                     }); 
                 </script>
 
+                    <!----------------------- du lịch của c --------->
+                <li class="li-parent diadiemdl">
+                    <a> <i class="fa-solid fa-compass"></i> QUẢN LÝ ĐỊA ĐIỂM DU LỊCH</a>
+                    <ul class="li-child diadiemdl">
+                        <li><a href="./dsdiadiem.php"> <i class="fa-solid fa-list"></i> Tất cả địa điểm du lịch</a></li>
+                        <li><a href="./themdiadiem.php"> <i class="fa-solid fa-plus"></i> Thêm địa điểm du lịch</a></li>
+                    </ul>
+                </li>
+
+                <script>
+
+                        let diadiemdltag = document.querySelector(".li-parent.diadiemdl");
+                        let diadiemdltagchild = document.querySelector(".li-child.diadiemdl");
+                        diadiemdltag.addEventListener("click", function(e){
+                            diadiemdltagchild.classList.toggle("show")
+                        }); 
+
+                </script>
+                    <!---------------- du lịch của c ---------------------------->
+
+           
+
                 <li>
                     <a href="../../app/controller/dangxuat.php"><i class="fa-solid fa-arrow-right-from-bracket"></i> ĐĂNG XUẤT</a>
                 </li>
