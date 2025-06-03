@@ -1,0 +1,133 @@
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
+    .container-loaihinh-dulich {
+        display: grid;
+        grid-template-columns: 5% 65% 30%;
+    }
+ /*h1 cho tiêu đề trang*/
+    .container-mid h1 {
+        color: #007BFF;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        /* căn giữa theo chiều ngang */
+    }
+/*hiện theo chiều dọc*/
+    .loaihinh-line {
+        display: block;
+        margin-bottom: 40px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid #ccc;
+    }
+/*h2 cho tên loại hình*/
+    .loaihinh-line h2{
+     margin-left: 5px;
+    }
+
+
+/*hiện thị theo chiều ngang*/
+    .diadiem-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        margin-top: 10px;
+    }
+
+
+
+    .place-card {
+        width: 215px;
+        text-align: center;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        overflow: hidden;
+        text-align: center;
+        margin: 10px;
+        position: relative;
+        /* max-height: 300px; */
+
+    }
+
+    .place-card:hover {
+        transform: scale(1.05);
+        /*tăng 5% kích thước ban đầu */
+    }
+
+    .place-card img {
+        width: 100%;
+        height: 200px;
+    }
+
+    .place-card h3 {
+        font-weight: bold;
+        color: #007BFF;
+        padding: 8px 5px 4px 5px;
+        font-size: 0.91em;
+    }
+
+    .place-card p {
+        background-color: #007BFF;
+        color: white;
+        padding: 6px 5px;
+        font-size: 13px;
+    }
+
+
+    .xemthem {
+        margin-top: 10px;
+        text-align: right;
+    }
+
+    .xemthem a {
+        color: #007bff;
+    }
+
+    .xemthem a:hover {
+        text-decoration: underline;
+    }
+
+
+
+
+
+
+    /*phân trang*************************/
+    .page-navigation * {
+        font-size: 1.2rem;
+    }
+
+    .page-navigation {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    .page-navigation span {
+        display: flex;
+        justify-content: center;
+        height: 2rem;
+        width: 2rem;
+        border-radius: 50%;
+        background-color: #007BFF;
+        padding: 5px;
+        margin: 0px 5px;
+        color: white;
+        text-decoration: underline;
+    }
+
+    .page-navigation a {
+        padding: 5px;
+        margin: 0px 5px;
+    }
+
+    .page-navigation a:hover {
+        display: flex;
+        justify-content: center;
+        height: 2rem;
+        width: 2rem;
+        border-radius: 50%;
+        background-color: #007BFF;
+        color: white;
+    }

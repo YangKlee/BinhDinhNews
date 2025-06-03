@@ -1,0 +1,78 @@
+body{
+    margin:0;
+    padding:0;
+}
+.container-ctDiaDiem{
+    display: grid;
+    grid-template-columns: 5% 65% 30%;
+   grid-template-rows: 100%;
+   left: 0 ;
+
+}
+.main-container{
+  
+}
+
+.main-container h1{
+    color: #007BFF;
+	margin-top: 10px;
+	text-align: center; /* căn giữa*/
+}
+.main-container img{
+	width: 80%;
+	height: 80%;
+	max-height: 500px;
+    margin: 10px auto; /* Căn giữa theo chiều ngang căn trên dưới 10px tự động căn theo chiều ngang*/
+    display: block;
+}
+
+.main-container p{
+    margin-bottom: 10px;
+	font-size: 1.2em;
+	text-align: justify;
+}
+
+
+
+.main-container u{
+    color: #007BFF;
+}
+
+.main-container h2{
+    font-size: 1.5em;
+}
+
+
+.main-container h3{
+	display:flex;
+	font-size: 1.2em;
+	margin-top: 10px;
+	margin-bottom: 20px;
+}
+
+.main-container h3 img{
+    width: 1.2em;
+	height: auto;
+    margin: 0;
+
+}
+
+
+/* Overlay tối nền */
+.img-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #007BFF;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.img-overlay img {
+    cursor: zoom-out;
+}
+
