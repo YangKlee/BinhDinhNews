@@ -204,9 +204,9 @@
                         <input type="file" class="txb txb-avatar" name="avatar_img" id="" >
 
                         <div class="button-wrapper">
-                        <button type="button" id="edit_btn">Sửa thông tin</button>
-                        <button type="submit" id="submit_btn">Cập nhật</button>
-                        <button type="button" id="edit_password" >Thay đổi mật khẩu</button>
+                        <button type="button" id="edit_btn"><i class="fa-solid fa-pen-to-square"></i>Sửa thông tin</button>
+                        <button type="submit" id="submit_btn"><i class="fa-solid fa-check"></i>Cập nhật</button>
+                        <button type="button" id="edit_password" ><i class="fa-solid fa-pen-to-square"></i>Thay đổi mật khẩu</button>
                         
                         </div>
                     </div>

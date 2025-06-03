@@ -91,13 +91,13 @@
                         $statusArticle = null;
                         if($row['ArticleStatus'] == 0)
                         {
-                            $statusArticle = '<label style="color:rgb(230, 138, 0);font-size:1.8rem">Chờ duyệt</label>';
+                            $statusArticle = '<label style="color:rgb(230, 138, 0);font-size:1.8rem"><i class="fa-solid fa-circle-pause"></i>Chờ duyệt</label>';
                         }
                         else if($row['ArticleStatus'] == 1){
-                            $statusArticle = '<label style="color:green;font-size:1.8rem">Đã đăng</label>';
+                            $statusArticle = '<label style="color:green;font-size:1.8rem"><i class="fa-solid fa-circle-check"></i>Đã đăng</label>';
                         }
                         else if($row['ArticleStatus'] == -1){
-                            $statusArticle = '<label style="color:red;font-size:1.8rem">Đã bị hủy</label>';
+                            $statusArticle = '<label style="color:red;font-size:1.8rem"><i class="fa-solid fa-circle-xmark"></i>Đã hủy</label>';
                         }
                         echo '
                         

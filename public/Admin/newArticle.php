@@ -108,8 +108,8 @@
 
                     </div>    
                     <div class="btn-modify-warper">
-                        <button onclick="loadNewImageUpload()" type="button" class="btn addimg">Thêm hình ảnh</button>
-                        <button onclick="deleteImages(indexUploadImages-1)" type="button" class="btn deleteimg">Xóa hình ảnh</button>
+                        <button onclick="loadNewImageUpload()" type="button" class="btn addimg"><i class="fa-solid fa-plus"></i>Thêm hình ảnh</button>
+                        <button onclick="deleteImages(indexUploadImages-1)" type="button" class="btn deleteimg"><i class="fa-solid fa-trash"></i>Xóa hình ảnh</button>
                     </div>
                         
                 </div>
@@ -143,7 +143,7 @@
                 </script>
 
                 <input class="btn submit" type="submit" value="Nộp bài báo">
-                <button type="button" class="btn delete">Xóa nội dung</button>
+                <button type="button" class="btn delete"><i class="fa-solid fa-trash"></i>Xóa nội dung</button>
             </form>
         </div>
     </div>

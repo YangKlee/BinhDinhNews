@@ -168,7 +168,7 @@
                     <?php
                         if($_SESSION['role'] >= 1)
                         {
-                            echo '<li><a href="./admin/index.php">Trang quản lý</a></li>';
+                            echo '<li><a href="./admin/index.php"><i class="fa-solid fa-toolbox"></i>Trang quản lý</a></li>';
                         }
                     ?>
                     <!-- <li><a href="#">Giới thiệu</a></li> -->

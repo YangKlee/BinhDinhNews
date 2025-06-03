@@ -49,6 +49,9 @@ body{
     font-size: 1.3rem;
     padding: 10px 15px;
     margin-right: 10px;
+    border: 1px solid white;
+    border-radius: 30px;
+
 }
 .image-upload-table{
     width: 100%;
@@ -65,7 +68,24 @@ body{
     width: 100%;
 }
 .btn.addimg{
-    width: 300px;
+    width: 200px;
+    background-color: green;
+    color: white;
+}
+.btn.deleteimg{
+    width: 200px;
+    background-color: red;
+    color: white;
+}
+.btn.submit{
+    width: 200px;
+    background-color: blue;
+    color: white;
+}
+.btn.delete{
+    width: 200px;
+    background-color: red;
+    color: white;
 }
 .image-upload-table #td1{
     width: 50px;

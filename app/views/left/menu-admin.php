@@ -8,6 +8,10 @@
                     
                 } 
 ?>
+    <header>
+
+        <script src="https://kit.fontawesome.com/8f5e4d2946.js" crossorigin="anonymous"></script>
+    </header>
 <div class="menu-container">
     <div class="user-info-container">
                 <img  src="<?php echo !empty($result['user_img']) ? "/BinhDinhNews/public/images/userAvatar/". $result['user_img'] : "/BinhDinhNews/public/images/user.png"?>"  alt="">
@@ -18,27 +22,27 @@
             
     <ul class="function-list-container">
                 <li id="func1">
-                    <a href="./index.php">TRANG CHỦ QUẢN LÝ</a>
+                    <a href="./index.php"><i class="fa-solid fa-toolbox"></i>TRANG CHỦ QUẢN LÝ</a>
                 </li>
                 <li id="func2" >
-                    <a href="../index.php">TRANG CHỦ</a>
+                    <a href="../index.php"> <i class="fa-solid fa-house"></i> TRANG CHỦ</a>
                 </li>
                 <li id="func3">
-                    <a href="./userInfo.php">THÔNG TIN CÁ NHÂN</a>
+                    <a href="./userInfo.php"> <i class="fa-solid fa-circle-info"></i> THÔNG TIN CÁ NHÂN</a>
                 </li>
                 <?php 
                     if($_SESSION['role'] == 2)
                     {
                                     echo '                <li>
-                                <a href="./listUser.php">QUẢN LÝ NGƯỜI DÙNG</a>
+                                <a href="./listUser.php"> <i class="fa-solid fa-users"></i> QUẢN LÝ NGƯỜI DÙNG</a>
                             </li>';
                     }                
                 ?>
                 <li id="func4" class="li-parent article">
-                    <a for="">QUẢN LÝ BÀI BÁO</a>
+                    <a for=""> <i class="fa-solid fa-newspaper"></i> QUẢN LÝ BÀI BÁO <i class="fa-solid fa-caret-down"></i></a>
                     <ul class="li-child article">
-                        <li id="func4-1"><a href="./listArticleAdmin.php">Danh sách bài báo</a></li>
-                        <li id="func4-2"><a href="./newArticle.php">Thêm bài báo</a></li>
+                        <li id="func4-1"><a href="./listArticleAdmin.php"> <i class="fa-solid fa-list"></i> Danh sách bài báo</a></li>
+                        <li id="func4-2"><a href="./newArticle.php"> <i class="fa-solid fa-plus"></i> Thêm bài báo</a></li>
                     </ul>
                 </li>
                 <script>
@@ -66,7 +70,7 @@
                 </script>
 
                 <li>
-                    <a href="../../app/controller/dangxuat.php">ĐĂNG XUẤT</a>
+                    <a href="../../app/controller/dangxuat.php"><i class="fa-solid fa-arrow-right-from-bracket"></i> ĐĂNG XUẤT</a>
                 </li>
     </ul>
 </div>

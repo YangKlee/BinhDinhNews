@@ -135,6 +135,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             </div>
 
             <div class="create-user-actions">
+                
                 <input type="submit" value="Tạo tài khoản" class="create-user-button">
             </div>
         </form>
