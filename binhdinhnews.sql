@@ -257,28 +257,6 @@ INSERT INTO `coquanchuyenmon` (`id`, `tencoquan`, `hoten`, `chucvu`, `hinhanh`, 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `diadiemdulich`
---
-
-DROP TABLE IF EXISTS `diadiemdulich`;
-CREATE TABLE IF NOT EXISTS `diadiemdulich` (
-  `IDDiaDiem` int NOT NULL AUTO_INCREMENT,
-  `IDLoaiDiaDiem` int DEFAULT NULL,
-  `IDQuanHuyen` int DEFAULT NULL,
-  `IDPhuongXa` int DEFAULT NULL,
-  `TenDiaDiem` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_vietnamese_ci DEFAULT NULL,
-  `ShortDecription` text CHARACTER SET utf8mb4 COLLATE utf8mb4_vietnamese_ci,
-  `MapIframe` text CHARACTER SET utf8mb4 COLLATE utf8mb4_vietnamese_ci,
-  `ListImage` text CHARACTER SET utf8mb4 COLLATE utf8mb4_vietnamese_ci,
-  PRIMARY KEY (`IDDiaDiem`),
-  KEY `IDQuanHuyen` (`IDQuanHuyen`),
-  KEY `IDPhuongXa` (`IDPhuongXa`),
-  KEY `IDLoaiDiaDiem` (`IDLoaiDiaDiem`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
-
--- --------------------------------------------------------
-
---
 -- Cấu trúc bảng cho bảng `donvihiepquan`
 --
 
@@ -431,26 +409,6 @@ INSERT INTO `lanhdao` (`id`, `ten`, `chucvu`, `anh`, `capbac`, `donvi`) VALUES
 (30, 'NGUYỄN VĂN DŨNG', 'ỦY VIÊN BTV TỈNH ỦY<br> Bí thư Thành ủy Quy Nhơn', 'nguyenvandung.jpg', 2, 'Ban thường vụ Tỉnh ủy'),
 (31, 'NGUYỄN TỰ CÔNG HOÀNG', 'ỦY VIÊN BTV TỈNH ỦY<br> Phó Chủ tịch UBND tỉnh Trưởng Ban Quản lý KKT tỉnh', 'nguyentuconghoang.jpg', 2, 'Ban thường vụ Tỉnh ủy');
 
--- --------------------------------------------------------
-
---
--- Cấu trúc bảng cho bảng `loaidiadiemdulich`
---
-
-DROP TABLE IF EXISTS `loaidiadiemdulich`;
-CREATE TABLE IF NOT EXISTS `loaidiadiemdulich` (
-  `IDLoaiDiaDiem` int NOT NULL AUTO_INCREMENT,
-  `TenLoaiDiaDiem` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL,
-  PRIMARY KEY (`IDLoaiDiaDiem`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
-
---
--- Đang đổ dữ liệu cho bảng `loaidiadiemdulich`
---
-
-INSERT INTO `loaidiadiemdulich` (`IDLoaiDiaDiem`, `TenLoaiDiaDiem`) VALUES
-(1, 'Danh lam thắng cảnh'),
-(2, 'Di tích lịch sử');
 
 -- --------------------------------------------------------
 
@@ -828,14 +786,6 @@ ALTER TABLE `article`
 ALTER TABLE `comment`
   ADD CONSTRAINT `comment_ibfk_1` FOREIGN KEY (`ArticleID`) REFERENCES `article` (`ArticleID`),
   ADD CONSTRAINT `comment_ibfk_2` FOREIGN KEY (`UserID`) REFERENCES `userdata` (`UserID`);
-
---
--- Các ràng buộc cho bảng `diadiemdulich`
---
-ALTER TABLE `diadiemdulich`
-  ADD CONSTRAINT `diadiemdulich_ibfk_1` FOREIGN KEY (`IDQuanHuyen`) REFERENCES `quanhuyen` (`IDQuanHuyen`),
-  ADD CONSTRAINT `diadiemdulich_ibfk_2` FOREIGN KEY (`IDPhuongXa`) REFERENCES `phuongxa` (`IDPhuongXa`),
-  ADD CONSTRAINT `diadiemdulich_ibfk_3` FOREIGN KEY (`IDLoaiDiaDiem`) REFERENCES `loaidiadiemdulich` (`IDLoaiDiaDiem`);
 
 --
 -- Các ràng buộc cho bảng `phuongxa`
