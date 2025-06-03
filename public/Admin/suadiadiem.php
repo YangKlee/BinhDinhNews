@@ -72,7 +72,7 @@
         
         // Ghi lại mô tả vô file txt
 
-        file_put_contents($txtPath, $mota);
+        file_put_contents($txtPath, $mota_moi);
         header("Location: dsdiadiem.php");
         exit();
     }
