@@ -802,6 +802,7 @@ CREATE TABLE IF NOT EXISTS `userdata` (
 --
 
 INSERT INTO `userdata` (`UserID`, `UserName`, `PassWord`, `AuthCookies`, `user_img`, `Email`, `FullName`, `Phone`, `Alias`, `Organization`, `CCCD`, `ROLE`) VALUES
+(1, 'nbc', 'c880901c00eae55922076e756a5ad8c17beafa11f83edc9ed0988963e6e08643', NULL, NULL, 'nbc', NULL, NULL, NULL, NULL, NULL, '1')
 (6, 'YangKlee', '4f231459ddf38bcaa618bf72d7b752eb848e53321fd747b1678417aa55dd033b', '5b33fbeaadcf4cb4bf31faaa0e0eb58de22ac6e82ed85135574b996984d1975c', '1747892564_6_4651050044.jpg', 'khanhduong18072005@gmail.com', 'Nguyễn Khánh Dương', '035670105 ', 'Yang', 'Đại học Quy Nhơn', '052205006413', 1),
 (7, 'Haru', 'a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3', 'deb77aa6825d7fdfd1fac4f9415acb90b643c5d94a432df681a8da7028fcf75b', NULL, '111', NULL, NULL, NULL, NULL, NULL, 0),
 (8, 'trucluong837@gmail.com', '355b1bbfc96725cdce8f4a2708fda310a80e6d13315aec4e5eed2a75fe8032ce', '83413af552e380c701436ac160b26b2da20c58e2bf9288e02b75f965b620ccce', NULL, 'trucluong837@gmail.com', NULL, NULL, NULL, NULL, NULL, 0),
