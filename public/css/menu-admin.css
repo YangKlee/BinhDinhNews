@@ -38,6 +38,7 @@ ul li{
 }
 .function-list-container{
     color: white;
+    cursor: pointer;
 
 
 }
