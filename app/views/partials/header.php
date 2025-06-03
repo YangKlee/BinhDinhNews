@@ -141,7 +141,7 @@
                     </li>
                     
                    
-                    <li class="parent du-lich"><a href="#"><i class="fa-solid fa-plane-departure"></i>Du lịch Bình Định <i class="fa-solid fa-caret-down"></i></a>
+                    <li class="parent du-lich"><a href="#"><i class="fa-solid fa-plane-departure"></i> Du lịch Bình Định <i class="fa-solid fa-caret-down"></i></a>
                      
                         <ul class="subnav du-lich">
                             <?php
@@ -168,7 +168,7 @@
                     <?php
                         if($_SESSION['role'] >= 1)
                         {
-                            echo '<li><a href="./admin/index.php"><i class="fa-solid fa-toolbox"></i>Trang quản lý</a></li>';
+                            echo '<li><a href="/BinhDinhNews/public/admin/index.php"><i class="fa-solid fa-toolbox"></i> Trang quản lý</a></li>';
                         }
                     ?>
                     <!-- <li><a href="#">Giới thiệu</a></li> -->

@@ -1,5 +1,5 @@
 body{
-    background-color: #EEEEEE;
+     background: #f8fafc;
 }
 .main-container{
     display: grid;
@@ -17,14 +17,17 @@ body{
 .input-warpper input{
     font-size: 1.2rem;
     padding: 10px;
+    border: 2px solid #a0a0a0;
+
     
 }
-.input-warpper input[type='text']
+.input-warpper input[type='file']
 {
-
+    background-color: white;
 }
 .form-article-input{
     margin: 0px 40px;
+   
 }
 .input-warpper select{
     font-size: 1.2rem;

@@ -22,7 +22,7 @@
             
     <ul class="function-list-container">
                 <li id="func1">
-                    <a href="./index.php"><i class="fa-solid fa-toolbox"></i>TRANG CHỦ QUẢN LÝ</a>
+                    <a href="./index.php"><i class="fa-solid fa-toolbox"></i> TRANG CHỦ QUẢN LÝ</a>
                 </li>
                 <li id="func2" >
                     <a href="../index.php"> <i class="fa-solid fa-house"></i> TRANG CHỦ</a>
