@@ -86,8 +86,32 @@ ul li{
     background-color: var(--main-color);
 }
  .li-child.place {
-    display: none; 
+
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.5s ease-in-out;
+  visibility: hidden;
+  margin: 0px;
+  
 }
+.li-child.place li{
+    border: none;
+}
+
+
 .li-child.place.show {
+
+  max-height: 500px; 
+  visibility: visible;
+}
+.function-list-container li a{
     display: block;
+}
+.function-list-container li a:hover{
+    /* background-color: white ;
+    color: var(--main-color); */
+    background-color: #547792;
+}
+.li-parent:hover .li-child{
+    background-color: var(--main-color);
 }
