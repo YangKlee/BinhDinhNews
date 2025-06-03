@@ -69,7 +69,7 @@
 
                     <!----------------------- du lịch của c --------->
                 <li class="li-parent diadiemdl">
-                    <a> <i class="fa-solid fa-plane-departure"></i> QUẢN LÝ ĐỊA ĐIỂM DU LỊCH</a>
+                    <a> <i class="fa-solid fa-plane-departure"></i> QUẢN LÝ ĐỊA ĐIỂM DU LỊCH <i class="fa-solid fa-caret-down"></i> </a>
                     <ul class="li-child diadiemdl">
                         <li><a href="./dsdiadiem.php"> <i class="fa-solid fa-list"></i> Tất cả địa điểm du lịch</a></li>
                         <li><a href="./themdiadiem.php"> <i class="fa-solid fa-plus"></i> Thêm địa điểm du lịch</a></li>
