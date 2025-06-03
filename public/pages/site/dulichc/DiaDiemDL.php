@@ -51,7 +51,7 @@
       $ddDAO = new DiaDiemDAO();
       $result = $ddDAO->get_tung_DiaDiem($iddiadiem);
 
-      // kiểm tra trong database có tồn tại bài báo với id đưa vào hay k
+      // kiểm tra trong database có tồn tại địa điểm với id đưa vào hay không
       if (mysqli_num_rows($result) > 0) {
           
         // vì có 1 dòng nên không cần lặp bằng while	  
@@ -97,16 +97,22 @@
         }
 
           fclose($f);
-        }
-        else {
+      }
+      else {
           echo "<h1> <b> Không có địa điểm nào với id này" .$iddiadiem. "</b> </h1>";
-        }
+      }
 
         
         require_once $_SERVER['DOCUMENT_ROOT']. ('/BinhDinhNews/app/model/userDAO.php');
         $authorDAO = new UserDAO();
         $dataAuthor = $authorDAO->getAuthorInfo($tacgiaid);
-        echo "<i> <b> <h3> Tác giả: ".$dataAuthor['UserName']." <h3> </b></i>";
+
+        if(!empty($dataAuthor['Alias'])){
+           echo "<i> <b> <h3> Tác giả: ".$dataAuthor['Alias']." <h3> </b></i>";
+        }
+        else {
+            echo "<i> <b> <h3> Tác giả: ".$dataAuthor['UserName']." <h3> </b></i>";
+        }
 
 	   ?>
     </div>
