@@ -1,10 +1,10 @@
 <?php
    
-    if(isset($_GET['id']))
+    if(isset($_GET['iddiadiem']))
     {
         require_once "../model/DiaDiemDLDAO.php";
         $ddDAO = new DiaDiemDAO();
-        $ddDAO->tuchoidiadiem($_GET['id']);
+        $ddDAO->tuchoidiadiem($_GET['iddiadiem']);
         header("Location: ../../public/admin/dsdiadiem.php");    
     }
 
