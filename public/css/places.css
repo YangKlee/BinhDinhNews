@@ -1,8 +1,10 @@
 /* 📌 Tiêu đề */
-h1 {
+.title {
     margin-top: 40px;
     text-align: center;
     color: #004a99;
+    font-size: 40px;
+    
 }
 
 /* 📌 Bố cục lưới */
