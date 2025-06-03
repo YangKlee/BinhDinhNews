@@ -43,36 +43,37 @@
 
     // Xử lý khi nhấn "Lưu"
     if (isset($_POST['luu'])) {
-        $ten = $_POST['tendiadiem'];
-        $diachi = $_POST['diachi'];
-        $loaihinhid = $_POST['loaihinhid'];
+        $ten_moi = $_POST['tendiadiem'];
+        $diachi_moi = $_POST['diachi'];
+        $loaihinhid_moi = $_POST['loaihinhid'];
         $mota_moi = $_POST['mota'];
-        $hinhanh = $row_diaDiem['HinhAnh'];//múc tên hình ảnh từ database
+        $hinhanh_cu = $row_diaDiem['HinhAnh'];//múc tên hình ảnh từ database
        
 
 
         if (!empty($_FILES['up_hinhanh_moi']['name'])) {
             
-            $anh_moi = $_FILES['up_hinhanh_moi']['name'];
+            $hinhanh_moi = $_FILES['up_hinhanh_moi']['name'];
 
             $uploadDir = "../../public/images/imgDuLich/" . $iddiadiem;
             
-            $path = $uploadDir . "/" . basename($anh_moi);
-            unlink($uploadDir. "/" . $hinhanh);
+            $path = $uploadDir . "/" . basename($hinhanh_moi);
+            unlink($uploadDir. "/" . $hinhanh_cu);
             move_uploaded_file($_FILES['up_hinhanh_moi']['tmp_name'], $path);
             //đẩy dữ liệu lên lại databasse
-            $dddao->capnhat_diadiem($iddiadiem, $status, $ten, $diachi, $loaihinhid, $anh_moi);
+            $dddao->capnhat_diadiem($iddiadiem, $status, $ten_moi, $diachi_moi, $loaihinhid_moi, $hinhanh_moi);
 
         }
         else{
-            $dddao->capnhat_diadiem($iddiadiem, $status, $ten, $diachi, $loaihinhid, $hinhanh);
+            $dddao->capnhat_diadiem($iddiadiem, $status, $ten_moi, $diachi_moi, $loaihinhid_moi, $hinhanh_cu);
         }
 
 
-        
-        // Ghi lại mô tả vô file txt
-
-        file_put_contents($txtPath, $mota_moi);
+        // Ghi nếu mô tả mới khác mô tả cũ thì lưu lại vô file txt
+        if( trim($mota_moi) != trim($mota_cu) ){
+            file_put_contents($txtPath, $mota_moi);
+        }
+ 
         header("Location: dsdiadiem.php");
         exit();
     }
