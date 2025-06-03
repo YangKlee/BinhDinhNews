@@ -1,0 +1,111 @@
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
+    .container-loaihinh-dulich {
+        display: grid;
+        grid-template-columns: 5% 65% 30%;
+    }
+	
+	 .container-mid h1{
+        color: #007BFF;
+		margin-top: 10px;
+    }
+	
+	
+	.container_cacdiadiem_dulich {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px,1fr));
+        place-items: center; 
+        gap: 30px;
+		max-width: 100%;
+	    box-sizing: border-box;
+        margin: 0 auto;
+            /* Căn giữa lưới theo chiều ngang */
+        justify-content: center;
+
+    }
+
+    .place-card {
+        width: 100%;
+		height: 100%;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        overflow: hidden;
+        text-align: center;
+        margin: 10px;
+        position: relative;
+		/* max-height: 300px; */
+    }
+	.place-card:hover {
+      transform: translateY(-10px);/* đẩy lên tầm 10px*/
+	  transform: scale(1.05); /*tăng 5% kích thước ban đầu */
+    }
+
+
+    .place-card img {
+        width: 100%;
+        height: 200px;
+        display: block;
+        padding: 0;
+    }
+
+    .place-card h2 {
+        font-weight: bold;
+        color: #007BFF;
+        padding: 8px 5px 4px 5px;
+        font-size: 15px;
+    }
+
+    .place-card p {
+        background-color: #007BFF;
+        color: white;
+        padding: 6px 5px;
+        font-size: 13px;
+    }
+
+
+
+	
+	/*phân trang*************************/
+	.page-navigation * {
+        font-size: 1.2rem;
+    }
+
+    .page-navigation {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    .page-navigation span {
+        display: flex;
+        justify-content: center;
+        height: 2rem;
+        width: 2rem;
+        border-radius: 50%;
+        
+        /*màu nền là xanh dương*/
+        background-color: #007BFF;
+        padding: 5px;
+        margin: 0px 5px;
+        
+        /*màu chữ là trắng*/
+        color: white; 
+    }
+
+    .page-navigation a {
+        padding: 5px;
+        margin: 0px 5px;
+    }
+
+    .page-navigation a:hover {
+        display: flex;
+        justify-content: center;
+        height: 2rem;
+        width: 2rem;
+        border-radius: 50%;
+        background-color: #007BFF;
+        color: white;
+    }
