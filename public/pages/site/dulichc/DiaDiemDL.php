@@ -55,24 +55,24 @@
       if (mysqli_num_rows($result) > 0) {
           
         // vì có 1 dòng nên không cần lặp bằng while	  
-	      $rawData = mysqli_fetch_array($result);
+	      $rowData = mysqli_fetch_array($result);
         
         //*************lấy tiêu đề từ database, ảnh , địa điểm từ database**************
         // lấy tiêu đề
-        echo "<h1> " . $rawData["TenDiaDiem"] . "</h1>";
+        echo "<h1> " . $rowData["TenDiaDiem"] . "</h1>";
 
 
         
 	    
   	    //hiện thị ảnh
-  	    echo '<img src="/BinhDinhNews/public/images/imgDuLich/' . $rawData["DiaDiemID"] . "/" . $rawData["HinhAnh"] . '" alt="' .$rawData['HinhAnh']. '" >';     
+  	    echo '<img src="/BinhDinhNews/public/images/imgDuLich/' . $rowData["DiaDiemID"] . "/" . $rowData["HinhAnh"] . '" alt="' .$rowData['HinhAnh']. '" >';     
          
         // chữ giới thiệu
         echo "<u> <h2> Giới thiệu: </h2> </u>";
 
         // hiện chữ địa điểm và địa điểm múc từ databasse
         echo "<h3>" 
-                  . "<img src='https://img.icons8.com/?size=100&id=Udrc3LA8OPbn&format=png&color=000000'>" . "<b> Địa chỉ: " .$rawData["DiaChi"]. "</b>" . 
+                  . "<img src='https://img.icons8.com/?size=100&id=Udrc3LA8OPbn&format=png&color=000000'>" . "<b> Địa chỉ: " .$rowData["DiaChi"]. "</b>" . 
               "</h3>";
 				  
        //*************************đọc nội dung từ file text **************************
