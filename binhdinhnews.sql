@@ -847,3 +847,70 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+
+-- Table structure for table `loaihinh_dulich`------------------------------------------------------du lich -----------------------------------------------------------
+--
+
+DROP TABLE IF EXISTS `loaihinh_dulich`;
+CREATE TABLE IF NOT EXISTS `loaihinh_dulich` (
+  `LoaiHinhID` int NOT NULL AUTO_INCREMENT,
+  `TenLoaiHinh` varchar(255) COLLATE utf8mb4_vietnamese_ci DEFAULT NULL,
+  PRIMARY KEY (`LoaiHinhID`)
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
+
+--
+-- Dumping data for table `loaihinh_dulich`
+--
+
+INSERT INTO `loaihinh_dulich` (`LoaiHinhID`, `TenLoaiHinh`) VALUES
+(1, 'Danh lam - thắng cảnh'),
+(2, 'Di tích lịch sử'),
+(3, 'Khu du lịch'),
+(4, 'Ẩm thực Bình Định');
+
+-- Table structure for table `diadiem_dulich`
+--
+
+DROP TABLE IF EXISTS `diadiem_dulich`;
+CREATE TABLE IF NOT EXISTS `diadiem_dulich` (
+  `DiaDiemID` int NOT NULL AUTO_INCREMENT,
+  `AuthorID` int NOT NULL,
+  `Status` int NOT NULL,
+  `TenDiaDiem` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_vietnamese_ci NOT NULL,
+  `DiaChi` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_vietnamese_ci DEFAULT NULL,
+  `LoaiHinhID` int DEFAULT NULL,
+  `HinhAnh` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_vietnamese_ci DEFAULT NULL,
+  PRIMARY KEY (`DiaDiemID`),
+  KEY `LoaiHinhID` (`LoaiHinhID`)
+) ENGINE=MyISAM AUTO_INCREMENT=25 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
+
+--
+-- Dumping data for table `diadiem_dulich`
+--
+
+INSERT INTO `diadiem_dulich` (`DiaDiemID`, `AuthorID`, `Status` , `TenDiaDiem`, `DiaChi`, `LoaiHinhID`, `HinhAnh`) VALUES
+(1, 1, 1, 'Eo Gió', 'Xã Nhơn Lý, TP Quy Nhơn', 1, 'eogio.jpg'),
+(2, 1, 1, 'Ghềnh Ráng Tiên Sa', 'Phường Ghềnh Ráng, TP Quy Nhơn', 1, 'ghenhrang.jpg'),
+(3, 1, 1, 'Bãi Xếp', 'Phường Ghềnh Ráng, TP Quy Nhơn', 1, 'baixep.jpg'),
+(4, 1, 1,'Đảo Cù Lao Xanh', 'Xã Nhơn Châu, TP Quy Nhơn', 1, 'culaoxanh.jpg'),
+(5, 1, 1,'Đồi Cát Phương Mai', 'Xã Nhơn Lý, TP Quy Nhơn', 1, 'phuongmai.jpg'),
+(6, 1, 1,'Hải đăng Hòn Nước', 'Xã Mỹ Thọ,Huyện Phù Mỹ', 1, 'haidang.jpg'),
+(7, 1, 1,'Tháp Bánh Ít', 'Phước Hiệp, Tuy Phước', 2, 'thapbanhit.jpg'),
+(8, 1, 1,'Bảo tàng Quang Trung', 'Thị trấn Phú Phong, Tây Sơn', 2, 'quangtrung.jpg'),
+(9, 1, 1,'Tháp Đôi', 'Đường Trần Hưng Đạo, TP Quy Nhơn', 2, 'thapdoi.jpg'),
+(10, 1, 1,'Thành cổ Đồ Bàn', 'An Nhơn, Bình Định', 2, 'doban.jpg'),
+(11, 1, 1,'Đàn tế Trời Đất', 'Tây Sơn, Bình Định', 2, 'dantetroi.jpg'),
+(12, 1, 1,'Di tích Gò Lăng', 'Phù Cát, Bình Định', 2, 'golang.jpg'),
+(13, 1, 1,'Kỳ Co', 'Xã Nhơn Lý, TP Quy Nhơn', 3, 'kyco.jpg'),
+(14, 1, 1,'Hòn Khô', 'Xã Nhơn Hải, TP Quy Nhơn', 3, 'honkho.jpg'),
+(15, 1, 1,'Khu dã ngoại Trung Lương', 'Xã Cát Tiến, Phù Cát', 3, 'trungluong.jpg'),
+(16, 1, 1,'Khu du lịch Hầm Hô', 'Xã Tây Phú, Tây Sơn', 3, 'hamho.jpg'),
+(17, 1, 1,'Safari FLC Zoo', 'Xã Nhơn Lý, TP Quy Nhơn', 3, 'flczoo.jpg'),
+(18,  1, 1,'Khu du lịch sinh thái Cửa Biển', 'TP Quy Nhơn', 3, 'cuabien.jpg'),
+(19, 1, 1,'Bánh hỏi lòng heo Diêu Trì', 'Thị trấn Diêu Trì, Tuy Phước', 4, 'banhhoi.jpg'),
+(20, 1, 1,'Bún chả cá Quy Nhơn', 'TP Quy Nhơn', 4, 'buncha.jpg'),
+(21, 1, 1,'Bánh xèo tôm nhảy', 'TP Quy Nhơn', 4, 'banhxeo.jpg'),
+(22, 1, 1,'Nem chợ Huyện', 'An Nhơn, Bình Định', 4, 'nemchohuyen.jpg'),
+(23, 1, 1,'Chả ram tôm đất', 'Phù Mỹ, Bình Định', 4, 'charam.jpg'),
+(24, 1, 1,'Bánh ít lá gai', 'Tây Sơn, Bình Định', 4, 'banhitlagai.jpg');
