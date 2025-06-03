@@ -92,9 +92,9 @@
 							</a>';
                              // mà status là chưa đc duyệt  mà rolo admin thì
 							if($row['Status'] == 0 && $_SESSION['role'] == 2){
-								echo '<a href="/BinhDinhNews/app/controller/duyetdd.php?id=' . $row['DiaDiemID'] . '"> <button class="btn btn-duyet"><b> Duyệt </b></button></a>';
+								echo '<a href="/BinhDinhNews/app/controller/duyetdd.php?iddiadiem=' . $row['DiaDiemID'] . '"> <button class="btn btn-duyet"><b> Duyệt </b></button></a>';
                                 
-								echo '<a href="/BinhDinhNews/app/controller/tuchoidd.php?id=' . $row['DiaDiemID'] . '"> <button class="btn btn-tuchoi"><b> Từ chối </b></button></a>';
+								echo '<a href="/BinhDinhNews/app/controller/tuchoidd.php?iddiadiem=' . $row['DiaDiemID'] . '"> <button class="btn btn-tuchoi"><b> Từ chối </b></button></a>';
 							}
 							
 						
