@@ -95,3 +95,30 @@ ul li{
 .active{
     background-color: #547792;
 }
+
+
+
+/****************************du lịch của c**********************/
+
+.li-child.diadiemdl {
+
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.5s ease-in-out;
+  visibility: hidden;
+  margin: 0px;
+  
+}
+.li-child.diadiemdl li{
+    border: none;
+}
+.li-parent.diadiemdl:active .li-child.diadiemdl {
+    
+}
+
+.li-child.diadiemdl.show {
+
+  max-height: 500px; 
+  visibility: visible;
+}
+/****************************du lịch của c**********************/
