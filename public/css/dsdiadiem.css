@@ -1,0 +1,148 @@
+
+        body {
+            background-color: #f6f8fa;
+            margin: 0;
+        }
+
+        .main-container{
+            display: grid;
+            grid-template-columns: 20% 80%;
+            grid-template-rows: 100%;
+        }
+
+/*nội dung chính ở đây**************************************************************/
+        .right-container {
+            padding: 20px 40px;
+        }
+        /*đây là cái phần header có tiêu đề trang và nút thêm địa điểm nè */
+        .container-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .container-header h1 {
+            font-size: 28px;
+            color: #007BFF;
+        }
+        
+        .btn-add {
+            background-color: #28a745;
+            border: none;
+            padding: 10px 20px;
+            color: white;
+            font-weight: bold;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn-add:hover {
+            background-color: #218838;
+        }
+        
+        /*đây là div từng địa điểm*/
+        .place-card {
+            display: flex;
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            transition: 0.3s;
+        }
+
+        .place-card:hover {
+            transform: scale(1.01);
+        }
+
+        .place-img img {
+            width: 180px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .place-info {
+            margin-left: 20px;
+            flex-grow: 1;
+        }
+
+        .place-info h3 {
+            margin-top: 0;
+            color: #007BFF;
+        }
+
+        .place-info p {
+            margin: 5px 0;
+            color: #555;
+        }
+
+         /*ay za các nút nhấn thêm sửa xóa*/
+        .btn-group {
+            margin-top: 10px;
+            /*border: 2px solid black;*/
+        }
+
+        .btn {
+            padding: 8px 16px;
+            border: none;
+            border-radius: 10px;
+            font-size: 14px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+
+        .btn-edit {
+            background-color: #ffc107;
+            color: #fff;
+        }
+
+        .btn-edit:hover {
+            background-color: #e0a800;
+        }
+
+        .btn-delete {
+            background-color: #dc3545;
+            color: white;
+        }
+
+        .btn-delete:hover {
+            background-color: #c82333;
+        }
+		
+		.btn-view {
+            background-color: blue;
+            color: white;
+        }
+
+        .btn-view:hover {
+            background-color: #167da6;
+        }
+		
+        .btn-duyet{
+            color:green;
+        }
+        .btn-tuchoi{
+            color: red;
+        }
+
+        @media screen and (max-width: 768px) {
+            .place-card {
+                flex-direction: column;
+                align-items: center;
+            }
+            .place-info {
+                margin-left: 0;
+                text-align: center;
+            }
+        }
+
+        .status-wait{
+            color: red;
+        } 
+
+        .status-done{
+            color: green;
+        }
+		
