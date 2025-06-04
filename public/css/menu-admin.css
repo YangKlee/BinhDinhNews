@@ -39,7 +39,7 @@ ul li{
 }
 .function-list-container{
     color: white;
-
+    cursor: pointer;
 
 }
 .function-list-container li{
