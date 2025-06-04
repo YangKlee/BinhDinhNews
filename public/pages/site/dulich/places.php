@@ -31,7 +31,7 @@ $offset = ($current_page - 1) * $places_per_page;
 $result = $mysqli->query("SELECT * FROM places ORDER BY id ASC LIMIT $places_per_page OFFSET $offset");
 ?>
 
- <div class = "title" ><b>Danh sách địa điểm du lịch</b></div>
+<h1>Danh sách địa điểm du lịch</h1>
 
 <div class="grid-container">
     <?php while ($row = mysqli_fetch_assoc($result)): ?>
