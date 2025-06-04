@@ -141,28 +141,32 @@
                     </li>
                     
                    
-                    <li class="parent du-lich"><a href="#"><i class="fa-solid fa-plane-departure"></i> Du lịch Bình Định <i class="fa-solid fa-caret-down"></i></a>
+
+                    <!--------------------------thanh điều hướng du lịch của c------------------------- -->
+                    <li class="parent du-lich"><a href="/BinhDinhNews/public/pages/site/dulichc/dulich_home.php"><i class="fa-solid fa-plane-departure"></i> Du lịch<i class="fa-solid fa-caret-down"></i></a>
                      
                         <ul class="subnav du-lich">
                             <?php
-                                // require_once $_SERVER['DOCUMENT_ROOT']."/BinhDinhNews/app/model/dulichDAO.php";
-                                // $catDAO3 = new dulichDAO();
-                                // $result3 = $catDAO3->getalltheloai();
-                                // while($row = mysqli_fetch_array( $result3, MYSQLI_ASSOC)){
-                                //     echo '<li><a  href="/BinhDinhNews/public/dulich.php?idcat='.$row['TheLoaiID'].'">'.$row['TenTheLoai'].'</a></li>';
-                                // }
-                                // mysqli_free_result($result3); 
+                            
+                                require_once $_SERVER['DOCUMENT_ROOT']."/BinhDinhNews/app/model/dulichDAO.php";
+                                $dlDAO = new dulichDAO();
+                                $result_tatca_loahihinh_dulich = $dlDAO->get_tatca_loaihinh();
+                                while($row = mysqli_fetch_array( $result_tatca_loahihinh_dulich, MYSQLI_ASSOC)){
+                                    echo 
+                                    '<li> 
+                                       <a  href="/BinhDinhNews/public/pages/site/dulichc/dulich.php?idloaihinh='.$row['LoaiHinhID'].'">
+                                            '.$row['TenLoaiHinh'].'
+                                       </a>
+                                     
+                                     </li>';
+                                }
+                                mysqli_free_result($result_tatca_loahihinh_dulich); 
 
                             ?>
     
                         </ul>
-                          <ul class="subnav du-lich">
-                            <li><a href="/BinhDinhNews/public/pages/site/dulich/places.php">Danh lam thắng cảnh</a></li>
-                            <li><a href="#">Di tích lịch sử</a></li>
-                            <li><a href="#">Khu du lịch</a></li>
-                            <li><a href="#">Ẩm thực Bình Định</a></li>
-                            <li><a href="#">Bài viết du lịch</a></li>
-                        </ul>
+                    </li>
+                    <!----------------------------thanh điều hướng du lịch của c------------------------------------>
 
                     </li>
                     <?php
