@@ -1,6 +1,7 @@
 :root{
     --main-color: #213448;
 }
+
 .menu-container{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     position: fixed;
@@ -38,7 +39,6 @@ ul li{
 }
 .function-list-container{
     color: white;
-    cursor: pointer;
 
 
 }
@@ -87,59 +87,11 @@ ul li{
     background-color: var(--main-color);
 }
  .li-child.place {
-
-  max-height: 0;
-  overflow: hidden;
-  transition: all 0.5s ease-in-out;
-  visibility: hidden;
-  margin: 0px;
-  
+    display: none; 
 }
-.li-child.place li{
-    border: none;
-}
-
-
 .li-child.place.show {
-
-  max-height: 500px; 
-  visibility: visible;
-}
-.function-list-container li a{
     display: block;
 }
-.function-list-container li a:hover{
-    /* background-color: white ;
-    color: var(--main-color); */
+.active{
     background-color: #547792;
 }
-.li-parent:hover .li-child{
-    background-color: var(--main-color);
-}
-
-
-
-/****************************du lịch của c**********************/
-
-.li-child.diadiemdl {
-
-  max-height: 0;
-  overflow: hidden;
-  transition: all 0.5s ease-in-out;
-  visibility: hidden;
-  margin: 0px;
-  
-}
-.li-child.diadiemdl li{
-    border: none;
-}
-.li-parent.diadiemdl:active .li-child.diadiemdl {
-    
-}
-
-.li-child.diadiemdl.show {
-
-  max-height: 500px; 
-  visibility: visible;
-}
-/****************************du lịch của c**********************/

@@ -20,6 +20,7 @@
     <link rel="shortcut icon" href="../../../../../BinhDinhNews/public/images/logo.webp" type="image/x-icon">
     <title>Document</title>
 </head>
+
 <body>
     <div class="main-container">
          <div class="left-container">
@@ -29,7 +30,10 @@
             ?>
 
         </div>
-        
+        <script>
+            document.querySelector(".li-child.article").classList.add("show");
+            document.querySelector("#func4-1").classList.add("active");
+        </script>
        <div class="right-container">
             <div class = "container-article-list">
                 <h1>Danh sách bài báo của tôi</h1>
@@ -87,13 +91,13 @@
                         $statusArticle = null;
                         if($row['ArticleStatus'] == 0)
                         {
-                            $statusArticle = '<label style="color:rgb(230, 138, 0);font-size:1.8rem">Chờ duyệt</label>';
+                            $statusArticle = '<label style="color:rgb(230, 138, 0);font-size:1.8rem"><i class="fa-solid fa-circle-pause"></i> Chờ duyệt</label>';
                         }
                         else if($row['ArticleStatus'] == 1){
-                            $statusArticle = '<label style="color:green;font-size:1.8rem">Đã đăng</label>';
+                            $statusArticle = '<label style="color:green;font-size:1.8rem"><i class="fa-solid fa-circle-check"></i> Đã đăng</label>';
                         }
                         else if($row['ArticleStatus'] == -1){
-                            $statusArticle = '<label style="color:red;font-size:1.8rem">Đã bị hủy</label>';
+                            $statusArticle = '<label style="color:red;font-size:1.8rem"><i class="fa-solid fa-circle-xmark"></i> Đã hủy</label>';
                         }
                         echo '
                         
@@ -103,18 +107,17 @@
                                     <img src="../images/upload/'.$row['ArticleID'].'/'.trim($row['MainImage']).'" alt="">
                                 </div>
                                 <div class="article-element-right">
-                                    <h3>'.$row['Title'].'</h3>
-                                    <i>'.$row['Time_modify'].'</i>
-                                    <p>'. $content.'</p>
-                                    '.$statusArticle.'
-
-                                </div>
+                                    <div>
+                                        <h3>'.$row['Title'].'</h3>
+                                        <i>'.$row['Time_modify'].'</i>
+                                        <p class="short-article-content">'. $content.'</p>
+                                    </div>      
                                 ';   
                         echo '
                                 <div class="article-element-rightfunction">
                                     <a href="../article.php?id='.$row['ArticleID'].'"><button class="btn btn-view">Xem bài báo</button></a>
                                     ';
-                        if($row['ArticleStatus'] == 0 || $_SESSION['role'] == 2){
+                        if($row['ArticleStatus'] <= 0 || $_SESSION['role'] == 2){
                                     echo'
                                     <a id="delete-btn" href="/BinhDinhNews/app/controller/deleteArticle.php?idart='.$row['ArticleID'].'"><button class="btn btn-delete">Xóa</button></a>
                                     ';
@@ -122,13 +125,15 @@
 
                         if($row['ArticleStatus'] == 0 && $_SESSION['role'] == 2)
                         {
-                            echo "<div>";
+
                             echo '<a id="allow-btn" href="/BinhDinhNews/app/controller/allowArticle.php?idart='.$row['ArticleID'].'"><button class="btn btn-allow">Duyệt bài báo</button></a>';
                              echo '<a id="reject-btn" href="/BinhDinhNews/app/controller/rejectArticle.php?idart='.$row['ArticleID'].'"><button class="btn btn-reject">Từ chối bài báo</button></a>';
-                             echo "</div>";
+
                         }           
                         echo'           
-                                </div>
+                                
+                                </div></div>
+                                '.$statusArticle.'
                             </article>
                             <hr>
                         </div>

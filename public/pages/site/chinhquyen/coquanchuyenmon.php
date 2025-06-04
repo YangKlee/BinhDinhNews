@@ -59,32 +59,39 @@ if ($result_cap3->num_rows > 0) {
 <html>
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="../../../../public/css/reset.css">
+	<link rel="stylesheet" href="../../../../public/css/footer-style.css">
+	<link rel="stylesheet" href="../../../../public/css/header-style.css">
+    <link rel="shortcut icon" href="../../../../../BinhDinhNews/public/images/logo.webp" type="image/x-icon">
+    <link rel="stylesheet" href="../../../../../BinhDinhNews/public/css/rightmenu-style.css">
+    
     <title>Cơ quan chuyên môn</title>
     <style>
     .container {
-        padding: 0 20px;
+        display: grid;
+        grid-template-columns: 5% 65% 30%;
+        padding: 0 20px; 
         box-sizing: border-box;
     }
 
-    .container h3 {
+    .container-mid h3 {
         text-align: left;
         margin: 20px 0;
-        padding-left: 10px;
         font-size: 22px;
     }
 
     .chutich-container,
     .pho-container,
     .cap3-container {
-        display: flex;
-        justify-content: center;
+        display: flex; /* sắp xếp các phần tử con theo hàng ngang */
+        justify-content: center; /* Căn các phần tử con ra giữa theo chiều ngang */
         flex-wrap: wrap;
         gap: 30px;
         margin-bottom: 40px;
     }
 
     .item {
-        width: 160px;
+        width: 220px;
         text-align: center;
     }
 
@@ -96,37 +103,42 @@ if ($result_cap3->num_rows > 0) {
     }
 
     .item label {
-        display: block;
+        display: block; /* Biến phần tử thành phần tư khối */
         margin-top: 10px;
         font-size: 18px;
     }
     </style>
-    <link rel="stylesheet" href="../../../../public/css/reset.css">
-	<link rel="stylesheet" href="../../../../public/css/footer-style.css">
-	<link rel="stylesheet" href="../../../../public/css/header-style.css">
-    <link rel="shortcut icon" href="../../../../../BinhDinhNews/public/images/logo.webp" type="image/x-icon">
 </head>
 
 <body>
+    <script>
+        document.querySelector("nav #f3").classList.add('active');
+    </script>
     <div class="container">
-        <?php
-            hienThiCoQuan($conn, "VĂN PHÒNG UBND");
-            hienThiCoQuan($conn, "SỞ NỘI VỤ");
-            hienThiCoQuan($conn, "SỞ TÀI CHÍNH");
-            hienThiCoQuan($conn, "SỞ XÂY DỰNG");
-            hienThiCoQuan($conn, "SỞ CÔNG THƯƠNG");
-            hienThiCoQuan($conn, "SỞ NÔNG NGHIỆP VÀ MÔI TRƯỜNG");
-            hienThiCoQuan($conn, "SỞ KHOA HỌC VÀ CÔNG NGHỆ");
-            hienThiCoQuan($conn, "SỞ GIÁO DỤC VÀ ĐÀO TẠO");
-            hienThiCoQuan($conn, "SỞ VĂN HÓA-THỂ THAO VÀ DU LỊCH");
-            hienThiCoQuan($conn, "SỞ Y TẾ");
-            hienThiCoQuan($conn, "SỞ TƯ PHÁP");
-            hienThiCoQuan($conn, "SỞ NGOẠI VỤ");
-            hienThiCoQuan($conn, "BAN QUẢN LÝ KKT");
-            hienThiCoQuan($conn, "THANH TRA TỈNH");
-            hienThiCoQuan($conn, "SỞ DÂN TỘC VÀ TÔN GIÁO");
+        <div class="container-left"></div>
+        <div class="container-mid">
+            <?php
+                hienThiCoQuan($conn, "VĂN PHÒNG UBND");
+                hienThiCoQuan($conn, "SỞ NỘI VỤ");
+                hienThiCoQuan($conn, "SỞ TÀI CHÍNH");
+                hienThiCoQuan($conn, "SỞ XÂY DỰNG");
+                hienThiCoQuan($conn, "SỞ CÔNG THƯƠNG");
+                hienThiCoQuan($conn, "SỞ NÔNG NGHIỆP VÀ MÔI TRƯỜNG");
+                hienThiCoQuan($conn, "SỞ KHOA HỌC VÀ CÔNG NGHỆ");
+                hienThiCoQuan($conn, "SỞ GIÁO DỤC VÀ ĐÀO TẠO");
+                hienThiCoQuan($conn, "SỞ VĂN HÓA-THỂ THAO VÀ DU LỊCH");
+                hienThiCoQuan($conn, "SỞ Y TẾ");
+                hienThiCoQuan($conn, "SỞ TƯ PHÁP");
+                hienThiCoQuan($conn, "SỞ NGOẠI VỤ");
+                hienThiCoQuan($conn, "BAN QUẢN LÝ KKT");
+                hienThiCoQuan($conn, "THANH TRA TỈNH");
+                hienThiCoQuan($conn, "SỞ DÂN TỘC VÀ TÔN GIÁO");
 
-        ?>
+            ?>
+        </div>
+        <div class="container-right">
+            <?php include($_SERVER['DOCUMENT_ROOT'].'/BinhDinhNews/app/views/right/homepage.php'); ?>
+        </div>
     </div>
 </body>
 </html>

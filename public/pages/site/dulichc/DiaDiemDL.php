@@ -51,28 +51,28 @@
       $ddDAO = new DiaDiemDAO();
       $result = $ddDAO->get_tung_DiaDiem($iddiadiem);
 
-      // kiểm tra trong database có tồn tại địa điểm với id đưa vào hay không
+      // kiểm tra trong database có tồn tại bài báo với id đưa vào hay k
       if (mysqli_num_rows($result) > 0) {
           
         // vì có 1 dòng nên không cần lặp bằng while	  
-	      $rowData = mysqli_fetch_array($result);
+	      $rawData = mysqli_fetch_array($result);
         
         //*************lấy tiêu đề từ database, ảnh , địa điểm từ database**************
         // lấy tiêu đề
-        echo "<h1> " . $rowData["TenDiaDiem"] . "</h1>";
+        echo "<h1> " . $rawData["TenDiaDiem"] . "</h1>";
 
 
         
 	    
   	    //hiện thị ảnh
-  	    echo '<img src="/BinhDinhNews/public/images/imgDuLich/' . $rowData["DiaDiemID"] . "/" . $rowData["HinhAnh"] . '" alt="' .$rowData['HinhAnh']. '" >';     
+  	    echo '<img src="/BinhDinhNews/public/images/imgDuLich/' . $rawData["DiaDiemID"] . "/" . $rawData["HinhAnh"] . '" alt="' .$rawData['HinhAnh']. '" >';     
          
         // chữ giới thiệu
         echo "<u> <h2> Giới thiệu: </h2> </u>";
 
         // hiện chữ địa điểm và địa điểm múc từ databasse
         echo "<h3>" 
-                  . "<img src='https://img.icons8.com/?size=100&id=Udrc3LA8OPbn&format=png&color=000000'>" . "<b> Địa chỉ: " .$rowData["DiaChi"]. "</b>" . 
+                  . "<img src='https://img.icons8.com/?size=100&id=Udrc3LA8OPbn&format=png&color=000000'>" . "<b> Địa chỉ: " .$rawData["DiaChi"]. "</b>" . 
               "</h3>";
 				  
        //*************************đọc nội dung từ file text **************************
@@ -97,22 +97,16 @@
         }
 
           fclose($f);
-      }
-      else {
+        }
+        else {
           echo "<h1> <b> Không có địa điểm nào với id này" .$iddiadiem. "</b> </h1>";
-      }
+        }
 
         
         require_once $_SERVER['DOCUMENT_ROOT']. ('/BinhDinhNews/app/model/userDAO.php');
         $authorDAO = new UserDAO();
         $dataAuthor = $authorDAO->getAuthorInfo($tacgiaid);
-
-        if(!empty($dataAuthor['Alias'])){
-           echo "<i> <b> <h3> Tác giả: ".$dataAuthor['Alias']." <h3> </b></i>";
-        }
-        else {
-            echo "<i> <b> <h3> Tác giả: ".$dataAuthor['UserName']." <h3> </b></i>";
-        }
+        echo "<i> <b> <h3> Tác giả: ".$dataAuthor['UserName']." <h3> </b></i>";
 
 	   ?>
     </div>

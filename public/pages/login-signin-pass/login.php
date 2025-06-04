@@ -19,7 +19,7 @@
             {
                 $userData = mysqli_fetch_array($result, MYSQLI_ASSOC);
                 // login complete
-                echo "<script> alert('Dang nhap thanh cong')</script>";
+                echo "<script> alert('Đăng nhập thành công')</script>";
                 $cookiesHash = hash("sha256", time() . $userData['UserName'] . $userData['PassWord']);
                 
                 // xóa session cũ
@@ -55,13 +55,11 @@
                     header("Location: ../../Admin/index.php");
                     exit();
                 }
-
             } 
 
             else
             {
                 echo "<script> alert('Dang nhap that bai') </script>";
-                $nofi = "Đăng nhập thất bại";
             }
             mysqli_close($coon);
         }
@@ -115,7 +113,6 @@
         <a href="fogot-password.php">Quên mật khẩu ?</a>
     </form>
 
-    <div class="login-nofication" style="display: <?php echo $displayNofi ?>;">
     </div>
     <?php 
         include("../../../app/views/partials/mini-footer.php");

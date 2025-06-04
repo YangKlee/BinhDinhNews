@@ -43,28 +43,30 @@ if ($result_pho->num_rows > 0) {
 <html>
 <head>
     <meta charset="UTF-8">
-            <link rel="stylesheet" href="../../../../public/css/reset.css">
+    <link rel="stylesheet" href="../../../../public/css/reset.css">
 	<link rel="stylesheet" href="../../../../public/css/footer-style.css">
 	<link rel="stylesheet" href="../../../../public/css/header-style.css">
     <link rel="shortcut icon" href="../../../../../BinhDinhNews/public/images/logo.webp" type="image/x-icon">
+    <link rel="stylesheet" href="../../../../../BinhDinhNews/public/css/rightmenu-style.css">
 
     <title>UBND tỉnh</title>
     <style>
         .container {
-        padding: 0 20px; /* tạo khoảng cách 2 bên cho toàn bộ nội dung */
-        box-sizing: border-box;
+            display: grid;
+            grid-template-columns: 5% 65% 30%;
+            padding: 0 20px; /* tạo khoảng cách 2 bên cho toàn bộ nội dung */
+            box-sizing: border-box;
         }
 
-        .container h3 {
+        .container-mid h3 {
             text-align: left;
             margin: 20px 0;
-            padding-left: 10px; /* hoặc dùng margin-left nếu thích */
             font-size: 22px;
         }
 
         .chutich-container,
         .pho-container {
-            display: flex;
+            display: flex; /* Sử dụng Flexbox để sắp xếp phần tử con linh hoạt */
             justify-content: center;
             flex-wrap: wrap;
             gap: 30px;
@@ -72,7 +74,7 @@ if ($result_pho->num_rows > 0) {
         }
 
         .item {
-            width: 160px;
+            width: 220px;
             text-align: center;
         }
 
@@ -84,18 +86,26 @@ if ($result_pho->num_rows > 0) {
         }
 
         .item label {
-            display: block;
+            display: block;  /* Hiển thị phần tử như một khối, chiếm toàn bộ chiều rộng */
             margin-top: 10px;
-            font-size: 18px;
+            font-size: 16px;
         }
     </style>
 </head>
 <body>
+        <script>
+        document.querySelector("nav #f3").classList.add('active');
+    </script>
     <div class="container">
-        <?php
-            hienThiCapUBND($conn, 1); 
-
-        ?>
+        <div class="container-left"></div>
+        <div class="container-mid">
+            <?php
+                hienThiCapUBND($conn, 1); 
+            ?>
+        </div>
+        <div class="container-right">
+            <?php include($_SERVER['DOCUMENT_ROOT'].'/BinhDinhNews/app/views/right/homepage.php'); ?>
+        </div>
     </div>
 </body>
 </html>

@@ -3,15 +3,33 @@
 
     class UserDAO{
         private $conn;
-
-        public function setConnection($conn) {
-        $this->conn = $conn;
-    }
+        public function setConnection($conn) 
+        {
+            $this->conn = $conn;
+        }
 
         function getConnection()
         {
             $dbConnect =  new DatabaseConnection();
             return $dbConnect->getConnection();
+        }
+
+        public function checkPassword($uid, $password) {
+            $conn = $this->getConnection();
+            $sql = "SELECT * FROM userdata WHERE UserID = ? AND PassWord = ?";
+            $stmt = $conn->prepare($sql);
+            if (!$stmt) {
+                die("Prepare failed: " . $conn->error);
+            }
+            $hashedPassword = hash('sha256', $password);
+            $stmt->bind_param("is", $uid, $hashedPassword);
+            $stmt->execute();
+            $result = $stmt->get_result();
+            if ($result->num_rows > 0) {
+                return true;
+            } else {
+                return false;
+            }
         }
         
         function getUserByAuthCokkies($authcode){
@@ -37,11 +55,25 @@
         function getAuthorInfo($uid)
         {
             $conn = $this->getConnection();
-            $sql = "Select * from UserData where UserID = " . $uid. "";
-            $result = mysqli_query($conn, $sql);
-            $data = mysqli_fetch_assoc($result);
-            mysqli_close($conn);
-            return $data;
+            $sql = "SELECT * FROM userdata WHERE UserID = ?";
+            $stmt = $conn->prepare($sql);
+            if (!$stmt) {
+                mysqli_close($conn);
+                return null;
+            }
+            $stmt->bind_param("s", $uid);
+            $stmt->execute();
+            $result = $stmt->get_result();
+            if ($result->num_rows > 0) {
+                $data = $result->fetch_assoc();
+                $stmt->close();
+                mysqli_close($conn);
+                return $data;
+            } else {
+                $stmt->close();
+                mysqli_close($conn);
+                return null;
+            }
         }
         // function updateAuthorInfo($uid, $fullname, $sdt,$email , $cccd, $adias, $organ, $role )
         // {
@@ -145,7 +177,7 @@
             return $users;
         }
         
-        function updateUserPassword($email, $newPassword)
+        function updateUserPasswordByEmail($email, $newPassword)
         {   
             $conn = $this->getConnection();
             $sql = "UPDATE userdata SET PassWord = ? WHERE Email = ?";
@@ -175,6 +207,21 @@
             $stmt->close();
             mysqli_close($conn);
             return $exists;
-    }
+        }
+
+        public function updatePasswordById($userId, $newPassword){
+            $conn = $this->getConnection();
+            $sql = "UPDATE userdata SET PassWord = ? WHERE UserID = ?";
+            $stmt = $conn->prepare($sql);
+            if (!$stmt) {
+                die("Prepare failed: " . $conn->error);
+            }
+            $newPassword = hash('sha256', $newPassword);
+            $stmt->bind_param("si", $newPassword, $userId);
+            $result = $stmt->execute();
+            $stmt->close();
+            mysqli_close($conn);
+            return $result;
+        }
     }
 ?>

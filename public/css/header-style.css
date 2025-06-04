@@ -257,7 +257,7 @@ nav li a{
     padding: 0.333px 0px 1px 5px;
 }
 
-.search-bar input[type="text"]{
+.search-bar input[type="search"]{
     width: 80%;
     flex: 1;
     padding: 10px;
@@ -292,46 +292,38 @@ button[type="submit"]{
     background-image: linear-gradient(to right, rgb(145, 220, 255), var(--main_color) );
     padding: 10px;
 }
-
+.active{
+    background-color: rgba(0, 0, 0, 0.2);
+}
 
 /* Nhóm định dạng responsive cho các kích thước màn hình */
-@media only screen and (max-width: 900px) {
-    .header-logo.header-logo__description h1 {
-        font-size: 25px;
+@media (max-width: 1610px) {
+    .nav-pc{
+        padding: 0;
     }
-    .header.header-userinfo button {
-        font-size: 10px;
-    }
-    .header.header-logo img {
-        width: 80px;
-    }
+    
 }
-@media only screen and (max-width: 750px) {
-    .header.userinfo-phone {
-        display: block;
-    }
-    .userinfo-phone .user-phone-menu {
-        display: none;
-    }
-    .header.header-userinfo button {
-        display: none;
-    }
-    .header-logo.header-logo__description > * {
-        margin-bottom: 5px;
-    }
-    .header-logo.header-logo__description h1 {
+@media (max-width: 1500px) {
+    html{
         font-size: 15px;
     }
-    .header.header-container {
-        height: 70px;
+    
+}
+@media (max-width: 1400px) {
+    html{
+        font-size: 13px;
     }
-    .header-logo.header-logo__description i {
-        font-size: 10px;
+    
+}
+@media (max-width: 1300px) {
+    html{
+        font-size: 12px;
     }
-    .header.header-logo > * {
-        margin-right: 10px;
+    
+}
+@media (max-width: 1200px) {
+    html{
+        font-size: 11px;
     }
-    .header.header-logo img {
-        width: 40px;
-    }
+    
 }

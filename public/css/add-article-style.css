@@ -1,5 +1,5 @@
 body{
-    background-color: #EEEEEE;
+     background: #f8fafc;
 }
 .main-container{
     display: grid;
@@ -17,14 +17,17 @@ body{
 .input-warpper input{
     font-size: 1.2rem;
     padding: 10px;
+    border: 1px solid #a0a0a0;
+
     
 }
-.input-warpper input[type='text']
+.input-warpper input[type='file']
 {
-
+    background-color: white;
 }
 .form-article-input{
     margin: 0px 40px;
+   
 }
 .input-warpper select{
     font-size: 1.2rem;
@@ -49,6 +52,9 @@ body{
     font-size: 1.3rem;
     padding: 10px 15px;
     margin-right: 10px;
+    border: 1px solid white;
+    border-radius: 30px;
+
 }
 .image-upload-table{
     width: 100%;
@@ -65,7 +71,24 @@ body{
     width: 100%;
 }
 .btn.addimg{
-    width: 300px;
+    width: 200px;
+    background-color: green;
+    color: white;
+}
+.btn.deleteimg{
+    width: 200px;
+    background-color: red;
+    color: white;
+}
+.btn.submit{
+    width: 200px;
+    background-color: blue;
+    color: white;
+}
+.btn.delete{
+    width: 200px;
+    background-color: red;
+    color: white;
 }
 .image-upload-table #td1{
     width: 50px;
@@ -75,4 +98,7 @@ body{
 }
 .image-upload-table #td4{
     width: 200px;
+}
+.hidden{
+    display: none;
 }

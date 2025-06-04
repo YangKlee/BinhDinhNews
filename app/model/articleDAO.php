@@ -42,7 +42,7 @@
         if ($authorID === null) {
             $sql = "INSERT INTO `article` (
                         `Time_modify`, `AuthorID`, `AuthorGuestName`, `CategoryID`, `Title`, `Tags`, `ArticleStatus`
-                    ) VALUES (?, NULL, ?, ?, ?, ?, ?)";
+                    ) VALUES (?, NULL , ?, ?, ?, ?, ?)";
             $stmt = $conn->prepare($sql);
             if ($stmt) {
                 $stmt->bind_param("ssssss", $stringSQLTime, $authorGuestName, $catID, $title, $tag, $status);

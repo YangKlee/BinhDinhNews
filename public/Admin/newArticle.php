@@ -30,7 +30,10 @@
             ?>
         </div>
         <div class="right-container">
-            
+        <script>
+            document.querySelector(".li-child.article").classList.add("show");
+            document.querySelector("#func4-2").classList.add("active");
+        </script>
             <form class="form-article-input" action="../../app/controller/submitBaiBao.php" method="POST" enctype="multipart/form-data"> 
                 <h1>Thêm bài báo</h1>    
                 <div class="input-warpper tieude-warpper">
@@ -41,6 +44,20 @@
                     <label for="">Tags(Các tag cách nhau bằng dấu phẩy) </label>
                     <input type="text" placeholder="Nhập các tags" name="article-tags">
                 </div>
+
+                <div class="input-warpper author-warpper">
+                    <label for="">Tác giả: </label>
+                    <input type="text" placeholder="Nhập tác giả:" name="article-author">
+                </div>
+                <?php 
+                    if($_SESSION['role'] != 2)
+                    {
+                        echo '                <script>
+                    document.querySelector(".input-warpper.author-warpper").classList.add("hidden");
+                </script>';
+                    }
+                ?>
+            
                 <div class="input-warpper category-warpper">
                     <label for="">Chọn thể loại của bài báo <span style="color:red">(*)</span> </label>
                     
@@ -91,8 +108,8 @@
 
                     </div>    
                     <div class="btn-modify-warper">
-                        <button onclick="loadNewImageUpload()" type="button" class="btn addimg">Thêm hình ảnh</button>
-                        <button onclick="deleteImages(indexUploadImages-1)" type="button" class="btn deleteimg">Xóa hình ảnh</button>
+                        <button onclick="loadNewImageUpload()" type="button" class="btn addimg"><i class="fa-solid fa-plus"></i> Thêm hình ảnh</button>
+                        <button onclick="deleteImages(indexUploadImages-1)" type="button" class="btn deleteimg"><i class="fa-solid fa-trash"></i> Xóa hình ảnh</button>
                     </div>
                         
                 </div>
@@ -124,9 +141,9 @@
                         indexUploadImages--;
                     }
                 </script>
+                <button class="btn submit" type="submit"><i class="fa-solid fa-right-to-bracket"></i> Nộp bài báo</button>
 
-                <input class="btn submit" type="submit" value="Nộp bài báo">
-                <button type="button" class="btn delete">Xóa nội dung</button>
+                <button type="button" class="btn delete"><i class="fa-solid fa-trash"></i> Xóa nội dung</button>
             </form>
         </div>
     </div>

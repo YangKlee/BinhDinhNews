@@ -5,24 +5,26 @@
     <link rel="stylesheet" href="../../../../../BinhDinhNews/public/css/chinhquyen.css">
     <link rel="shortcut icon" href="../../../../../BinhDinhNews/public/images/logo.webp" type="image/x-icon">
     <title>Chính quyền</title>
-    <link rel="shortcut icon" href="../../../../../BinhDinhNews/public/images/logo.webp" type="image/x-icon">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 </head>
 
 <?php include($_SERVER['DOCUMENT_ROOT'].'/BinhDinhNews/app/views/partials/header.php'); ?>
 
 <body>
+    <script>
+        document.querySelector("nav #f3").classList.add('active');
+    </script>
     <div class="main-container">
         <div class="pathway-category">
             <nav class="breadcrumb" aria-label="breadcrumb">
                 <span class="breadcrumb-item">
-                    <a href="../../../index.php" title="Trang chủ">
+                    <a href="../../../index.php" >
                         <i class="fas fa-home"></i> Trang chủ
                     </a>
                 </span>
                 <span class="breadcrumb-separator">/</span>
                 <span class="breadcrumb-item">
-                    <a href="./chinhquyenindex.php" title="Chính quyền">Chính quyền</a>
+                    <a href="./chinhquyenindex.php" > Chính quyền</a>
                 </span>
             </nav>
         </div>
@@ -39,7 +41,7 @@
                 ["link" => "./hiepquan.php", "img" => "dvhq.jpg", "label" => "Đơn vị Hiệp quản"],
             ];         
             foreach ($items as $item) {
-                echo '<a class="item-category" href="' . $item["link"] . '" title="' . $item["label"] . '">
+                echo '<a class="item-category" href="' . $item["link"] . '">
                         <img class="post-image" src="../../../images/imgChinhquyen/logo/' . $item["img"] . '" alt="' . $item["label"] . '">
                         <div class="article-info">' . $item["label"] . '</div>
                     </a>';

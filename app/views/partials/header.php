@@ -104,9 +104,9 @@
         </header>
         <nav class="nav-pc">
             <ul class="main">
-                    <li><a  href="/BinhDinhNews/public/index.php"> <i class="fa-solid fa-house"></i> Homepage</a></li>
+                    <li id="f1"><a  href="/BinhDinhNews/public/index.php"> <i class="fa-solid fa-house"></i> Homepage</a></li>
 
-                    <li class="parent tin-tuc"><a  href="/BinhDinhNews/public/index.php"> <i class="fa-solid fa-newspaper"></i> Tin tức <i class="fa-solid fa-caret-down"></i></a> 
+                    <li id="f2" class="parent tin-tuc"><a  href="/BinhDinhNews/public/index.php"> <i class="fa-solid fa-newspaper"></i> Tin tức <i class="fa-solid fa-caret-down"></i></a> 
                         <ul class="subnav tin-tuc">
                             <?php
                                 require_once $_SERVER['DOCUMENT_ROOT']."/BinhDinhNews/app/model/CategoryDAO.php";
@@ -127,7 +127,7 @@
                         </ul>
                     </li>
 
-                    <li class="parent chinh-quyen"><a href="/BinhDinhNews/public/pages/site/chinhquyen/chinhquyenindex.php"> <i class="fa-solid fa-circle-nodes"></i> Chính quyền <i class="fa-solid fa-caret-down"></i></a>
+                    <li id="f3" class="parent chinh-quyen"><a href="/BinhDinhNews/public/pages/site/chinhquyen/chinhquyenindex.php"> <i class="fa-solid fa-circle-nodes"></i> Chính quyền <i class="fa-solid fa-caret-down"></i></a>
                         <ul class="subnav chinh-quyen">
                             <li><a href="/BinhDinhNews/public/pages/site/chinhquyen/tinhuy.php">Tỉnh ủy</a></li>
                             <li><a href="/BinhDinhNews/public/pages/site/chinhquyen/hdnd.php">HDND Tỉnh</a></li>
@@ -141,7 +141,7 @@
                     </li>
                     
                    
-                    <li class="parent du-lich"><a href="#"><i class="fa-solid fa-plane-departure"></i>Du lịch Bình Định <i class="fa-solid fa-caret-down"></i></a>
+                    <li class="parent du-lich"><a href="#"><i class="fa-solid fa-plane-departure"></i> Du lịch Bình Định <i class="fa-solid fa-caret-down"></i></a>
                      
                         <ul class="subnav du-lich">
                             <?php
@@ -164,37 +164,11 @@
                             <li><a href="#">Bài viết du lịch</a></li>
                         </ul>
 
-                    <!--------------------------thanh điều hướng du lịch của c------------------------- -->
-                    <li class="parent du-lich"><a href="/BinhDinhNews/public/pages/site/dulichc/dulich_home.php"><i class="fa-solid fa-plane-departure"></i> Du lịch<i class="fa-solid fa-caret-down"></i></a>
-                     
-                        <ul class="subnav du-lich">
-                            <?php
-                            
-                                require_once $_SERVER['DOCUMENT_ROOT']."/BinhDinhNews/app/model/dulichDAO.php";
-                                $dlDAO = new dulichDAO();
-                                $result_tatca_loahihinh_dulich = $dlDAO->get_tatca_loaihinh();
-                                while($row = mysqli_fetch_array( $result_tatca_loahihinh_dulich, MYSQLI_ASSOC)){
-                                    echo 
-                                    '<li> 
-                                       <a  href="/BinhDinhNews/public/pages/site/dulichc/dulich.php?idloaihinh='.$row['LoaiHinhID'].'">
-                                            '.$row['TenLoaiHinh'].'
-                                       </a>
-                                     
-                                     </li>';
-                                }
-                                mysqli_free_result($result_tatca_loahihinh_dulich); 
-
-                            ?>
-    
-                        </ul>
-                    </li>
-                    <!----------------------------thanh điều hướng du lịch của c------------------------------------>
-
                     </li>
                     <?php
                         if($_SESSION['role'] >= 1)
                         {
-                            echo '<li><a href="/BinhDinhNews/public/admin/index.php">Trang quản lý</a></li>';
+                            echo '<li><a href="/BinhDinhNews/public/admin/index.php"><i class="fa-solid fa-toolbox"></i> Trang quản lý</a></li>';
                         }
                     ?>
                     <!-- <li><a href="#">Giới thiệu</a></li> -->
@@ -202,7 +176,7 @@
                 
                 </ul>
                 <form action="/BinhDinhNews/public/pages/site/searchingsite.php" class="search-bar" method="GET">
-                    <input type="text" placeholder="Tìm kiếm..." name="search" id="search">
+                    <input type="search" placeholder="Tìm kiếm..." name="search" id="search">
                     <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
                 </form>
             </nav>

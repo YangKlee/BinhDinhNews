@@ -24,12 +24,16 @@
     width: 250px;
     height: 150px;
     object-fit: cover;
+    border-radius: 10px;
 }
 .article-element-right{
     width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 .article-element-right h3{
-    font-size: 1.6rem;
+    font-size: 1.4rem;
 }
 .article-element-right i{
     color: rgb(0, 0, 0, 0.5);
@@ -78,11 +82,15 @@
 }
 .article-element-rightfunction{
     display: flex;
-    flex-direction: column;
+    position: relative;
+    bottom: 0px;
+    left: 0px;
     gap: 15px;
 }
 .article-element-rightfunction .btn{
     padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
 }
 .article-element-rightfunction .btn-delete{
     background-color: red;
@@ -103,4 +111,9 @@
 .article-element-rightfunction .btn-view{
     background-color: blue;
     color: white;
+}
+.article-container .short-article-content{
+    max-height: 40px;
+    overflow: hidden;
+
 }

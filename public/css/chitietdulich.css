@@ -1,31 +1,32 @@
 /* Cấu hình chung */
 /* Tiêu đề */
-
 .title {
     text-align: center;
     font-size: 45px;
     font-weight: bold;
-    margin-top: 20px ; /* Đẩy tiêu đề xuống */
+    margin-top: 20px;
 }
-
 
 /* Tiêu đề phần */
 .section-title {
     font-size: 25px;
-    line-height: 1.5;
+    line-height: 1.8;
     text-align: justify;
     width: 80%;
     margin: 20px auto;
+}
+
+a {
+    text-align: left;
 }
 
 /* Nội dung mô tả */
 .location-text, .description-box {
     font-size: 22px;
-    line-height: 1.5;
+    line-height: 1.8;
     text-align: justify;
     width: 80%;
     margin: 20px auto;
-
 }
 
 /* Ảnh chính */
@@ -54,7 +55,7 @@
     display: block;
     text-align: center;
     font-size: 25px;
-    color: #031324;
+    color: #007bff;
     text-decoration: none;
     margin-top: 20px;
 }
@@ -62,4 +63,3 @@
 .back-link:hover {
     text-decoration: underline;
 }
-

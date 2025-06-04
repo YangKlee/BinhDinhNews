@@ -35,9 +35,7 @@ body {
     display: block;
     color: #333;
 }
-.avatar-warpper{
-    
-}
+
 .avatar-warpper img {
     display: block;
     margin: 0px auto;
@@ -75,17 +73,98 @@ body {
 }
     
 form{
-
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-
     width: auto;
+}
+
+.form-user-info {
     margin-left: 50%;
     transform: translateX(-50%);
 }
 .role-warpper.hidden {
     display: none !important;
 }
+
 .form-input-warpper{
     display: flex;
     gap: 30px;
+}
+
+.re-password-overlay {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.re-password-overlay.active {
+    background-color: #3333332d;
+    display: flex;
+}
+
+.re-password-form {
+    display: block;
+    background: #fff;
+    padding: 32px 32px 16px 32px;
+    border-radius: 12px;
+    box-shadow: 0 4px 32px rgba(0,0,0,0.15);
+    min-width: 350px;
+    position: relative;
+    z-index: 1001;
+    flex-direction: column;
+    margin: 0;
+}
+
+.re-password-form h1 {
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 18px;
+}
+
+.form-re-password .button-wrapper {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 18px;
+}
+
+.form-re-password label {
+    font-weight: 600;
+    margin-top: 16px;
+    display: block;
+    color: #333;
+}
+
+.form-re-password input[type="password"] {
+    width: 100%;
+    padding: 10px 14px;
+    margin-top: 6px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 17px;
+    background: #f8fafc;
+    transition: border-color 0.3s;
+    box-sizing: border-box;
+}
+
+.form-re-password .form-input-re-password-warpper {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.form-re-password button {
+    display: block;
+    padding: 12px;
+    background-color: #0056b3;
+    border: none;
+    color: white;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 24px;
+    transition: background-color 0.3s ease;
+    margin: 10px auto;
 }

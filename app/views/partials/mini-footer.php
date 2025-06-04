@@ -1,6 +1,6 @@
 <footer class="mini-footer">
     <div class="mini-footer-left">
-        <h3>Cổng thông tin Bình Định</h3>
+        <h3>CỔNG THÔNG TIN BÌNH ĐỊNH</h3>
         <p>
             <span class="footer-icon">&#9993;</span> cutechatchoinguoidoi@gmail.com
             &nbsp;|&nbsp;

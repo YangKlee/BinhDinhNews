@@ -1,8 +1,9 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const iconEye = document.querySelector('.icon-eye');
-    if (iconEye) {
+    const iconEyes = document.querySelectorAll('.icon-eye');
+    iconEyes.forEach(function(iconEye) {
         iconEye.addEventListener('click', function() {
-            const input = document.getElementById('password');
+            // Tìm input nằm cùng wrapper với icon này
+            const input = this.parentElement.querySelector('input[type="password"], input[type="text"]');
             const eyeOpen = this.querySelector('.icon-eye-active');
             const eyeClose = this.querySelector('.icon-eye-inactive');
             if (input.type === 'password') {
@@ -15,5 +16,5 @@ document.addEventListener('DOMContentLoaded', function() {
                 eyeClose.style.display = 'none';
             }
         });
-    }
+    });
 });
