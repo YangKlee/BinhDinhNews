@@ -154,3 +154,15 @@ form a:hover {
     margin-top: 5px;
     display: none; /* Initially hidden */
 }
+
+.error {
+    background-color: rgba(255, 0, 0, 0.2);
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 400;
+    text-align: center;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid rgba(255, 0, 0, 0.5);
+}
