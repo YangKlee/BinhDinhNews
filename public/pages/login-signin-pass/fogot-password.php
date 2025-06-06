@@ -100,7 +100,7 @@ if (isset($_POST['reset-btn'])) {
         <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST">
             <h3>Quên mật khẩu</h3>
             <label for="email">Nhập email</label>
-            <input type="email" placeholder="Nhập email để nhận mã OTP" id="email" name="email" required>
+            <input type="email" placeholder="Nhập email để nhận mã OTP" id="email" name="email" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" title="Chưa đúng định dạng" required>
             <input type="submit" value="Gửi" id="confirm-btn" name="email-btn">
             <a href="signin.php">Chưa có tài khoản?</a>
             <a href="login.php">Quay lại trang đăng nhập</a>
@@ -110,7 +110,7 @@ if (isset($_POST['reset-btn'])) {
             <h3>Nhập mã OTP</h3>
             <label for="otp">Mã OTP đã gửi đến <?php echo htmlspecialchars($_SESSION['email']); ?></label>
             <input type="text" placeholder="Nhập mã OTP" id="otp" name="otp" required>
-            <input type="submit" value="Xác nhận" id="confirm-btn" name="verify-btn">
+            <input type="submit" value="Xác nhận" id="confirm-btn" name="verify-btn" pattern="\d{6}" title="Mã OTP gồm 6 chữ số" maxlength="6">
             <a href="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>">Thử email khác</a>
             <a href="login.php">Quay lại trang đăng nhập</a>
         </form>
@@ -119,7 +119,7 @@ if (isset($_POST['reset-btn'])) {
             <h3>Đặt lại mật khẩu</h3>
             <input type="hidden" name="email" value="<?php echo htmlspecialchars($_SESSION['email']); ?>">
             <label for="new-password">Mật khẩu mới</label>
-            <input type="password" placeholder="Nhập mật khẩu mới" id="new-password" name="new-password" required>
+            <input type="password" placeholder="Nhập mật khẩu mới" id="new-password" name="new-password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Mật khẩu có ít nhất 8 kí tự và 1 chữ hoa và 1 chữ thường" required>
             <input type="submit" value="Đặt lại mật khẩu" id="confirm-btn" name="reset-btn">
             <a href="login.php">Quay lại trang đăng nhập</a>
         </form>
