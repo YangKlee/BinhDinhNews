@@ -10,7 +10,7 @@
     {
         $data = $userDAO->getAuthorInfo($_SESSION['UID']);
         $_SESSION['role'] = $data['ROLE'];
-        $_SESSION['username'] = $data['UserName'];  
+        $_SESSION['username'] = $data['UserName'];
     }
     else if(isset($_COOKIE['auth'])){
         { 

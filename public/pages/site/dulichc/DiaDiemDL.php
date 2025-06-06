@@ -23,6 +23,7 @@
   <link rel="stylesheet" href="/BinhDinhNews/public/css/DiaDiemDL.css">
   <link rel="stylesheet" href="/BinhDinhNews/public/css/rightmenu-style.css">
   <script src="https://kit.fontawesome.com/8f5e4d2946.js" crossorigin="anonymous"></script>
+  <link rel="shortcut icon" href="../../../images/logo.webp" type="image/x-icon">
   <title>
     <?php 
     	  if (isset($tendd)) {
@@ -34,8 +35,6 @@
     ?>
 
   </title>
-
-  <link rel="icon" href="./images/logo.webp" type="image/x-icon">
 </head>
 <?php include $_SERVER['DOCUMENT_ROOT']. "/BinhDinhNews/app/views/partials/header.php"; ?>
 

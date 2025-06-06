@@ -28,7 +28,7 @@
       <link rel="stylesheet" href="/BinhDinhNews/public/css/dulich.css">
       <link rel="stylesheet" href="/BinhDinhNews/public/css/header-style.css">
       <script src="https://kit.fontawesome.com/8f5e4d2946.js" crossorigin="anonymous"></script>
-      <link rel="icon" href="./images/logo.webp" type="image/x-icon">
+      <link rel="icon" href="../../../images/logo.webp" type="image/x-icon">
       <title>
             <?php 
                 if(isset($tenlh)) echo $tenlh; 
