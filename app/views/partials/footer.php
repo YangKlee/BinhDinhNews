@@ -95,7 +95,7 @@
                         if($_SESSION['role'] != 0) {
                             echo '
                             <div class="footer-profile">
-                                <a href="./admin/index.php">Trung tâm tài khoảng</a>
+                                <a href="./admin/index.php">Trung tâm tài khoản</a>
                             </div>';
                         }
                         
