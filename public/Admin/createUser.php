@@ -126,7 +126,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
             <div class="create-user-field">
                 <label for="password_tb">Mật khẩu:</label>
-                <input type="password" id="password_tb" name="password_tb" required>
+                <input type="password"  id="password" name="password_tb" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Mật khẩu có ít nhất 8 kí tự và 1 chữ hoa và 1 chữ thường" required>
             </div>
 
             <div class="create-user-field">
