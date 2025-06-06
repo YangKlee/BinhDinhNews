@@ -20,7 +20,7 @@
             echo '<div class="error">Tên tài khoản hoặc email đã tồn tại</div>';
         } else {
             // Hash password an toàn hơn
-            $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+            $hashedPassword = hash("sha256", $password);
             $query= "INSERT INTO UserData(UserName,PassWord,Email,ROLE) VALUES(?, ?, ?, 0)";
             $sttm = mysqli_prepare($conn,$query);
             mysqli_stmt_bind_param($sttm, "sss", $username, $hashedPassword, $email );
