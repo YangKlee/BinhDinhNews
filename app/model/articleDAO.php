@@ -38,7 +38,7 @@
         $stringSQLTime = $currTime->format('Y-m-d H:i:s');
         $conn = $this->getConnection();
         $lastIDInsert = null;
-
+        // add bài báo cho admin
         if ($authorID === null) {
             $sql = "INSERT INTO `article` (
                         `Time_modify`, `AuthorID`, `AuthorGuestName`, `CategoryID`, `Title`, `Tags`, `ArticleStatus`
@@ -47,6 +47,7 @@
             if ($stmt) {
                 $stmt->bind_param("ssssss", $stringSQLTime, $authorGuestName, $catID, $title, $tag, $status);
             }
+            //add bài báo cho tác giả
         } else {
             $sql = "INSERT INTO `article` (
                         `Time_modify`, `AuthorID`, `AuthorGuestName`, `CategoryID`, `Title`, `Tags`, `ArticleStatus`
