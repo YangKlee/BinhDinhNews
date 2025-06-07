@@ -1,3 +1,6 @@
+<?php
+echo '<link rel="shortcut icon" href="../../../images/logo.webp" type="image/x-icon">';
+?>
 <?php include($_SERVER['DOCUMENT_ROOT'].'/BinhDinhNews/app/views/partials/header.php'); ?>
 
 <?php
@@ -48,7 +51,6 @@ function hienThiCapUBMTTQVN($conn, $scapbac) {
 	<link rel="stylesheet" href="../../../../public/css/footer-style.css">
 	<link rel="stylesheet" href="../../../../public/css/header-style.css">
     <link rel="stylesheet" href="../../../../../BinhDinhNews/public/css/rightmenu-style.css">
-    <link rel="shortcut icon" href="../../../../../BinhDinhNews/public/images/logo.webp" type="image/x-icon">
     <title>UBMTTQVN tỉnh</title>
     <style>
     .container {
