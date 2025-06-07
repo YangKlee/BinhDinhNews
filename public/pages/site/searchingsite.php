@@ -26,6 +26,11 @@
     <?php
         include('../../../app/views/partials/header.php');
     ?>
+    <?php 
+        echo '    <script>
+                document.getElementById("search").value = "'.htmlspecialchars($_GET['search']).'"
+            </script>'
+    ?>
     <div class="container-theloai">
         <div class="container-left"></div>
         <div class="container-mid">
