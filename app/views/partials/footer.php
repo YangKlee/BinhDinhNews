@@ -81,7 +81,7 @@
                         $role = "Admin";
                     }
                     else{
-                        $role = "Đéo biết";
+                        $role = "Không xác định";
                     }
                     echo '
                     <div class="footer-Logined-Info">
@@ -95,7 +95,7 @@
                         if($_SESSION['role'] != 0) {
                             echo '
                             <div class="footer-profile">
-                                <a href="./admin/index.php">Trung tâm tài khoản</a>
+                                <a href="/BinhDinhNews/public/admin/index.php">Trung tâm tài khoản</a>
                             </div>';
                         }
                         

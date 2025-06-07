@@ -106,11 +106,14 @@
         $authorDAO = new UserDAO();
         $dataAuthor = $authorDAO->getAuthorInfo($tacgiaid);
 
-        if(!empty($dataAuthor['Alias'])){
-           echo "<i> <b> <h3> Tác giả: ".$dataAuthor['Alias']." <h3> </b></i>";
-        }
+        if (!empty($dataAuthor['Alias'])) {
+               echo "<h3><i><b>Tác giả: " . $dataAuthor['Alias'] . "</b></i></h3>";
+        } 
+        elseif (!empty($dataAuthor['UserName'])) {
+             echo "<h3><i><b>Tác giả: " . $dataAuthor['UserName'] . "</b></i></h3>";
+        }      
         else {
-            echo "<i> <b> <h3> Tác giả: ".$dataAuthor['UserName']." <h3> </b></i>";
+            echo "<h3><i><b>Tác giả: Không xác định</b></i></h3>";
         }
 
 	   ?>

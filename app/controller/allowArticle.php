@@ -3,6 +3,7 @@
 
 ?>
 <?php
+// lọc chỉ cho phép admin được duyệt và từ chối
     if($_SESSION['role'] !=2)
     {
         header("Location: ".$_SERVER['DOCUMENT_ROOT']."/BinhDinhNews/public/admin/firewall.php");    
