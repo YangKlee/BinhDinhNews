@@ -1,3 +1,6 @@
+<?php
+echo '<link rel="shortcut icon" href="../../../images/logo.webp" type="image/x-icon">';
+?>
 <?php include($_SERVER['DOCUMENT_ROOT'].'/BinhDinhNews/app/views/partials/header.php'); ?>
 
 <?php
@@ -63,7 +66,7 @@ if ($result_cap3->num_rows > 0) {
 	<link rel="stylesheet" href="../../../../public/css/footer-style.css">
 	<link rel="stylesheet" href="../../../../public/css/header-style.css">
     <link rel="stylesheet" href="../../../../../BinhDinhNews/public/css/rightmenu-style.css">
-    <link rel="shortcut icon" href="../../../images/imgChinhquyen/logo/cqcm.jpg" type="image/x-icon">
+    <link rel="shortcut icon" href="../../../../../BinhDinhNews/public/images/logo.webp" type="image/x-icon">
     
     <title>Cơ quan chuyên môn</title>
     <style>
