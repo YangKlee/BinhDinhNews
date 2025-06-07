@@ -3,6 +3,7 @@
 
 ?>
 <?php
+    // chỉ cho phép nhà báo vs admin xóa bài
     if($_SESSION['role'] < 1)
     {
         header("Location: ".$_SERVER['DOCUMENT_ROOT']."/BinhDinhNews/public/admin/firewall.php");    
@@ -17,7 +18,8 @@
         $artDAO = new articleDAO();
         $result = $artDAO->getArticle($_GET['idart']);
         $data = mysqli_fetch_assoc($result);
-        if($_SESSION['role'] != 2 && $_SESSION['UID'] != $data['AuthorID'])
+        // kiểm tra quyền lần 2, chỉ cho phép nhà báo xóa những bài chính mình đăng và những bài chưa đc duyệt
+        if($_SESSION['role'] != 2 && $_SESSION['UID'] != $data['AuthorID'] && $data['ArticleStatus'] == 1)
         {
             header("Location: ".$_SERVER['DOCUMENT_ROOT']."/BinhDinhNews/public/admin/firewall.php");    
             exit;
