@@ -1,0 +1,29 @@
+@media (width <= 1600px) {
+    .container-theloai {
+        display: grid;
+        grid-template-columns: 75% 25%;
+        grid-template-rows: 100%;
+    }
+
+    .container-left {
+        display: none;
+    }
+    .container-right {
+        margin-right: 5px;
+    }
+}
+
+@media (width <= 1300px) {
+    .container-right {
+        display: none;
+    }
+    .container-theloai {
+        display: block;
+    }
+}
+@media (width <= 600px){
+    .article-element-left img{
+        width: 150px;
+        height: 100px;
+    }
+}

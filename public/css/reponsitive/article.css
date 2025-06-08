@@ -1,0 +1,14 @@
+@media (width <= 1300px) {
+    .container-left{
+        display: none;
+    }
+    .container-right {
+        display: none;
+    }
+    .container-article {
+        display: block;
+    }
+    .art-content{
+        margin: 10px 5px;
+    }
+}

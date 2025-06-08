@@ -1,0 +1,33 @@
+@media (width <= 830px){
+    .header.header-container{
+        padding: 0px;
+    }
+    .search-bar{
+        width: 200px;
+    }
+}
+@media (width <= 500px){
+    .header-Logined-Info{
+        display: none;
+    }
+    .header.header-userinfo{
+        display: none;
+    }
+    .header.header-logo img{
+        width: 80px;
+    }
+    .header.header-container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .header-logo__description h1{
+        font-size: 1.6rem;
+    }
+    .nav-pc{
+        display: none;
+    }
+    .nav-mobile{
+        display: block;
+    }
+}

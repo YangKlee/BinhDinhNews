@@ -15,6 +15,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quản lý</title>
     <link rel="stylesheet" href="../css/index-admin.css">
+    
     <link rel="stylesheet" href="../css/menu-admin.css">
     <link rel="stylesheet" href="../css/reset.css">
     <link rel="shortcut icon" href="../../../../../BinhDinhNews/public/images/logo.webp" type="image/x-icon">

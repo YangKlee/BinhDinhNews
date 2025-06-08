@@ -5,7 +5,11 @@
     <link rel="stylesheet" href="./css/footer-style.css">
 	<link rel="stylesheet" href="./css/header-style.css">
     <link rel="stylesheet" href="./css/article-style.css">
+
     <link rel="stylesheet" href="./css/rightmenu-style.css">
+    <link rel="stylesheet" href="./css/reponsitive/main.css">
+    <link rel="stylesheet" href="./css/reponsitive/header.css">
+    <link rel="stylesheet" href="./css/reponsitive/article.css">
     <script src="https://kit.fontawesome.com/8f5e4d2946.js" crossorigin="anonymous"></script>
     <script src="./scripts/zoom-img.js"></script>
     <title><?php 
