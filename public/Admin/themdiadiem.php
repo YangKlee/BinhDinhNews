@@ -17,7 +17,7 @@
     include_once("../../app/model/DiaDiemDLDAO.php");
 
     //khi mà người dùng nhấn nút them
-    if (isset($_POST['them'])) {
+    if (isset($_POST['submit-them'])) {
         $ten = $_POST['tendiadiem'];
         $diachi = $_POST['diachi'];
         $loaihinh = $_POST['loaihinh'];
@@ -94,7 +94,7 @@
                    <input type="file" name="tailenhinhanh" required>
 				  </div> 
 				<textarea name="mota" rows="8" placeholder="Giới thiệu chi tiết..." required></textarea>
-                <button type="submit" name="them">Thêm địa điểm</button>
+                <button type="submit" name="submit-them">Thêm địa điểm</button>
             </form>
         </div>
     </div>
