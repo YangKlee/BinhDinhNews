@@ -22,24 +22,27 @@ let idx_curr_HotNews = 0;
 let listHotArt = document.getElementsByClassName("hot-article");
 function loadArtNext(isNext){
 
-
-
+    const ArtWitdh = document.querySelector(".hot-article").offsetWidth;
+    const slideNews = document.querySelector(".hot-article-slide");
+    currHotNews = 0;
     if(isNext)
     {
-
-        listHotArt[idx_curr_HotNews].classList.remove('show');
+        
         idx_curr_HotNews++;
+        currHotNews -= idx_curr_HotNews * ArtWitdh;
+        slideNews.style.transform = `translateX(${currHotNews}px)`;
         if(idx_curr_HotNews >= listHotArt.length)
         {
             idx_curr_HotNews = 0;
         }
-        listHotArt[idx_curr_HotNews].classList.add('show');
+
 
     }
     else
     {
-        listHotArt[idx_curr_HotNews].classList.remove('show');
         idx_curr_HotNews--;
+        currHotNews += idx_curr_HotNews * ArtWitdh;
+        slideNews.style.transform = `translateX(${currHotNews}px)`;
         if(idx_curr_HotNews <= 0)
         {
                 idx_curr_HotNews = listHotArt.length -1;

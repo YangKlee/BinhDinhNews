@@ -63,3 +63,8 @@
         display: none;
     }
 }
+@media (width <= 700px) {
+    .hot-article-container{
+        height: 200px;
+    }
+}

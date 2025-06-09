@@ -33,7 +33,9 @@
                     <div class="homepage-content hot-news">
                         <div class="hot-article-container" id="slide-hot-news">
                             <button class="btn slide-left" onclick="loadArtNext(false);clearHotNewsTimer()"><i class="fa-solid fa-arrow-left"></i></button>
-                            <?php
+                            <div class="hot-article-warpper">
+                                <div class="hot-article-slide">
+                                            <?php
                                 // import class xây dựng sẵn
                                 require_once("../app/model/articleDAO.php");
                                 $DAOArticle = new articleDAO();
@@ -62,7 +64,11 @@
                                 // giải phóng bộ nhớ
                                 mysqli_free_result($result);   
                             ?>
+                                </div>
+                                
 
+                            </div>
+                            
                             <button class="btn slide-right" onclick="loadArtNext(true); clearHotNewsTimer()"><i class="fa-solid fa-arrow-right"></i></button>
                         </div>
                         
