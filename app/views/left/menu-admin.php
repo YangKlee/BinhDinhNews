@@ -1,5 +1,6 @@
 <?php
     require "../../app/controller/loadsession.php";
+    include($_SERVER['DOCUMENT_ROOT'] . '/BinhDinhNews/app/views/partials/loading.php');
                 if(isset($_SESSION['UID']))
                 {
                     require_once $_SERVER['DOCUMENT_ROOT'].'/BinhDinhNews/app/model/userDAO.php';
