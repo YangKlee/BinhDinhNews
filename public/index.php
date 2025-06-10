@@ -18,6 +18,7 @@
 </head>
 <?php
 	include('../app/views/partials/header.php');
+   
 ?>
 
 <body>
@@ -33,7 +34,9 @@
                     <div class="homepage-content hot-news">
                         <div class="hot-article-container" id="slide-hot-news">
                             <button class="btn slide-left" onclick="loadArtNext(false);clearHotNewsTimer()"><i class="fa-solid fa-arrow-left"></i></button>
-                            <?php
+                            <div class="hot-article-warpper">
+                                <div class="hot-article-slide">
+                                            <?php
                                 // import class xây dựng sẵn
                                 require_once("../app/model/articleDAO.php");
                                 $DAOArticle = new articleDAO();
@@ -47,7 +50,20 @@
                                 // duyệt từng hàng  
                                 //Trả về 1 dòng dữ liệu trong $row dưới dạng 1 mảng các giá trị
                                 //MYSQL_ASSOC: các giá trị trong mảng trả về có thể truy cập qua $key là tên của các trường trong "bảng".
-                                
+                                // clone dòng cuối
+                                $result_clone = $DAOArticle->getListArticleQuery("SELECT ArticleID,Title, Time_modify, mainimage from article\n"
+                                                                                        . "where ArticleStatus = 1\n"
+                                                                                        . "ORDER BY Time_modify DESC\n"
+                                                                                        . "LIMIT 1 OFFSET 4;");
+                                $row = mysqli_fetch_array($result_clone, MYSQLI_ASSOC);
+                                    echo '  <a href="./article.php?id='.$row['ArticleID'].'"  class="hot-article clone" id="art-hot-news">
+                                        <article>
+                                            <img src="./images/upload/'.$row['ArticleID'].'/'.$row['mainimage'].'" alt="">
+                                            <h3> '.$row['Title'].'
+                                            </h3>
+                                            <i class="time-label">'.$row['Time_modify'].'</i>
+                                        </article>
+                                    </a>';
                                 while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){
                                     // áp giá trị vào template
                                         echo '  <a href="./article.php?id='.$row['ArticleID'].'"  class="hot-article" id="art-hot-news">
@@ -59,15 +75,37 @@
                                         </article>
                                     </a>';
                                 }    
+                                // clone dòng đầu
+                                $result_clone = $DAOArticle->getListArticleQuery("SELECT ArticleID,Title, Time_modify, mainimage from article\n"
+                                                                                        . "where ArticleStatus = 1\n"
+                                                                                        . "ORDER BY Time_modify DESC\n"
+                                                                                        . "LIMIT 1 OFFSET 0;");
+                                        
+                                $row = mysqli_fetch_array($result_clone, MYSQLI_ASSOC);
+                                    echo '  <a href="./article.php?id='.$row['ArticleID'].'"  class="hot-article clone" id="art-hot-news">
+                                        <article>
+                                            <img src="./images/upload/'.$row['ArticleID'].'/'.$row['mainimage'].'" alt="">
+                                            <h3> '.$row['Title'].'
+                                            </h3>
+                                            <i class="time-label">'.$row['Time_modify'].'</i>
+                                        </article>
+                                    </a>';
                                 // giải phóng bộ nhớ
                                 mysqli_free_result($result);   
                             ?>
+                                </div>
+                                
 
+                            </div>
+                            
                             <button class="btn slide-right" onclick="loadArtNext(true); clearHotNewsTimer()"><i class="fa-solid fa-arrow-right"></i></button>
                         </div>
                         
 
                     </div>
+                    <script>
+                        
+                    </script>
                     <div class="homepage-content current-news">
                         <i class="fa-solid fa-square-rss"></i>
                         <h2 class="type-title" >Tin mới</h2>

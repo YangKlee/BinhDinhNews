@@ -10,16 +10,25 @@
 /* Nhóm định dạng cho bài viết nổi bật */
 .homepage-content .hot-article {
     display: block;
-    position: absolute;
+
     left: 0px;
     top: 0px;
     width: 100%;
     margin: 10px 0px;
-    animation: slideCloseLeft 0.8s forwards;
+
 }
 .hot-article.show {
     display: block;
-    animation: slideOpenLeft 0.8s forwards;
+
+}
+.hot-article-warpper{
+    overflow: hidden;
+}
+.hot-article-slide{
+    display: flex;
+     /* transition: transform 0.3s ease; */
+        transform: translateX(0); /* hoặc vị trí khởi đầu đúng */
+    transition: none;
 }
 .hot-article {
     flex-shrink: 0;
