@@ -4,7 +4,7 @@
     if ($_SESSION['role'] != 2) {
         header("Location: ./firewall.php");
     }
-    require_once $_SERVER['DOCUMENT_ROOT'].'/BinhDinhNews/app/model/userDAO.php';
+    require_once __DIR__.'/../../app/model/userDAO.php';
     $userDAO = new UserDAO();
     $userList = $userDAO->getAllUsers();  // Hàm này bạn cần định nghĩa trong UserDAO để lấy danh sách user
 ?>

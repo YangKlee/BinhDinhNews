@@ -12,7 +12,7 @@
 <body>
 
     <?php
-    include($_SERVER['DOCUMENT_ROOT'].'/BinhDinhNews/app/views/partials/header.php');
+    include(__DIR__.'/../../../../app/er.php');
     ?>
 
     <div class="container-tracuudiem">
@@ -25,7 +25,7 @@
     </div>
 
     <?php
-    include($_SERVER['DOCUMENT_ROOT'].'/BinhDinhNews/app/views/partials/footer.php');
+    include(__DIR__.'/../../../../app/views/partials/footer.php');
     ?>
 
 </body>

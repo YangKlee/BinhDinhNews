@@ -108,11 +108,11 @@ function hienThiCap($conn, $sunghiep) {
         ?>
     </div>
     <div class="container-right">
-        <?php include($_SERVER['DOCUMENT_ROOT'].'/BinhDinhNews/app/views/right/homepage.php'); ?>
+        <?php include(__DIR__.'/../../../../app/views/right/homepage.php'); ?>
     </div>
     
 </div>
 </body>
 </html>
 <?php $conn->close(); ?>
-<?php include($_SERVER['DOCUMENT_ROOT'].'/BinhDinhNews/app/views/partials/footer.php'); ?>
+<?php include(__DIR__.'/../../../../app/views/partials/footer.php'); ?>

@@ -52,4 +52,4 @@
     </div>
 </body>
 
-<?php include($_SERVER['DOCUMENT_ROOT'].'/BinhDinhNews/app/views/partials/footer.php'); ?>
+<?php include(__DIR__.'/../../../../app/views/partials/footer.php'); ?>

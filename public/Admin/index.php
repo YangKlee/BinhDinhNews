@@ -67,7 +67,7 @@
              </div>
             <div class="thong-ke-container">
                 <?php
-                    require_once $_SERVER['DOCUMENT_ROOT']. "/BinhDinhNews/app/model/articleDAO.php";
+                    require_once __DIR__. "/../../app/model/articleDAO.php";
                     $artDAO = new articleDAO();
                     if($_SESSION['role'] == 1)
                     {

@@ -13,7 +13,8 @@
     if($_SERVER['REQUEST_METHOD'] == "POST") {
         // Nếu là đổi mật khẩu
         if (isset($_POST['old_password_tx']) && isset($_POST['new_password_tx']) && isset($_POST['re_new_password_tx'])) {
-            require_once $_SERVER['DOCUMENT_ROOT'].'/BinhDinhNews/app/model/userDAO.php';
+            //require_once __DIR__.'/../../app/model/userDAO.php';
+            require_once __DIR__.'/../../app/model/userDAO.php';
             $userDAO = new UserDAO();
             $oldPassword = $_POST['old_password_tx'];
             $newPassword = $_POST['new_password_tx'];
@@ -34,8 +35,8 @@
             isset($_POST['email_tx']) && isset($_POST['cccd_tx']) && isset($_POST['adias_tx']) &&
             isset($_POST['organ_tx']) && isset($_POST['role_select'])
         ) {
-            require_once $_SERVER['DOCUMENT_ROOT'].'/BinhDinhNews/app/model/userDAO.php';
-            require_once $_SERVER['DOCUMENT_ROOT'].'/BinhDinhNews/app/controller/Upload.php';
+            require_once __DIR__.'/../../app/model/userDAO.php';
+            require_once __DIR__.'/../../app/controller/Upload.php';
             $userDAO = new UserDAO();
             $fileUpload = new Upload();
 
@@ -98,7 +99,7 @@
         </div>
         <div class="right-container">
             <?php
-                require_once $_SERVER['DOCUMENT_ROOT'].'/BinhDinhNews/app/model/userDAO.php';
+                require_once __DIR__.'/../../app/model/userDAO.php';
                 $userDAO = new UserDAO();
                 if(isset($_GET['user_id']))
                 {

@@ -38,7 +38,7 @@
             <div class = "container-article-list">
                 <h1>Danh sách bài báo của tôi</h1>
                 <?php
-                    include( $_SERVER['DOCUMENT_ROOT'].'/BinhDinhNews/app/model/ArticleDAO.php');
+                   require_once ( __DIR__.'/../../app/model/ArticleDAO.php');
                     $artilces_per_page = 2;
                     $current_page = $_GET['page'] ?? 1;
                     $artDAO = new articleDAO();
@@ -66,7 +66,7 @@
 
                     while($row = mysqli_fetch_array($result, MYSQLI_ASSOC))
                     {
-                        $filename =  $_SERVER['DOCUMENT_ROOT']. '/BinhDinhNews/app/ArticleData/'.$row['ArticleID'].'.txt';
+                        $filename =  __DIR__. '/../../app/ArticleData/'.$row['ArticleID'].'.txt';
                         $f = fopen($filename, 'r');
                         if($f)
                         {
@@ -141,7 +141,7 @@
                         
                     }
                     mysqli_free_result($result);
-                    require_once( $_SERVER['DOCUMENT_ROOT'] . '/BinhDinhNews/app/controller/paginationHelper.php');
+                    require_once( __DIR__.'/../../app/controller/paginationHelper.php');
                     page_navigation($total_pages, $current_page,  "/BinhDinhNews/public/admin/listArticleAdmin.php");
                 ?>
 

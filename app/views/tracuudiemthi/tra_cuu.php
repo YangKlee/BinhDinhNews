@@ -9,7 +9,7 @@
 </head>
 
 <?php
-    include($_SERVER['DOCUMENT_ROOT'].'/BinhDinhNews/app/views/partials/header.php');
+    include(__DIR__.'/../../../../app/views/partials/header.php');
 ?>
 
 <?php
@@ -71,5 +71,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["sbd"])) {
 
 
 <?php
-    include($_SERVER['DOCUMENT_ROOT'].'/BinhDinhNews/app/views/partials/footer.php');
+    include(__DIR__.'/../../../../app/views/partials/footer.php');
 ?>

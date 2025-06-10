@@ -19,7 +19,7 @@
 
 
 <?php
-    include $_SERVER['DOCUMENT_ROOT']. "/BinhDinhNews/app/views/partials/header.php";
+     include __DIR__. "/../../../../app/views/partials/header.php";
 ?>
 
 <body>
@@ -34,8 +34,8 @@
 		    <h1> Danh sách các loại hình du lịch  </h1>
 
 		     <?php
-			    require_once $_SERVER['DOCUMENT_ROOT']. "/BinhDinhNews//app/model/dulichDAO.php";
-			    require_once $_SERVER['DOCUMENT_ROOT']. "/BinhDinhNews//app/model/DiaDiemDLDAO.php";
+			    require_once __DIR__. "/../../../../app/model/dulichDAO.php";
+			    require_once __DIR__. "/../../../../app/model/DiaDiemDLDAO.php";
 
 			    $dlDAO = new dulichDAO();
 			    $ddDAO = new DiaDiemDAO();
@@ -92,13 +92,13 @@
 		<!-- container bên phải có ảnh anh DƯƠNG =))))))))))))	 -->
 	      <div class="container-right">
 		     <?php
-		         include $_SERVER['DOCUMENT_ROOT'] . "/BinhDinhNews/app/views/right/homepage.php";
+		         include __DIR__. "/../../../../app/views/right/homepage.php";
 		      ?>
 	      </div>
       </div>
 </body>
 <?php
-        include $_SERVER['DOCUMENT_ROOT'] . "/BinhDinhNews/app/views/partials/footer.php";
+        include __DIR__. "/../../../../app/views/partials/footer.php";
     ?>
 
 </html>

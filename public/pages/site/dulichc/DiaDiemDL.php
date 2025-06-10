@@ -1,5 +1,5 @@
 <?php
-    include $_SERVER['DOCUMENT_ROOT']. "/BinhDinhNews/app/model/DiaDiemDLDAO.php";
+    include __DIR__. "/../../../../app/model/DiaDiemDLDAO.php";
     $ddDAO = new DiaDiemDAO();
     $iddiadiem = $_GET["iddiadiem"];
     $result = $ddDAO->get_tung_DiaDiem($iddiadiem);
@@ -36,7 +36,7 @@
 
   </title>
 </head>
-<?php include $_SERVER['DOCUMENT_ROOT']. "/BinhDinhNews/app/views/partials/header.php"; ?>
+<?php include __DIR__. "/../../../../app/views/partials/header.php"; ?>
 
 <body>
 
@@ -46,7 +46,7 @@
      
 	 <?php
 
-      require_once $_SERVER['DOCUMENT_ROOT']. "/BinhDinhNews/app/model/DiaDiemDLDAO.php";
+      require_once __DIR__. "/../../../../app/model/DiaDiemDLDAO.php";
       $ddDAO = new DiaDiemDAO();
       $result = $ddDAO->get_tung_DiaDiem($iddiadiem);
 
@@ -76,7 +76,7 @@
 				  
        //*************************đọc nội dung từ file text **************************
        // đường dẫn đến file mô tả địa điểm.txt
-        $path = $_SERVER['DOCUMENT_ROOT']. "/BinhDinhNews/app/dulich_data/" .$iddiadiem. ".txt";
+        $path = __DIR__. "/../../../../app/dulich_data/" .$iddiadiem. ".txt";
         
         $f = fopen($path , "r") or die("<h1>Không tìm thấy bài báo</h1>"); 
         
@@ -102,7 +102,7 @@
       }
 
         
-        require_once $_SERVER['DOCUMENT_ROOT']. ('/BinhDinhNews/app/model/userDAO.php');
+        require_once __DIR__. "/../../../../app/model/userDAO.php";
         $authorDAO = new UserDAO();
         $dataAuthor = $authorDAO->getAuthorInfo($tacgiaid);
 
@@ -119,7 +119,7 @@
 	   ?>
     </div>
     <div class="container-right">
-      <?php include $_SERVER['DOCUMENT_ROOT']. "/BinhDinhNews/app/views/right/homepage.php"; ?>
+      <?php include __DIR__. "/../../../../app/views/right/homepage.php"; ?>
     </div>
 
   </div>
@@ -127,5 +127,5 @@
 </body>
 
 
-<?php include $_SERVER['DOCUMENT_ROOT']. "/BinhDinhNews/app/views/partials/footer.php";
+<?php include __DIR__. "/../../../../app/views/partials/footer.php";
 ?>
