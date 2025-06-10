@@ -1,6 +1,6 @@
-// var timerHotNews = setInterval(() => {
-//     loadArtNext(true)
-// }, 10000);
+var timerHotNews = setInterval(() => {
+    loadArtNext(true)
+}, 10000);
 var timerThoiSu =setInterval(() => {
     loadArtThoiSuNext(true)
 }, 3000);
