@@ -1,8 +1,12 @@
 <head>
+    
     <link rel="stylesheet" href="../../../../../BinhDinhNews/public/css/reset.css">
     <link rel="stylesheet" href="../../../../../BinhDinhNews/public/css/footer-style.css">
     <link rel="stylesheet" href="../../../../../BinhDinhNews/public/css/header-style.css">
     <link rel="stylesheet" href="../../../../../BinhDinhNews/public/css/chinhquyen.css">
+    <link rel="stylesheet" href="../../../../../BinhDinhNews/public/css/reponsitive/chinhquyen.css">
+    <link rel="stylesheet" href="../../../../../BinhDinhNews/public/css/reponsitive/main.css">
+    <link rel="stylesheet" href="../../../../../BinhDinhNews/public/css/reponsitive/header.css">
     <link rel="shortcut icon" href="../../../../../BinhDinhNews/public/images/logo.webp" type="image/x-icon">
     <title>Chính quyền</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">

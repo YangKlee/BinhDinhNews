@@ -1,0 +1,26 @@
+@media (width <= 1600px) {
+    .main-container {
+        display: grid;
+        grid-template-columns: 75% 25%;
+        grid-template-rows: 100%;
+    }
+
+    .container-left {
+        display: none;
+    }
+    .container-right {
+        margin-right: 5px;
+    }
+}
+
+@media (max-width: 1300px){
+    .container-right {
+        display: none;
+    }
+    .container{
+        display: block !important;; 
+    }
+    .container-mid{
+        display: block;
+    }
+}
