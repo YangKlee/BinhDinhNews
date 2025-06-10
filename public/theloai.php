@@ -43,7 +43,7 @@
             echo $nameCat; else echo "404 Không tìm thấy" ?> </h1>
             <div class = "container-article-list">
                 <?php
-                    include('../app/model/ArticleDAO.php');
+                    include( __DIR__. '/../app/model/articleDAO.php');
                     $artilces_per_page = 5;
                     $current_page = $_GET['page'] ?? 1;
                     $artDAO = new articleDAO();
@@ -55,7 +55,7 @@
 
                     while($row = mysqli_fetch_array($result, MYSQLI_ASSOC))
                     {
-                        $filename = '../app/ArticleData/'.$row['ArticleID'].'.txt';
+                        $filename = __DIR__. '/../app/ArticleData/'.$row['ArticleID'].'.txt';
                         $f = fopen($filename, 'r');
                         if($f)
                         {
@@ -95,7 +95,7 @@
                         
                     }
                     mysqli_free_result($result);
-                    require_once('../app/controller/paginationHelper.php');
+                    require_once(__DIR__. '/../app/controller/paginationHelper.php');
                     page_navigation_Cat($total_pages, $current_page);
                 ?>
                 <!-- <div class="article-container">
@@ -116,13 +116,13 @@
         </div>
         <div class="container-right">
             <?php
-                include("../app/views/right/homepage.php");
+                include(__DIR__. "/../app/views/right/homepage.php");
             ?>
         </div>
     </div>
 </body>
 <?php
-        include('../app/views/partials/footer.php');
+        include(__DIR__. '/../app/views/partials/footer.php');
     ?>
     
 </html>
