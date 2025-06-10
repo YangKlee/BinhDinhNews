@@ -1,8 +1,5 @@
 /* Nhóm định dạng responsive cho các kích thước màn hình */
-html, body {
-  max-width: 100%;
-  overflow-x: hidden;
-}
+
 @media (max-width: 1610px) {
     .nav-pc{
         padding: 0;
@@ -32,6 +29,10 @@ html, body {
 
 }
 @media (max-width: 1200px) {
+    html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+    }
     html{
         font-size: 11px;
     }
