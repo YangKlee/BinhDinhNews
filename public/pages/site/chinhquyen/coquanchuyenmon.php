@@ -1,7 +1,7 @@
 <?php
 echo '<link rel="shortcut icon" href="../../../images/logo.webp" type="image/x-icon">';
 ?>
-<?php include($_SERVER['DOCUMENT_ROOT'].'/BinhDinhNews/app/views/partials/header.php'); ?>
+<?php include( __DIR__.'/../../../../app/views/partials/header.php'); ?>
 
 <?php
 $conn = new mysqli("localhost", "root", "", "BinhDinhNews");

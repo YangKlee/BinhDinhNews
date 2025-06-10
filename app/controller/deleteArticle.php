@@ -6,7 +6,7 @@
     // chỉ cho phép nhà báo vs admin xóa bài
     if($_SESSION['role'] < 1)
     {
-        header("Location: ".$_SERVER['DOCUMENT_ROOT']."/BinhDinhNews/public/admin/firewall.php");    
+        header(__DIR__."/../../public/admin/firewall.php");    
         exit;
     }
 ?>

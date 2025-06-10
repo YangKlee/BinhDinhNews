@@ -1,4 +1,4 @@
-<?php include($_SERVER['DOCUMENT_ROOT'].'/BinhDinhNews/app/views/partials/header.php'); ?>
+<?php include( __DIR__.'/../../../../app/views/partials/header.php'); ?>
 
 <?php 
 $mysqli = new mysqli("localhost", "root", "", "dulich");

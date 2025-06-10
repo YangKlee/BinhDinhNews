@@ -60,7 +60,7 @@
                 <?php
                 if(isset($_SESSION['UID']))
                 {
-                    require_once $_SERVER['DOCUMENT_ROOT'].'/BinhDinhNews/app/model/userDAO.php';
+                    require_once __DIR__.'/../../model/userDAO.php';
                     $userDAO = new UserDAO();
                     $result = $userDAO->getAuthorInfo($_SESSION['UID']);
                     

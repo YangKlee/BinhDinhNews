@@ -13,7 +13,7 @@
     <script src="https://kit.fontawesome.com/8f5e4d2946.js" crossorigin="anonymous"></script>
     <script src="./scripts/zoom-img.js"></script>
     <title><?php 
-        require_once('../app/model/ArticleDAO.php');
+        require_once(__DIR__ . '/../app/model/ArticleDAO.php');
         $artDAO = new articleDAO();
         $result = $artDAO->getArticle($_GET['id']);
         

@@ -1,6 +1,6 @@
 <?php 
-    require_once $_SERVER['DOCUMENT_ROOT']."/BinhDinhNews/app/controller/loadsession.php";
-     include($_SERVER['DOCUMENT_ROOT'] . '/BinhDinhNews/app/views/partials/loading.php');
+    require_once __DIR__."/../../controller/loadsession.php";
+    include(__DIR__ . '/loading.php');
 ?>    
     
     <header>
@@ -21,7 +21,7 @@
             <?php
                 if(isset($_SESSION['UID']))
                 {
-                    require_once $_SERVER['DOCUMENT_ROOT'].'/BinhDinhNews/app/model/userDAO.php';
+                    require_once __DIR__.'/../../model/userDAO.php';
                     $userDAO = new UserDAO();
                     $result = $userDAO->getAuthorInfo($_SESSION['UID']);
                     
@@ -102,7 +102,7 @@
                     <li id="f2" class="parent tin-tuc"><a  href="/BinhDinhNews/public/index.php"> <i class="fa-solid fa-newspaper"></i> Tin tức <i class="fa-solid fa-caret-down"></i></a> 
                         <ul class="subnav tin-tuc">
                             <?php
-                                require_once $_SERVER['DOCUMENT_ROOT']."/BinhDinhNews/app/model/CategoryDAO.php";
+                                require_once __DIR__."/../../model/CategoryDAO.php";
                                 $catDAO = new CategoryDAO();
                                 $result = $catDAO->getAllCategory();
                                 while($row = mysqli_fetch_array( $result, MYSQLI_ASSOC)){
@@ -141,7 +141,7 @@
                         <ul class="subnav du-lich">
                             <?php
                             
-                                require_once $_SERVER['DOCUMENT_ROOT']."/BinhDinhNews/app/model/dulichDAO.php";
+                                require_once __DIR__ . "/../../model/dulichDAO.php";
                                 $dlDAO = new dulichDAO();
                                 $result_tatca_loahihinh_dulich = $dlDAO->get_tatca_loaihinh();
                                 while($row = mysqli_fetch_array( $result_tatca_loahihinh_dulich, MYSQLI_ASSOC)){
@@ -194,7 +194,7 @@
                     <li id="f2" class="parent-mobile tin-tuc"><a  href=""> <i class="fa-solid fa-newspaper"></i> Tin tức <i class="fa-solid fa-caret-down"></i></a> 
                         <ul class="subnav-mobile tin-tuc">
                             <?php
-                                require_once $_SERVER['DOCUMENT_ROOT']."/BinhDinhNews/app/model/CategoryDAO.php";
+                                require_once __DIR__."/../../model/CategoryDAO.php";
                                 $catDAO = new CategoryDAO();
                                 $result = $catDAO->getAllCategory();
                                 while($row = mysqli_fetch_array( $result, MYSQLI_ASSOC)){
@@ -233,7 +233,7 @@
                         <ul class="subnav-mobile du-lich">
                             <?php
                             
-                                require_once $_SERVER['DOCUMENT_ROOT']."/BinhDinhNews/app/model/dulichDAO.php";
+                                require_once __DIR__."/../../model/dulichDAO.php";
                                 $dlDAO = new dulichDAO();
                                 $result_tatca_loahihinh_dulich = $dlDAO->get_tatca_loaihinh();
                                 while($row = mysqli_fetch_array( $result_tatca_loahihinh_dulich, MYSQLI_ASSOC)){

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <?php
-    include $_SERVER['DOCUMENT_ROOT']. "/BinhDinhNews/app/model/dulichDAO.php";
+    include __DIR__. "/../../../../app/model/dulichDAO.php";
     $dlDAO =  new dulichDAO();
     $idloaihinh = $_GET['idloaihinh'];
 
@@ -40,7 +40,7 @@
 
 
 <?php
-    include $_SERVER['DOCUMENT_ROOT']. "/BinhDinhNews/app/views/partials/header.php";
+    include  __DIR__. "/../../../../app/views/partials/header.php";
 ?>
 
 <body>
@@ -62,7 +62,7 @@
 				  
 				   <?php
 				   // hiện từng địa điểm
-                    include $_SERVER['DOCUMENT_ROOT']. "/BinhDinhNews/app/model/DiaDiemDLDAO.php";
+                    include __DIR__. "/../../../../app/model/DiaDiemDLDAO.php";
 					$ddDAO = new DiaDiemDAO();
 					
 			
@@ -187,13 +187,13 @@
 			
             <div class="container-right">
                   <?php
-                include $_SERVER['DOCUMENT_ROOT']. "/BinhDinhNews/app/views/right/homepage.php";
+                include __DIR__. "/../../../../app/views/right/homepage.php";
             ?>
             </div>
       </div>
 </body>
 <?php
-        include $_SERVER['DOCUMENT_ROOT']. "/BinhDinhNews/app/views/partials/footer.php";
+         include __DIR__. "/../../../../app/views/partials/footer.php";
     ?>
 
 </html>

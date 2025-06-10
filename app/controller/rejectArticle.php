@@ -5,7 +5,7 @@
 <?php
     if($_SESSION['role'] !=2)
     {
-        header("Location: ".$_SERVER['DOCUMENT_ROOT']."/BinhDinhNews/public/admin/firewall.php");    
+        header(__DIR__."/../../public/admin/firewall.php");      
         exit;
     }
 ?>

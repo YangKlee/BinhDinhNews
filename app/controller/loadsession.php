@@ -8,7 +8,7 @@
     if (session_status() === PHP_SESSION_NONE ) {
         session_start();
     }
-     require_once $_SERVER['DOCUMENT_ROOT']. "/BinhDinhNews/app/model/userDAO.php";
+     require_once __DIR__. "/../model/userDAO.php";
      $userDAO = new UserDAO();
     // nếu tồn tại session với tên UID, cái này dùng để lấy data từ csdl và load vào session khi có sự thay đổi về thông tin user trên database
     // các thông tin user sẽ thay đổi khi refest trang thay vì phải đăng xuất
