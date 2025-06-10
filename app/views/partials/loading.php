@@ -1,15 +1,16 @@
 <style>
 
-    .loading-container::before{
-        content: '';
+    .loading-container{
+
         position: fixed;
         top: 0;
         left: 0;
-        height: 100%;
-        width: 100%;
+        height: 100vh;
+        width: 100vw;
         background-color: rgba(255, 255, 255, 0.61);
         z-index: 101;
     }
+
     .loading-container label{
         font-size: 2rem;
         display: block;
