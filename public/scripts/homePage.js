@@ -1,6 +1,6 @@
-var timerHotNews = setInterval(() => {
-    loadArtNext(true)
-}, 10000);
+// var timerHotNews = setInterval(() => {
+//     loadArtNext(true)
+// }, 10000);
 var timerThoiSu =setInterval(() => {
     loadArtThoiSuNext(true)
 }, 3000);
@@ -8,47 +8,83 @@ function showArticle(idArt) {
     window.location.href = `./article.php?id=${idArt}`
 }
 var slideThoiSuCurr;
-function loadHotNews()
-{
-    let listArt =  document.getElementsByClassName("hot-article")
-    console.log(listArt);
-    for (let i = 1; i < listArt.length; i++)
-    {
-        listArt[i].style.display = "none";
-    }
-}
-let idx_curr_HotNews = 0;
+// function loadHotNews()
+// {
+//     let listArt =  document.getElementsByClassName("hot-article")
+//     console.log(listArt);
+//     for (let i = 1; i < listArt.length; i++)
+//     {
+//         listArt[i].style.display = "none";
+//     }
+// }
+let idx_curr_HotNews = 1;
+window.addEventListener("load", function () {
+    const ArtWidth = document.querySelector(".hot-article").offsetWidth;
+    const slideNews = document.querySelector(".hot-article-slide");
+    setTimeout(() => {
 
-let listHotArt = document.getElementsByClassName("hot-article");
+        slideNews.style.transition = "none";
+        slideNews.style.transform = `translateX(${-ArtWidth}px)`;
+        slideNews.offsetHeight;
+        slideNews.style.transition = "transform 0.3s ease";
+        console.log("Load success");
+    }, 10); 
+});
+
 function loadArtNext(isNext){
-
+    // chỉ lấy những phần tử không clone
+    const listHotArt = document.querySelectorAll(".hot-article:not(.clone)");
     const ArtWitdh = document.querySelector(".hot-article").offsetWidth;
     const slideNews = document.querySelector(".hot-article-slide");
     currHotNews = 0;
-    if(isNext)
-    {
-        
+    block_Transform= false;
+    if (isNext) {
         idx_curr_HotNews++;
-        currHotNews -= idx_curr_HotNews * ArtWitdh;
-        slideNews.style.transform = `translateX(${currHotNews}px)`;
-        if(idx_curr_HotNews >= listHotArt.length)
-        {
-            idx_curr_HotNews = 0;
-        }
+        if (idx_curr_HotNews > listHotArt.length -1) {
+            // Chạy đến phần clone
+            currHotNews = -idx_curr_HotNews * ArtWitdh;
+            slideNews.style.transition = "transform 0.3s ease";
+            slideNews.style.transform = `translateX(${currHotNews}px)`;
 
-
+            setTimeout(() => {
+                slideNews.style.transition = "none";
+                slideNews.style.transform = `translateX(0px)`;
+                slideNews.offsetHeight; // ép cập nhật DOM
+                block_Transform = true;
+                slideNews.style.transition = "transform 0.3s ease";
+                idx_curr_HotNews = 0;
+            }, 300);
+        } 
     }
     else
     {
         idx_curr_HotNews--;
-        currHotNews += idx_curr_HotNews * ArtWitdh;
-        slideNews.style.transform = `translateX(${currHotNews}px)`;
         if(idx_curr_HotNews <= 0)
         {
-                idx_curr_HotNews = listHotArt.length -1;
-        }
-        listHotArt[idx_curr_HotNews].classList.add('show');
+             // Chạy đến phần clone
+            currHotNews = -idx_curr_HotNews * ArtWitdh;
+            slideNews.style.transition = "transform 0.3s ease";
+            slideNews.style.transform = `translateX(${currHotNews}px)`;
+
+            setTimeout(() => {
+                slideNews.style.transition = "none";
+                slideNews.style.transform = `translateX(${-(ArtWitdh * (listHotArt.length)) }px)`;
+                slideNews.offsetHeight; // ép cập nhật DOM
+                 block_Transform = true;
+                slideNews.style.transition = "transform 0.3s ease";
+                idx_curr_HotNews = listHotArt.length    ;
+            }, 300);
+        }  
     }
+    if(!block_Transform)
+    {
+        currHotNews = -idx_curr_HotNews * ArtWitdh;
+        slideNews.style.transition = "transform 0.3s ease";
+        slideNews.style.transform = `translateX(${currHotNews}px)`;
+    }
+
+    
+    console.log(`hotnews-index= ${idx_curr_HotNews}` );
 }
 
 let indexThoiSu = 0;      

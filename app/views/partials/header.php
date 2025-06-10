@@ -1,5 +1,6 @@
 <?php 
-    require_once $_SERVER['DOCUMENT_ROOT']."/BinhDinhNews/app/controller/loadsession.php"
+    require_once $_SERVER['DOCUMENT_ROOT']."/BinhDinhNews/app/controller/loadsession.php";
+     include($_SERVER['DOCUMENT_ROOT'] . '/BinhDinhNews/app/views/partials/loading.php');
 ?>    
     
     <header>
@@ -7,6 +8,7 @@
         <script src="https://kit.fontawesome.com/8f5e4d2946.js" crossorigin="anonymous"></script>
     </header>
     <body>
+        
         <header class="header header-container">
             <div  class="header header-logo">
                 <img onclick="loadHomePage()" src="/BinhDinhNews/public/images/logo.webp" alt="">
