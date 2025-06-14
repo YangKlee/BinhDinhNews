@@ -46,41 +46,50 @@ function loadArtNext(isNext, isclick){
     currHotNews = 0;
     block_Transform= false;
     if (isNext) {
-        idx_curr_HotNews++;
-        if (idx_curr_HotNews > listHotArt.length -1) {
+        
+        if (idx_curr_HotNews >=  listHotArt.length ) {
             // Chạy đến phần clone
+            idx_curr_HotNews ++;
             currHotNews = -idx_curr_HotNews * ArtWitdh;
             slideNews.style.transition = "transform 0.3s ease";
             slideNews.style.transform = `translateX(${currHotNews}px)`;
-
+            block_Transform = true;
+            idx_curr_HotNews = 1;
             setTimeout(() => {
                 slideNews.style.transition = "none";
-                slideNews.style.transform = `translateX(0px)`;
+                slideNews.style.transform = `translateX(${-ArtWitdh}px)`;
                 slideNews.offsetHeight; // ép cập nhật DOM
-                block_Transform = true;
+                console.log("reset!!!");
                 slideNews.style.transition = "transform 0.3s ease";
-                idx_curr_HotNews = 0;
+                
             }, 300);
         } 
+        else{
+            idx_curr_HotNews++;
+        }
     }
     else
     {
-        idx_curr_HotNews--;
-        if(idx_curr_HotNews == 0)
+        
+        if(idx_curr_HotNews == 1)
         {
              // Chạy đến phần clone
-            currHotNews = -idx_curr_HotNews * ArtWitdh;
+            slideNews.style.transform = `translateX(0px)`;
             slideNews.style.transition = "transform 0.3s ease";
-            slideNews.style.transform = `translateX(${currHotNews}px)`;
-
+            block_Transform = true;
+            idx_curr_HotNews = listHotArt.length;
             setTimeout(() => {
+                currHotNews = -idx_curr_HotNews * ArtWitdh;
                 slideNews.style.transition = "none";
-                slideNews.style.transform = `translateX(${-(ArtWitdh * (listHotArt.length)) }px)`;
+                slideNews.style.transform = `translateX(${currHotNews}px)`;
                 slideNews.offsetHeight; // ép cập nhật DOM
-                 block_Transform = true;
                 slideNews.style.transition = "transform 0.3s ease";
-                idx_curr_HotNews = listHotArt.length    ;
+                console.log("reset!!!");
+
             }, 300);
+        }
+        else{
+            idx_curr_HotNews--;
         }  
     }
     if(!block_Transform)
@@ -92,6 +101,7 @@ function loadArtNext(isNext, isclick){
 
     
     console.log(`hotnews-index= ${idx_curr_HotNews}` );
+    console.log(`hotnews-items= ${listHotArt.length}`)
 }
 
 let indexThoiSu = 0;      
