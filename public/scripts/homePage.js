@@ -1,6 +1,6 @@
 var timerHotNews = setInterval(() => {
-    loadArtNext(true)
-}, 10000);
+    loadArtNext(true, false)
+}, 5000);
 var timerThoiSu =setInterval(() => {
     loadArtThoiSuNext(true)
 }, 3000);
@@ -31,7 +31,14 @@ window.addEventListener("load", function () {
     }, 10); 
 });
 
-function loadArtNext(isNext){
+function loadArtNext(isNext, isclick){
+    
+    if(!isclick){
+        clearInterval(timerHotNews);
+        timerHotNews = setInterval(() => {
+            loadArtNext(true, false)
+        }, 5000);
+    }
     // chỉ lấy những phần tử không clone
     const listHotArt = document.querySelectorAll(".hot-article:not(.clone)");
     const ArtWitdh = document.querySelector(".hot-article").offsetWidth;
@@ -59,7 +66,7 @@ function loadArtNext(isNext){
     else
     {
         idx_curr_HotNews--;
-        if(idx_curr_HotNews <= 0)
+        if(idx_curr_HotNews == 0)
         {
              // Chạy đến phần clone
             currHotNews = -idx_curr_HotNews * ArtWitdh;
@@ -89,7 +96,13 @@ function loadArtNext(isNext){
 
 let indexThoiSu = 0;      
                                                                   
-function loadArtThoiSuNext(isNext){
+function loadArtThoiSuNext(isNext, isclick){
+    if(!isclick){
+        clearInterval(timerThoiSu);
+        timerThoiSu = setInterval(() => {
+            loadArtNext(true, false)
+        }, 3000);
+    }
     const ThoiSuWrap = document.getElementById("thoisu-wrapper");     
     const listThoiSu = document.querySelectorAll(".thoisu-article:not(.clone)");
     let Witdth = document.querySelector(".thoisu-article").offsetWidth;
