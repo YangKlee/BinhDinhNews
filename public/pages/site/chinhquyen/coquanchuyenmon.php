@@ -67,9 +67,10 @@ if ($result_cap3->num_rows > 0) {
     <link rel="stylesheet" href="../../../../public/css/reset.css">
 	<link rel="stylesheet" href="../../../../public/css/footer-style.css">
 	<link rel="stylesheet" href="../../../../public/css/header-style.css">
-    <link rel="stylesheet" href="../../../../../BinhDinhNews/public/css/reponsitive/chinhquyen.css">
+
     <link rel="stylesheet" href="../../../../../BinhDinhNews/public/css/reponsitive/main.css">
     <link rel="stylesheet" href="../../../../../BinhDinhNews/public/css/reponsitive/header.css">
+        <link rel="stylesheet" href="../../../../../BinhDinhNews/public/css/reponsitive/chinhquyen.css">
     <link rel="stylesheet" href="../../../../../BinhDinhNews/public/css/rightmenu-style.css">
     
     <title>Cơ quan chuyên môn</title>

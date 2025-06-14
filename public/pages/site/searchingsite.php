@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="../../css/article-style.css">
     <link rel="stylesheet" href="../../css/rightmenu-style.css">
     <link rel="stylesheet" href="../../css/category-style.css">
+    <link rel="stylesheet" href="../../css/reponsitive/header.css">
+    <link rel="stylesheet" href="../../css/reponsitive/main.css">
+    <link rel="stylesheet" href="../../css/reponsitive/theloai.css">
     <script src="https://kit.fontawesome.com/8f5e4d2946.js" crossorigin="anonymous"></script>
     <link rel="icon" href="../../images/logo.webp" type="image/x-icon">
     <script src="./scripts/homePage.js"></script>

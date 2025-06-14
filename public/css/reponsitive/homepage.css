@@ -62,6 +62,13 @@
     .btn.slide-right {
         display: none;
     }
+    .btn.slide-left {
+    display: block;
+
+    }
+    .btn.slide-right {
+        display: block;
+    }
 }
 @media (width <= 700px) {
     .hot-article-container{

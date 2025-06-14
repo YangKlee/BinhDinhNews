@@ -24,7 +24,7 @@
         flex-direction: column  ;
         justify-content: center;
         align-items: center;
-        z-index: 102;
+        z-index: 150;
     }
     .loading-label-container img{
         width: 200px ;

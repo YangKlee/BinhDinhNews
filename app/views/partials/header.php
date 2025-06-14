@@ -178,7 +178,6 @@
                 </form>
             </nav>
             <nav class="nav-mobile">
-
                 <div class="nav-quickbar">
                     <button id="open-popup-nav"><i class="fa-solid fa-bars"></i></button>
                     <a href="\BinhDinhNews\public\pages\login-signin-pass\login.php"> <button type="button" id="btn-login"> Đăng nhập </button></a>
@@ -277,6 +276,7 @@
 
                     })
                     document.querySelector(".parent-mobile.chinh-quyen > a").addEventListener('click', function(e){
+                        e.preventDefault();
                         document.querySelector(".subnav-mobile.chinh-quyen").classList.toggle("subnav-show");
 
                     })

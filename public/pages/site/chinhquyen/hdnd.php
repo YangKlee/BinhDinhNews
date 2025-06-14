@@ -48,10 +48,14 @@ function hienThiCap($conn, $sunghiep) {
 <html>
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../../../public/css/reset.css">
 	<link rel="stylesheet" href="../../../../public/css/footer-style.css">
 	<link rel="stylesheet" href="../../../../public/css/header-style.css">
     <link rel="stylesheet" href="../../../../../BinhDinhNews/public/css/rightmenu-style.css">
+        <link rel="stylesheet" href="../../../../../BinhDinhNews/public/css/reponsitive/main.css">
+    <link rel="stylesheet" href="../../../../../BinhDinhNews/public/css/reponsitive/header.css">
+        <link rel="stylesheet" href="../../../../../BinhDinhNews/public/css/reponsitive/chinhquyen.css">
     
     <title>HĐND tỉnh</title>
     <style>

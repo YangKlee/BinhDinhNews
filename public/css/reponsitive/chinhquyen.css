@@ -14,6 +14,9 @@
 }
 
 @media (max-width: 1300px){
+    .pathway-category{
+        display: none;
+    }
     .container-right {
         display: none;
     }
