@@ -3,8 +3,19 @@
     <div class="footer-content">
       <div class="footer-logo">
         <img src="/BinhDinhNews/public/images/logo.webp" alt="Cổng thông tin Bình Định" />
+          <div class="footer-legal">
+            <p><strong>© CỔNG THÔNG TIN BÌNH ĐỊNH</strong></p>
+            <P>Địa chỉ: 123 Đường ABC, TP. Quy Nhơn, Bình Định</P>
+            <p>Giấy phép số 113 do Sở Thông tin và Truyền thông Bình Định cấp ngày 16/05/2025</p>
+            <p>Trưởng Ban biên tập: Ông Trần Thanh Cường - Chánh Văn phòng UBND tỉnh</p>
+            <p>Quản lý kỹ thuật: Trung tâm Phục vụ Hành chính công tỉnh Bình Định</p>
+            <p>Điện thoại: (0256).1234567 – 12345678 - Fax: (0256).1234567 - Email: banbientap@binhdinhnews.vn</p>
+            <p>Số điện thoại đường dây nóng: 0256 1234567</p>
+            <p>©Bản quyền thuộc Cổng Thông tin Bình Định. Khi trích dẫn thông tin từ nguồn này, ghi rõ "www.binhdinhnews.vn".</p>
+        </div>
       </div>
       <div class="footer-info">
+
         <div class="footer-nav">
           <a href="/BinhDinhNews/public/index.php">Trang chủ</a><span>|</span>
           <a href="https://binhdinh.gov.vn/tin-tuc">Tin tức</a><span>|</span>
@@ -14,16 +25,7 @@
           <a href="#">Tra cứu</a>
         </div>
 
-        <div class="footer-legal">
-          <p><strong>© CỔNG THÔNG TIN BÌNH ĐỊNH</strong></p>
-          <P>Địa chỉ: 123 Đường ABC, TP. Quy Nhơn, Bình Định</P>
-          <p>Giấy phép số 113 do Sở Thông tin và Truyền thông Bình Định cấp ngày 16/05/2025</p>
-          <p>Trưởng Ban biên tập: Ông Trần Thanh Cường - Chánh Văn phòng UBND tỉnh</p>
-          <p>Quản lý kỹ thuật: Trung tâm Phục vụ Hành chính công tỉnh Bình Định</p>
-          <p>Điện thoại: (0256).1234567 – 12345678 - Fax: (0256).1234567 - Email: banbientap@binhdinhnews.vn</p>
-          <p>Số điện thoại đường dây nóng: 0256 1234567</p>
-          <p>©Bản quyền thuộc Cổng Thông tin Bình Định. Khi trích dẫn thông tin từ nguồn này, ghi rõ "www.binhdinhnews.vn".</p>
-        </div>
+
       </div>
     </div>
   </div>
@@ -47,17 +49,21 @@
     display: flex; 
     align-items: flex-start;
     justify-content: space-between;
+
     gap: 30px;
   }
 
   .footer-logo {
-    flex-shrink: 0;
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px   ;
     padding-right: 20px;
   }
 
   .footer-logo img {
-    width: 250px;
+    width: 150px;
     height: auto;
+    object-fit: contain;
     display: block; 
   }
 
