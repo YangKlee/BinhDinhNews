@@ -4,8 +4,9 @@
       <a href="/BinhDinhNews/public/index.php">Trang chủ</a><span>|</span>
       <a href="https://binhdinh.gov.vn/tin-tuc">Tin tức</a><span>|</span>
       <a href="/BinhDinhNews/public/pages/site/chinhquyen/chinhquyenindex.php">Chính quyền</a><span>|</span>
-      <a href="/BinhDinhNews/public/pages/site/dulichc/dulich_home.php">Du lich</a><span>|</span>
-      <a href="https://binhdinh.gov.vn/van-ban-chi-dao-dieu-hanh">Công dân</a>
+      <a href="/BinhDinhNews/public/pages/site/dulichc/dulich_home.php">Du lịch</a><span>|</span>
+      <a href="https://binhdinh.gov.vn/van-ban-chi-dao-dieu-hanh">Công dân</a><span>|</span>
+      <a href="#">Tra cứu</a>
     </div>
 
     <div class="footer-legal">
@@ -69,8 +70,19 @@
       background-size: 100px;
     }
     .footer .footer-nav {
-      flex-direction: column;
-      align-items: flex-start;
-    }
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    font-size: 16px;
+  }
+
+  .footer .footer-nav a {
+    display: inline-block;
+    padding: 6px 0;
+  }
+
+  .footer .footer-nav span {
+    display: none;
+  }
   }
 </style>
