@@ -1,4 +1,5 @@
 @media (width <= 1600px) {
+    
     .main-container {
         display: grid;
         grid-template-columns: 75% 25%;

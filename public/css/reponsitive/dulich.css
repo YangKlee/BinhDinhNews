@@ -1,0 +1,50 @@
+@media (width <= 1600px) {
+    .container-ctDiaDiem{
+        display: grid;
+        grid-template-columns: 75% 25%;
+        grid-template-rows: 100%;
+    }
+    .container-loaihinh-dulich {
+        display: grid;
+        grid-template-columns: 75% 25%;
+        grid-template-rows: 100%;
+    }
+
+    .container-left {
+        display: none;
+    }
+    .container-right {
+        margin-right: 5px;
+    }
+
+    .container-left {
+        display: none;
+    }
+    .container-right {
+        margin-right: 5px;
+    }
+}
+@media (width <= 1300px) {
+    .container-mid{
+        display: block;
+
+    }
+    .container-ctDiaDiem{
+        display: block;
+    }
+    .container-loaihinh-dulich{
+        display: block;
+    }
+    .container_cacdiadiem_dulich{
+        display: flex;
+        flex-wrap: wrap;
+        flex-shrink: inherit;
+        gap: 0px;
+    }
+    .container-right {
+        display: none;
+    }
+    .main-container {
+        display: block;
+    }
+}

@@ -22,6 +22,9 @@
   <link rel="stylesheet" href="/BinhDinhNews/public/css/header-style.css">
   <link rel="stylesheet" href="/BinhDinhNews/public/css/DiaDiemDL.css">
   <link rel="stylesheet" href="/BinhDinhNews/public/css/rightmenu-style.css">
+          <link rel="stylesheet" href="../../../css/reponsitive/main.css">
+     <link rel="stylesheet" href="../../../css/reponsitive/header.css">
+     <link rel="stylesheet" href="../../../css/reponsitive/dulich.css">
   <script src="https://kit.fontawesome.com/8f5e4d2946.js" crossorigin="anonymous"></script>
   <link rel="shortcut icon" href="../../../images/logo.webp" type="image/x-icon">
   <title>

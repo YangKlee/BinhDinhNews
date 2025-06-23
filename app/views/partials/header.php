@@ -227,7 +227,7 @@
                    
 
                     <!--------------------------thanh điều hướng du lịch của c------------------------- -->
-                    <li class="parent-mobile du-lich"><a href="/BinhDinhNews/public/pages/site/dulichc/dulich_home.php"><i class="fa-solid fa-plane-departure"></i> Du lịch<i class="fa-solid fa-caret-down"></i></a>
+                    <li class="parent-mobile du-lich"><a href="#"><i class="fa-solid fa-plane-departure"></i> Du lịch<i class="fa-solid fa-caret-down"></i></a>
                      
                         <ul class="subnav-mobile du-lich">
                             <?php
@@ -281,6 +281,7 @@
 
                     })
                     document.querySelector(".parent-mobile.du-lich > a").addEventListener('click', function(e){
+                        e.preventDefault();
                         document.querySelector(".subnav-mobile.du-lich").classList.toggle("subnav-show");
 
                     })

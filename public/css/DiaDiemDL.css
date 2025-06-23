@@ -19,11 +19,13 @@ body{
 	text-align: center; /* căn giữa*/
 }
 .main-container img{
+     display: block;
 	width: 80%;
-	height: 80%;
-	max-height: 500px;
+    height: auto;
+	max-height: 800px;
+    object-fit: contain;
     margin: 10px auto; /* Căn giữa theo chiều ngang căn trên dưới 10px tự động căn theo chiều ngang*/
-    display: block;
+   
 }
 
 .main-container p{
