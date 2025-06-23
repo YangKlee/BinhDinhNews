@@ -1,124 +1,76 @@
-<body>
-    <footer class="footer">
-        <div class="footer-menu">
-            <div class=" footer-left">
-                <div class="footer-head">
-                    <div><img onclick="loadHomePage()" style="cursor: pointer;" src="/BinhDinhNews/public/images/logo.webp" alt="Logo" class="footer-logo"></div>
-                    <div>
-                        <h2>
-                            © CỔNG THÔNG TIN BÌNH ĐỊNH
-                        </h2>
-                        <p>
-                            Tổng giám ngục: Trần Thanh Cường
-                        </p>
-                    </div>
-                </div>
+<footer class="footer">
+  <div class="container">
+    <div class="footer-nav">
+      <a href="/BinhDinhNews/public/index.php">Trang chủ</a><span>|</span>
+      <a href="https://binhdinh.gov.vn/tin-tuc">Tin tức</a><span>|</span>
+      <a href="/BinhDinhNews/public/pages/site/chinhquyen/chinhquyenindex.php">Chính quyền</a><span>|</span>
+      <a href="/BinhDinhNews/public/pages/site/dulichc/dulich_home.php">Du lich</a><span>|</span>
+      <a href="https://binhdinh.gov.vn/van-ban-chi-dao-dieu-hanh">Công dân</a>
+    </div>
 
-                <div class="footer-content">
-                    <p>Website: www.binhdinhnews.vn</p>
-                    <p>Email: binhdinhnews@binhdinh.vn</p>
-                    <p>Số điện thoại: 0123-456-789</p>
-                    <p>Địa chỉ: 123 Đường ABC, Thành phố Quy Nhơn, Tỉnh Bình Định</p>
-                </div>
-            </div>
+    <div class="footer-legal">
+     <p><strong>© CỔNG THÔNG TIN BÌNH ĐỊNH</strong></p>
+      <P>Địa chỉ: 123 Đường ABC, TP. Quy Nhơn, Bình Định</P>
+      <p>Giấy phép số 113 do Sở Thông tin và Truyền thông Bình Định cấp ngày 16/05/2025</p>
+      <p>Trưởng Ban biên tập: Ông Trần Thanh Cường - Chánh Văn phòng UBND tỉnh</p>
+      <p>Quản lý kỹ thuật: Trung tâm Phục vụ Hành chính công tỉnh Bình Định</p>
+      <p>Điện thoại: (0256).1234567 – 12345678 - Fax: (0256).1234567 - Email: banbientap@binhdinhnews.vn</p>
+      <p>Số điện thoại đường dây nóng: 0256 1234567</p>
+      <p>©Bản quyền thuộc Cổng Thông tin Bình Định. Khi trích dẫn thông tin từ nguồn này, ghi rõ "www.binhdinhnews.vn".</p>
+    </div>
+  </div>
+</footer>
 
-            <div class=" footer-right">
-                <div class="top-menu">
-                    <div class="footer-item">
-                        <i onclick="loadHomePage()" class = "fas fa-home" id="icon" ></i>
-                        <p>Trang chủ</p>
-                    </div>
-
-                    <div class="footer-item">
-                        <i onclick="document.getElementById('search').focus();" class="fas fa-search" id="icon" ></i>
-                        <p>Tra cứu</p>
-                    </div>
-
-                    <div class="footer-item">
-                        <i class="fas fa-info-circle"></i>
-                        <p>Thông tin</p>
-                    </div>
-
-                    <div class="footer-item">
-                        <i onclick="window.location.href = 'mailto:cutechatchoinguoidoi@gmail.com'" class="fas fa-envelope"></i>
-                        <p>Liên hệ</p>
-                    </div>
-                </div>
-
-                <hr class="footer-divider">
-
-                <div class="bottom-menu">
-                    <a href="#">Chính sách</a>
-                    <a href="#">Trợ giúp</a>
-                    <a href="#">Điều khoản sử dụng</a>
-                    <a href="#">Quy định</a>
-                </div>
-            </div>
-            <div class="footer-user">
-
-                <div class="auth-menu">
-                <?php
-                if(isset($_SESSION['UID']))
-                {
-                    require_once $_SERVER['DOCUMENT_ROOT'].'/BinhDinhNews/app/model/userDAO.php';
-                    $userDAO = new UserDAO();
-                    $result = $userDAO->getAuthorInfo($_SESSION['UID']);
-                    
-                } 
-
-                    if(isset($_SESSION["role"]) && $_SESSION['role'] != -1)
-                {
-                    if($_SESSION['role'] == 0)
-                    {
-                        $role = "Đọc giả";
-                    }
-                    else if($_SESSION['role'] == 1)
-                    {
-                        $role = "Nhà báo";
-                    }
-                    else if($_SESSION['role'] == 2)
-                    {
-                        $role = "Admin";
-                    }
-                    else{
-                        $role = "Không xác định";
-                    }
-                    echo '
-                    <div class="footer-Logined-Info">
-                        <div class="footer-user-label">
-                            <b id="user-label-name">' . $_SESSION['username'] . '</b>
-                            <i id="user-label-role">' . $role . '</i>  
-                            <img id="user-profile-img" src="' . (isset($result['user_img']) && !empty($result['user_img']) ? '/BinhDinhNews/public/images/userAvatar/' . $result['user_img'] : '/BinhDinhNews/public/images/user.png') . '" alt="">
-                            
-                        </div>';
-                        
-                        if($_SESSION['role'] != 0) {
-                            echo '
-                            <div class="footer-profile">
-                                <a href="/BinhDinhNews/public/admin/index.php">Trung tâm tài khoản</a>
-                            </div>';
-                        }
-                        
-                    echo '
-                        <div class="footer-logout">
-                            <a href="/BinhDinhNews/app/controller/dangxuat.php">Đăng xuất</a>
-                        </div>
-                    </div>';
-
-                }
-                else
-                {
-                    echo 
-                    '<div class="footer-login-signin">
-                    <a href="\BinhDinhNews\public\pages\login-signin-pass\login.php"> Đăng nhập </a>
-                    <a href="/BinhDinhNews/public/pages/login-signin-pass/signin.php"> Đăng ký </a>
-                    </div>';
-                }
-                ?>
-                </div>
-            
-                    
-            </div>
-        </div>
-    </footer>
-</body>
+<style>
+      .footer {
+    background: #007bff url('/BinhDinhNews/public/images/logo.webp') no-repeat center left 120px;
+    background-size: 320px;
+    color: #fff;
+    font-family: "Segoe UI", sans-serif;
+    padding: 40px 20px 40px 600px;
+    font-size: 20px;
+    position: relative;
+  }
+  .footer .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .footer .footer-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 20px;
+    font-weight: 500;
+  }
+  .footer .footer-nav a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .footer .footer-nav a:hover {
+    color:rgb(26, 75, 235);
+    text-decoration: underline;
+  }
+  .footer .footer-nav span {
+    color: rgba(255, 255, 255, 0.5);
+  }
+  .footer .footer-legal {
+    font-size: 13px;
+    line-height: 1.6;
+  }
+  .footer .footer-legal p {
+    margin: 0 0 5px;
+  }
+  @media (max-width: 768px) {
+    .footer {
+      background-position: top center;
+      padding-left: 20px;
+      padding-top: 160px;
+      background-size: 100px;
+    }
+    .footer .footer-nav {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+</style>

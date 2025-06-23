@@ -1,182 +1,56 @@
-/* Footer Layout */
-.footer {
-    border-radius: 10px 10px 0 0;
-    display: flex;
-    flex-direction: column;
-    background-color: rgb(0, 132, 255);
-    color: white;
-    padding: 10px 0;
-    font-family: Arial, sans-serif;
-}
-
-.footer-menu {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    width: 100%;
-    padding: 0 40px;
-    box-sizing: border-box;
-}
-
-/* Footer Left */
-.footer-left {
-    min-width: 320px;
-    margin-right: 40px;
-}
-
-.footer-head {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.footer-logo {
-    width: 100px;
-    height: auto;
-    margin-bottom: 10px;
-}
-
-.footer-content {
-    margin-top: 10px;
+  /* .footer {
+    background: #007bff url('/BinhDinhNews/public/images/logo.webp') no-repeat center left 20px;
+    background-size: 120px;
+    color: #fff;
+    font-family: "Segoe UI", sans-serif;
+    padding: 40px 20px 30px 160px;
     font-size: 14px;
-}
-.footer-content p {
-    line-height: 1.5;
-    font-size: 14px;
-    color: white;
-}
-
-/* Footer Right */
-.footer-right {
+    position: relative;
+  }
+  .footer .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .footer .footer-nav {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    flex: 1;
-    min-width: 400px;
-    padding-top: 30px;
-}
-
-/* Top Menu */
-.top-menu {
-    display: flex;
-    gap: 30px;
-}
-
-.footer-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: white;
-    font-size: 14px;
-}
-.footer-item > i {
-    cursor: pointer;
-    font-size: 20px;
-    margin-bottom: 5px;
-}
-
-.footer-divider {
-    width: 100%;
-    max-width: 400px;
-    margin: 20px 0 10px 0;
-    border: 0.5px solid rgba(255, 255, 255, 0.3);
-}
-
-/* Bottom Menu */
-.bottom-menu {
-    display: flex;
-    gap: 30px;
-    margin-top: 10px;
-}
-.bottom-menu a {
-    color: white;
-    text-decoration: none;
-    font-size: 15px;
-    transition: text-decoration 0.2s;
-}
-.bottom-menu a:hover {
-    text-decoration: underline;
-}
-
-/*  Auth Menu */
-.auth-menu {
-    margin-top: 10px;
-}
-.auth-menu a:hover {
-    text-decoration: underline;
-}
-
-/*  User Info */
-.footer-Logined-Info {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    color: white;
-    gap: 2px;
-}
-.footer-user-label {
-    display: flex;
+    flex-wrap: wrap;
     gap: 8px;
-    align-items: center;
-    font-size: 25px;
-}
-.footer-user-label b {
-    font-weight: bold;
+    margin-bottom: 20px;
+    font-weight: 500;
+  }
+  .footer .footer-nav a {
     color: #fff;
-}
-.footer-user-label i {
-    font-style: italic;
-    color: #e0e0e0;
-}
-.footer-profile {
-    display: flex;
-    align-items: center;
-    color: #fff;
-    margin-top: 10px;
-    font-size: 16px;
-}
-.footer-profile a {
-    color: #fff;
-}
-
-/* Login/Signin */
-.footer-login-signin {
-    display: flex;
-    gap: 16px;
-    align-items: center;
-    color: #fff;
-    font-size: 20px;
-    margin: 50px 50px;
-}
-.footer-login-signin a {
-    color: #fff;
-    padding: 2px 8px;
-}
-.footer-login-signin a:hover {
-    text-decoration: underline;
-}
-
-/* Logout */
-.footer-logout {
-    margin-top: 10px;
-}
-.footer-logout a {
-    color: #fff;
-    font-size: 15px;
     text-decoration: none;
-    transition: text-decoration 0.2s;
-}
-.footer-logout a:hover {
+    transition: color 0.2s;
+  }
+  .footer .footer-nav a:hover {
+    color: #ffc107;
     text-decoration: underline;
-}
-
-/* User Profile Image */
-#user-profile-img {
-    width: 102px;
-    height: 102px;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 2px solid #fff;
-    margin-left: 8px;
-    background: #eee;
-}
+  }
+  .footer .footer-nav span {
+    color: rgba(255, 255, 255, 0.5);
+  }
+  .footer ul {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 16px;
+  }
+  .footer ul li {
+    margin-bottom: 4px;
+  }
+  .footer .footer-legal {
+    font-size: 13px;
+    line-height: 1.6;
+  }
+  @media (max-width: 768px) {
+    .footer {
+      background-position: top center;
+      padding-left: 20px;
+      padding-top: 160px;
+      background-size: 100px;
+    }
+    .footer .footer-nav {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  } */
