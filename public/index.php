@@ -292,7 +292,7 @@
                                 </div>
                         </div>
                     </div>
-                    <div class="homepage-row-4">
+                    <div style="display: none;" class="homepage-row-4">
                         <div class="homepage-content du-lich">
                             <i class="fa-solid fa-plane"></i>
                             <h2 class="type-title">Du lịch</h2>

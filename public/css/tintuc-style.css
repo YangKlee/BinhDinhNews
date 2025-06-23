@@ -1,0 +1,6 @@
+.container-tintuc {
+    display: grid;
+    grid-template-columns: 5% 65% 30%;
+    grid-template-rows: 100%;
+
+}

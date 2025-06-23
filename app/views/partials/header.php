@@ -62,7 +62,7 @@
                     echo 
                     '<div class="header header-userinfo">
                     <a href="\BinhDinhNews\public\pages\login-signin-pass\login.php"> <button type="button" id="btn-login"> Đăng nhập </button></a>
-                    <a href="/BinhDinhNews/public/pages/login-signin-pass/signin.php"> <button type="button" id="btn-res"> Đăng ký </button></a>
+                    <a style="display:none" href="/BinhDinhNews/public/pages/login-signin-pass/signin.php"> <button type="button" id="btn-res"> Đăng ký </button></a>
                     </div>';
                 }
                 
@@ -99,7 +99,7 @@
             <ul class="main">
                     <li id="f1"><a  href="/BinhDinhNews/public/index.php"> <i class="fa-solid fa-house"></i> Homepage</a></li>
 
-                    <li id="f2" class="parent tin-tuc"><a  href="/BinhDinhNews/public/index.php"> <i class="fa-solid fa-newspaper"></i> Tin tức <i class="fa-solid fa-caret-down"></i></a> 
+                    <li id="f2" class="parent tin-tuc"><a  href="/BinhDinhNews/public/tintuc.php"> <i class="fa-solid fa-newspaper"></i> Tin tức <i class="fa-solid fa-caret-down"></i></a> 
                         <ul class="subnav tin-tuc">
                             <?php
                                 require_once $_SERVER['DOCUMENT_ROOT']."/BinhDinhNews/app/model/CategoryDAO.php";
