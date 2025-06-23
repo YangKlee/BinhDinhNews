@@ -173,7 +173,7 @@
                 
                 </ul>
                 <form action="/BinhDinhNews/public/pages/site/searchingsite.php" class="search-bar" method="GET">
-                    <input type="search" placeholder="Tìm kiếm..." name="search" id="search">
+                    <input required type="search" placeholder="Tìm kiếm..." name="search" id="search">
                     <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
                 </form>
             </nav>
@@ -184,7 +184,7 @@
                 </div>
                 <div class="nav-popup">
                 <form action="/BinhDinhNews/public/pages/site/searchingsite.php" class="search-bar" method="GET">
-                    <input type="search" placeholder="Tìm kiếm..." name="search" id="search">
+                    <input required type="search" placeholder="Tìm kiếm..." name="search" id="search">
                     <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
                 </form>
                 <ul class="main-mobile">
