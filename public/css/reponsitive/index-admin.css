@@ -1,0 +1,11 @@
+/* Nhóm định dạng responsive cho các kích thước màn hình */
+
+@media (max-width: 1000px) {
+    .time-warpper{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 15px   ;
+    }
+}

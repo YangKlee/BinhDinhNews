@@ -1,0 +1,72 @@
+/* Nhóm định dạng responsive cho các kích thước màn hình */
+
+@media (max-width: 1610px) {
+    .nav-pc{
+        padding: 0;
+    }
+    
+}
+@media (max-width: 1500px) {
+    html{
+        font-size: 15px;
+    }
+    
+}
+@media (max-width: 1400px) {
+    html{
+        font-size: 13px;
+    }
+    
+}
+@media (width <= 1340px) {
+
+}
+@media (width <=  1300px) {
+    html{
+        font-size: 12px;
+    }
+
+
+}
+@media (max-width: 1200px) {
+    html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+    }
+    html{
+        font-size: 11px;
+    }
+    
+}
+@media (max-width: 1000px)
+{
+    .nav-quickbar{
+        display: flex;
+    }
+    .main-container
+    {
+        display: block;
+    }
+    .right-container{
+        overflow-x: scroll;
+    }
+    .menu-container{
+        display:none;
+        position: fixed;
+        top: 0px;
+        width: 60%;
+        max-width: 250px;
+        height: 100vh;
+        z-index: 100;
+    }
+
+    .right-container{
+        display: block;
+    }
+}
+.hide{
+    display: none;
+}
+.show{
+    display: block;
+}

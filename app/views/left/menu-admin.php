@@ -13,6 +13,7 @@
 
         <script src="https://kit.fontawesome.com/8f5e4d2946.js" crossorigin="anonymous"></script>
     </header>
+<div class="overlay-menu"></div>
 <div class="menu-container">
     <div class="user-info-container">
                 <img  src="<?php echo !empty($result['user_img']) ? "/BinhDinhNews/public/images/userAvatar/". $result['user_img'] : "/BinhDinhNews/public/images/user.png"?>"  alt="">
@@ -20,7 +21,18 @@
                 </h3>
 
     </div>
-            
+                <script>
+                    let leftmenu = document.querySelector(".menu-container");
+                    let overlay = document.querySelector(".overlay-menu");
+                    document.querySelector("#open-popup-nav").addEventListener('click', function (){
+                        leftmenu.classList.toggle("show");
+                        overlay.classList.toggle("show");
+                    })
+                    overlay.addEventListener('click', function (){
+                        leftmenu.classList.remove("show");
+                        overlay.classList.remove("show");
+                    })
+                </script>
     <ul class="function-list-container">
                 <li id="func1">
                     <a href="./index.php"><i class="fa-solid fa-toolbox"></i> TRANG CHỦ QUẢN LÝ</a>

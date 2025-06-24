@@ -184,8 +184,8 @@
                         if($_SESSION['role'] > 0):
                     ?>
                     <div class="user-logined-info-phone">
-                    <label for=""><?php echo $_SESSION['username'] ?></label>
-                    <a href="\BinhDinhNews\public\pages\login-signin-pass\login.php"> <button type="button" id="btn-login"> Đăng xuất </button></a>
+                        <label id="username-label" for=""><?php echo $_SESSION['username'] ?></label>
+                        <a href="\BinhDinhNews\app\controller\dangxuat.php"> <button type="button" id="btn-login"> Đăng xuất </button></a>
 
                     </div>
                     <?php

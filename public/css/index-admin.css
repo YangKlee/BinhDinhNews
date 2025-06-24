@@ -75,11 +75,12 @@ body{
     margin: 0px 5px;
 }
 .thong-ke-container{
-    margin: 20px 5%;
-        padding: 30px;
+    margin: 20px 10px;
+    padding: 30px;
     background-color: white ;
 }
 .table-thongke-article{
+
     width: 400px;
 }
 .table-thongke-article, td, tr{
