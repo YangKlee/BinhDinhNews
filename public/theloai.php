@@ -50,7 +50,7 @@
                     $sql = "SELECT * FROM `article` WHERE CategoryID = ".$_GET['idcat']." AND ArticleStatus = 1 ORDER BY Time_modify DESC
                             LIMIT ".$artilces_per_page." OFFSET ".($current_page - 1) * $artilces_per_page."";
                     $result = $artDAO->getListArticleQuery($sql);
-                    $total_articles = mysqli_num_rows(mysqli_query($artDAO->getConnection(), "SELECT * FROM `article` WHERE CategoryID = ".$_GET['idcat'].""));
+                    $total_articles = mysqli_num_rows(mysqli_query($artDAO->getConnection(), "SELECT * FROM `article` WHERE CategoryID = ".$_GET['idcat']." AND ArticleStatus = 1"));
                     $total_pages = ceil($total_articles / $artilces_per_page);
 
                     while($row = mysqli_fetch_array($result, MYSQLI_ASSOC))

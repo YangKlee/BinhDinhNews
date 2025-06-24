@@ -189,7 +189,7 @@
 
 
                                         $sql = 'SELECT * FROM article INNER JOIN category ON article.CategoryID = category.CategoryID
-                                                        WHERE category.CategoryName = "Chính trị"
+                                                        WHERE category.CategoryName = "Chính trị and ArticleStatus = 1"
                                                         LIMIT 5';
                                         $result = $DAOArticle->getListArticleQuery($sql);     
                                         while($row = mysqli_fetch_array($result, MYSQLI_ASSOC))
