@@ -18,7 +18,7 @@
 
         <div class="footer-nav">
           <a href="/BinhDinhNews/public/index.php">Trang chủ</a><span>|</span>
-          <a href="https://binhdinh.gov.vn/tin-tuc">Tin tức</a><span>|</span>
+          <a href="/BinhDinhNews/public/tintuc.php">Tin tức</a><span>|</span>
           <a href="/BinhDinhNews/public/pages/site/chinhquyen/chinhquyenindex.php">Chính quyền</a><span>|</span>
           <a href="/BinhDinhNews/public/pages/site/dulichc/dulich_home.php">Du lịch</a><span>|</span>
           <a href="https://binhdinh.gov.vn/van-ban-chi-dao-dieu-hanh">Công dân</a><span>|</span>

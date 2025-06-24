@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="./css/HomePage-style.css">
     <link rel="stylesheet" href="./css/rightmenu-style.css">
     <link rel="stylesheet" href="./css/reset.css">
-	<link rel="stylesheet" href="./css/footer-style.css">
+	<!-- <link rel="stylesheet" href="./css/footer-style.css"> -->
 	<link rel="stylesheet" href="./css/header-style.css">
     <link rel="stylesheet" href="./css/reponsitive/header.css">
     <link rel="stylesheet" href="./css/reponsitive/main.css">

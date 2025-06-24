@@ -2,5 +2,71 @@
     display: grid;
     grid-template-columns: 5% 65% 30%;
     grid-template-rows: 100%;
-
+}
+.tintuc-main {
+    margin: 40px auto;
+    padding: 0 16px;
+}
+.tintuc-title {
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 32px;
+    color: #0d47a1;
+}
+.tintuc-section {
+    margin-bottom: 40px;
+}
+.tintuc-cat-title {
+    font-size: 1.5rem;
+    color: #1976d2;
+    border-left: 5px solid #1976d2;
+    padding-left: 12px;
+    margin-bottom: 18px;
+    font-weight: bold;
+}
+.tintuc-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+}
+.tintuc-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    background: #f5f7fa;
+    border-radius: 8px;
+    padding: 10px 14px;
+    color: #222;
+    width: 49%;
+}
+.tintuc-item:hover {
+    background: #e3f2fd;
+}
+.tintuc-item img {
+    width: 90px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 6px;
+    flex-shrink: 0;
+}
+.tintuc-item h3 {
+    font-size: 1.1rem;
+    margin: 0 0 6px 0;
+    font-weight: 500;
+}
+.tintuc-time {
+    font-size: 0.95rem;
+    color: #888;
+}
+@media (max-width: 700px) {
+    .tintuc-list {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .tintuc-item {
+        width: 100%;
+    }
+    .tintuc-main {
+        padding: 0 4px;
+    }
 }
