@@ -33,7 +33,7 @@
 </style>
 <div class="loading-container">
     <div class="loading-label-container">
-        <img src="https://media.tenor.com/7lHdnabfyTQAAAAj/herta-kurukuru.gif" alt="">
+        <img src="https://cdn.pixabay.com/animation/2023/10/08/03/19/03-19-26-213_512.gif" alt="">
         <label for="">Đang tải, đợi xíu đi</label>
     </div>
 </div>
