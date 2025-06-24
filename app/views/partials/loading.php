@@ -34,11 +34,11 @@
 <div class="loading-container">
     <div class="loading-label-container">
         <img src="https://cdn.pixabay.com/animation/2023/10/08/03/19/03-19-26-213_512.gif" alt="">
-        <label for="">Đang tải, đợi xíu đi</label>
+        <label for="">Đang tải</label>
     </div>
 </div>
 <script>
-    window.addEventListener('load', function(e) {
+    window.addEventListener('load', function() {
         document.querySelector(".loading-container").style.display = 'none';
     })
 </script>

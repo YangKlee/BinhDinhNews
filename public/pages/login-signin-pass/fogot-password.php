@@ -102,7 +102,7 @@ if (isset($_POST['reset-btn'])) {
             <label for="email">Nhập email</label>
             <input type="email" placeholder="Nhập email để nhận mã OTP" id="email" name="email" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" title="Chưa đúng định dạng" required>
             <input type="submit" value="Gửi" id="confirm-btn" name="email-btn">
-            <a href="signin.php">Chưa có tài khoản?</a>
+            <!-- <a href="signin.php">Chưa có tài khoản?</a> -->
             <a href="login.php">Quay lại trang đăng nhập</a>
         </form>
     <?php elseif (!isset($_SESSION['reset_password']) && isset($_SESSION['otp_sent'])): ?>

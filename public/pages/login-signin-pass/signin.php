@@ -25,6 +25,8 @@
             $sttm = mysqli_prepare($conn,$query);
             mysqli_stmt_bind_param($sttm, "sss", $username, $hashedPassword, $email );
             if(mysqli_stmt_execute($sttm)){
+                require_once '../../../app/controller/mail-sender.php';
+                sendEmail($email, "Chào mừng bạn đến với BinhDinhNews", "Tài khoản của bạn đã được đăng ký thành công với tên đăng nhập: $username. Hãy đăng nhập để trải nghiệm dịch vụ của chúng tôi.");
                 echo '<script>alert("Đăng ký thành công"); window.location.href="login.php";</script>';
                 exit();
             } else {

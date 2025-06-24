@@ -111,7 +111,7 @@
         <div class="submit-wrapper">
             <input type="submit" value="Đăng nhập" id="login-btn" name="loginbtn">
         </div>
-        <a href="signin.php">Chưa có tài khoản ?</a>
+        <!-- <a href="signin.php">Chưa có tài khoản ?</a> -->
         <a href="fogot-password.php">Quên mật khẩu ?</a>
     </form>
 
