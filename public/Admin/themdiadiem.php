@@ -56,9 +56,13 @@
     <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href="../css/menu-admin.css">
     <link rel="stylesheet" href="../css/themdiadiem.css">
+        <link rel="stylesheet" href="../css/reponsitive/main-admin.css">
 
 </head>
 <body>
+        <?php
+        include "../../app/views/partials/phone-header-admin.php";
+    ?>
 <div class="main-container">
     <div class="left-container">
         <?php include "../../app/views/left/menu-admin.php"; ?>

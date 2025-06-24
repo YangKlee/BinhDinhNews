@@ -31,8 +31,12 @@
     <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href="../css/menu-admin.css">
     <link rel="stylesheet" href="../css/dsdiadiem.css">
+	<link rel="stylesheet" href="../css/reponsitive/main-admin.css">
   
 </head>
+    <?php
+        include "../../app/views/partials/phone-header-admin.php";
+    ?>
 <body>
 <div class="main-container">
     <!-- phần thanh menu bên trái nè -->

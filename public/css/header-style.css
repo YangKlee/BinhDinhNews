@@ -355,3 +355,9 @@ ul{
 .subnav-show{
     display: block;
 }
+.user-logined-info-phone label{
+    color: white;
+    font-size: 1.3rem;
+    font-weight: bold;
+    padding-right: 10px;
+}

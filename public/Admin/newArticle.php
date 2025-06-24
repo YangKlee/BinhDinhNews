@@ -17,12 +17,16 @@
     <link rel="stylesheet" href="../css/menu-admin.css">
     <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href="../css/add-article-style.css">
+        <link rel="stylesheet" href="../css/reponsitive/main-admin.css">
     <link rel="shortcut icon" href="../../../../../BinhDinhNews/public/images/logo.webp" type="image/x-icon">
     <script>
         var indexUploadImages = 1;
     </script>
 </head>
 <body>
+        <?php
+        include "../../app/views/partials/phone-header-admin.php";
+    ?>
     <div class="main-container">
         <div class="left-container">
             <?php
