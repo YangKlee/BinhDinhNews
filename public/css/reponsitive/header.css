@@ -5,8 +5,12 @@
     .search-bar{
         width: 200px;
     }
+
 }
 @media (width <= 500px){
+        #header-logined-pc{
+        display: none;
+    }
     .header-Logined-Info{
         display: none;
     }

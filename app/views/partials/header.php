@@ -45,7 +45,7 @@
                         $role = "Đéo biết";
                     }
                     echo '
-                    <div class="header header-Logined-Info">
+                    <div class="header header-Logined-Info" id="header-logined-pc">
                         <div class="user-label">
                             <b id="user-label-name">' . $_SESSION['username'] . '</b>
                             <i id="user-label-role">' . $role . '</i>  
@@ -180,9 +180,21 @@
             <nav class="nav-mobile">
                 <div class="nav-quickbar">
                     <button id="open-popup-nav"><i class="fa-solid fa-bars"></i></button>
+                    <?php 
+                        if($_SESSION['role'] > 0):
+                    ?>
+                    <div class="user-logined-info-phone">
+                    <label for=""><?php echo $_SESSION['username'] ?></label>
+                    <a href="\BinhDinhNews\public\pages\login-signin-pass\login.php"> <button type="button" id="btn-login"> Đăng xuất </button></a>
+
+                    </div>
+                    <?php
+                        else:
+                    ?>
                     <a href="\BinhDinhNews\public\pages\login-signin-pass\login.php"> <button type="button" id="btn-login"> Đăng nhập </button></a>
+                    <?php endif; ?>
                 </div>
-                <div class="nav-popup">
+                <div class="nav-popup"> 
                 <form action="/BinhDinhNews/public/pages/site/searchingsite.php" class="search-bar" method="GET">
                     <input required type="search" placeholder="Tìm kiếm..." name="search" id="search">
                     <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
