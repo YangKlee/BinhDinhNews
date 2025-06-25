@@ -49,6 +49,10 @@
 
                         echo '<div class="tintuc-list">';
                         while($row = mysqli_fetch_assoc($result)) {
+                            if (!$row['mainimage']) {
+                                $row['mainimage'] = 'default.png';
+                                $row['ArticleID'] = 'default'; // Thay đổi tên file nếu cần
+                            }
                             echo '<a class="tintuc-item" href="./article.php?id='.$row['ArticleID'].'">
                                     <img src="./images/upload/'.$row['ArticleID'].'/'.$row['mainimage'].'" alt="">
                                     <div>

@@ -235,12 +235,16 @@
                                     <div class="module-1 list-news">
                                         <?php
                                         while($row = mysqli_fetch_assoc($result))
-                                        {
-                                                echo '<a href="./article.php?id='.$row['ArticleID'].'" class="list-news container">
-                                               <img src="./images/upload/'.$row['ArticleID'].'/'.$row['MainImage'].'" alt="">
-                                                <div class="news-title">
-                                                <p>'.$row['Title'].'</p>
-                                                <i class="time-label" >'.$row['Time_modify'].'</i> </div> </a>';
+                                        {   
+                                            if(!$row['MainImage']) {
+                                                $row['MainImage'] = 'default.png';
+                                                $row['ArticleID'] = 'default';
+                                            }
+                                            echo '<a href="./article.php?id='.$row['ArticleID'].'" class="list-news container">
+                                            <img src="./images/upload/'.$row['ArticleID'].'/'.$row['MainImage'].'" alt="">
+                                            <div class="news-title">
+                                            <p>'.$row['Title'].'</p>
+                                            <i class="time-label" >'.$row['Time_modify'].'</i> </div> </a>';
                                         }
                                         mysqli_free_result($result);
                                         ?>
