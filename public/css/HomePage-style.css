@@ -27,7 +27,7 @@
 .hot-article-slide{
     display: flex;
      /* transition: transform 0.3s ease; */
-        transform: translateX(0); /* hoặc vị trí khởi đầu đúng */
+    transform: translateX(0); 
     transition: none;
 }
 .hot-article {
