@@ -58,7 +58,7 @@
                             // lấy file id từ tham số id
                 // mode r = read only
                 $f = fopen("../app/ArticleData/".$_GET['id'].".txt", 'r') or die("<h1>Không tìm thấy bài báo</h1>   ");
-                echo '<p><b>'.fgets($f).'</b></p>';
+                $isFirstrows = true;
                 //kiểm tra xem đã đến cuối file (EOF: End Of File) chưa.
                 while(!feof($f))
                 {
@@ -88,9 +88,12 @@
                     }
                     else
                     {
-                        
-                        echo '<p>'.$rows.'</p>';
+                        if($isFirstrows)
+                             echo '<p><b>'.$rows.'</b></p>';
+                        else
+                            echo '<p>'.$rows.'</p>';
                     }
+                    $isFirstrows = false;
                 }
                 if(empty($rawData['AuthorGuestName'])){
                     require_once('../app/model/userDAO.php');

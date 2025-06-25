@@ -174,7 +174,7 @@
 
 
                                         $sql = 'SELECT * FROM article INNER JOIN category ON article.CategoryID = category.CategoryID
-                                                        WHERE category.CategoryName = "Chính trị"
+                                                       WHERE category.CategoryName = "Chính trị" and ArticleStatus = 1
                                                         LIMIT 10';
                                         $result = $DAOArticle->getListArticleQuery($sql);     
                                         while($row = mysqli_fetch_array($result, MYSQLI_ASSOC))
@@ -189,7 +189,7 @@
 
 
                                         $sql = 'SELECT * FROM article INNER JOIN category ON article.CategoryID = category.CategoryID
-                                                        WHERE category.CategoryName = "Chính trị and ArticleStatus = 1"
+                                                        WHERE category.CategoryName = "Chính trị" and ArticleStatus = 1
                                                         LIMIT 5';
                                         $result = $DAOArticle->getListArticleQuery($sql);     
                                         while($row = mysqli_fetch_array($result, MYSQLI_ASSOC))
@@ -202,15 +202,7 @@
                                         }
                                         mysqli_free_result($result); 
                                     ?>
-                                    <script>
-                                        const dsThoiSu = document.querySelector("thoisu-wrapper");
-                                        let start, isclick;
-                                        dsThoiSu.addEventListener('mousedown', function (e){
-                                            isclick = true;
-                                            
-                                        })
-                                        
-                                    </script>
+
                             </div>
                             </div>
                         </div>
