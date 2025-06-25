@@ -33,7 +33,7 @@
                     <div class="homepage-row-1">
                     <div class="homepage-content hot-news">
                         <div class="hot-article-container" id="slide-hot-news">
-                            <button class="btn slide-left" onclick="loadArtNext(false);clearHotNewsTimer()"><i class="fa-solid fa-arrow-left"></i></button>
+                            <button class="btn slide-left" onclick="loadArtNext(false, true);clearHotNewsTimer()"><i class="fa-solid fa-arrow-left"></i></button>
                             <div class="hot-article-warpper">
                                 <div class="hot-article-slide">
                                             <?php
@@ -98,7 +98,7 @@
 
                             </div>
                             
-                            <button class="btn slide-right" onclick="loadArtNext(true); clearHotNewsTimer()"><i class="fa-solid fa-arrow-right"></i></button>
+                            <button class="btn slide-right" onclick="loadArtNext(true, true); clearHotNewsTimer()"><i class="fa-solid fa-arrow-right"></i></button>
                         </div>
                         
 
@@ -147,8 +147,8 @@
                                     <h2 class="type-title" >Chính trị<h2>
                                 </div>
                                 <div class="thoisu-button-container">
-                                    <button onclick="loadArtThoiSuNext(false);clearHotNewsTimer()" class="left-btn"><i class="fa-solid fa-arrow-left"></i></button>
-                                    <button onclick="loadArtThoiSuNext(true);clearHotNewsTimer()"class="right-btn"><i class="fa-solid fa-arrow-right"></i></button>
+                                    <button onclick="loadArtThoiSuNext(false, true);" class="left-btn"><i class="fa-solid fa-arrow-left"></i></button>
+                                    <button onclick="loadArtThoiSuNext(true, true);"class="right-btn"><i class="fa-solid fa-arrow-right"></i></button>
                                 </div>
                                 
                             </div>
@@ -160,6 +160,7 @@
                                         $DAOArticle = new articleDAO();
                                         $sql = 'SELECT * FROM article INNER JOIN category ON article.CategoryID = category.CategoryID
                                                         WHERE category.CategoryName = "Chính trị"
+                                                        ORDER BY time_modify DESC
                                                         LIMIT 5 OFFSET 5';
                                         $result = $DAOArticle->getListArticleQuery($sql);     
                                         while($row = mysqli_fetch_array($result, MYSQLI_ASSOC))
@@ -175,6 +176,7 @@
 
                                         $sql = 'SELECT * FROM article INNER JOIN category ON article.CategoryID = category.CategoryID
                                                        WHERE category.CategoryName = "Chính trị" and ArticleStatus = 1
+                                                       ORDER BY time_modify DESC
                                                         LIMIT 10';
                                         $result = $DAOArticle->getListArticleQuery($sql);     
                                         while($row = mysqli_fetch_array($result, MYSQLI_ASSOC))
@@ -190,6 +192,7 @@
 
                                         $sql = 'SELECT * FROM article INNER JOIN category ON article.CategoryID = category.CategoryID
                                                         WHERE category.CategoryName = "Chính trị" and ArticleStatus = 1
+                                                        ORDER BY time_modify DESC
                                                         LIMIT 5';
                                         $result = $DAOArticle->getListArticleQuery($sql);     
                                         while($row = mysqli_fetch_array($result, MYSQLI_ASSOC))

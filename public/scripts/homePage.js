@@ -2,7 +2,7 @@ var timerHotNews = setInterval(() => {
     loadArtNext(true, false)
 }, 5000);
 var timerThoiSu =setInterval(() => {
-    loadArtThoiSuNext(true)
+    loadArtThoiSuNext(true, false)
 }, 3000);
 function showArticle(idArt) {
     window.location.href = `./article.php?id=${idArt}`
@@ -25,7 +25,7 @@ window.addEventListener("load", function () {
 
 function loadArtNext(isNext, isclick){
     
-    if(!isclick){
+    if(isclick){
         clearInterval(timerHotNews);
         timerHotNews = setInterval(() => {
             loadArtNext(true, false)
@@ -99,10 +99,10 @@ function loadArtNext(isNext, isclick){
 let indexThoiSu = 0;      
                                                                   
 function loadArtThoiSuNext(isNext, isclick){
-    if(!isclick){
+    if(isclick){
         clearInterval(timerThoiSu);
         timerThoiSu = setInterval(() => {
-            loadArtNext(true, false)
+            loadArtThoiSuNext(true, false)
         }, 3000);
     }
     const ThoiSuWrap = document.getElementById("thoisu-wrapper");     

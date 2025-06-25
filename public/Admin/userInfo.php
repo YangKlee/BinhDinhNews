@@ -87,7 +87,7 @@
     <link rel="stylesheet" href="../css/reset.css">
     <link rel="shortcut icon" href="../../../../../BinhDinhNews/public/images/logo.webp" type="image/x-icon">
         <link rel="stylesheet" href="../css/reponsitive/main-admin.css">
-    <title>Document</title>
+    <title>Thêm bài báo</title>
 </head>
 
 <body>
