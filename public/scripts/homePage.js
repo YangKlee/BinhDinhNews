@@ -8,15 +8,7 @@ function showArticle(idArt) {
     window.location.href = `./article.php?id=${idArt}`
 }
 var slideThoiSuCurr;
-// function loadHotNews()
-// {
-//     let listArt =  document.getElementsByClassName("hot-article")
-//     console.log(listArt);
-//     for (let i = 1; i < listArt.length; i++)
-//     {
-//         listArt[i].style.display = "none";
-//     }
-// }
+
 let idx_curr_HotNews = 1;
 window.addEventListener("load", function () {
     const ArtWidth = document.querySelector(".hot-article").offsetWidth;

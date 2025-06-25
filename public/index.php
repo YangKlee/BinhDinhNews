@@ -202,15 +202,7 @@
                                         }
                                         mysqli_free_result($result); 
                                     ?>
-                                    <script>
-                                        const dsThoiSu = document.querySelector("thoisu-wrapper");
-                                        let start, isclick;
-                                        dsThoiSu.addEventListener('mousedown', function (e){
-                                            isclick = true;
-                                            
-                                        })
-                                        
-                                    </script>
+
                             </div>
                             </div>
                         </div>
