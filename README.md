@@ -45,4 +45,6 @@ Lưu tạm chơi
                     </script>';
                 }
             }
-        ?> 
+        ?>
+
+THANKS, I OWE YOU ONE
