@@ -236,11 +236,13 @@
                                         <?php
                                         while($row = mysqli_fetch_assoc($result))
                                         {   
+    
+                                            echo '<a href="./article.php?id='.$row['ArticleID'].'" class="list-news container">';
                                             if(!$row['MainImage']) {
                                                 $row['MainImage'] = 'default.png';
                                                 $row['ArticleID'] = 'default';
                                             }
-                                            echo '<a href="./article.php?id='.$row['ArticleID'].'" class="list-news container">
+                                            echo '
                                             <img src="./images/upload/'.$row['ArticleID'].'/'.$row['MainImage'].'" alt="">
                                             <div class="news-title">
                                             <p>'.$row['Title'].'</p>

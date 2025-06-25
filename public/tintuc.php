@@ -49,12 +49,13 @@
 
                         echo '<div class="tintuc-list">';
                         while($row = mysqli_fetch_assoc($result)) {
-                            if (!$row['mainimage']) {
+                            // fallback image
+                            echo '<a class="tintuc-item" href="./article.php?id='.$row['ArticleID'].'">';
+                            if (empty($row['mainimage'])) {
                                 $row['mainimage'] = 'default.png';
-                                $row['ArticleID'] = 'default'; // Thay đổi tên file nếu cần
+                                $row['ArticleID'] = 'default';
                             }
-                            echo '<a class="tintuc-item" href="./article.php?id='.$row['ArticleID'].'">
-                                    <img src="./images/upload/'.$row['ArticleID'].'/'.$row['mainimage'].'" alt="">
+                            echo '<img src="./images/upload/'.$row['ArticleID'].'/'.$row['mainimage'].'" alt="">
                                     <div>
                                         <h3>'.$row['Title'].'</h3>
                                         <span class="tintuc-time">'.$row['Time_modify'].'</span>

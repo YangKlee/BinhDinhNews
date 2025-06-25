@@ -174,7 +174,7 @@ form a:hover {
 
 @media (max-width: 600px) {
     form {
-        width: 95vw;
+        width: 85vw;
         min-width: unset;
         max-width: 98vw;
         padding: 24px 8px;
@@ -227,7 +227,7 @@ form a:hover {
 @media (max-width: 400px) {
     form {
         padding: 10px 2vw;
-        width: 99vw;
+        width: 90vw;
         min-width: unset;
         max-width: 100vw;
     }
